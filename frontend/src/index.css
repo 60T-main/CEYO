@@ -1,0 +1,73 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set up a modern font and background */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #263344;
+  margin-bottom: 16px;
+}
+
+.header{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.header .logo {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-section{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-ul{
+  display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    /* space between cards */
+    padding: 1rem;
+}
+
+.card{
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /* keeps images proportional */
+}
+
+.card content {
+  padding: 0.75rem;
+  flex: 1;
+}
