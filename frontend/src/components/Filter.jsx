@@ -1,5 +1,5 @@
 import React from 'react';
-const Search = ({searchTerm, setSearchTerm}) => {
+const Search = ({categoryFilter, setCategoryFilter}) => {
     return ( 
                 <div className="search">
                     <div className="search-bar">
