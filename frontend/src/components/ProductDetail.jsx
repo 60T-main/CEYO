@@ -29,11 +29,6 @@ const ProductDetail = ({ API_BASE_URL, ProductComponent }) => {
         }
 
         setProductDetail(data);
-
-        console.log("data:", data); 
-        console.log("id:", id); 
-        console.log("Product id : ",productDetail.product_id);
-        console.log("Product: ",productDetail.name);
         
       } catch (error) {
       console.error('Error fetching products:', error);

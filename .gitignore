@@ -13,6 +13,7 @@ __pycache__/
 .env*
 venv/
 ceyo-venv/
+.ceyo_venv/
 ENV/
 
 # Django
@@ -52,5 +53,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Ignore requirements.txt if you want to keep it out of git
-# requirements.txt

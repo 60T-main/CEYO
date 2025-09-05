@@ -1,9 +1,6 @@
 import React from 'react';
 
-
-import { Link } from "react-router-dom";
-
-const AllProducts = ({ products,  ProductComponent }) => {
+const AllProducts = ({ products,  ProductComponent, handleCartUpdate }) => {
     return (
     <>
           <section className="card-section">
@@ -12,11 +9,7 @@ const AllProducts = ({ products,  ProductComponent }) => {
             {products.map((product) => (
               <div key={product.product_id} className="card">
                 
-                <Link to={`/product/${product.product_id}`}
-                  style={{ textDecoration: "none", color: "inherit" }}>
-                  
-                <ProductComponent product={product} />
-                </Link>
+                <ProductComponent product={product} handleCartUpdate={handleCartUpdate} />
               </div>
             ))}
           </div>

@@ -1,8 +1,17 @@
 import React from 'react';
+import AddToCart from './AddToCart.jsx'
+
+
+import { Link } from "react-router-dom";
 
 const Product = ({ product:
-    { name, description, category, price, images } }) => {
+    { product_id, name, description, category, price, images }, handleCartUpdate }) => {
     return (
+
+        <>
+                        <Link to={`/product/${product_id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}>
+
                         <li className="card">
                             <img className="product-img" src="/no-img.jpg" alt={name} />
                             <div>
@@ -12,8 +21,16 @@ const Product = ({ product:
                                 <p>{ description }</p>
                                 <p>{category}</p>
                                 <p>${price}</p>
-                            </div>
-                        </li>
+                </div>
+        </li >
+            </Link>
+            
+        
+            <AddToCart
+                product_id={product_id}
+                handleCartUpdate= {handleCartUpdate}
+            />
+                            </>
     )
 };
  

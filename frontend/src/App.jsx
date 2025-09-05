@@ -6,17 +6,29 @@ import AllProducts from './components/AllProducts.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx'
 import Filter from './components/Filter.jsx'
+import Cart from './components/Cart.jsx'
 import ProductDetail from './components/ProductDetail.jsx';
 
 import { useDebounce } from "use-debounce";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+const GET_OPTIONS = {
+  method: 'GET',
+  credentials: 'include',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+};
+
+
 
 function App() {
 
   const [productList, setProductList] = useState([]);
+  
+  const [cart, setCart] = useState([]);
+
 
   const [errorMessage, setErrorMessage] = useState('');
   
@@ -29,12 +41,13 @@ function App() {
 
   
   const fetchProducts = async (filters = {}) => {
+    
 
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
 
     try {
-      const response = await fetch(API_BASE_URL + endpoint);
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
 
       if (!response.ok) {
         throw new Error('Failed to fetch products');
@@ -62,7 +75,7 @@ function App() {
     const endpoint = `/product/categories/`;
 
      try {
-      const response = await fetch(API_BASE_URL + endpoint);
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
 
       if (!response.ok) {
         throw new Error('Failed to fetch categories');
@@ -83,6 +96,39 @@ function App() {
       setErrorMessage('Error fetching categories. Please try again later...')
     } 
   }
+
+  const fetchCart = async () => {
+    const endpoint = `/product/cart/`;
+
+     try {
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch cart');
+      }
+    
+      const data = await response.json();
+
+      if (data.Response === 'False') {
+        setErrorMessage(data.Error || 'Failed to fetch cart');
+        setCart([]);
+        return;
+      }
+
+       setCart(data);
+       
+    
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      setErrorMessage('Error fetching categories. Please try again later...')
+    } 
+  }
+  
+  const handleCartUpdate = async () => {
+    await fetchCart(); 
+};
+
+
   
   const onFilter = async (filter = {} ) => {
 
@@ -101,7 +147,15 @@ function App() {
 
     useEffect(() => {
       fetchCategories();
-  }, []);
+    }, []);
+  
+    useEffect(() => {
+      fetchCart();
+    }, []);
+  
+  useEffect(() => {
+  console.log('Cart updated:', cart);
+}, [cart]);
 
   return ( 
     <main>
@@ -114,13 +168,20 @@ function App() {
   <Filter
           categoriesList={categoriesList}
           onFilter = {onFilter}
-  />
+        />
+        
+        <Cart
+          cart={cart}
+          setCart={setCart}
+        />
+
 </Header>
 
       <Routes>
         <Route path="/" element={<AllProducts
           products={productList}
           ProductComponent={Product}
+          handleCartUpdate = {handleCartUpdate}
         />} />
         <Route path="/product/:id" element={<ProductDetail
           API_BASE_URL={API_BASE_URL}
