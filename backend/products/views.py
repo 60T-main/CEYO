@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from .models import Product
+from .models import Product, Category
 
 
 class ProductListView(ListView):
@@ -40,7 +40,7 @@ class ProductListView(ListView):
                 for img in product.images.all()
             ]
             data.append({
-                "product_id": product.product_id,
+                "product_id": product.id,
                 "name": product.name,
                 "description": product.description,
                 "category": product.category.name,
@@ -64,7 +64,7 @@ class ProductDetailView(DetailView):
             for img in product.images.all()
         ]
         data = {
-            "product_id": product.product_id,
+            "product_id": product.id,
             "name": product.name,
             "description": product.description,
             "category": product.category.name,
@@ -74,3 +74,21 @@ class ProductDetailView(DetailView):
         }
         return JsonResponse(data, safe=False)
     
+
+
+class CategoryView(ListView):
+    model = Category
+
+
+    def render_to_response(self, context, **response_kwargs):
+        queryset = context['object_list']
+
+        data = []
+        for category in queryset:
+
+            data.append({
+                "category_id": category.category_id,
+                "name" : category.name
+            })
+
+        return JsonResponse(data, safe=False)

@@ -13,7 +13,8 @@ const AllProducts = ({ products,  ProductComponent }) => {
               <div key={product.product_id} className="card">
                 
                 <Link to={`/product/${product.product_id}`}
-                style={{ textDecoration: "none", color: "inherit" }}>
+                  style={{ textDecoration: "none", color: "inherit" }}>
+                  
                 <ProductComponent product={product} />
                 </Link>
               </div>

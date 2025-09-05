@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search.jsx';
 import { useLocation } from "react-router-dom";
 
-const Header = ({ searchTerm, setSearchTerm }) => {
+const Header = ({ searchTerm, setSearchTerm, children }) => {
     
     const location = useLocation();
 
@@ -18,6 +18,8 @@ const Header = ({ searchTerm, setSearchTerm }) => {
                 <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             )}
 
+
+            {children}
         </header>
     )
 };
