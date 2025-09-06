@@ -7,7 +7,7 @@ const AddToCart = ({ product_id , handleCartUpdate}) => {
     
       const handleAddToCart = async (e) => {
         e.preventDefault(); 
-        const response = await fetch(`${API_BASE_URL}/product/cart/`, {
+        const response = await fetch(`${API_BASE_URL}/product/cart/add`, {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

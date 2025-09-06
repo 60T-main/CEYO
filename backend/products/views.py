@@ -8,94 +8,86 @@ from django.utils.decorators import method_decorator
 from .models import Product, Category, Cart, CartItem
 from .utils import get_or_create_cart
 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
-class ProductListView(ListView):
-    model = Product
+from .serializers import ProductSerializer, CategorySerializer, CartSerializer
 
-    def get_queryset(self):
-        query = super().get_queryset()
 
-        search = self.request.GET.get('search')
-        if search:
-            query = query.filter(name__icontains=search)
+@api_view(['GET'])
+def ProductList(request):
 
-        category = self.request.GET.get("category")
-        if category:
-            query = query.filter(category__name__iexact=category)
+    products = Product.objects.all()
 
-        min_price = self.request.GET.get("min_price")
-        if min_price:
-            query = query.filter(price__gte=min_price)
+    # search by name
+    search = request.GET.get('search')
+    if search:
+        products = products.filter(name__icontains=search)
 
-        max_price = self.request.GET.get("max_price")
-        if max_price:
-            query = query.filter(price__lte=max_price)
+    # filter by category
+    category = request.GET.get('category')
+    if category:
+        products = products.filter(category__name__iexact=category)
 
-        return query
+    # filter by max price
+    max_price = request.GET.get('max_price')
+    if max_price:
+        products = products.filter(price__lte=max_price)
+
+    # filter by min price
+    min_price = request.GET.get('min_price')
+    if min_price:
+        products = products.filter(price__gte=min_price)
+
+    serializer = ProductSerializer(products, many=True)
+
+    return Response(serializer.data)
+
+
+
+@api_view(['GET'])
+def ProductDetail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+
+    serializer = ProductSerializer(product, many=False)
+
+    return Response(serializer.data)
 
     
-    def render_to_response(self, context, **response_kwargs):
-        queryset = context['object_list']
+@api_view(['GET'])
+def CategoryList(request):
+    categories = Category.objects.all()
 
-        data = []
-        for product in queryset:
-            images = [
-                self.request.build_absolute_uri(img.image.url)
-                for img in product.images.all()
-            ]
-            data.append({
-                "product_id": product.id,
-                "name": product.name,
-                "description": product.description,
-                "category": product.category.name,
-                "price": float(product.price),
-                "stock_qty": product.stock_qty,
-                "images": images
-            })
+    serializer = CategorySerializer(categories, many=True)
 
-        return JsonResponse(data, safe=False)
+    return Response(serializer.data)
+
+
+
+@api_view(['GET'])
+def getCart(request):
+    cart = get_or_create_cart(request)
+
+    serializer = CartSerializer(cart, many=False)
     
+    return Response(serializer.data)
 
 
-class ProductDetailView(DetailView):
-    model = Product
+@api_view(['POST'])
+def addToCart(request):
+    cart = get_or_create_cart(request)
 
-    def render_to_response(self, context, **response_kwargs):
-        product = context['object']
+    # CONTINIUE HERE
 
-        images = [
-            self.request.build_absolute_uri(img.image.url)
-            for img in product.images.all()
-        ]
-        data = {
-            "product_id": product.id,
-            "name": product.name,
-            "description": product.description,
-            "category": product.category.name,
-            "price": float(product.price),
-            "stock_qty": product.stock_qty,
-            "images": images
-        }
-        return JsonResponse(data, safe=False)
+
+    serializer = CartSerializer(data = request.data)
+
+    if serializer.is_valid():
+        serializer.save()
     
+    return Response(serializer.data)
 
 
-class CategoryView(ListView):
-    model = Category
-
-
-    def render_to_response(self, context, **response_kwargs):
-        queryset = context['object_list']
-
-        data = []
-        for category in queryset:
-
-            data.append({
-                "category_id": category.category_id,
-                "name" : category.name
-            })
-
-        return JsonResponse(data, safe=False)
     
 
 
