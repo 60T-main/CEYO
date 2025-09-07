@@ -75,98 +75,45 @@ def getCart(request):
 
 
 @csrf_exempt   # REMOVE THIS BEFORE PRODUCTION
-@api_view(['POST'])
-def addToCart(request):
+@api_view(['POST', 'DELETE'])
+def handleCartItems(request):
 
     product_id = request.data.get('id')
-    print("ID:",product_id)
+    cart_item_id = request.data.get('cart_item_id')
     cart = get_or_create_cart(request)
     product = get_object_or_404(Product, pk=product_id)
 
     item, created = CartItem.objects.get_or_create(
-        cart=cart,
-        product=product
-    )
-    item.save()
+            cart=cart,
+            product=product
+        )
+    
+    if request.method == 'POST':
+        if not created:
+            item.quantity += 1
+        else:
+            item.quantity = 1
+
+        item.save()
+
+    elif request.method == 'DELETE':
+
+        item.quantity -= 1
+        if item.quantity <= 0:
+            item.delete()
+        else:
+            item.save()
+        
+    
 
     request.session.save()
 
-
-    serializer = CartSerializer(data = request.data)
-
-    if serializer.is_valid():
-        serializer.save()
-    
+    serializer = CartSerializer(cart)
     return Response(serializer.data)
 
 
-    
 
 
-# @method_decorator(csrf_exempt, name='dispatch')   # REMOVE THIS BEFORE PRODUCTION
-# class CartView(View):
-
-#     def post(self, request, *args, **kwargs):
 
 
-#         if request.POST.get('action') == 'remove':
-#             item_id = request.POST.get('item_id')
-#             item = get_object_or_404(CartItem, id=item_id)
-#             item.delete()
-#             return JsonResponse({'success': True})
 
-#         product_id = request.POST.get('product_id')
-#         cart = get_or_create_cart(request)
-#         product = get_object_or_404(Product, pk=product_id)
-
-#         item, created = CartItem.objects.get_or_create(
-#             cart=cart,
-#             product=product
-#             product_id = request.data.get('product_id')
-#             print("ID:",product_id)
-#             item.save()
-
-#         # Ensure session is saved so session_key persists
-#         request.session.save()
-
-#         cart_items = [
-#             {
-#                 "product_id": item.product.id,
-#                 "name": item.product.name,
-#                 "quantity": item.quantity,
-#                 "unit_price": float(item.product.price),
-#                 "subtotal": float(item.subtotal)
-#             }
-#             for item in cart.items.all()
-#         ]
-
-#         data = {
-#             "user": cart.user.username if cart.user else None,
-#             "session_key": cart.session_key,
-#             "cart_items": cart_items,
-#             "total_items": cart.total_items,
-#             "total_price": float(cart.total_price),
-#         }
-#         return JsonResponse(data, safe=False)
-    
-
-#     def get(self, request, *args, **kwargs):
-#         cart = get_or_create_cart(request)
-#         cart_items = [
-#             {
-#                 "product_id": item.product.id,
-#                 "name": item.product.name,
-#                 "quantity": item.quantity,
-#                 "unit_price": float(item.product.price),
-#                 "subtotal": float(item.subtotal)
-#             }
-#             for item in cart.items.all()
-#         ]
-#         data = {
-#             "user": cart.user.username if cart.user else None,
-#             "session_key": cart.session_key,
-#             "cart_items": cart_items,
-#             "total_items": cart.total_items,
-#             "total_price": float(cart.total_price),
-#         }
-#         return JsonResponse(data, safe=False)

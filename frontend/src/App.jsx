@@ -172,6 +172,7 @@ function App() {
         <Cart
           cart={cart}
           setCart={setCart}
+          handleCartUpdate= {handleCartUpdate}
         />
 
 </Header>
@@ -185,6 +186,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail
           API_BASE_URL={API_BASE_URL}
           ProductComponent={Product}
+          handleCartUpdate = {handleCartUpdate}
         />} />
       </Routes>
 

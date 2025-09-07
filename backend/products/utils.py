@@ -7,11 +7,8 @@ def get_or_create_cart(request):
             is_active=True
         )
     else:
-        if not request.session.session_key:
-            request.session.create()
-
-        cart, created = Cart.objects.get_or_create(
-            session_key=request.session.session_key,
-            is_active=True
-        )
+        session_key = request.session.session_key
+        cart = Cart.objects.filter(session_key=session_key).first()
+        if not cart:
+            cart = Cart.objects.create(session_key=session_key)
     return cart

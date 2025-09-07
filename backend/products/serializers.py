@@ -31,11 +31,12 @@ class CartSerializer(serializers.ModelSerializer):
     def get_cart_items(self, obj):
         return [
             {
-                "product_id": item.product. id,
+                "id": item.product.id,
+                "cart_item_id": item.id,
                 "name": item.product.name,
                 "quantity": item.quantity,
-                "unit_price": float(item.   product.price),
-                "subtotal": float(item. subtotal)
+                "unit_price": float(item.product.price),
+                "subtotal": float(item.subtotal)
             }
             for item in obj.items.all()
         ]

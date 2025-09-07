@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { useEffect,useState } from 'react';
 
-const ProductDetail = ({ API_BASE_URL, ProductComponent }) => {
+const ProductDetail = ({ API_BASE_URL, ProductComponent , handleCartUpdate}) => {
 
     const { id } = useParams();
     const [productDetail, setProductDetail] = useState([]);
@@ -47,7 +47,7 @@ const ProductDetail = ({ API_BASE_URL, ProductComponent }) => {
             <h2>{productDetail.name}</h2>
             <ul className="card-ul">
               {
-                <ProductComponent key={productDetail.product_id} product={productDetail} />
+                <ProductComponent key={productDetail.product_id} product={productDetail} handleCartUpdate={handleCartUpdate} />
               }
         </ul>
             </section>
