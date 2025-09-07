@@ -7,7 +7,7 @@ const AllProducts = ({ products,  ProductComponent, handleCartUpdate }) => {
             <h2>All Products</h2>
           <div className="card-div">
             {products.map((product) => (
-              <div key={product.product_id} className="card">
+              <div key={product.id} className="card">
                 
                 <ProductComponent product={product} handleCartUpdate={handleCartUpdate} />
               </div>

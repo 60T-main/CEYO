@@ -134,15 +134,14 @@ function App() {
 
       fetchProducts({ category: filter.category, min_price: filter.min_price, max_price: filter.max_price })
 
-      console.log(filter);
       
-    
-
+  
   }
 
 
   useEffect(() => {
       fetchProducts({ search: debouncedSearchTerm });
+      
   }, [debouncedSearchTerm]);
 
     useEffect(() => {

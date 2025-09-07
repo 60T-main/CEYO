@@ -5,11 +5,11 @@ import AddToCart from './AddToCart.jsx'
 import { Link } from "react-router-dom";
 
 const Product = ({ product:
-    { product_id, name, description, category, price, images }, handleCartUpdate }) => {
+    { id, name, description, category, price, images }, handleCartUpdate }) => {
     return (
 
         <>
-                        <Link to={`/product/${product_id}`}
+                        <Link to={`/product/${id}`}
                   style={{ textDecoration: "none", color: "inherit" }}>
 
                         <li className="card">
@@ -21,13 +21,14 @@ const Product = ({ product:
                                 <p>{ description }</p>
                                 <p>{category}</p>
                                 <p>${price}</p>
+                                <p>${id}</p>
                 </div>
         </li >
             </Link>
             
         
             <AddToCart
-                product_id={product_id}
+                id={id}
                 handleCartUpdate= {handleCartUpdate}
             />
                             </>
