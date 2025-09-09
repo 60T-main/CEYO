@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import './App.css'
+import './style.css'
 
 
-import AllProducts from './components/AllProducts.jsx';
+import Home from './components/Home.jsx';
+import HeroBanner from './components/HeroBanner.jsx';
+import Menu from './components/Menu.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx'
 import Filter from './components/Filter.jsx'
@@ -11,6 +13,7 @@ import ProductDetail from './components/ProductDetail.jsx';
 
 import { useDebounce } from "use-debounce";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Search from './components/Search.jsx';
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -28,6 +31,10 @@ function App() {
   const [productList, setProductList] = useState([]);
   
   const [cart, setCart] = useState([]);
+
+// Menu State
+  const [menuActive, setMenuActive] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
 
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -154,34 +161,58 @@ function App() {
   
   useEffect(() => {
   console.log('Cart updated:', cart);
-}, [cart]);
+  }, [cart]);
+  
+
+  const onMenuClose = async () => {
+
+    console.log("menu closing initiated");
+    
+    setMenuClosing(true)
+    
+    setTimeout(() => {
+      setMenuActive(false)
+      setMenuClosing(false)
+    }, 300);
+    
+
+  }
 
   return ( 
     <main>
-<Header
-  searchTerm={searchTerm}
-  setSearchTerm={setSearchTerm}
-  categoriesList={categoriesList}
-  setCategoriesList={setCategoriesList}
->
-  <Filter
-          categoriesList={categoriesList}
-          onFilter = {onFilter}
-        />
+
+      <div className={`${menuClosing ? 'animate-slide-up' : 'animate-slide-down'} ${menuActive ? 'menu-active' : 'hidden'}`}>
+          <div className="pointer-events-none h-30">
+              {/* background layer */}
+          </div>
+          
+            {/* Category content */}
+          </div>
+
+      <Header
+        categoriesList={categoriesList}
+        setCategoriesList={setCategoriesList}
+        MenuComponent={Menu}
+        setMenuActive={setMenuActive}
+        onMenuClose={onMenuClose}
+        menuActive = {menuActive}
+      >   
         
+        <Search
+          searchTerm={searchTerm} setSearchTerm={setSearchTerm}
+        />
         <Cart
           cart={cart}
-          setCart={setCart}
           handleCartUpdate= {handleCartUpdate}
         />
+        
+      </Header>
+      
 
-</Header>
 
       <Routes>
-        <Route path="/" element={<AllProducts
-          products={productList}
-          ProductComponent={Product}
-          handleCartUpdate = {handleCartUpdate}
+        <Route path="/" element={<Home
+        HeroBanner={HeroBanner}
         />} />
         <Route path="/product/:id" element={<ProductDetail
           API_BASE_URL={API_BASE_URL}

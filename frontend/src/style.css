@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'MainFont';
+  src: url('../public/fonts/mainFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'MainFont', sans-serif;
+}
+
+@theme {
+  --font-main: 'MainFont';
+}
+
+@layer base {
+  .icon{
+    @apply w-4.5;
+  }
+}
+
+
+@layer utilities {
+
+  .inline-font {
+    font-feature-settings: "case";
+  }
+
+  /* Animations */
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+  
+      100% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+  .animate-slide-down {
+    animation: slide-down 0.5s cubic-bezier(0.57, 0, 0.2, 1) forwards;
+  }
+}
+  .animate-slide-up {
+    animation: slide-up 0.5s cubic-bezier(0.57, 0, 0.2, 1) forwards;
+  }
+
+
+
+@layer components {
+  /* header */
+  .header {
+  @apply flex flex-row items-center justify-between z-1000 relative px-4 h-15 m-6 rounded-3xl bg-white;
+  }
+  .menu{
+    @apply order-1 md:order-2 md:mx-auto md:mt-0;
+  }
+
+  .logo-div {
+    @apply absolute inset-0 mx-auto flex max-w-[75px] items-center justify-center;
+  }
+  .logo {
+    @apply order-2 md:order-1 md:mx-auto md:mt-0 w-18;
+  }
+
+  .header-children {
+    @apply order-3 md:order-3 md:ml-auto md:mt-0 flex gap-4;
+  }
+
+  /* Active Menu */
+
+    .menu-active {
+      @apply absolute top-0 left-0 w-full h-full bg-black z-500;
+    }
+
+
+  /* hero banner section */
+
+  .hero-section{
+    @apply absolute z-1 top-1 px-3 pt-2;
+  }
+  .hero{
+    @apply rounded-3xl;
+  }
+}
+
+

@@ -4,7 +4,7 @@ const AllProducts = ({ products,  ProductComponent, handleCartUpdate }) => {
     return (
     <>
           <section className="card-section">
-            <h2>All Products</h2>
+            <h2>ყველა ფეხსაცმელი</h2>
           <div className="card-div">
             {products.map((product) => (
               <div key={product.id} className="card">

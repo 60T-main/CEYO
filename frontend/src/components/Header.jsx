@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search.jsx';
 import { useLocation } from "react-router-dom";
 
-const Header = ({ searchTerm, setSearchTerm, children }) => {
+const Header = ({ children, MenuComponent, setMenuActive, onMenuClose,menuActive }) => {
     
     const location = useLocation();
 
@@ -11,15 +11,21 @@ const Header = ({ searchTerm, setSearchTerm, children }) => {
 
 
     return (
-        <header className="header">
-            <img className="logo" src="/ceyo-logo.avif" alt="Ceyo Logo" />
+        <header className="header" style={{ transform: "translate(0px, 0px)" }}>
 
-            {!isProductDetail && (
-                <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            )}
+            <MenuComponent
+                setMenuActive={setMenuActive}
+                onMenuClose={onMenuClose}
+                menuActive = {menuActive}
+            ></MenuComponent>
 
+            <div className='logo-div'>
+                <a href="./"><img className="logo" src="/logo.png" alt="Ceyo Logo" /></a>
+            </div>
 
-            {children}
+            <div className='header-children'>
+                {children}
+            </div>
         </header>
     )
 };

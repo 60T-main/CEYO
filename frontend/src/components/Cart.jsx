@@ -20,7 +20,9 @@ const Cart = ({ cart, handleCartUpdate }) => {
 };
 
     return (
-        <div>
+        <div className='cart-div'>
+            <img className="icon cart" src="./public/cart.svg" alt="" />
+            <div className='hidden'>
             {cart.cart_items && cart.cart_items.length > 0 ? (
                 <div style={{ display: "flex", flexDirection: "row", gap: "1rem", marginLeft: "2rem" }}>
                     <div>Cart: </div>
@@ -38,7 +40,8 @@ const Cart = ({ cart, handleCartUpdate }) => {
                 </div>
             ) : (
                 <div style={{ color: 'red' }}>cart is empty</div>
-            )}
+                )}
+        </div>
         </div>
     )
 };
