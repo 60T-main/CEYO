@@ -32,27 +32,23 @@ function App() {
   // Cart State
   const [cart, setCart] = useState([]);
 
-  // Menu State
-  const [menuActive, setMenuActive] = useState(false);
-  const [menuClosing, setMenuClosing] = useState(false);
-
-  // Search Page State
-  const [searchActive, setSearchActive] = useState(false);
-  const [searchClosing, setSearchClosing] = useState(false);
-
-  // Search Page State
-  const [cartActive, setCartActive] = useState(false);
-  const [cartClosing, setCartClosing] = useState(false);
-
-  // Error State
-  const [errorMessage, setErrorMessage] = useState('');
-
   // Search State
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
   // Categories State
   const [categoriesList, setCategoriesList] = useState([]);
+
+  // Overlay States: 'menu', 'search', 'cart' or null
+  const [overlayState, setOverlayState] = useState('none');
+  const [overlayClosing, setOverlayClosing] = useState(null);
+
+  // Header Animation State
+
+  const [headerAnimate, setHeaderAnimate] = useState('none');
+
+  // Error State
+  const [errorMessage, setErrorMessage] = useState('');
 
   const fetchProducts = async (filters = {}) => {
     const params = new URLSearchParams(filters).toString();
@@ -144,28 +140,6 @@ function App() {
     });
   };
 
-  const onMenuClose = async () => {
-    console.log('menu closing initiated');
-
-    setMenuClosing(true);
-
-    setTimeout(() => {
-      setMenuActive(false);
-      setMenuClosing(false);
-    }, 300);
-  };
-
-  const onSearchClose = async () => {
-    console.log('search closing initiated');
-
-    setSearchClosing(true);
-
-    setTimeout(() => {
-      setSearchActive(false);
-      setSearchClosing(false);
-    }, 300);
-  };
-
   const handleRemoveFromCart = async (id, e) => {
     e.preventDefault();
 
@@ -180,21 +154,15 @@ function App() {
     handleCartUpdate();
   };
 
-  const onCartClose = async () => {
-    console.log('cart closing initiated');
+  const onOverlayClose = async (overlay) => {
+    console.log(`${overlay} closing initiated`);
 
-    setCartClosing(true);
+    setOverlayClosing(overlay);
 
     setTimeout(() => {
-      setCartActive(false);
-      setCartClosing(false);
+      setOverlayState(null);
+      setOverlayClosing(null);
     }, 300);
-  };
-
-  const closeAllOverlays = async () => {
-    onCartClose();
-    onSearchClose();
-    onMenuClose();
   };
 
   // UseEffects
@@ -205,9 +173,6 @@ function App() {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
-
-  useEffect(() => {
     fetchCart();
   }, []);
 
@@ -215,36 +180,56 @@ function App() {
     console.log('Cart updated:', cart);
   }, [cart]);
 
+  useEffect(() => {
+    const overlays = ['menu', 'search', 'cart'];
+
+    if (overlayState === 'none') {
+      setHeaderAnimate('none');
+    } else if (overlays.includes(overlayState)) {
+      setHeaderAnimate('left');
+    } else {
+      setHeaderAnimate('right');
+    }
+
+    console.log('headerAnimate:', headerAnimate);
+    console.log('overlayState:', overlayState);
+  }, [overlayState]);
+
   return (
     <main>
-      <div
-        className={`${menuClosing ? 'animate-slide-up' : 'animate-slide-down'} ${
-          menuActive ? 'menu-active' : 'hidden'
-        }`}
-      >
-        {/* Menu Content */}
-      </div>
+      {overlayState == 'menu' && (
+        <div
+          className={`${overlayClosing ? 'animate-slide-up' : 'animate-slide-down'} ${
+            overlayState ? 'menu-active' : 'hidden'
+          }`}
+        >
+          {/* Menu Content */}
+        </div>
+      )}
 
-      <SearchOverlay
-        searchTerm={searchTerm}
-        debouncedSearchTerm={debouncedSearchTerm}
-        setSearchTerm={setSearchTerm}
-        searchClosing={searchClosing}
-        searchActive={searchActive}
-        SearchResults={SearchResults}
-        products={productList}
-        ProductComponent={Product}
-        handleCartUpdate={handleCartUpdate}
-        closeAllOverlays={closeAllOverlays}
-      />
+      {overlayState == 'search' && (
+        <SearchOverlay
+          searchTerm={searchTerm}
+          debouncedSearchTerm={debouncedSearchTerm}
+          setSearchTerm={setSearchTerm}
+          overlayClosing={overlayClosing}
+          overlayState={overlayState}
+          SearchResults={SearchResults}
+          products={productList}
+          ProductComponent={Product}
+          handleCartUpdate={handleCartUpdate}
+        />
+      )}
 
-      <div
-        className={`${cartClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
-          cartActive ? 'cart-active' : 'hidden'
-        }`}
-      >
-        {/* Cart Content */}
-      </div>
+      {overlayState == 'cart' && (
+        <div
+          className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
+            overlayState ? 'cart-active' : 'hidden'
+          }`}
+        >
+          {/* Cart Content */}
+        </div>
+      )}
 
       {/* CART */}
       <div className="hidden">
@@ -282,23 +267,24 @@ function App() {
         categoriesList={categoriesList}
         setCategoriesList={setCategoriesList}
         MenuComponent={Menu}
-        setMenuActive={setMenuActive}
-        onMenuClose={onMenuClose}
-        menuActive={menuActive}
+        setOverlayState={setOverlayState}
+        overlayState={overlayState}
+        onOverlayClose={onOverlayClose}
+        headerAnimate={headerAnimate}
       >
         <Search
-          searchActive={searchActive}
-          setSearchActive={setSearchActive}
-          searchClosing={searchClosing}
-          setSearchClosing={setSearchClosing}
-          onSearchClose={onSearchClose}
+          overlayState={overlayState}
+          setOverlayState={setOverlayState}
+          overlayClosing={overlayClosing}
+          setOverlayClosing={setOverlayClosing}
+          onOverlayClose={onOverlayClose}
         />
         <Cart
-          cartActive={cartActive}
-          setCartActive={setCartActive}
-          cartClosing={cartClosing}
-          setCartClosing={setCartClosing}
-          onCartClose={onCartClose}
+          overlayState={overlayState}
+          setOverlayState={setOverlayState}
+          overlayClosing={overlayClosing}
+          setOverlayClosing={setOverlayClosing}
+          onOverlayClose={onOverlayClose}
         />
       </Header>
 

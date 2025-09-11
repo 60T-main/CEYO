@@ -1,28 +1,22 @@
 import React from 'react';
-const Search = ({ setSearchActive, searchActive, onSearchClose, AllProducts }) => {
+const Search = ({ overlayState, setOverlayState, onOverlayClose }) => {
+  let searchIcon = null;
+  if (!overlayState || overlayState === 'none') {
+    searchIcon = (
+      <img
+        onClick={() => {
+          setOverlayState('search');
+        }}
+        className="w-5"
+        src="/public/search.svg"
+        alt="search"
+      />
+    );
+  }
+
   return (
     <div className="search">
-      <div className="search-bar">
-        {searchActive ? (
-          <img
-            onClick={() => {
-              onSearchClose();
-            }}
-            className="w-5"
-            src="/public/menu2.svg"
-            alt="Menu2"
-          />
-        ) : (
-          <img
-            className="icon search"
-            src="/public/search-icon.svg"
-            alt="search"
-            onClick={() => {
-              setSearchActive(true);
-            }}
-          />
-        )}
-      </div>
+      <div className="search-bar">{searchIcon}</div>
     </div>
   );
 };

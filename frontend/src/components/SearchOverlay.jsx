@@ -4,19 +4,17 @@ const SearchOverlay = ({
   debouncedSearchTerm,
   searchTerm,
   setSearchTerm,
-  searchClosing,
-  searchActive,
   SearchResults,
   products,
-  handleCartUpdateproducts,
   ProductComponent,
   handleCartUpdate,
-  closeAllOverlays,
+  overlayClosing,
+  overlayState,
 }) => {
   return (
     <div
-      className={`${searchClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
-        searchActive ? 'search-active' : 'hidden'
+      className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
+        overlayState ? 'search-active' : 'hidden'
       }`}
     >
       <div className="search-content-parent">
@@ -38,10 +36,9 @@ const SearchOverlay = ({
             products={products}
             ProductComponent={ProductComponent}
             handleCartUpdate={handleCartUpdate}
-            closeAllOverlays={closeAllOverlays}
           />
         ) : (
-          'nothing'
+          ''
         )}
       </div>
     </div>

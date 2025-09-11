@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-const Menu = ({ setMenuActive, onMenuClose, menuActive }) => {
+const Menu = ({ setOverlayState, onOverlayClose, overlayState }) => {
   return (
     <>
-      {menuActive ? (
+      {overlayState !== 'none' && overlayState !== null ? (
         <img
           onClick={() => {
-            onMenuClose();
+            onOverlayClose('menu');
           }}
           className="w-5"
           src="/public/menu2.svg"
@@ -16,7 +16,7 @@ const Menu = ({ setMenuActive, onMenuClose, menuActive }) => {
       ) : (
         <img
           onClick={() => {
-            setMenuActive(true);
+            setOverlayState('menu');
           }}
           className="icon menu"
           src="/public/menu.svg"
