@@ -20,6 +20,18 @@ input::placeholder {
 
 }
 
+h1 {
+  @apply text-4xl font-bold leading-tight;
+}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+h3 {
+  @apply text-2xl font-medium;
+}
+
 @theme {
   --font-main: 'MainFont';
 }
@@ -97,14 +109,14 @@ input::placeholder {
     }
 
     100% {
-      transform: translateX(150%);
+      transform: translateX(32vw)
 
     }
   }
 
   @keyframes logo-slide-right {
     0% {
-      transform: translateX(150%);
+      transform: translateX(32vw);
 
     }
 
@@ -181,6 +193,8 @@ input::placeholder {
   }
 
 
+  /* Search Overlay */
+
   .search-content-parent{
     @apply mt-24 flex flex-col justify-start items-center;
   }
@@ -198,6 +212,23 @@ input::placeholder {
     @apply w-full h-[40px] outline-none bg-white rounded-[30px] pl-[15px] text-[13.4px] text-[#131313];
     letter-spacing: 0.8px;
   }
+
+
+  /* Cart Overlay */
+
+  .cart-parent{
+    @apply mt-24;
+  }
+  .cart-title-div{
+    @apply flex justify-center items-center mb-10;
+  }
+  .cart-items-parent{
+    @apply flex flex-col gap-5 justify-center items-center;
+  }
+
+  .cart-item {
+    @apply flex flex-row gap-5
+    }
 
 
   /* hero banner section */

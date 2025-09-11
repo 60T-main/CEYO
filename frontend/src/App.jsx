@@ -7,10 +7,11 @@ import Menu from './components/Menu.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Filter from './components/Filter.jsx';
-import Cart from './components/Cart.jsx';
 import AllProducts from './components/AllProducts.jsx';
 import SearchResults from './components/SearchResults.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
+import Cart from './components/Cart.jsx';
+import CartOverlay from './components/CartOverlay.jsx';
 import Search from './components/Search.jsx';
 import SearchOverlay from './components/SearchOverlay.jsx';
 
@@ -207,6 +208,7 @@ function App() {
         </div>
       )}
 
+      {/* Search Overlay */}
       {overlayState == 'search' && (
         <SearchOverlay
           searchTerm={searchTerm}
@@ -221,47 +223,16 @@ function App() {
         />
       )}
 
+      {/* Cart Overlay */}
       {overlayState == 'cart' && (
-        <div
-          className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
-            overlayState ? 'cart-active' : 'hidden'
-          }`}
-        >
-          {/* Cart Content */}
-        </div>
+        <CartOverlay
+          cart={cart}
+          handleCartUpdate={handleCartUpdate}
+          handleRemoveFromCart={handleRemoveFromCart}
+          overlayClosing={overlayClosing}
+          overlayState={overlayState}
+        />
       )}
-
-      {/* CART */}
-      <div className="hidden">
-        {cart.cart_items && cart.cart_items.length > 0 ? (
-          <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', marginLeft: '2rem' }}>
-            <div>Cart: </div>
-            <div>{cart.total_items}</div>
-            <div>${cart.total_price}</div>
-            <div>
-              {cart.cart_items.map((item) => (
-                <div
-                  className="cartItem"
-                  style={{ display: 'flex', justifyContent: 'right' }}
-                  key={item.id}
-                >
-                  <div>
-                    {item.name} {item.quantity} $ {item.subtotal}
-                  </div>
-                  <button
-                    onClick={(e) => handleRemoveFromCart(item.id, e)}
-                    style={{ color: 'red', cursor: 'pointer', marginLeft: '1rem' }}
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div style={{ color: 'red' }}>cart is empty</div>
-        )}
-      </div>
 
       <Header
         categoriesList={categoriesList}
