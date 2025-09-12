@@ -1,35 +1,32 @@
 import React from 'react';
 import AddToCart from './AddToCart.jsx';
+import { useLocation } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
 const Product = ({
-  product: { id, name, description, category, price, images },
+  product: { id, name, category, price, images },
   handleCartUpdate,
   closeAllOverlays,
 }) => {
+  const location = useLocation();
   return (
     <>
       <Link
         onClick={() => closeAllOverlays()}
         to={`/product/${id}`}
         style={{ textDecoration: 'none', color: 'inherit' }}
+        className="card-parent"
       >
-        <li className="card">
-          <img className="product-img" src="/no-img.jpg" alt={name} />
-          <div>
-            <h3>{name}</h3>
-          </div>
-          <div className="content">
-            <p>{description}</p>
-            <p>{category}</p>
-            <p>${price}</p>
-            <p>${id}</p>
-          </div>
-        </li>
+        <div className="card-img-parent">
+          <img src="/public/no-img.jpg" alt="no image" />
+        </div>
+        <div className="card-content-parent">
+          <h3 className={'card-title'}>{name}</h3>
+          <p className={'card-price'}>{price}₾</p>
+          {location.pathname !== '/' && <AddToCart id={id} handleCartUpdate={handleCartUpdate} />}
+        </div>
       </Link>
-
-      <AddToCart id={id} handleCartUpdate={handleCartUpdate} />
     </>
   );
 };

@@ -3,20 +3,23 @@ import './style.css';
 
 import Home from './components/Home.jsx';
 import HeroBanner from './components/HeroBanner.jsx';
-import Menu from './components/Menu.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Filter from './components/Filter.jsx';
 import AllProducts from './components/AllProducts.jsx';
+import NewProducts from './components/NewProducts.jsx';
 import SearchResults from './components/SearchResults.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
+import Menu from './components/Menu.jsx';
+import MenuOverlay from './components/MenuOverlay.jsx';
 import Cart from './components/Cart.jsx';
 import CartOverlay from './components/CartOverlay.jsx';
 import Search from './components/Search.jsx';
 import SearchOverlay from './components/SearchOverlay.jsx';
+import SearchInput from './components/SearchInput.jsx';
 
 import { useDebounce } from 'use-debounce';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -27,8 +30,13 @@ const GET_OPTIONS = {
 };
 
 function App() {
+  const location = useLocation();
+
   // Products State
   const [productList, setProductList] = useState([]);
+
+  // Date Ordered Products State
+  const [dateOrderedProducts, setDateOrderedProducts] = useState([]);
 
   // Cart State
   const [cart, setCart] = useState([]);
@@ -37,7 +45,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
-  // Categories State
+  // Categories List State
   const [categoriesList, setCategoriesList] = useState([]);
 
   // Overlay States: 'menu', 'search', 'cart' or null
@@ -45,12 +53,12 @@ function App() {
   const [overlayClosing, setOverlayClosing] = useState(null);
 
   // Header Animation State
-
   const [headerAnimate, setHeaderAnimate] = useState('none');
 
   // Error State
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Functions
   const fetchProducts = async (filters = {}) => {
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
@@ -70,7 +78,12 @@ function App() {
         return;
       }
 
-      setProductList(data);
+      if (filters.price_ascending) {
+        setDateOrderedProducts(data);
+        console.log('price_ascending triggered: ', filters.price_ascending);
+      } else {
+        setProductList(data);
+      }
     } catch (error) {
       console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
@@ -102,8 +115,6 @@ function App() {
     }
   };
 
-  // Functions
-
   const fetchCart = async () => {
     const endpoint = `/product/cart/`;
 
@@ -134,7 +145,22 @@ function App() {
   };
 
   const onFilter = async (filter = {}) => {
+    !filter.category && (filter.category = '');
+    !filter.min_price && (filter.min_price = '');
+    !filter.max_price && (filter.max_price = '');
+    !filter.search && (filter.search = '');
+
+    console.log(
+      'onFilter running',
+      'search:',
+      filter.search,
+      filter.category,
+      filter.min_price,
+      filter.max_price
+    );
+
     fetchProducts({
+      search: filter.search,
       category: filter.category,
       min_price: filter.min_price,
       max_price: filter.max_price,
@@ -175,6 +201,7 @@ function App() {
   useEffect(() => {
     fetchCategories();
     fetchCart();
+    fetchProducts({ price_ascending: 'true' });
   }, []);
 
   useEffect(() => {
@@ -191,21 +218,19 @@ function App() {
     } else {
       setHeaderAnimate('right');
     }
-
-    console.log('headerAnimate:', headerAnimate);
-    console.log('overlayState:', overlayState);
   }, [overlayState]);
 
   return (
     <main>
+      {/* Menu Overlay */}
       {overlayState == 'menu' && (
-        <div
-          className={`${overlayClosing ? 'animate-slide-up' : 'animate-slide-down'} ${
-            overlayState ? 'menu-active' : 'hidden'
-          }`}
-        >
-          {/* Menu Content */}
-        </div>
+        <MenuOverlay
+          overlayClosing={overlayClosing}
+          overlayState={overlayState}
+          categoriesList={categoriesList}
+          onFilter={onFilter}
+          onOverlayClose={onOverlayClose}
+        />
       )}
 
       {/* Search Overlay */}
@@ -220,6 +245,7 @@ function App() {
           products={productList}
           ProductComponent={Product}
           handleCartUpdate={handleCartUpdate}
+          SearchInput={SearchInput}
         />
       )}
 
@@ -231,6 +257,7 @@ function App() {
           handleRemoveFromCart={handleRemoveFromCart}
           overlayClosing={overlayClosing}
           overlayState={overlayState}
+          onFilter={onFilter}
         />
       )}
 
@@ -243,13 +270,16 @@ function App() {
         onOverlayClose={onOverlayClose}
         headerAnimate={headerAnimate}
       >
-        <Search
-          overlayState={overlayState}
-          setOverlayState={setOverlayState}
-          overlayClosing={overlayClosing}
-          setOverlayClosing={setOverlayClosing}
-          onOverlayClose={onOverlayClose}
-        />
+        {location.pathname !== '/product' && location.pathname !== '/product/' && (
+          <Search
+            overlayState={overlayState}
+            setOverlayState={setOverlayState}
+            overlayClosing={overlayClosing}
+            setOverlayClosing={setOverlayClosing}
+            onOverlayClose={onOverlayClose}
+          />
+        )}
+
         <Cart
           overlayState={overlayState}
           setOverlayState={setOverlayState}
@@ -260,7 +290,23 @@ function App() {
       </Header>
 
       <Routes>
-        <Route path="/" element={<Home HeroBanner={HeroBanner} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              HeroBanner={HeroBanner}
+              dateOrderedProducts={dateOrderedProducts}
+              Product={Product}
+              handleCartUpdate={handleCartUpdate}
+            >
+              <NewProducts
+                Product={Product}
+                dateOrderedProducts={dateOrderedProducts}
+                handleCartUpdate={handleCartUpdate}
+              />
+            </Home>
+          }
+        />
         <Route
           path="/product/:id"
           element={
@@ -269,6 +315,23 @@ function App() {
               ProductComponent={Product}
               handleCartUpdate={handleCartUpdate}
             />
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <AllProducts
+              ProductComponent={Product}
+              handleCartUpdate={handleCartUpdate}
+              productList={productList}
+            >
+              <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+              <Filter
+                categoriesList={categoriesList}
+                onFilter={onFilter}
+                debouncedSearchTerm={debouncedSearchTerm}
+              />
+            </AllProducts>
           }
         />
       </Routes>

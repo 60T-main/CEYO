@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = ({ overlayState, setOverlayState, onOverlayClose }) => {
+const Cart = ({ overlayState, setOverlayState }) => {
   let cartIcon = null;
   if (!overlayState || overlayState === 'none') {
     cartIcon = (

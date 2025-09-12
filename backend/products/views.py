@@ -39,6 +39,16 @@ def ProductList(request):
     if min_price:
         products = products.filter(price__gte=min_price)
 
+    # order ascending
+    price_ascending = request.GET.get('price_ascending')
+    if price_ascending:
+        products = products.order_by('last_modified')[:12]
+
+    # order descending
+    price_descending = request.GET.get('price_descending')
+    if price_descending:
+        products = products.order_by('-last_modified')
+
     serializer = ProductSerializer(products, many=True)
 
     return Response(serializer.data)

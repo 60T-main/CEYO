@@ -1,5 +1,5 @@
 import React from 'react';
-const Search = ({ overlayState, setOverlayState, onOverlayClose }) => {
+const Search = ({ overlayState, setOverlayState }) => {
   let searchIcon = null;
   if (!overlayState || overlayState === 'none') {
     searchIcon = (

@@ -10,6 +10,7 @@ const SearchOverlay = ({
   handleCartUpdate,
   overlayClosing,
   overlayState,
+  SearchInput,
 }) => {
   return (
     <div
@@ -19,17 +20,7 @@ const SearchOverlay = ({
     >
       <div className="search-content-parent">
         <div className="search-parent">
-          <div className="search-input-div">
-            <input
-              className="search-input"
-              type="text"
-              placeholder="ძებნა"
-              value={searchTerm}
-              onChange={(event) => {
-                setSearchTerm(event.target.value);
-              }}
-            />
-          </div>
+          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
         {debouncedSearchTerm.length > 0 ? (
           <SearchResults

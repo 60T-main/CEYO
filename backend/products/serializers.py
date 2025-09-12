@@ -36,7 +36,8 @@ class CartSerializer(serializers.ModelSerializer):
                 "name": item.product.name,
                 "quantity": item.quantity,
                 "unit_price": float(item.product.price),
-                "subtotal": float(item.subtotal)
+                "subtotal": float(item.subtotal),
+                "last_modified": item.last_modified
             }
             for item in obj.items.all()
         ]

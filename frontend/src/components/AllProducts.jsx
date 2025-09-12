@@ -1,11 +1,15 @@
 import React from 'react';
 
-const AllProducts = ({ products, ProductComponent, handleCartUpdate }) => {
+const AllProducts = ({ productList, ProductComponent, handleCartUpdate, children }) => {
   return (
     <>
-      <section className="card-section">
+      <section className="products-section">
+        <div className="page-title">
+          <h2>ფეხსაცმელი</h2>
+        </div>
+        <div className="filter-parent">{children}</div>
         <div className="card-div">
-          {products.map((product) => (
+          {productList.map((product) => (
             <div key={product.id} className="card">
               <ProductComponent product={product} handleCartUpdate={handleCartUpdate} />
             </div>

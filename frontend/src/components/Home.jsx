@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Home = ({ HeroBanner }) => {
+const Home = ({ HeroBanner, children }) => {
   return (
     <>
       <HeroBanner />
+
+      {children}
     </>
   );
 };
