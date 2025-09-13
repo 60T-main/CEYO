@@ -11,9 +11,11 @@ const NewProducts = ({ Product, dateOrderedProducts, handleCartUpdate, closeAllO
         <div className="new-products">
           {dateOrderedProducts.map((product) => (
             <Product
+              key={product.id}
               product={product}
               handleCartUpdate={handleCartUpdate}
               closeAllOverlays={closeAllOverlays}
+              variant="home"
             />
           ))}
         </div>

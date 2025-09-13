@@ -18,17 +18,17 @@ const AddToCart = ({ id, handleCartUpdate }) => {
 
   return (
     <div className="card-cart-parent">
-      <div className="cart-cart">
+      <div className="cart-cart shadow">
         <form onSubmit={handleAddToCart}>
           <button className={'inline-font'} type="submit">
             დაამატე კალათაში
           </button>
         </form>
       </div>
-      <div className="cart-buy">
+      <div className="cart-buy shadow">
         <form onSubmit={handleAddToCart}>
           <button className={'inline-font'} type="submit">
-            ახლავე ყიდვა
+            იყიდე ახლავე
           </button>
         </form>
       </div>

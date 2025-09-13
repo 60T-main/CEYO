@@ -43,6 +43,7 @@ const ProductDetail = ({ API_BASE_URL, ProductComponent, handleCartUpdate }) => 
         key={productDetail.product_id}
         product={productDetail}
         handleCartUpdate={handleCartUpdate}
+        variant="product-detail"
       />
     </div>
   );

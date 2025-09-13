@@ -3,6 +3,7 @@ import './style.css';
 
 import Home from './components/Home.jsx';
 import HeroBanner from './components/HeroBanner.jsx';
+import InfoSection from './components/InfoSection.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Filter from './components/Filter.jsx';
@@ -304,6 +305,7 @@ function App() {
                 dateOrderedProducts={dateOrderedProducts}
                 handleCartUpdate={handleCartUpdate}
               />
+              <InfoSection />
             </Home>
           }
         />

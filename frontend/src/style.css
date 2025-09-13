@@ -11,8 +11,7 @@
 
 body {
   font-family: 'MainFont', sans-serif;
-  color: #3E2A1F;
-  background-color: #EDE8D0;
+  color: var(--color-primary-font)
 }
 
 input::placeholder {
@@ -33,8 +32,14 @@ h3 {
   @apply text-xl font-bold;
 }
 
+h4 {
+  @apply text-base font-bold;
+}
+
 @theme {
   --font-main: 'MainFont';
+  --color-primary-font: #2E2E2E;
+  --color-secondary-font: #6E6E6E;
 }
 
 @layer base {
@@ -51,6 +56,10 @@ h3 {
 
   .sticky {
     @apply fixed top-0 w-full;
+  }
+
+  .shadow {
+    @apply shadow-xl drop-shadow-sm;
   }
 
 
@@ -159,7 +168,7 @@ h3 {
 
   /* header */
   .header {
-    @apply flex flex-row items-center justify-between z-1000 w-9/10 px-5 h-14 rounded-3xl bg-[#EDE8D0] shadow-md fixed top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    @apply flex flex-row items-center justify-between z-1000 w-9/10 px-5 h-14 rounded-3xl bg-white fixed top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
   }
 
   .menu {
@@ -282,7 +291,7 @@ h3 {
       @apply font-bold; 
     }
     .card-price{
-      @apply flex justify-center items-center w-18 h-10 rounded-xl bg-[#E07A5F] font-bold text-[#FFF8F0];
+      @apply flex justify-center items-center w-18 h-10 rounded-xl bg-[#ed1a2d] font-bold text-[#FFF8F0];
     }
     .card-img-parent img{
       @apply flex w-full rounded-2xl;
@@ -301,8 +310,50 @@ h3 {
     }
 
     .cart-buy{
-      @apply bg-[#E07A5F];
+      @apply bg-[#ed1a2d];
     }
+
+  /* Product Card Home */
+
+  .new-products-section{
+    @apply mt-10
+  }
+
+  .new-products{
+    @apply flex flex-row gap-4 overflow-x-auto mt-10;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none
+  }
+
+   .new-products-title, .new-products-categories{
+    @apply flex justify-center items-center;
+   }
+
+   .new-products-categories{
+    @apply text-[var(--color-secondary-font)] mt-2
+   }
+
+  .card-parent-home {
+    @apply flex flex-col justify-center items-center min-w-[10rem];
+  }
+
+  .card-content-parent-home {
+    @apply flex flex-col gap-3;
+  }
+
+  .card-title-home {
+    @apply text-xs font-bold;
+  }
+
+  .card-price-home {
+    @apply flex justify-center items-center w-13 h-5 rounded-xl bg-[#ed1a2d] font-bold text-xs text-[#FFF8F0];
+  }
+
+
+  .card-img-parent-home img {
+    @apply flex w-25;
+  }
+
 
   /* Product Detail Page */
 
