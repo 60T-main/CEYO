@@ -5,9 +5,8 @@ const NewProducts = ({ Product, dateOrderedProducts, handleCartUpdate, closeAllO
     <>
       <section className="new-products-section">
         <div className="new-products-title">
-          <h2>ახალი კოლექცია</h2>
+          <h2 className="inline-font">ახალი კოლექცია</h2>
         </div>
-        <div className="new-products-categories">ქალები . კაცები . ბავშვები</div>
         <div className="new-products">
           {dateOrderedProducts.map((product) => (
             <Product

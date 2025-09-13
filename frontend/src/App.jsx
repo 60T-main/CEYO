@@ -6,6 +6,7 @@ import HeroBanner from './components/HeroBanner.jsx';
 import InfoSection from './components/InfoSection.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import Filter from './components/Filter.jsx';
 import AllProducts from './components/AllProducts.jsx';
 import NewProducts from './components/NewProducts.jsx';
@@ -233,7 +234,6 @@ function App() {
           onOverlayClose={onOverlayClose}
         />
       )}
-
       {/* Search Overlay */}
       {overlayState == 'search' && (
         <SearchOverlay
@@ -249,7 +249,6 @@ function App() {
           SearchInput={SearchInput}
         />
       )}
-
       {/* Cart Overlay */}
       {overlayState == 'cart' && (
         <CartOverlay
@@ -261,7 +260,6 @@ function App() {
           onFilter={onFilter}
         />
       )}
-
       <Header
         categoriesList={categoriesList}
         setCategoriesList={setCategoriesList}
@@ -337,6 +335,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </main>
   );
 }

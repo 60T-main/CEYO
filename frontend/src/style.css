@@ -17,7 +17,6 @@ body {
 input::placeholder {
   font-size: 14px;
   font-weight: bold;
-
 }
 
 h1 {
@@ -40,6 +39,8 @@ h4 {
   --font-main: 'MainFont';
   --color-primary-font: #2E2E2E;
   --color-secondary-font: #6E6E6E;
+  --color-primary-blue: #004684;
+  --color-primary-red: #ee1b2e;
 }
 
 @layer base {
@@ -191,7 +192,7 @@ h4 {
   .menu-active,
   .search-active,
   .cart-active {
-    @apply top-0 left-0 w-full bg-[#EDE8D0] z-500;
+    @apply top-0 left-0 w-full bg-white z-500;
   }
 
   .menu-active,
@@ -212,7 +213,7 @@ h4 {
 
   .search-parent {
     @apply w-9/10 h-[50px] flex items-center justify-center rounded-[30px] overflow-hidden shadow-[2px_2px_10px_rgba(0,0,0,0.075)];
-    background: linear-gradient(to bottom, #EDE8D0, #d9a17f);
+    background: linear-gradient(to bottom, #004684, #90c0d0);
     
   }
 
@@ -354,6 +355,48 @@ h4 {
     @apply flex w-25;
   }
 
+  /* Home Info Section */
+
+    .info-section{
+      @apply flex flex-col justify-center items-center mt-10;
+    }
+
+    .info-why-div{
+      @apply flex flex-col gap-2 mb-10 text-start;
+    }
+
+    .info-div{
+      @apply flex flex-col gap-5 px-5;
+    }
+
+    .info-div p{
+      @apply text-xs
+    }
+
+    .info-2{
+      @apply text-end
+    }
+
+
+    /* Footer */
+
+    .footer{
+      @apply bg-[var(--color-primary-blue)] mt-10 rounded-t-3xl ;
+    }
+
+    .footer-content-parent{
+      @apply flex  flex-col px-5 py-10 gap-5
+    }
+    .footer h4{
+      @apply text-white ;
+    }
+
+    .social-parent{
+      @apply flex gap-2;
+    }
+    .social-icon{
+      @apply text-white text-lg;
+    }
 
   /* Product Detail Page */
 
@@ -361,3 +404,4 @@ h4 {
     @apply mt-30 flex flex-col;
   }
 }
+

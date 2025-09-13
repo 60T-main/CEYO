@@ -1,0 +1,21 @@
+import React from 'react';
+import { useState } from 'react';
+
+const Footer = ({}) => {
+  return (
+    <footer className="footer">
+      <div className="footer-content-parent">
+        <h4 className="about-us">ჩვენ შესახებ</h4>
+        <h4 className="catalogue">წესები და პირობები</h4>
+        <h4 className="contact">კონტაქტი</h4>
+        <div className="social-parent">
+          <i class="social-icon fa-brands fa-facebook"></i>
+          <i class="social-icon fa-brands fa-facebook-messenger"></i>
+          <i class="social-icon fa-brands fa-instagram"></i>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
