@@ -11,7 +11,7 @@ const Header = ({
   headerAnimate,
 }) => {
   return (
-    <header className="header shadow">
+    <header className="header">
       <MenuComponent
         setOverlayState={setOverlayState}
         onOverlayClose={onOverlayClose}

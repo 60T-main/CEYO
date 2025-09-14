@@ -1,19 +1,64 @@
 import React from 'react';
 
-const AllProducts = ({ productList, ProductComponent, handleCartUpdate, children }) => {
+const AllProducts = ({
+  productList,
+  Product,
+  handleCartUpdate,
+  setOverlayState,
+  overlayState,
+  children,
+  overlayClosing,
+  onOverlayClose,
+  OrderOverlay,
+}) => {
   return (
     <>
-      <section className="products-section">
-        <div className="page-title">
-          <h2>ფეხსაცმელი</h2>
-        </div>
-        <div className="filter-parent">{children}</div>
-        <div className="card-div">
-          {productList.map((product) => (
-            <div key={product.id} className="card">
-              <ProductComponent product={product} handleCartUpdate={handleCartUpdate} />
-            </div>
-          ))}
+      <section className={`products-section`}>
+        {/* Filter Overlay */}
+        {overlayState == 'filter' && (
+          <div
+            className={`${overlayClosing ? 'animate-slide-left-2' : 'animate-slide-right-2'} ${
+              overlayState ? 'filter-active' : 'hidden'
+            }`}
+          >
+            <img
+              onClick={() => {
+                onOverlayClose('true');
+              }}
+              className="w-5"
+              src="/public/menu2.svg"
+              alt="Menu2"
+            />
+            <div className="filter-overlay-parent">{children}</div>
+          </div>
+        )}
+
+        <OrderOverlay />
+        <div className={`all-products-content ${overlayState === 'filter' ? 'blurred' : ''}`}>
+          <div className="page-title">
+            <h2>ფეხსაცმელი</h2>
+          </div>
+          <div className="filter-order-parent">
+            <button
+              onClick={() => {
+                setOverlayState('filter');
+              }}
+              className="filter-button"
+            >
+              გაფილტვრა
+            </button>
+            <button className="order-button">დალაგება</button>
+          </div>
+          <div className="cards-parent-all">
+            {productList.map((product) => (
+              <Product
+                key={product.id}
+                product={product}
+                handleCartUpdate={handleCartUpdate}
+                variant="all-products"
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>

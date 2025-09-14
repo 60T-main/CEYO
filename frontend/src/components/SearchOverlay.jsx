@@ -19,9 +19,7 @@ const SearchOverlay = ({
       }`}
     >
       <div className="search-content-parent">
-        <div className="search-parent">
-          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         {debouncedSearchTerm.length > 0 ? (
           <SearchResults
             products={products}

@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 const Menu = ({ setOverlayState, onOverlayClose, overlayState }) => {
   return (
     <>
-      {overlayState !== 'none' && overlayState !== null ? (
+      {overlayState !== 'filter' && overlayState !== 'none' && overlayState !== null ? (
         <img
           onClick={() => {
-            onOverlayClose('menu');
+            onOverlayClose('true');
           }}
           className="w-5"
           src="/public/menu2.svg"

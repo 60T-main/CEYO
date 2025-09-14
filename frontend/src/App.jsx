@@ -7,7 +7,9 @@ import InfoSection from './components/InfoSection.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import Filter from './components/Filter.jsx';
+import FilterOverlay from './components/FilterOverlay.jsx';
+import OrderOverlay from './components/OrderOverlay.jsx';
+
 import AllProducts from './components/AllProducts.jsx';
 import NewProducts from './components/NewProducts.jsx';
 import SearchResults from './components/SearchResults.jsx';
@@ -19,6 +21,7 @@ import CartOverlay from './components/CartOverlay.jsx';
 import Search from './components/Search.jsx';
 import SearchOverlay from './components/SearchOverlay.jsx';
 import SearchInput from './components/SearchInput.jsx';
+import Loader from './components/Loader.jsx';
 
 import { useDebounce } from 'use-debounce';
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -50,12 +53,15 @@ function App() {
   // Categories List State
   const [categoriesList, setCategoriesList] = useState([]);
 
-  // Overlay States: 'menu', 'search', 'cart' or null
+  // Overlay States: 'menu', 'search', 'cart', 'filter', 'none' or null
   const [overlayState, setOverlayState] = useState('none');
   const [overlayClosing, setOverlayClosing] = useState(null);
 
   // Header Animation State
   const [headerAnimate, setHeaderAnimate] = useState('none');
+
+  // Loader State
+  const [loading, setLoading] = useState(true);
 
   // Error State
   const [errorMessage, setErrorMessage] = useState('');
@@ -184,8 +190,6 @@ function App() {
   };
 
   const onOverlayClose = async (overlay) => {
-    console.log(`${overlay} closing initiated`);
-
     setOverlayClosing(overlay);
 
     setTimeout(() => {
@@ -194,7 +198,24 @@ function App() {
     }, 300);
   };
 
+  const waitForPageReady = async () => {
+    if (document.readyState !== 'complete') {
+      await new Promise((resolve) => {
+        window.addEventListener('load', resolve, { once: true });
+      });
+    }
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready;
+    }
+    setLoading(false);
+    document.body.classList.add('fully-loaded');
+  };
+
   // UseEffects
+
+  useEffect(() => {
+    waitForPageReady();
+  }, []);
 
   useEffect(() => {
     fetchProducts({ search: debouncedSearchTerm });
@@ -211,7 +232,7 @@ function App() {
   }, [cart]);
 
   useEffect(() => {
-    const overlays = ['menu', 'search', 'cart'];
+    const overlays = ['menu', 'search', 'cart', 'filter'];
 
     if (overlayState === 'none') {
       setHeaderAnimate('none');
@@ -221,6 +242,8 @@ function App() {
       setHeaderAnimate('right');
     }
   }, [overlayState]);
+
+  if (loading) return <Loader />;
 
   return (
     <main>
@@ -321,12 +344,18 @@ function App() {
           path="/product"
           element={
             <AllProducts
-              ProductComponent={Product}
+              Product={Product}
               handleCartUpdate={handleCartUpdate}
               productList={productList}
+              setOverlayState={setOverlayState}
+              setOverlayClosing={setOverlayClosing}
+              overlayState={overlayState}
+              overlayClosing={overlayClosing}
+              onOverlayClose={onOverlayClose}
+              OrderOverlay={OrderOverlay}
             >
               <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-              <Filter
+              <FilterOverlay
                 categoriesList={categoriesList}
                 onFilter={onFilter}
                 debouncedSearchTerm={debouncedSearchTerm}

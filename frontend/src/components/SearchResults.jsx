@@ -11,6 +11,7 @@ const SearchResults = ({ products, ProductComponent, handleCartUpdate, closeAllO
                 product={product}
                 handleCartUpdate={handleCartUpdate}
                 closeAllOverlays={closeAllOverlays}
+                variant={'search'}
               />
             </div>
           ))}

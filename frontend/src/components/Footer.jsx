@@ -9,9 +9,9 @@ const Footer = ({}) => {
         <h4 className="catalogue">წესები და პირობები</h4>
         <h4 className="contact">კონტაქტი</h4>
         <div className="social-parent">
-          <i class="social-icon fa-brands fa-facebook"></i>
-          <i class="social-icon fa-brands fa-facebook-messenger"></i>
-          <i class="social-icon fa-brands fa-instagram"></i>
+          <i className="social-icon fa-brands fa-facebook"></i>
+          <i className="social-icon fa-brands fa-facebook-messenger"></i>
+          <i className="social-icon fa-brands fa-instagram"></i>
         </div>
       </div>
     </footer>

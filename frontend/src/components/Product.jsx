@@ -13,7 +13,6 @@ const Product = ({
     <>
       {variant === 'home' && (
         <Link
-          onClick={() => closeAllOverlays()}
           to={`/product/${id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
           className="card-parent-home"
@@ -33,7 +32,6 @@ const Product = ({
 
       {variant === 'product-detail' && (
         <Link
-          onClick={() => closeAllOverlays()}
           to={`/product/${id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
           className="card-parent"
@@ -48,6 +46,43 @@ const Product = ({
             <h3 className={'card-title'}>{name}</h3>
             <p className={'card-price shadow'}>{price}₾</p>
             <AddToCart id={id} handleCartUpdate={handleCartUpdate} />
+          </div>
+        </Link>
+      )}
+      {variant === 'all-products' && (
+        <Link
+          to={`/product/${id}`}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+          className="card-parent-all"
+        >
+          <div className="card-img-parent-all">
+            <img
+              src={images ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              alt="no image"
+            />
+          </div>
+          <div className="card-content-parent-all ">
+            <h4 className={'card-title-all'}>{name}</h4>
+            <p className={'card-price-all'}>{price}₾</p>
+          </div>
+        </Link>
+      )}
+      {variant === 'search' && (
+        <Link
+          onClick={() => closeAllOverlays()}
+          to={`/product/${id}`}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+          className="card-parent-all"
+        >
+          <div className="card-img-parent-all">
+            <img
+              src={images ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              alt="no image"
+            />
+          </div>
+          <div className="card-content-parent-all ">
+            <h4 className={'card-title-all'}>{name}</h4>
+            <p className={'card-price-all'}>{price}₾</p>
           </div>
         </Link>
       )}
