@@ -19,7 +19,7 @@ const Header = ({
       />
       <div
         className={`logo-div ${
-          headerAnimate === 'none'
+          !headerAnimate
             ? ''
             : headerAnimate === 'left'
             ? 'logo-animation-left'

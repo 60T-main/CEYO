@@ -2,7 +2,12 @@ import React from 'react';
 
 const Cart = ({ overlayState, setOverlayState }) => {
   let cartIcon = null;
-  if (!overlayState || overlayState === 'none') {
+  if (
+    !overlayState ||
+    overlayState === 'none' ||
+    overlayState === 'order' ||
+    overlayState === 'order-close'
+  ) {
     cartIcon = (
       <img
         onClick={() => {

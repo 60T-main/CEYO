@@ -53,12 +53,12 @@ function App() {
   // Categories List State
   const [categoriesList, setCategoriesList] = useState([]);
 
-  // Overlay States: 'menu', 'search', 'cart', 'filter', 'none' or null
+  // Overlay States: 'menu', 'search', 'cart', 'filter', 'order', 'none' or null
   const [overlayState, setOverlayState] = useState('none');
   const [overlayClosing, setOverlayClosing] = useState(null);
 
   // Header Animation State
-  const [headerAnimate, setHeaderAnimate] = useState('none');
+  const [headerAnimate, setHeaderAnimate] = useState(null);
 
   // Loader State
   const [loading, setLoading] = useState(true);
@@ -86,9 +86,9 @@ function App() {
         return;
       }
 
-      if (filters.price_ascending) {
+      if (filters.date_descending) {
         setDateOrderedProducts(data);
-        console.log('price_ascending triggered: ', filters.price_ascending);
+        console.log('date_descending triggered: ', filters.date_descending);
       } else {
         setProductList(data);
       }
@@ -153,10 +153,22 @@ function App() {
   };
 
   const onFilter = async (filter = {}) => {
-    !filter.category && (filter.category = '');
-    !filter.min_price && (filter.min_price = '');
-    !filter.max_price && (filter.max_price = '');
-    !filter.search && (filter.search = '');
+    const expectedKeys = [
+      'category',
+      'min_price',
+      'max_price',
+      'search',
+      'price_ascending',
+      'price_descending',
+      'name_ascending',
+      'name_descending',
+    ];
+
+    expectedKeys.forEach((key) => {
+      if (!filter[key]) {
+        filter[key] = '';
+      }
+    });
 
     console.log(
       'onFilter running',
@@ -164,7 +176,9 @@ function App() {
       filter.search,
       filter.category,
       filter.min_price,
-      filter.max_price
+      filter.max_price,
+      filter.price_ascending,
+      filter.price_descending
     );
 
     fetchProducts({
@@ -172,6 +186,8 @@ function App() {
       category: filter.category,
       min_price: filter.min_price,
       max_price: filter.max_price,
+      price_ascending: filter.price_ascending,
+      price_descending: filter.price_descending,
     });
   };
 
@@ -190,12 +206,19 @@ function App() {
   };
 
   const onOverlayClose = async (overlay) => {
+    console.log('onOverlayClose activated:', overlay);
+
     setOverlayClosing(overlay);
 
-    setTimeout(() => {
-      setOverlayState(null);
+    if (overlay === 'order') {
+      setOverlayState('order-close');
       setOverlayClosing(null);
-    }, 300);
+    } else {
+      setTimeout(() => {
+        setOverlayState(null);
+        setOverlayClosing(null);
+      }, 300);
+    }
   };
 
   const waitForPageReady = async () => {
@@ -224,24 +247,28 @@ function App() {
   useEffect(() => {
     fetchCategories();
     fetchCart();
-    fetchProducts({ price_ascending: 'true' });
+    fetchProducts({ date_descending: 'true' });
   }, []);
+
+  useEffect(() => {
+    console.log('overlay state:', overlayState);
+    const overlays = ['menu', 'cart', 'search', 'filter'];
+    if (overlays.includes(overlayState)) {
+      setHeaderAnimate('left');
+    } else if (overlayState === 'order-close' || overlayState === 'order') {
+      setHeaderAnimate(null);
+    } else if (!overlayState) {
+      setHeaderAnimate('right');
+    }
+  }, [overlayState]);
+
+  useEffect(() => {
+    console.log('headerAnimate:', headerAnimate);
+  }, [headerAnimate]);
 
   useEffect(() => {
     console.log('Cart updated:', cart);
   }, [cart]);
-
-  useEffect(() => {
-    const overlays = ['menu', 'search', 'cart', 'filter'];
-
-    if (overlayState === 'none') {
-      setHeaderAnimate('none');
-    } else if (overlays.includes(overlayState)) {
-      setHeaderAnimate('left');
-    } else {
-      setHeaderAnimate('right');
-    }
-  }, [overlayState]);
 
   if (loading) return <Loader />;
 
@@ -353,6 +380,7 @@ function App() {
               overlayClosing={overlayClosing}
               onOverlayClose={onOverlayClose}
               OrderOverlay={OrderOverlay}
+              onFilter={onFilter}
             >
               <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
               <FilterOverlay

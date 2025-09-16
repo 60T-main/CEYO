@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react';
 const Menu = ({ setOverlayState, onOverlayClose, overlayState }) => {
   return (
     <>
-      {overlayState !== 'filter' && overlayState !== 'none' && overlayState !== null ? (
+      {overlayState !== 'filter' &&
+      overlayState !== 'none' &&
+      overlayState !== null &&
+      overlayState !== 'order' &&
+      overlayState !== 'order-close' ? (
         <img
           onClick={() => {
             onOverlayClose('true');

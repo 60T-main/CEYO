@@ -10,7 +10,11 @@ const AllProducts = ({
   overlayClosing,
   onOverlayClose,
   OrderOverlay,
+  onFilter,
 }) => {
+  const handleOrderButton = async () => {
+    overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');
+  };
   return (
     <>
       <section className={`products-section`}>
@@ -33,7 +37,10 @@ const AllProducts = ({
           </div>
         )}
 
-        <OrderOverlay />
+        <div className={overlayState === 'order' ? '' : 'hidden'}>
+          <OrderOverlay onFilter={onFilter} />
+        </div>
+
         <div className={`all-products-content ${overlayState === 'filter' ? 'blurred' : ''}`}>
           <div className="page-title">
             <h2>ფეხსაცმელი</h2>
@@ -47,7 +54,14 @@ const AllProducts = ({
             >
               გაფილტვრა
             </button>
-            <button className="order-button">დალაგება</button>
+            <button
+              className="order-button"
+              onClick={() => {
+                handleOrderButton();
+              }}
+            >
+              დალაგება
+            </button>
           </div>
           <div className="cards-parent-all">
             {productList.map((product) => (
