@@ -86,11 +86,12 @@ function App() {
         return;
       }
 
-      if (filters.date_descending) {
+      if (filters.order_by === 'last_modified') {
         setDateOrderedProducts(data);
-        console.log('date_descending triggered: ', filters.date_descending);
+        console.log('date_descending triggered: ', filters.order_by);
       } else {
         setProductList(data);
+        console.log('productList updated:', filters);
       }
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -153,16 +154,7 @@ function App() {
   };
 
   const onFilter = async (filter = {}) => {
-    const expectedKeys = [
-      'category',
-      'min_price',
-      'max_price',
-      'search',
-      'price_ascending',
-      'price_descending',
-      'name_ascending',
-      'name_descending',
-    ];
+    const expectedKeys = ['category', 'min_price', 'max_price', 'search', 'order_by'];
 
     expectedKeys.forEach((key) => {
       if (!filter[key]) {
@@ -177,8 +169,7 @@ function App() {
       filter.category,
       filter.min_price,
       filter.max_price,
-      filter.price_ascending,
-      filter.price_descending
+      filter.order_by
     );
 
     fetchProducts({
@@ -186,8 +177,7 @@ function App() {
       category: filter.category,
       min_price: filter.min_price,
       max_price: filter.max_price,
-      price_ascending: filter.price_ascending,
-      price_descending: filter.price_descending,
+      order_by: filter.order_by,
     });
   };
 
@@ -247,7 +237,7 @@ function App() {
   useEffect(() => {
     fetchCategories();
     fetchCart();
-    fetchProducts({ date_descending: 'true' });
+    fetchProducts({ order_by: 'last_modified' });
   }, []);
 
   useEffect(() => {
@@ -318,6 +308,7 @@ function App() {
         overlayState={overlayState}
         onOverlayClose={onOverlayClose}
         headerAnimate={headerAnimate}
+        onFilter={onFilter}
       >
         {location.pathname !== '/product' && location.pathname !== '/product/' && (
           <Search

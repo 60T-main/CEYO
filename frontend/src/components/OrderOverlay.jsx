@@ -7,24 +7,24 @@ const OrderOverlay = ({ onFilter }) => {
 
   const handleOrder = async (orderBy) => {
     if (orderBy === 'price') {
-      if (!priceState || priceState === 'ascending') {
-        setPriceState('descending');
-        setNameState(null);
-        onFilter({ price_descending: 'true' });
-      } else if (priceState === 'descending') {
+      if (!priceState || priceState === 'descending') {
         setPriceState('ascending');
         setNameState(null);
-        onFilter({ price_ascending: 'true' });
+        onFilter({ order_by: 'price' });
+      } else if (priceState === 'ascending') {
+        setPriceState('descending');
+        setNameState(null);
+        onFilter({ order_by: '-price' });
       }
     } else if (orderBy === 'name') {
-      if (!nameState || nameState === 'ascending') {
-        setNameState('descending');
-        setPriceState(null);
-        onFilter({ price_descending: 'true' });
-      } else if (nameState === 'descending') {
+      if (!nameState || nameState === 'descending') {
         setNameState('ascending');
         setPriceState(null);
-        onFilter({ nameState: 'true' });
+        onFilter({ order_by: 'name' });
+      } else if (nameState === 'ascending') {
+        setNameState('descending');
+        setPriceState(null);
+        onFilter({ order_by: '-name' });
       }
     }
   };

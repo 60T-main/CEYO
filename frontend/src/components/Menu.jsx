@@ -13,7 +13,7 @@ const Menu = ({ setOverlayState, onOverlayClose, overlayState }) => {
           onClick={() => {
             onOverlayClose('true');
           }}
-          className="w-5"
+          className="icon close"
           src="/public/menu2.svg"
           alt="Menu2"
         />

@@ -39,34 +39,10 @@ def ProductList(request):
     if min_price:
         products = products.filter(price__gte=min_price)
 
-    # order date ascending
-    date_ascending = request.GET.get('date_ascending')
-    if date_ascending:
-        products = products.order_by('-last_modified')[:12]
-
-    # order date descending
-    date_descending = request.GET.get('date_descending')
-    if date_descending:
-        products = products.order_by('last_modified')[:12]
-
-    # order price ascending
-    price_ascending = request.GET.get('price_ascending')
-    if price_ascending:
-        products = products.order_by('-price')
-
-    # order price descending
-    price_descending = request.GET.get('price_descending')
-    if price_descending:
-        products = products.order_by('price')
-
-    # order name descending
-    name_descending = request.GET.get('name_ascending')
-    if name_descending:
-        products = products.order_by('name')
-    # order price descending
-    name_descending = request.GET.get('name_descending')
-    if name_descending:
-        products = products.order_by('-name')
+    # ordering
+    order_by = request.GET.get('order_by')
+    if order_by in ['last_modified', '-last_modified', 'name', '-name', 'price', '-price']:
+        products = products.order_by(order_by)
 
     serializer = ProductSerializer(products, many=True)
 

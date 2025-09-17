@@ -8,9 +8,9 @@ class Category(models.Model):
     KIDS = 'Kids'
 
     CATEGORY_CHOICES = [
-        (MEN, 'kaci'),
-        (WOMEN, 'qali'),
-        (KIDS, 'bavSvebi'),
+        ('კაცი', 'კაცი'),
+        ('ქალი', 'ქალი'),
+        ('ბავშვი', 'ბავშვი'),
     ]
 
     category_id = models.AutoField(primary_key=True)
@@ -96,5 +96,20 @@ class CartItem(models.Model):
     @property
     def subtotal(self):
         return self.product.price * self.quantity
+
+
+class ProductLog(models.Model):
+    product = models.ForeignKey(
+        Product, 
+        on_delete=models.CASCADE
+    )
+    message = models.TextField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'log for {self.product.name} : {self.message[:30]}'
+
+
 
 
