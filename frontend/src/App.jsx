@@ -11,7 +11,7 @@ import FilterOverlay from './components/FilterOverlay.jsx';
 import OrderOverlay from './components/OrderOverlay.jsx';
 
 import AllProducts from './components/AllProducts.jsx';
-import NewProducts from './components/NewProducts.jsx';
+import NewProducts from './components/CustomProducts.jsx';
 import SearchResults from './components/SearchResults.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
 import Menu from './components/Menu.jsx';
@@ -25,6 +25,7 @@ import Loader from './components/Loader.jsx';
 
 import { useDebounce } from 'use-debounce';
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CustomProducts from './components/CustomProducts.jsx';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -38,7 +39,10 @@ function App() {
   const location = useLocation();
 
   // Products State
+
   const [productList, setProductList] = useState([]);
+  // Products State
+  const [recentProductList, setRecentProductList] = useState([]);
 
   // Date Ordered Products State
   const [dateOrderedProducts, setDateOrderedProducts] = useState([]);
@@ -96,6 +100,31 @@ function App() {
     } catch (error) {
       console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
+    }
+  };
+
+  const fetchRecentProducts = async () => {
+    const endpoint = `/product/recents`;
+
+    try {
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch recent products');
+      }
+
+      const data = await response.json();
+
+      if (data.Response === 'False') {
+        setErrorMessage(data.Error || 'Failed to fetch recent products');
+        setRecentProductList([]);
+        return;
+      }
+
+      setRecentProductList(data);
+    } catch (error) {
+      console.error('Error fetching recent products:', error);
+      setErrorMessage('Error fetching recent products. Please try again later...');
     }
   };
 
@@ -339,10 +368,12 @@ function App() {
               Product={Product}
               handleCartUpdate={handleCartUpdate}
             >
-              <NewProducts
+              <CustomProducts
                 Product={Product}
-                dateOrderedProducts={dateOrderedProducts}
+                customProductsList={dateOrderedProducts}
                 handleCartUpdate={handleCartUpdate}
+                API_BASE_URL={API_BASE_URL}
+                variant="new"
               />
               <InfoSection />
             </Home>
@@ -353,8 +384,12 @@ function App() {
           element={
             <ProductDetail
               API_BASE_URL={API_BASE_URL}
+              GET_OPTIONS={GET_OPTIONS}
               ProductComponent={Product}
               handleCartUpdate={handleCartUpdate}
+              fetchRecentProducts={fetchRecentProducts}
+              recentProductList={recentProductList}
+              NewProducts={NewProducts}
             />
           }
         />

@@ -1,4 +1,5 @@
-from .models import Cart
+from .models import Cart,Product
+from django.shortcuts import get_object_or_404
 
 def get_or_create_cart(request):
     if request.user.is_authenticated:
@@ -12,3 +13,19 @@ def get_or_create_cart(request):
         if not cart:
             cart = Cart.objects.create(session_key=session_key)
     return cart
+
+
+
+def add_product_history(request, pk):
+    visited = request.session.get('visited_products', [])
+
+    if pk in visited:
+        visited.remove(pk)
+
+    visited = visited[-10:]
+    visited.insert(0, pk)
+
+    request.session['visited_products'] = visited
+    request.session.modified = True
+
+    print(f'add_product_history called, {pk}')

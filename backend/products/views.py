@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 from .models import Product, Category, Cart, CartItem
-from .utils import get_or_create_cart
+from .utils import get_or_create_cart,add_product_history
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -54,9 +54,30 @@ def ProductList(request):
 def ProductDetail(request, pk):
     product = get_object_or_404(Product, pk=pk)
 
+    add_product_history(request, pk)
+
+    request.session.save()
+
     serializer = ProductSerializer(product, many=False)
 
     return Response(serializer.data)
+
+@api_view(['GET'])
+def RecentlyVisitedProducts(request):
+    product_ids = request.session.get('visited_products', [])
+
+    products = []
+
+    for pk in product_ids:
+        product = get_object_or_404(Product, pk=pk)
+        products.append(product)
+
+    
+
+    serializer = ProductSerializer(products, many=True)
+
+    return Response(serializer.data)
+
 
     
 @api_view(['GET'])

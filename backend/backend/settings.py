@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^bsm1gyphj!dt4jd7fdgt+x7r^di@%*420f67lewvp(bhv+#%u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -46,8 +46,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    # CORS middleware should be placed as high as possible, especially before CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # Custom middleware
     'products.middleware.ProductMiddleware',
 ]
 
@@ -155,3 +155,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTH_USER_MODEL = 'customers.Customer'
+
+# Allow CSRF for the Vite dev server when using cookie-based auth/session
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:5173',
+]

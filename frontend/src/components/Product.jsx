@@ -7,6 +7,7 @@ const Product = ({
   product: { id, name, category, price, images },
   handleCartUpdate,
   closeAllOverlays,
+  API_BASE_URL,
   variant,
 }) => {
   return (
@@ -19,7 +20,7 @@ const Product = ({
         >
           <div className="card-img-parent-home">
             <img
-              src={images[0] ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              src={images[0] ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
               alt="no image"
             />
           </div>
@@ -31,14 +32,14 @@ const Product = ({
       )}
 
       {variant === 'product-detail' && (
-        <Link
+        <div
           to={`/product/${id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
           className="card-parent"
         >
           <div className="card-img-parent">
             <img
-              src={images ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
               alt="no image"
             />
           </div>
@@ -47,7 +48,7 @@ const Product = ({
             <p className={'card-price shadow'}>{price}₾</p>
             <AddToCart id={id} handleCartUpdate={handleCartUpdate} />
           </div>
-        </Link>
+        </div>
       )}
       {variant === 'all-products' && (
         <Link
@@ -57,7 +58,7 @@ const Product = ({
         >
           <div className="card-img-parent-all">
             <img
-              src={images ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
               alt="no image"
             />
           </div>
@@ -76,7 +77,7 @@ const Product = ({
         >
           <div className="card-img-parent-all">
             <img
-              src={images ? `http://127.0.0.1:8000/${images[0]}` : '/public/no-img.jpg'}
+              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
               alt="no image"
             />
           </div>
