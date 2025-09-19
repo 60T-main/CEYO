@@ -25,21 +25,24 @@ input::placeholder {
   font-weight: bold;
 }
 
-h1 {
+
+.h1, h1 {
   @apply text-3xl leading-tight;
 }
 
-h2 {
+.h2, h2 {
   @apply text-2xl font-bold;
 }
 
-h3 {
+.h3 , h3 {
   @apply text-xl;
 }
 
-h4 {
+.h4 , h4 {
   @apply text-base;
 }
+
+
 
 @theme {
   --font-main: 'MainFont';
@@ -52,7 +55,7 @@ h4 {
 
 @layer base {
   .icon {
-    @apply w-5;
+    @apply w-5 text-[var(--color-primary-blue)];
   }
 }
 
@@ -245,24 +248,29 @@ h4 {
 
   /* header */
   .header {
-    @apply flex flex-row items-center justify-center z-1000 w-9/10 lg:w-2/3 px-5 h-14 rounded-3xl bg-white fixed top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl drop-shadow-md md:h-15;
+    @apply flex flex-row items-center  z-1000 w-9/10 lg:w-2/3 px-5 h-14 rounded-3xl bg-white fixed top-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl drop-shadow-md md:h-15;
   }
 
   .menu {
     @apply absolute left-4 lg:hidden md:mt-0;
   }
 
-.logo-div {
-  @apply w-18 flex justify-center items-center ml-4 md:ml-0 md:absolute md:top-8 md:w-20 lg:left-4 md:-translate-y-1/2;
-
-}
-  .header-children {
-    @apply md:mt-0 flex gap-4 absolute right-10;
-  }
-
   .close{
-    @apply absolute left-4 md:left-auto md:right-10;
+    @apply w-4 absolute left-4 md:left-auto md:right-10;
   }
+
+  .search, .cart{
+    @apply w-4 flex justify-center items-center;
+  }
+
+.logo-div {
+  @apply w-18 md:w-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+  .header-children {
+    @apply md:mt-0 flex gap-4 absolute right-4;
+  }
+
 
   .category-desktop-parent{
     @apply flex gap-2 ;
@@ -500,7 +508,15 @@ h4 {
   }
 
    .new-products-title, .new-products-categories{
+    @apply flex flex-col justify-center items-center;
+   }
+
+   .see-all{
     @apply flex justify-center items-center;
+   }
+
+   .see-all p {
+    @apply text-sm !mb-0;
    }
 
    .new-products-categories{
@@ -562,7 +578,7 @@ h4 {
       @apply flex  flex-col px-5 py-10 gap-5 lg:flex-row lg:justify-around lg:items-center lg:px-[var(--padding-x-large)] ;
     }
     .footer h4{
-      @apply text-white ;
+      @apply !text-white;
     }
     .social-parent{
       @apply flex gap-2;

@@ -38,8 +38,11 @@ const GET_OPTIONS = {
 function App() {
   const location = useLocation();
 
-  // Products State
+  // Screen Size State
+  const MOBILE_BREAKPOINT = 768;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
 
+  // Products State
   const [productList, setProductList] = useState([]);
   // Products State
   const [recentProductList, setRecentProductList] = useState([]);
@@ -71,6 +74,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
 
   // Functions
+
   const fetchProducts = async (filters = {}) => {
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
@@ -282,6 +286,21 @@ function App() {
   }, [overlayState]);
 
   useEffect(() => {
+    const handleResize = () => {
+      const mobileNow = window.innerWidth < MOBILE_BREAKPOINT;
+      setIsMobile(mobileNow);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log(isMobile ? 'Switched to mobile' : 'Switched to desktop');
+    setHeaderAnimate(null);
+  }, [isMobile]);
+
+  useEffect(() => {
     console.log('headerAnimate:', headerAnimate);
   }, [headerAnimate]);
 
@@ -292,7 +311,7 @@ function App() {
   if (loading) return <Loader />;
 
   return (
-    <main>
+    <main className="app-root">
       {/* Menu Overlay */}
       {overlayState == 'menu' && (
         <MenuOverlay
