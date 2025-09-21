@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 const CustomProducts = ({
   Product,
@@ -8,11 +9,16 @@ const CustomProducts = ({
   closeAllOverlays,
   API_BASE_URL,
   variant,
+  CardSkeleton,
+  isLoading,
 }) => {
-  let CustomProducts = customProductsList.slice(0, 12);
+  console.log('loading in CustomProducts', isLoading);
+
+  const cardCount = 12;
+  let customProducts = customProductsList.slice(0, cardCount);
 
   variant === 'recent' &&
-    (CustomProducts = CustomProducts.filter((product) => product.id !== currentProduct.id));
+    (customProducts = customProducts.filter((product) => product.id !== currentProduct.id));
 
   return (
     <>
@@ -49,17 +55,20 @@ const CustomProducts = ({
               : 'hidden'
           }
         >
-          {CustomProducts.map((product) => (
-            <Product
-              key={product.id}
-              product={product}
-              currentProduct={currentProduct}
-              handleCartUpdate={handleCartUpdate}
-              closeAllOverlays={closeAllOverlays}
-              API_BASE_URL={API_BASE_URL}
-              variant="home"
-            />
-          ))}
+          {isLoading
+            ? [...Array(cardCount)].map((_, i) => <CardSkeleton key={i} />)
+            : customProducts.map((product) => (
+                <Product
+                  key={product.id}
+                  product={product}
+                  currentProduct={currentProduct}
+                  handleCartUpdate={handleCartUpdate}
+                  closeAllOverlays={closeAllOverlays}
+                  API_BASE_URL={API_BASE_URL}
+                  variant="home"
+                  isLoading={isLoading}
+                />
+              ))}
         </div>
       </section>
     </>

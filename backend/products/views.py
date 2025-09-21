@@ -5,13 +5,13 @@ from django.views.generic import ListView, DetailView, View
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-from .models import Product, Category, Cart, CartItem
+from .models import Product, Category, Cart, CartItem, Comment
 from .utils import get_or_create_cart,add_product_history
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .serializers import ProductSerializer, CategorySerializer, CartSerializer
+from .serializers import ProductSerializer, CategorySerializer, CartSerializer, CommentSerializer
 
 
 @api_view(['GET'])
@@ -104,7 +104,6 @@ def getCart(request):
 def handleCartItems(request):
 
     product_id = request.data.get('id')
-    cart_item_id = request.data.get('cart_item_id')
     cart = get_or_create_cart(request)
     product = get_object_or_404(Product, pk=product_id)
 
@@ -138,7 +137,30 @@ def handleCartItems(request):
 
 
 
+@api_view(['GET'])
+def getComments(request, pk):
+    comments = Comment.objects.filter(product_id=pk)
+
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
 
 
 
+@csrf_exempt     # REMOVE THIS BEFORE PRODUCTION
+@api_view(['POST'])
+def addComment(request):
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+    
+
+
+
+    
+
+    
+    
+    
+    
 

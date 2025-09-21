@@ -22,7 +22,7 @@ def add_product_history(request, pk):
     if pk in visited:
         visited.remove(pk)
 
-    visited = visited[-10:]
+    visited = visited[-12:]
     visited.insert(0, pk)
 
     request.session['visited_products'] = visited

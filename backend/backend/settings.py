@@ -14,14 +14,17 @@ from pathlib import Path
 import environ
 import os
 
-env = environ.Env(
-    DEBUG=(bool, False)  # set default types
-)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Read the .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# Initialize environment
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+# Load .env file from BASE_DIR
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 
@@ -111,8 +114,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 

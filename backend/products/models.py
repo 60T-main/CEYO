@@ -40,7 +40,7 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="product_images/")
+    image = models.URLField(max_length=500)
     alt_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
@@ -96,6 +96,18 @@ class CartItem(models.Model):
     @property
     def subtotal(self):
         return self.product.price * self.quantity
+    
+
+class Comment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+
+    name = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)
+    comment = models.CharField(max_length=1000)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 
 
 class ProductLog(models.Model):

@@ -19,10 +19,7 @@ const Product = ({
           className="card-parent-home"
         >
           <div className="card-img-parent-home">
-            <img
-              src={images[0] ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
-              alt="no image"
-            />
+            <img src={images[0] ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-home ">
             <p className={'card-title-home'}>{name}</p>
@@ -38,10 +35,7 @@ const Product = ({
           className="card-parent"
         >
           <div className="card-img-parent">
-            <img
-              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
-              alt="no image"
-            />
+            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent ">
             <h3 className={'card-title'}>{name}</h3>
@@ -57,10 +51,7 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img
-              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
-              alt="no image"
-            />
+            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-all ">
             <h4 className={'card-title-all'}>{name}</h4>
@@ -76,10 +67,7 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img
-              src={images ? `${API_BASE_URL}/${images[0]}` : '/public/no-img.jpg'}
-              alt="no image"
-            />
+            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-all ">
             <h4 className={'card-title-all'}>{name}</h4>

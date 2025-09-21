@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Category, Cart
+from .models import Product, Category, Cart, Comment
 
 class ProductSerializer(serializers.ModelSerializer):
     images = serializers.SerializerMethodField()
@@ -9,11 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ["id", 'name', 'description', 'category', 'price', 'stock_qty', 'last_modified', 'images']
 
     def get_images(self, obj):
-        request = self.context.get('request')
-        if request:
-            return [request.build_absolute_uri(img.image.url) for img in obj.images.all()]
-        else:
-            return [img.image.url for img in obj.images.all()]
+        return [img.image for img in obj.images.all()]
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,6 +36,13 @@ class CartSerializer(serializers.ModelSerializer):
             }
             for item in obj.items.all()
         ]
+    
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
             
 
         

@@ -11,7 +11,6 @@
 
 
 body {
-  visibility: hidden;
   font-family: 'MainFont', sans-serif;
   color: var(--color-primary-font)
 }
@@ -592,5 +591,31 @@ input::placeholder {
   .product-parent{
     @apply mt-30 flex flex-col;
   }
+
+    .comments-section {
+      @apply mt-8 p-4 bg-[#f7f8fa] rounded-lg;
+    }
+  
+    .comment-card {
+      @apply bg-white rounded-md shadow-sm mb-4 p-4;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      /* Tailwind shadow-sm is close, but you can keep this for exact match */
+    }
+  
+    .comment-header {
+      @apply flex justify-between mb-2 text-[0.95rem] text-[#555];
+    }
+  
+    .comment-author {
+      @apply font-semibold;
+    }
+  
+    .comment-date {
+      @apply text-[0.85rem] text-[#888];
+    }
+  
+    .comment-body {
+      @apply text-base text-[#222] whitespace-pre-line;
+    }
 }
 

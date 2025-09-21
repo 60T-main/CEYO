@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, ProductImage, Cart, CartItem
+from .models import Product, Category, ProductImage, Cart, CartItem, Comment
 from import_export.admin import ImportExportModelAdmin
 
 
@@ -7,5 +7,5 @@ from import_export.admin import ImportExportModelAdmin
 class ProductAdmin(ImportExportModelAdmin):
     pass
 
-admin.site.register([Category, ProductImage, Cart, CartItem])
+admin.site.register([Category, ProductImage, Cart, CartItem,Comment ])
 

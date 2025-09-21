@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 
+import { SkeletonTheme } from 'react-loading-skeleton';
+
+import CardSkeleton from './components/CardSkeleton.jsx';
+
+import 'react-loading-skeleton/dist/skeleton.css';
+
 import Home from './components/Home.jsx';
 import HeroBanner from './components/HeroBanner.jsx';
 import InfoSection from './components/InfoSection.jsx';
@@ -21,7 +27,6 @@ import CartOverlay from './components/CartOverlay.jsx';
 import Search from './components/Search.jsx';
 import SearchOverlay from './components/SearchOverlay.jsx';
 import SearchInput from './components/SearchInput.jsx';
-import Loader from './components/Loader.jsx';
 
 import { useDebounce } from 'use-debounce';
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -33,6 +38,12 @@ const GET_OPTIONS = {
   method: 'GET',
   credentials: 'include',
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+};
+
+const POST_OPTIONS = {
+  method: 'POST',
+  credentials: 'include',
+  headers: { 'Content-Type': 'application/json' },
 };
 
 function App() {
@@ -67,8 +78,8 @@ function App() {
   // Header Animation State
   const [headerAnimate, setHeaderAnimate] = useState(null);
 
-  // Loader State
-  const [loading, setLoading] = useState(true);
+  // Loading State
+  const [isLoading, setIsLoading] = useState(false);
 
   // Error State
   const [errorMessage, setErrorMessage] = useState('');
@@ -76,6 +87,8 @@ function App() {
   // Functions
 
   const fetchProducts = async (filters = {}) => {
+    setIsLoading(true);
+
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
 
@@ -96,19 +109,24 @@ function App() {
 
       if (filters.order_by === 'last_modified') {
         setDateOrderedProducts(data);
+
         console.log('date_descending triggered: ', filters.order_by);
       } else {
         setProductList(data);
+
         console.log('productList updated:', filters);
       }
     } catch (error) {
       console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const fetchRecentProducts = async () => {
     const endpoint = `/product/recents`;
+    setIsLoading(true);
 
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
@@ -244,24 +262,7 @@ function App() {
     }
   };
 
-  const waitForPageReady = async () => {
-    if (document.readyState !== 'complete') {
-      await new Promise((resolve) => {
-        window.addEventListener('load', resolve, { once: true });
-      });
-    }
-    if (document.fonts && document.fonts.ready) {
-      await document.fonts.ready;
-    }
-    setLoading(false);
-    document.body.classList.add('fully-loaded');
-  };
-
   // UseEffects
-
-  useEffect(() => {
-    waitForPageReady();
-  }, []);
 
   useEffect(() => {
     fetchProducts({ search: debouncedSearchTerm });
@@ -308,137 +309,140 @@ function App() {
     console.log('Cart updated:', cart);
   }, [cart]);
 
-  if (loading) return <Loader />;
-
   return (
     <main className="app-root">
-      {/* Menu Overlay */}
-      {overlayState == 'menu' && (
-        <MenuOverlay
-          overlayClosing={overlayClosing}
-          overlayState={overlayState}
+      <SkeletonTheme baseColor="#bebebeff" highlightColor="#E6E9ED">
+        {/* Menu Overlay */}
+        {overlayState == 'menu' && (
+          <MenuOverlay
+            overlayClosing={overlayClosing}
+            overlayState={overlayState}
+            categoriesList={categoriesList}
+            onFilter={onFilter}
+            onOverlayClose={onOverlayClose}
+          />
+        )}
+        {/* Search Overlay */}
+        {overlayState == 'search' && (
+          <SearchOverlay
+            searchTerm={searchTerm}
+            debouncedSearchTerm={debouncedSearchTerm}
+            setSearchTerm={setSearchTerm}
+            overlayClosing={overlayClosing}
+            overlayState={overlayState}
+            SearchResults={SearchResults}
+            products={productList}
+            ProductComponent={Product}
+            handleCartUpdate={handleCartUpdate}
+            SearchInput={SearchInput}
+          />
+        )}
+        {/* Cart Overlay */}
+        {overlayState == 'cart' && (
+          <CartOverlay
+            cart={cart}
+            handleCartUpdate={handleCartUpdate}
+            handleRemoveFromCart={handleRemoveFromCart}
+            overlayClosing={overlayClosing}
+            overlayState={overlayState}
+            onFilter={onFilter}
+          />
+        )}
+        <Header
           categoriesList={categoriesList}
-          onFilter={onFilter}
+          setCategoriesList={setCategoriesList}
+          MenuComponent={Menu}
+          setOverlayState={setOverlayState}
+          overlayState={overlayState}
           onOverlayClose={onOverlayClose}
-        />
-      )}
-      {/* Search Overlay */}
-      {overlayState == 'search' && (
-        <SearchOverlay
-          searchTerm={searchTerm}
-          debouncedSearchTerm={debouncedSearchTerm}
-          setSearchTerm={setSearchTerm}
-          overlayClosing={overlayClosing}
-          overlayState={overlayState}
-          SearchResults={SearchResults}
-          products={productList}
-          ProductComponent={Product}
-          handleCartUpdate={handleCartUpdate}
-          SearchInput={SearchInput}
-        />
-      )}
-      {/* Cart Overlay */}
-      {overlayState == 'cart' && (
-        <CartOverlay
-          cart={cart}
-          handleCartUpdate={handleCartUpdate}
-          handleRemoveFromCart={handleRemoveFromCart}
-          overlayClosing={overlayClosing}
-          overlayState={overlayState}
+          headerAnimate={headerAnimate}
           onFilter={onFilter}
-        />
-      )}
-      <Header
-        categoriesList={categoriesList}
-        setCategoriesList={setCategoriesList}
-        MenuComponent={Menu}
-        setOverlayState={setOverlayState}
-        overlayState={overlayState}
-        onOverlayClose={onOverlayClose}
-        headerAnimate={headerAnimate}
-        onFilter={onFilter}
-      >
-        {location.pathname !== '/product' && location.pathname !== '/product/' && (
-          <Search
+        >
+          {location.pathname !== '/product' && location.pathname !== '/product/' && (
+            <Search
+              overlayState={overlayState}
+              setOverlayState={setOverlayState}
+              overlayClosing={overlayClosing}
+              setOverlayClosing={setOverlayClosing}
+              onOverlayClose={onOverlayClose}
+            />
+          )}
+
+          <Cart
             overlayState={overlayState}
             setOverlayState={setOverlayState}
             overlayClosing={overlayClosing}
             setOverlayClosing={setOverlayClosing}
             onOverlayClose={onOverlayClose}
           />
-        )}
-
-        <Cart
-          overlayState={overlayState}
-          setOverlayState={setOverlayState}
-          overlayClosing={overlayClosing}
-          setOverlayClosing={setOverlayClosing}
-          onOverlayClose={onOverlayClose}
-        />
-      </Header>
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              HeroBanner={HeroBanner}
-              dateOrderedProducts={dateOrderedProducts}
-              Product={Product}
-              handleCartUpdate={handleCartUpdate}
-            >
-              <CustomProducts
+        </Header>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                HeroBanner={HeroBanner}
+                dateOrderedProducts={dateOrderedProducts}
                 Product={Product}
-                customProductsList={dateOrderedProducts}
                 handleCartUpdate={handleCartUpdate}
+              >
+                <CustomProducts
+                  Product={Product}
+                  customProductsList={dateOrderedProducts}
+                  handleCartUpdate={handleCartUpdate}
+                  API_BASE_URL={API_BASE_URL}
+                  CardSkeleton={CardSkeleton}
+                  variant="new"
+                  isLoading={isLoading}
+                />
+                <InfoSection />
+              </Home>
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <ProductDetail
                 API_BASE_URL={API_BASE_URL}
-                variant="new"
+                GET_OPTIONS={GET_OPTIONS}
+                POST_OPTIONS={POST_OPTIONS}
+                ProductComponent={Product}
+                handleCartUpdate={handleCartUpdate}
+                fetchRecentProducts={fetchRecentProducts}
+                recentProductList={recentProductList}
+                NewProducts={NewProducts}
+                isLoading={isLoading}
+                CardSkeleton={CardSkeleton}
               />
-              <InfoSection />
-            </Home>
-          }
-        />
-        <Route
-          path="/product/:id"
-          element={
-            <ProductDetail
-              API_BASE_URL={API_BASE_URL}
-              GET_OPTIONS={GET_OPTIONS}
-              ProductComponent={Product}
-              handleCartUpdate={handleCartUpdate}
-              fetchRecentProducts={fetchRecentProducts}
-              recentProductList={recentProductList}
-              NewProducts={NewProducts}
-            />
-          }
-        />
-        <Route
-          path="/product"
-          element={
-            <AllProducts
-              Product={Product}
-              handleCartUpdate={handleCartUpdate}
-              productList={productList}
-              setOverlayState={setOverlayState}
-              setOverlayClosing={setOverlayClosing}
-              overlayState={overlayState}
-              overlayClosing={overlayClosing}
-              onOverlayClose={onOverlayClose}
-              OrderOverlay={OrderOverlay}
-              onFilter={onFilter}
-            >
-              <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-              <FilterOverlay
-                categoriesList={categoriesList}
+            }
+          />
+          <Route
+            path="/product"
+            element={
+              <AllProducts
+                Product={Product}
+                handleCartUpdate={handleCartUpdate}
+                productList={productList}
+                setOverlayState={setOverlayState}
+                setOverlayClosing={setOverlayClosing}
+                overlayState={overlayState}
+                overlayClosing={overlayClosing}
+                onOverlayClose={onOverlayClose}
+                OrderOverlay={OrderOverlay}
                 onFilter={onFilter}
-                debouncedSearchTerm={debouncedSearchTerm}
-              />
-            </AllProducts>
-          }
-        />
-      </Routes>
-
-      <Footer />
+              >
+                <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                <FilterOverlay
+                  categoriesList={categoriesList}
+                  onFilter={onFilter}
+                  debouncedSearchTerm={debouncedSearchTerm}
+                />
+              </AllProducts>
+            }
+          />
+        </Routes>
+        <Footer />
+      </SkeletonTheme>
     </main>
   );
 }
