@@ -56,7 +56,7 @@ const CustomProducts = ({
           }
         >
           {isLoading
-            ? [...Array(cardCount)].map((_, i) => <CardSkeleton key={i} />)
+            ? [...Array(cardCount)].map((_, i) => <CardSkeleton key={i} variant={'home'} />)
             : customProducts.map((product) => (
                 <Product
                   key={product.id}

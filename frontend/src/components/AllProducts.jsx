@@ -11,7 +11,13 @@ const AllProducts = ({
   onOverlayClose,
   OrderOverlay,
   onFilter,
+  CardSkeleton,
+  isLoading,
 }) => {
+  const cardCount = 10;
+
+  console.log('loading:', isLoading);
+
   const handleOrderButton = async () => {
     overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');
   };
@@ -25,14 +31,17 @@ const AllProducts = ({
               overlayState ? 'filter-active' : 'hidden'
             }`}
           >
-            <img
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
               onClick={() => {
                 onOverlayClose('true');
               }}
-              className="w-5"
-              src="/public/menu2.svg"
-              alt="Menu2"
-            />
+              class="bi bi-x-lg icon close"
+              viewBox="0 0 16 16"
+            >
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
             <div className="filter-overlay-parent">{children}</div>
           </div>
         )}
@@ -64,14 +73,16 @@ const AllProducts = ({
             </button>
           </div>
           <div className="cards-parent-all">
-            {productList.map((product) => (
-              <Product
-                key={product.id}
-                product={product}
-                handleCartUpdate={handleCartUpdate}
-                variant="all-products"
-              />
-            ))}
+            {isLoading
+              ? [...Array(cardCount)].map((_, i) => <CardSkeleton variant={'products'} key={i} />)
+              : productList.map((product) => (
+                  <Product
+                    key={product.id}
+                    product={product}
+                    handleCartUpdate={handleCartUpdate}
+                    variant="all-products"
+                  />
+                ))}
           </div>
         </div>
       </section>

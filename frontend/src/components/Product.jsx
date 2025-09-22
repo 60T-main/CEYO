@@ -8,6 +8,7 @@ const Product = ({
   handleCartUpdate,
   closeAllOverlays,
   API_BASE_URL,
+  POST_OPTIONS,
   variant,
 }) => {
   return (
@@ -40,7 +41,12 @@ const Product = ({
           <div className="card-content-parent ">
             <h3 className={'card-title'}>{name}</h3>
             <p className={'card-price shadow'}>{price}₾</p>
-            <AddToCart id={id} handleCartUpdate={handleCartUpdate} />
+            <AddToCart
+              id={id}
+              handleCartUpdate={handleCartUpdate}
+              API_BASE_URL={API_BASE_URL}
+              POST_OPTIONS={POST_OPTIONS}
+            />
           </div>
         </div>
       )}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(models.Model):
@@ -19,6 +20,9 @@ class Category(models.Model):
         choices=CATEGORY_CHOICES,
         unique=True
     )
+
+    class Meta:
+        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
@@ -103,6 +107,12 @@ class Comment(models.Model):
 
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
+    rating = models.PositiveSmallIntegerField(
+            validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5)
+        ]
+    )
     comment = models.CharField(max_length=1000)
 
     created_at = models.DateTimeField(auto_now_add=True)

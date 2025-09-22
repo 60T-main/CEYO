@@ -11,7 +11,10 @@ const SearchOverlay = ({
   overlayClosing,
   overlayState,
   SearchInput,
+  isLoading,
+  CardSkeleton,
 }) => {
+  const cardCount = 10;
   return (
     <div
       className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
@@ -20,12 +23,21 @@ const SearchOverlay = ({
     >
       <div className="search-content-parent">
         <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
         {debouncedSearchTerm.length > 0 ? (
-          <SearchResults
-            products={products}
-            ProductComponent={ProductComponent}
-            handleCartUpdate={handleCartUpdate}
-          />
+          !isLoading ? (
+            <SearchResults
+              products={products}
+              ProductComponent={ProductComponent}
+              handleCartUpdate={handleCartUpdate}
+            />
+          ) : (
+            <div className="results-parent">
+              {[...Array(cardCount)].map((_, i) => (
+                <CardSkeleton key={i} variant="search" />
+              ))}
+            </div>
+          )
         ) : (
           ''
         )}

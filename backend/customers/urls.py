@@ -1,7 +1,13 @@
 from django.urls import path
-from .views import CustomerListView
+
+from .views import LoginView, LogoutView, RegisterView, StatusView,UserView,EditUser
+
 
 urlpatterns = [
-    path('', CustomerListView, name='customer-list'),
-    # path('add/', CustomerCreateView.as_view(), name='customer-add'),
+    path('login/', LoginView, name='login'),
+    path('logout/', LogoutView, name='logout'),
+    path('register/', RegisterView, name='register'),
+    path('edit/', EditUser, name='edit'),
+    path('status/', StatusView, name='status'),
+    path('user/', UserView, name='user'),
 ]

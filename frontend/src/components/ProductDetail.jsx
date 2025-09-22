@@ -23,6 +23,7 @@ const ProductDetail = ({
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [comment, setComment] = useState('');
+  const [rating, setRating] = useState(1);
 
   const fetchProductDetail = async () => {
     const endpoint = `/product/${id}/`;
@@ -79,18 +80,15 @@ const ProductDetail = ({
   const handleComment = async (e) => {
     e.preventDefault();
 
-    console.log('handleComment initiated');
-
     const endpoint = `/product/comments/add/`; // trailing slash required
 
     try {
       const response = await fetch(API_BASE_URL + endpoint, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        ...POST_OPTIONS,
         body: JSON.stringify({
           name: name.trim(),
           lastname: lastName.trim(),
+          rating: parseInt(rating, 10),
           comment: comment.trim(),
           product: id,
         }),
@@ -109,6 +107,7 @@ const ProductDetail = ({
         setName('');
         setLastName('');
         setComment('');
+        setRating(1);
         fetchComments();
       }
     } catch (error) {
@@ -133,6 +132,7 @@ const ProductDetail = ({
           product={productDetail}
           handleCartUpdate={handleCartUpdate}
           API_BASE_URL={API_BASE_URL}
+          POST_OPTIONS={POST_OPTIONS}
           variant="product-detail"
         />
 
@@ -163,19 +163,36 @@ const ProductDetail = ({
               <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
             </label>
             <label>
+              შეფასება:
+              <div className="flex gap-2">
+                {[...Array(5)].map((_, idx) => (
+                  <i
+                    key={idx}
+                    className={`bi text-xl star ${idx < rating ? 'bi-star-fill' : 'bi-star'}`}
+                    onClick={() => setRating(idx + 1)}
+                    style={{ cursor: 'pointer' }}
+                  ></i>
+                ))}
+              </div>
+            </label>
+            <label>
               კომენტარი:
-              <input
-                className="h-50"
-                type="text"
+              <textarea
+                className="comment-textarea"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
+                rows={5}
               />
             </label>
-            <button type="submit">დამატება</button>
+            <div className="submit-comment-div">
+              <button className="w-full h-full" type="submit">
+                დამატება
+              </button>
+            </div>
           </form>
         </div>
         <div className="comments-parent">
-          <div className="comments-section">
+          <div className="comments-list">
             <h3>კომენტარები</h3>
             {commentList.length === 0 ? (
               <p>კომენტარები ვერ მოიძებნა</p>
@@ -183,9 +200,16 @@ const ProductDetail = ({
               commentList.map((c, idx) => (
                 <div key={idx} className="comment-card">
                   <div className="comment-header">
-                    <span className="comment-author">
-                      {c.name} {c.lastname}
-                    </span>
+                    <div className="autor-rating-parent">
+                      <span className="comment-author">
+                        {c.name} {c.lastname}
+                      </span>
+                      <div className="comment-rating">
+                        {[...Array(c.rating)].map((_, idx) => (
+                          <i key={idx} className={'bi text-xl bi-star-fill star'}></i>
+                        ))}
+                      </div>
+                    </div>
                     <span className="comment-date">{new Date(c.created_at).toLocaleString()}</span>
                   </div>
                   <div className="comment-body">{c.comment}</div>

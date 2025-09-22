@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import { SkeletonTheme } from 'react-loading-skeleton';
 
 import CardSkeleton from './components/CardSkeleton.jsx';
@@ -27,6 +29,8 @@ import CartOverlay from './components/CartOverlay.jsx';
 import Search from './components/Search.jsx';
 import SearchOverlay from './components/SearchOverlay.jsx';
 import SearchInput from './components/SearchInput.jsx';
+import User from './components/User.jsx';
+import ProfilePage from './components/ProfilePage.jsx';
 
 import { useDebounce } from 'use-debounce';
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -46,6 +50,12 @@ const POST_OPTIONS = {
   headers: { 'Content-Type': 'application/json' },
 };
 
+const DELETE_OPTIONS = {
+  method: 'DELETE',
+  credentials: 'include',
+  headers: { 'Content-Type': 'application/json' },
+};
+
 function App() {
   const location = useLocation();
 
@@ -55,7 +65,8 @@ function App() {
 
   // Products State
   const [productList, setProductList] = useState([]);
-  // Products State
+
+  // Recent Products State
   const [recentProductList, setRecentProductList] = useState([]);
 
   // Date Ordered Products State
@@ -235,15 +246,24 @@ function App() {
   const handleRemoveFromCart = async (id, e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API_BASE_URL}/product/cart/delete`, {
-      method: 'DELETE',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: id }),
-    });
-    const data = await response.json();
+    const endpoint = '/product/cart/delete/';
 
-    handleCartUpdate();
+    try {
+      const response = await fetch(API_BASE_URL + endpoint, {
+        ...DELETE_OPTIONS,
+        body: JSON.stringify({ id: id }),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error('Failed to add to cart');
+      }
+
+      handleCartUpdate();
+    } catch (error) {
+      console.error('Error adding comment:', error);
+      setErrorMessage('Error adding comment. Please try again later...');
+    }
   };
 
   const onOverlayClose = async (overlay) => {
@@ -335,6 +355,8 @@ function App() {
             ProductComponent={Product}
             handleCartUpdate={handleCartUpdate}
             SearchInput={SearchInput}
+            isLoading={isLoading}
+            CardSkeleton={CardSkeleton}
           />
         )}
         {/* Cart Overlay */}
@@ -375,6 +397,7 @@ function App() {
             setOverlayClosing={setOverlayClosing}
             onOverlayClose={onOverlayClose}
           />
+          <User overlayState={overlayState} />
         </Header>
         <Routes>
           <Route
@@ -430,6 +453,8 @@ function App() {
                 onOverlayClose={onOverlayClose}
                 OrderOverlay={OrderOverlay}
                 onFilter={onFilter}
+                CardSkeleton={CardSkeleton}
+                isLoading={isLoading}
               >
                 <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                 <FilterOverlay
@@ -440,6 +465,7 @@ function App() {
               </AllProducts>
             }
           />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
       </SkeletonTheme>
