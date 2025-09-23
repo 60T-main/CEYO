@@ -13,10 +13,20 @@ const AllProducts = ({
   onFilter,
   CardSkeleton,
   isLoading,
+  currentPage,
+  postsPerPage,
+  setCurrentPage,
 }) => {
+  console.log('isLoading in all products', isLoading);
+
   const cardCount = 10;
 
-  console.log('loading:', isLoading);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+
+  const paginated_list = productList.slice(firstPostIndex, lastPostIndex);
+
+  const pages_num = Math.ceil(productList.length / postsPerPage);
 
   const handleOrderButton = async () => {
     overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');
@@ -75,7 +85,7 @@ const AllProducts = ({
           <div className="cards-parent-all">
             {isLoading
               ? [...Array(cardCount)].map((_, i) => <CardSkeleton variant={'products'} key={i} />)
-              : productList.map((product) => (
+              : paginated_list.map((product) => (
                   <Product
                     key={product.id}
                     product={product}
@@ -83,6 +93,22 @@ const AllProducts = ({
                     variant="all-products"
                   />
                 ))}
+          </div>
+          <div className="pages-parent">
+            <div className="pages">
+              {[...Array(pages_num)].map((_, index) => (
+                <div className="page">
+                  <button
+                    key={index + 1}
+                    onClick={() => {
+                      setCurrentPage(index + 1);
+                    }}
+                  >
+                    {index + 1}
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

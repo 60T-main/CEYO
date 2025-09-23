@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 const CustomProducts = ({

@@ -11,6 +11,10 @@ from rest_framework.decorators import api_view
 from .models import Customer
 from .serializers import CustomerSerializer
 
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import AllowAny
+
 
 @api_view(['POST'])
 def LoginView(request):
@@ -31,7 +35,11 @@ def LoginView(request):
     else:
         return Response({"error": "User not found"})
     
+
+@csrf_exempt
 @api_view(['POST'])
+@authentication_classes([])
+@permission_classes([AllowAny])
 def LogoutView(request):
     logout(request)
     return Response({"messege": "User logged out"})
@@ -98,11 +106,18 @@ def RegisterView(request):
 
     return Response({"message": "User Registered"})
 
+
+
+@csrf_exempt
 @api_view(['PUT'])
+@authentication_classes([])
+@permission_classes([AllowAny])
 def EditUser(request):
-    user = request.user
-    if not user.is_authenticated:
-        return Response({"error": "User not authenticated"}, status=400)
+    print('CSRF EXEMPTION ACTIVE: EditUser called')
+    # user = request.user
+    # if not user.is_authenticated:
+    #     return Response({"error": "User not authenticated"}, status=400)
+
 
     username = request.data.get('username')
     password = request.data.get('password')
@@ -110,6 +125,8 @@ def EditUser(request):
     first_name = request.data.get('first_name')
     last_name = request.data.get('last_name')
     phone = request.data.get('phone')
+
+    user = Customer.objects.get(username=username)
 
     if username and Customer.objects.filter(username=username).exclude(pk=user.pk).exists():
         return Response({"error": "Username already exists"}, status=400)

@@ -31,6 +31,9 @@ import SearchOverlay from './components/SearchOverlay.jsx';
 import SearchInput from './components/SearchInput.jsx';
 import User from './components/User.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
+import LogIn from './components/LogIn.jsx';
+
+import ScrollToTop from './components/ScrollToTop';
 
 import { useDebounce } from 'use-debounce';
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -46,6 +49,11 @@ const GET_OPTIONS = {
 
 const POST_OPTIONS = {
   method: 'POST',
+  credentials: 'include',
+  headers: { 'Content-Type': 'application/json' },
+};
+const PUT_OPTIONS = {
+  method: 'PUT',
   credentials: 'include',
   headers: { 'Content-Type': 'application/json' },
 };
@@ -92,19 +100,34 @@ function App() {
   // Loading State
   const [isLoading, setIsLoading] = useState(false);
 
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(4);
+
+  // User States
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState('');
+
   // Error State
   const [errorMessage, setErrorMessage] = useState('');
 
   // Functions
 
+  // Keep reference to last in-flight products fetch to avoid race conditions resetting isLoading
   const fetchProducts = async (filters = {}) => {
     setIsLoading(true);
+
+    const controller = new AbortController();
+    const { signal } = controller;
+    // Store controller on function so caller (or cleanup) could cancel later if needed
+    fetchProducts.lastController?.abort();
+    fetchProducts.lastController = controller;
 
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
 
     try {
-      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+      const response = await fetch(API_BASE_URL + endpoint, { ...GET_OPTIONS, signal });
 
       if (!response.ok) {
         throw new Error('Failed to fetch products');
@@ -131,7 +154,10 @@ function App() {
       console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
     } finally {
-      setIsLoading(false);
+      // Only clear loading if this request wasn't aborted and is the latest one
+      if (!signal.aborted && fetchProducts.lastController === controller) {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -158,6 +184,9 @@ function App() {
     } catch (error) {
       console.error('Error fetching recent products:', error);
       setErrorMessage('Error fetching recent products. Please try again later...');
+    } finally {
+      // Ensure loading state is always cleared, even when early returns occur above
+      setIsLoading(false);
     }
   };
 
@@ -266,6 +295,49 @@ function App() {
     }
   };
 
+  // PROFILE/LOGIN/REGISTER/LOGOUT
+
+  const checkIfLogedIn = async () => {
+    const endpoint = '/customer/status/';
+    try {
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error('Failed to get login status');
+      }
+      setLoggedIn(!!data.loggedIn);
+      return !!data.loggedIn;
+    } catch (error) {
+      console.error('Error getting login status:', error);
+      setErrorMessage('Error getting login status. Please try again later...');
+      setLoggedIn(false);
+      return false;
+    }
+  };
+
+  const getUserInfo = async () => {
+    const userEndpoint = '/customer/user/';
+    const isLogged = await checkIfLogedIn();
+    if (!isLogged) {
+      setUserInfo(null);
+      return null;
+    }
+    try {
+      const response = await fetch(API_BASE_URL + userEndpoint, GET_OPTIONS);
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error('Failed to get user info');
+      }
+      setUserInfo(data);
+      return data;
+    } catch (error) {
+      console.error('Error getting user info:', error);
+      setErrorMessage('Error getting user info. Please try again later...');
+      setUserInfo(null);
+      return null;
+    }
+  };
+
   const onOverlayClose = async (overlay) => {
     console.log('onOverlayClose activated:', overlay);
 
@@ -292,6 +364,15 @@ function App() {
     fetchCategories();
     fetchCart();
     fetchProducts({ order_by: 'last_modified' });
+    getUserInfo();
+
+    return () => {
+      // Abort any in-flight products request on unmount
+      if (fetchProducts.lastController) {
+        fetchProducts.lastController.abort();
+      }
+      setIsLoading(false);
+    };
   }, []);
 
   useEffect(() => {
@@ -329,9 +410,17 @@ function App() {
     console.log('Cart updated:', cart);
   }, [cart]);
 
+  // Safety: if products list updates but isLoading somehow stayed true, clear it
+  useEffect(() => {
+    if (productList.length && isLoading) {
+      setIsLoading(false);
+    }
+  }, [productList]);
+
   return (
     <main className="app-root">
       <SkeletonTheme baseColor="#bebebeff" highlightColor="#E6E9ED">
+        <ScrollToTop />
         {/* Menu Overlay */}
         {overlayState == 'menu' && (
           <MenuOverlay
@@ -417,7 +506,7 @@ function App() {
                   CardSkeleton={CardSkeleton}
                   variant="new"
                   isLoading={isLoading}
-                />
+                ></CustomProducts>
                 <InfoSection />
               </Home>
             }
@@ -436,7 +525,7 @@ function App() {
                 NewProducts={NewProducts}
                 isLoading={isLoading}
                 CardSkeleton={CardSkeleton}
-              />
+              ></ProductDetail>
             }
           />
           <Route
@@ -455,6 +544,9 @@ function App() {
                 onFilter={onFilter}
                 CardSkeleton={CardSkeleton}
                 isLoading={isLoading}
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
               >
                 <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                 <FilterOverlay
@@ -465,7 +557,21 @@ function App() {
               </AllProducts>
             }
           />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              <ProfilePage
+                loggedIn={loggedIn}
+                getUserInfo={getUserInfo}
+                userInfo={userInfo}
+                checkIfLogedIn={checkIfLogedIn}
+                PUT_OPTIONS={PUT_OPTIONS}
+                POST_OPTIONS={POST_OPTIONS}
+                API_BASE_URL={API_BASE_URL}
+                LogIn={LogIn}
+              ></ProfilePage>
+            }
+          />
         </Routes>
         <Footer />
       </SkeletonTheme>

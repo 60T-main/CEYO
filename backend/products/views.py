@@ -9,7 +9,8 @@ from .models import Product, Category, Cart, CartItem, Comment
 from .utils import get_or_create_cart,add_product_history
 
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import AllowAny
 
 from .serializers import ProductSerializer, CategorySerializer, CartSerializer, CommentSerializer
 
@@ -99,39 +100,35 @@ def getCart(request):
     return Response(serializer.data)
 
 
-@csrf_exempt   # REMOVE THIS BEFORE PRODUCTION
 @api_view(['POST', 'DELETE'])
+@permission_classes([AllowAny]) 
+@authentication_classes([])  # REMOVE THIS BEFORE PRODUCTION
+@csrf_exempt  # REMOVE THIS BEFORE PRODUCTION
 def handleCartItems(request):
 
     product_id = request.data.get('id')
+    if not product_id:
+        return Response({"error": "Missing product id"}, status=400)
+
     cart = get_or_create_cart(request)
-    product = get_object_or_404(Product, pk=product_id)
+    try:
+        product = get_object_or_404(Product, pk=product_id)
+    except Exception:
+        return Response({"error": "Product not found"}, status=404)
 
-    item, created = CartItem.objects.get_or_create(
-            cart=cart,
-            product=product
-        )
-    
+    item, created = CartItem.objects.get_or_create(cart=cart, product=product)
+
     if request.method == 'POST':
-        if not created:
-            item.quantity += 1
-        else:
-            item.quantity = 1
-
+        item.quantity = item.quantity + 1 if not created else 1
         item.save()
-
     elif request.method == 'DELETE':
-
         item.quantity -= 1
         if item.quantity <= 0:
             item.delete()
         else:
             item.save()
-        
-    
 
     request.session.save()
-
     serializer = CartSerializer(cart)
     return Response(serializer.data)
 
@@ -146,13 +143,17 @@ def getComments(request, pk):
 
 
 
-@csrf_exempt     # REMOVE THIS BEFORE PRODUCTION
 @api_view(['POST'])
+@permission_classes([AllowAny])
+@authentication_classes([]) # REMOVE THIS BEFORE PRODUCTION
+@csrf_exempt  # REMOVE THIS BEFORE PRODUCTION
 def addComment(request):
+    print("addComment called", request.user.is_authenticated, request.session.session_key)
     serializer = CommentSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-    return Response(serializer.data)
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
     
 
 

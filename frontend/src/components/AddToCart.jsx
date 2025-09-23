@@ -20,11 +20,11 @@ const AddToCart = ({ id, handleCartUpdate, POST_OPTIONS }) => {
         throw new Error('Failed to add to cart');
       }
     } catch (error) {
-      console.error('Error adding comment:', error);
-      setErrorMessage('Error adding comment. Please try again later...');
+      console.error('Error adding to cart:', error);
+      setErrorMessage('Error adding to cart. Please try again later...');
+    } finally {
+      handleCartUpdate();
     }
-
-    handleCartUpdate();
   };
 
   return (

@@ -406,6 +406,18 @@ input::placeholder {
       @apply flex justify-center items-center mb-25;
     }
 
+
+    .pages-parent{
+      @apply flex justify-center mt-12;
+    }
+
+    .pages{
+      @apply flex gap-12 rounded-3xl border-1 bg-[var(--color-primary-blue)] text-white;
+    }
+
+    .pages button{
+      @apply w-12;
+    }
     /* Filter */
 
     .filter-order-parent{
