@@ -3,7 +3,6 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView, View
 
 from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 
 from .models import Product, Category, Cart, CartItem, Comment
 from .utils import get_or_create_cart,add_product_history

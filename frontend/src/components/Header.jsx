@@ -10,6 +10,7 @@ const Header = ({
   headerAnimate,
   categoriesList,
   onFilter,
+  cart,
 }) => {
   return (
     <header className="header">
@@ -42,7 +43,10 @@ const Header = ({
             }}
             to={`/product`}
           >
-            <p className={'inline-font category-desktop'} key={category.category_id}>
+            <p
+              className={'inline-font category-desktop animate-slide-left'}
+              key={category.category_id}
+            >
               {category.name}
             </p>
           </Link>

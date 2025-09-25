@@ -19,6 +19,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class CartSerializer(serializers.ModelSerializer):
     cart_items = serializers.SerializerMethodField()
+    total_price = serializers.ReadOnlyField()
+    total_items = serializers.ReadOnlyField()
 
     class Meta:
         model = Cart

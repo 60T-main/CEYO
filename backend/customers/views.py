@@ -31,9 +31,9 @@ def LoginView(request):
             login(request, user_auth)  
             return Response({"message": "Successfully logged in"})
         else:
-            return Response({"error": "Invalid password"})
+            return Response({"error": "Invalid password"},status=400)
     else:
-        return Response({"error": "User not found"})
+        return Response({"error": "User not found"},status=404)
     
 
 @csrf_exempt
@@ -51,7 +51,7 @@ def UserView(request):
         serializer = CustomerSerializer(user, many=False)
         return Response(serializer.data)
     else: 
-        return Response({"message": 'user is not authenticated'})
+        return Response({"message": 'user is not authenticated'},status=400)
 
 @api_view(['GET'])
 def StatusView(request):
@@ -87,6 +87,11 @@ def RegisterView(request):
     )
     user.set_password(password)
     user.save()
+
+    user_auth = authenticate(request, username=username, password=password)
+    if user_auth:
+        login(request, user_auth)  
+
 
     try:
         send_mail(

@@ -117,17 +117,11 @@ function App() {
   const fetchProducts = async (filters = {}) => {
     setIsLoading(true);
 
-    const controller = new AbortController();
-    const { signal } = controller;
-    // Store controller on function so caller (or cleanup) could cancel later if needed
-    fetchProducts.lastController?.abort();
-    fetchProducts.lastController = controller;
-
     const params = new URLSearchParams(filters).toString();
     const endpoint = `/product/?${params}`;
 
     try {
-      const response = await fetch(API_BASE_URL + endpoint, { ...GET_OPTIONS, signal });
+      const response = await fetch(API_BASE_URL + endpoint, { ...GET_OPTIONS });
 
       if (!response.ok) {
         throw new Error('Failed to fetch products');
@@ -154,10 +148,7 @@ function App() {
       console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
     } finally {
-      // Only clear loading if this request wasn't aborted and is the latest one
-      if (!signal.aborted && fetchProducts.lastController === controller) {
-        setIsLoading(false);
-      }
+      setIsLoading(false);
     }
   };
 
@@ -485,6 +476,7 @@ function App() {
             overlayClosing={overlayClosing}
             setOverlayClosing={setOverlayClosing}
             onOverlayClose={onOverlayClose}
+            cart={cart}
           />
           <User overlayState={overlayState} />
         </Header>

@@ -26,7 +26,7 @@ const Product = ({
           </div>
           <div className="card-content-parent-home ">
             <p className={'card-title-home'}>{name}</p>
-            <p className={'card-price-home shadow'}>{price}₾</p>
+            <p className={'card-price-home'}>{price}₾</p>
           </div>
         </Link>
       )}

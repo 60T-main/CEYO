@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 
+import Register from './Register.jsx';
+
 const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
   const [form, setForm] = useState({
     username: '',
     password: '',
   });
+
+  const [registerState, setRegisterState] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const handleLogIn = async () => {
+  const handleLogIn = async (form) => {
     const endpoint = '/customer/login/';
     try {
       const response = await fetch(API_BASE_URL + endpoint, {
@@ -23,7 +29,8 @@ const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to edit user data');
+        const data = await response.json();
+        throw new Error(data.error);
       }
 
       const data = await response.json();
@@ -31,14 +38,18 @@ const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
       window.location.reload();
 
       if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to edit user data');
+        setErrorMessage(data.error || 'Failed to log in data');
         return;
       }
     } catch (error) {
-      console.error('Error editing user details:', error);
-      setErrorMessage('Error editing user details. Please try again later...');
+      console.error('Error logging in :', error.message);
+      error.message == 'User not found'
+        ? setErrorMessage('მომხმარებელი ვერ მოიძებნა')
+        : setErrorMessage('error logging in');
     }
   };
+
+  if (registerState) return <Register POST_OPTIONS={POST_OPTIONS} API_BASE_URL={API_BASE_URL} />;
 
   return (
     <section className="mt-30 px-5 lg:px-[var(--padding-x-large)] flex flex-col gap-10 items-center min-h-[60vh]">
@@ -48,7 +59,6 @@ const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
           გთხოვთ შეიყვანოთ თქვენი მონაცემები სისტემაში შესასვლელად.
         </p>
       </div>
-
       <form className="bg-white rounded-2xl shadow-sm p-5 md:p-8 flex flex-col gap-6 max-w-xl w-full">
         {/* Username or Email */}
         <div className="flex flex-col gap-1">
@@ -94,12 +104,28 @@ const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
             type="button"
             className="flex-1 h-10 rounded-xl font-bold text-sm transition bg-[var(--color-primary-blue)] text-white hover:bg-[#00345f]"
             onClick={() => {
-              handleLogIn();
+              handleLogIn(form);
             }}
           >
             შესვლა
           </button>
         </div>
+        <div className="flex flex-row gap-4 pt-2">
+          <button
+            type="button"
+            className="flex-1 h-10 rounded-xl font-bold text-sm transition bg-[var(--color-primary-blue)] text-white hover:bg-[#00345f]"
+            onClick={() => {
+              setRegisterState(true);
+            }}
+          >
+            რეგისტრაცია
+          </button>
+        </div>
+        {errorMessage && (
+          <div className="error-message-div">
+            <p className="text-red-500">{errorMessage}</p>
+          </div>
+        )}
       </form>
     </section>
   );
