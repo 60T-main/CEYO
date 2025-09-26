@@ -10,7 +10,6 @@ const Header = ({
   headerAnimate,
   categoriesList,
   onFilter,
-  cart,
 }) => {
   return (
     <header className="header">

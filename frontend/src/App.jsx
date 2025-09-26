@@ -371,10 +371,12 @@ function App() {
     const overlays = ['menu', 'cart', 'search', 'filter'];
     if (overlays.includes(overlayState)) {
       setHeaderAnimate('left');
+      document.body.style.overflow = 'hidden';
     } else if (overlayState === 'order-close' || overlayState === 'order') {
       setHeaderAnimate(null);
     } else if (!overlayState) {
       setHeaderAnimate('right');
+      document.body.style.overflow = 'auto';
     }
   }, [overlayState]);
 

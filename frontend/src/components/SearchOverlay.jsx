@@ -14,7 +14,7 @@ const SearchOverlay = ({
   isLoading,
   CardSkeleton,
 }) => {
-  const cardCount = 10;
+  const cardCount = 4;
   return (
     <div
       className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${

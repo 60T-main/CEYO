@@ -138,18 +138,18 @@ const ProductDetail = ({
 
         {errorMessage && <div className="text-red-600 mb-4">{errorMessage}</div>}
       </div>
-
-      <div className="recent-products-parent">
-        <CustomProducts
-          Product={ProductComponent}
-          currentProduct={productDetail}
-          customProductsList={recentProductList || []}
-          handleCartUpdate={handleCartUpdate}
-          API_BASE_URL={API_BASE_URL}
-          variant="recent"
-        />
-      </div>
-
+      {{ recentProductList } && (
+        <div className="recent-products-parent">
+          <CustomProducts
+            Product={ProductComponent}
+            currentProduct={productDetail}
+            customProductsList={recentProductList || []}
+            handleCartUpdate={handleCartUpdate}
+            API_BASE_URL={API_BASE_URL}
+            variant="recent"
+          />
+        </div>
+      )}
       <section className="comments-section">
         <div className="add-comment-parent">
           <h3>დატოვეთ კომენტარი</h3>

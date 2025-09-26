@@ -9,14 +9,14 @@
   font-display: swap;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 
 body {
   font-family: 'MainFont', sans-serif;
   color: var(--color-primary-font);
-}
-
-body.fully-loaded {
-  visibility: visible;
 }
 
 input::placeholder {
@@ -329,7 +329,7 @@ input::placeholder {
   .search-active,
   .cart-active,
   .filter-active {
-    @apply top-0 left-0 bg-gray-200 z-500;
+    @apply top-0 left-0 bg-gray-50 z-500;
   }
 
   .menu-active,
@@ -354,7 +354,7 @@ input::placeholder {
   }
 
   .search-parent {
-    @apply w-9/10 h-[50px] flex items-center justify-center rounded-[30px] overflow-hidden shadow-[2px_2px_10px_rgba(0,0,0,0.075)];
+    @apply w-2/3 h-[50px] flex items-center justify-center rounded-[30px] overflow-hidden shadow-[2px_2px_10px_rgba(0,0,0,0.075)];
     background: linear-gradient(to bottom, #004684, #90c0d0);
     
   }
@@ -368,11 +368,11 @@ input::placeholder {
   }
 
   .results-parent{
-    @apply flex flex-col gap-5;
+    @apply flex flex-col justify-center gap-5 md:flex-row md:flex-wrap md:px-12;
   }
 
   .card-skeleton-search{
-    @apply w-45 h-55;
+    @apply w-45 h-55 lg:w-80 lg:h-100;
   }
 
 
@@ -545,7 +545,7 @@ input::placeholder {
   /* Product Card Home */
 
   .new-products-section{
-    @apply mt-10 mx-12 lg:px-[var(--padding-x-large)];
+    @apply mt-10 mx-2 lg:mx-12 lg:px-[var(--padding-x-large)];
   }
 
   .new-products{
@@ -558,12 +558,29 @@ input::placeholder {
     @apply flex flex-col justify-center items-center;
    }
 
+     .new-products-parent{
+      @apply relative;
+     }
+
+   .new-products-title{
+    @apply bg-[var(--color-primary-blue)] rounded-4xl py-2 text-white w-4/5 mx-auto relative z-20; 
+   }
+
+   .new-products-title h2{
+    @apply !text-lg md:!text-xl lg:!text-2xl
+   }
+
+     .background-red-item{
+      @apply bg-[var(--color-primary-red)] absolute w-3/4 h-7/8 rounded-4xl left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8 -rotate-4 z-10 lg:h-2/3 2xl:-rotate-3;
+      clip-path: inset(0 0 30% 0) ;
+     }
+
    .see-all{
     @apply flex justify-center items-center;
    }
 
    .see-all p {
-    @apply text-sm !mb-0;
+    @apply text-xs !mb-0;
    }
 
    .new-products-categories{
@@ -649,6 +666,10 @@ input::placeholder {
 
   .product-parent{
     @apply mt-30 lg:mx-40 flex flex-col;
+  }
+
+  .recent-products-parent{
+    @apply flex justify-center items-center;
   }
 
 /* Wrapper of the whole comment feature */
