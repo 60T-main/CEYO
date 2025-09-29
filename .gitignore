@@ -11,9 +11,9 @@ __pycache__/
 *.mo
 *.env
 .env*
+.venv
 venv/
-ceyo-venv/
-.ceyo_venv/
+.venv/
 ENV/
 
 # Django

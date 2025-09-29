@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AddToCart from './AddToCart.jsx';
-import ScrollToTop from './ScrollToTop.jsx';
+import ScrollToTop from '../hooks/ScrollToTop.jsx';
 
 import { Link } from 'react-router-dom';
 

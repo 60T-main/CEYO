@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({
-  children,
-  MenuComponent,
-  setOverlayState,
-  overlayState,
-  onOverlayClose,
-  headerAnimate,
-  categoriesList,
-  onFilter,
-}) => {
+import { usePageContext } from '../hooks/PageStates.jsx';
+import { useContext } from 'react';
+
+const Header = ({ children, MenuComponent, onOverlayClose, headerAnimate, onFilter }) => {
+  const { categoriesList, overlayState, setOverlayState } = usePageContext();
+
   return (
     <header className="header">
       <MenuComponent

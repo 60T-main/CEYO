@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import BannerSkeleton from './BannerSkeleton.jsx';
+import BannerSkeleton from '../skeletons/BannerSkeleton.jsx';
 import Player from '@vimeo/player';
 
 const HeroBanner = () => {

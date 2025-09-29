@@ -1,10 +1,9 @@
 import React from 'react';
-import NewProducts from './CustomProducts';
 
 import { useParams } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
-import CustomProducts from './CustomProducts';
+import CustomProducts from '../components/CustomProducts';
 
 const ProductDetail = ({
   API_BASE_URL,
