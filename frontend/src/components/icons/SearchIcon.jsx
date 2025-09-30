@@ -1,6 +1,11 @@
 import React from 'react';
-const Search = ({ overlayState, setOverlayState }) => {
+
+import { usePageContext } from '../../hooks/PageStates.jsx';
+
+const Search = () => {
   let searchIcon = null;
+  const { overlayState, setOverlayState } = usePageContext();
+
   if (!overlayState || overlayState === 'none') {
     searchIcon = (
       <i

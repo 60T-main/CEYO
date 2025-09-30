@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import { useApi } from '../services/api.jsx';
+
 import { useEffect, useState } from 'react';
 import CustomProducts from '../components/CustomProducts';
 
@@ -11,9 +13,10 @@ const ProductDetail = ({
   POST_OPTIONS,
   ProductComponent,
   handleCartUpdate,
-  fetchRecentProducts,
   recentProductList,
 }) => {
+  const { fetchRecentProducts } = useApi();
+
   const { id } = useParams();
   const [productDetail, setProductDetail] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -138,7 +141,7 @@ const ProductDetail = ({
         {errorMessage && <div className="text-red-600 mb-4">{errorMessage}</div>}
       </div>
       {{ recentProductList } && (
-        <div className="recent-products-parent">
+        <div className="recent-products-parent overflow-hidden">
           <CustomProducts
             Product={ProductComponent}
             currentProduct={productDetail}

@@ -1,7 +1,11 @@
 import React from 'react';
+import { usePageContext } from '../../hooks/PageStates.jsx';
+import { useProductContext } from '../../hooks/ProductStates.jsx';
 
-const Cart = ({ overlayState, setOverlayState, cart }) => {
+const Cart = () => {
   let cartIcon = null;
+  const { overlayState, setOverlayState } = usePageContext();
+  const { cart } = useProductContext();
   if (
     !overlayState ||
     overlayState === 'none' ||

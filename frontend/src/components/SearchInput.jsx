@@ -1,6 +1,10 @@
 import React from 'react';
 
-const SearchOverlay = ({ searchTerm, setSearchTerm }) => {
+import { useProductContext } from '../hooks/ProductStates';
+
+const SearchOverlay = () => {
+  const { searchTerm, setSearchTerm } = useProductContext();
+
   return (
     <div className="search-parent">
       <div className="search-input-div">

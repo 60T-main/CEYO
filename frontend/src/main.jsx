@@ -7,15 +7,18 @@ import App from './App.jsx';
 import { ProductProvider } from './hooks/ProductStates.jsx';
 import { UserProvider } from './hooks/UserStates.jsx';
 import { PageProvider } from './hooks/PageStates.jsx';
+import { ErrorProvider } from './hooks/ErrorStates.jsx';
 
 createRoot(document.getElementById('root')).render(
   <Router>
-    <ProductProvider>
-      <PageProvider>
-        <UserProvider>
-          <App />
-        </UserProvider>
-      </PageProvider>
-    </ProductProvider>
+    <ErrorProvider>
+      <ProductProvider>
+        <PageProvider>
+          <UserProvider>
+            <App />
+          </UserProvider>
+        </PageProvider>
+      </ProductProvider>
+    </ErrorProvider>
   </Router>
 );

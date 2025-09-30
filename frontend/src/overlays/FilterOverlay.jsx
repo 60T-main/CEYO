@@ -1,7 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-const FilterOverlay = ({ categoriesList, onFilter, debouncedSearchTerm }) => {
+import { useProductContext } from '../hooks/ProductStates';
+
+const FilterOverlay = ({ onFilter }) => {
+  const { categoriesList, debouncedSearchTerm } = useProductContext();
+
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [chosenCategory, setChosenCategory] = useState('');

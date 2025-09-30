@@ -1,11 +1,9 @@
-import React from 'react';
-const CartOverlay = ({
-  cart,
-  handleCartUpdate,
-  handleRemoveFromCart,
-  overlayState,
-  overlayClosing,
-}) => {
+import React, { useEffect } from 'react';
+import { useProductContext } from '../hooks/ProductStates';
+import { useApi } from '../services/api';
+const CartOverlay = ({ overlayState, overlayClosing }) => {
+  const { cart } = useProductContext();
+  const { handleRemoveFromCart } = useApi();
   return (
     <div
       className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${

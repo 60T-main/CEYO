@@ -42,6 +42,11 @@ import { useProductContext } from './hooks/ProductStates.jsx';
 import { usePageContext } from './hooks/PageStates.jsx';
 import ScrollToTop from './hooks/ScrollToTop.jsx';
 
+// API imports
+import { useApi } from './services/api.jsx';
+// Option Imports
+import { GET_OPTIONS, POST_OPTIONS, PUT_OPTIONS } from './services/api.jsx';
+
 import { useLocation, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -49,10 +54,20 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 function App() {
   const location = useLocation();
 
-  // States
+  const { fetchCategories, fetchCart, fetchProducts, getUserInfo } = useApi();
 
-  const { debouncedSearchTerm, productList } = useProductContext();
-  const { overlayState } = usePageContext();
+  // States
+  const { productList, categoriesList, searchTerm, setSearchTerm, debouncedSearchTerm } =
+    useProductContext();
+  const {
+    overlayState,
+    setOverlayState,
+    overlayClosing,
+    setOverlayClosing,
+    setHeaderAnimate,
+    isLoading,
+    setIsLoading,
+  } = usePageContext();
 
   // Screen Size State
   const MOBILE_BREAKPOINT = 768;
@@ -81,8 +96,6 @@ function App() {
   };
 
   const onOverlayClose = async (overlay) => {
-    console.log('onOverlayClose activated:', overlay);
-
     setOverlayClosing(overlay);
 
     if (overlay === 'order') {
@@ -109,11 +122,11 @@ function App() {
     getUserInfo();
 
     return () => {
-      // Abort any in-flight products request on unmount
       setIsLoading(false);
     };
   }, []);
 
+  // Header Logo Animations
   useEffect(() => {
     console.log('overlay state:', overlayState);
     const overlays = ['menu', 'cart', 'search', 'filter'];
@@ -143,7 +156,6 @@ function App() {
     setHeaderAnimate(null);
   }, [isMobile]);
 
-  // Safety: if products list updates but isLoading somehow stayed true, clear it
   useEffect(() => {
     if (productList.length && isLoading) {
       setIsLoading(false);
@@ -184,53 +196,25 @@ function App() {
         {/* Cart Overlay */}
         {overlayState == 'cart' && (
           <CartOverlay
-            cart={cart}
             handleCartUpdate={handleCartUpdate}
-            handleRemoveFromCart={handleRemoveFromCart}
-            overlayClosing={overlayClosing}
             overlayState={overlayState}
             onFilter={onFilter}
+            overlayClosing={overlayClosing}
           />
         )}
-        <Header
-          MenuComponent={Menu}
-          onOverlayClose={onOverlayClose}
-          headerAnimate={headerAnimate}
-          onFilter={onFilter}
-        >
-          {location.pathname !== '/product' && location.pathname !== '/product/' && (
-            <Search
-              overlayState={overlayState}
-              setOverlayState={setOverlayState}
-              overlayClosing={overlayClosing}
-              setOverlayClosing={setOverlayClosing}
-              onOverlayClose={onOverlayClose}
-            />
-          )}
+        <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>
+          {location.pathname !== '/product' && location.pathname !== '/product/' && <Search />}
 
-          <Cart
-            overlayState={overlayState}
-            setOverlayState={setOverlayState}
-            overlayClosing={overlayClosing}
-            setOverlayClosing={setOverlayClosing}
-            onOverlayClose={onOverlayClose}
-            cart={cart}
-          />
+          <Cart />
           <User overlayState={overlayState} />
         </Header>
         <Routes>
           <Route
             path="/"
             element={
-              <Home
-                HeroBanner={HeroBanner}
-                dateOrderedProducts={dateOrderedProducts}
-                Product={Product}
-                handleCartUpdate={handleCartUpdate}
-              >
+              <Home HeroBanner={HeroBanner}>
                 <CustomProducts
                   Product={Product}
-                  customProductsList={dateOrderedProducts}
                   handleCartUpdate={handleCartUpdate}
                   API_BASE_URL={API_BASE_URL}
                   CardSkeleton={CardSkeleton}
@@ -250,9 +234,6 @@ function App() {
                 POST_OPTIONS={POST_OPTIONS}
                 ProductComponent={Product}
                 handleCartUpdate={handleCartUpdate}
-                fetchRecentProducts={fetchRecentProducts}
-                recentProductList={recentProductList}
-                NewProducts={NewProducts}
                 isLoading={isLoading}
                 CardSkeleton={CardSkeleton}
               ></ProductDetail>
@@ -265,25 +246,15 @@ function App() {
                 Product={Product}
                 handleCartUpdate={handleCartUpdate}
                 productList={productList}
-                setOverlayState={setOverlayState}
-                setOverlayClosing={setOverlayClosing}
                 overlayState={overlayState}
-                overlayClosing={overlayClosing}
                 onOverlayClose={onOverlayClose}
                 OrderOverlay={OrderOverlay}
                 onFilter={onFilter}
                 CardSkeleton={CardSkeleton}
                 isLoading={isLoading}
-                postsPerPage={postsPerPage}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
               >
-                <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                <FilterOverlay
-                  categoriesList={categoriesList}
-                  onFilter={onFilter}
-                  debouncedSearchTerm={debouncedSearchTerm}
-                />
+                <SearchInput />
+                <FilterOverlay onFilter={onFilter} debouncedSearchTerm={debouncedSearchTerm} />
               </AllProducts>
             }
           />
@@ -291,10 +262,6 @@ function App() {
             path="/profile"
             element={
               <ProfilePage
-                loggedIn={loggedIn}
-                getUserInfo={getUserInfo}
-                userInfo={userInfo}
-                checkIfLogedIn={checkIfLogedIn}
                 PUT_OPTIONS={PUT_OPTIONS}
                 POST_OPTIONS={POST_OPTIONS}
                 API_BASE_URL={API_BASE_URL}

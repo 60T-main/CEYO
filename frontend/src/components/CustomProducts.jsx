@@ -1,9 +1,10 @@
 import Skeleton from 'react-loading-skeleton';
 
+import { useProductContext } from '../hooks/ProductStates';
+
 const CustomProducts = ({
   Product,
   currentProduct,
-  customProductsList,
   handleCartUpdate,
   closeAllOverlays,
   API_BASE_URL,
@@ -11,10 +12,10 @@ const CustomProducts = ({
   CardSkeleton,
   isLoading,
 }) => {
-  console.log('loading in CustomProducts', isLoading);
+  const { dateOrderedProducts } = useProductContext();
 
   const cardCount = 12;
-  let customProducts = customProductsList.slice(0, cardCount);
+  let customProducts = dateOrderedProducts.slice(0, cardCount);
 
   variant === 'recent' &&
     (customProducts = customProducts.filter((product) => product.id !== currentProduct.id));

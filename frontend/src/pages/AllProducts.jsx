@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useProductContext } from '../hooks/ProductStates.jsx';
+import { usePageContext } from '../hooks/PageStates.jsx';
 
 const AllProducts = ({
-  productList,
   Product,
   handleCartUpdate,
-  setOverlayState,
-  overlayState,
   children,
-  overlayClosing,
   onOverlayClose,
   OrderOverlay,
   onFilter,
   CardSkeleton,
-  isLoading,
-  currentPage,
-  postsPerPage,
-  setCurrentPage,
 }) => {
-  console.log('isLoading in all products', isLoading);
+  const { productList } = useProductContext();
+  const {
+    setOverlayState,
+    overlayState,
+    overlayClosing,
+    currentPage,
+    postsPerPage,
+    setCurrentPage,
+    isLoading,
+  } = usePageContext();
 
   const cardCount = 10;
 
@@ -27,6 +31,10 @@ const AllProducts = ({
   const paginated_list = productList.slice(firstPostIndex, lastPostIndex);
 
   const pages_num = Math.ceil(productList.length / postsPerPage);
+
+  useEffect(() => {
+    console.log('isLoading in all products', isLoading);
+  }, []);
 
   const handleOrderButton = async () => {
     overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');

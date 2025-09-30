@@ -484,7 +484,7 @@ input::placeholder {
     }
 
     .card-parent-all {
-      @apply mt-10 flex flex-col justify-center items-center;
+      @apply mt-12 flex flex-col items-center;
     }
 
     .card-content-parent-all{

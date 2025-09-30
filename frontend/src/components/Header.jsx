@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { usePageContext } from '../hooks/PageStates.jsx';
-import { useContext } from 'react';
+import { useProductContext } from '../hooks/ProductStates.jsx';
 
-const Header = ({ children, MenuComponent, onOverlayClose, headerAnimate, onFilter }) => {
-  const { categoriesList, overlayState, setOverlayState } = usePageContext();
+const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
+  const { overlayState, setOverlayState, headerAnimate } = usePageContext();
+  const { categoriesList } = useProductContext();
 
   return (
     <header className="header">

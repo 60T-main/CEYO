@@ -1,8 +1,3 @@
-import { setProductList, setRecentProductList, setDateOrderedProducts, setCategoriesList, handleCartUpdate , setCart, setSearchTerm} from '../hooks/ProductStates.js';
-
-import { setErrorMessage } from '../hooks/UserStates.js';
-import { setErrorMessage } from '../hooks/Error.js';
-
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // FETCH OPTIONS //
@@ -29,23 +24,36 @@ export const DELETE_OPTIONS = {
   headers: { 'Content-Type': 'application/json' },
 };
 
+import { useProductContext } from '../hooks/ProductStates.jsx';
+import { usePageContext } from '../hooks/PageStates.jsx';
+import { useUserContext } from '../hooks/UserStates.jsx';
+import { useErrorContext } from '../hooks/ErrorStates.jsx';
 
-// FETCH FUNCTIONS //
+export function useApi() {
+  const {
+    setProductList,
+    setDateOrderedProducts,
+    setRecentProductList,
+    setCategoriesList,
+    setCart,
+  } = useProductContext();
+  const { setErrorMessage } = useErrorContext();
+  const { setUserInfo, setLoggedIn } = useUserContext();
+  const { setIsLoading } = usePageContext();
 
-// fetch all products
-export const fetchProducts = async (filters = {}) => {
+  // Fetch all products
+  const fetchProducts = async (filters = {}) => {
     setIsLoading(true);
-
-    const params = new URLSearchParams(filters).toString();
-    const endpoint = `/product/?${params}`;
-
     try {
-      const response = await fetch(API_BASE_URL + endpoint, { ...GET_OPTIONS });
+      const params = new URLSearchParams(filters).toString();
+      const endpoint = `/product/?${params}`;
+      const response = await fetch(API_BASE_URL + endpoint, {
+        method: 'GET',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      });
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch products');
-      }
-
+      if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
 
       if (data.Response === 'False') {
@@ -55,23 +63,18 @@ export const fetchProducts = async (filters = {}) => {
 
       if (filters.order_by === 'last_modified') {
         setDateOrderedProducts(data);
-
-        console.log('date_descending triggered: ', filters.order_by);
       } else {
         setProductList(data);
-
-        console.log('productList updated:', filters);
       }
     } catch (error) {
-      console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
     } finally {
       setIsLoading(false);
     }
-};
-  
-// fetch recent products
-export const fetchRecentProducts = async () => {
+  };
+
+  // Fetch Recent Products
+  const fetchRecentProducts = async () => {
     const endpoint = `/product/recents`;
     setIsLoading(true);
 
@@ -95,91 +98,78 @@ export const fetchRecentProducts = async () => {
       console.error('Error fetching recent products:', error);
       setErrorMessage('Error fetching recent products. Please try again later...');
     } finally {
-      // Ensure loading state is always cleared, even when early returns occur above
       setIsLoading(false);
     }
-};
+  };
 
-// fetch categories
-export const fetchCategories = async () => {
-    const endpoint = `/product/categories/`;
-
+  // Fetch categories
+  const fetchCategories = async () => {
     try {
-      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+      const endpoint = `/product/categories/`;
+      const response = await fetch(API_BASE_URL + endpoint, {
+        method: 'GET',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      });
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch categories');
-      }
-
+      if (!response.ok) throw new Error('Failed to fetch categories');
       const data = await response.json();
 
       if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch categories');
         setCategoriesList([]);
+        setErrorMessage(data.Error || 'Failed to fetch categories');
         return;
       }
 
       setCategoriesList(data);
     } catch (error) {
-      console.error('Error fetching categories:', error);
       setErrorMessage('Error fetching categories. Please try again later...');
     }
-};
-  
+  };
 
-// fetch cart
-export const fetchCart = async () => {
+  //  Fetch Cart
+  const fetchCart = async () => {
     const endpoint = `/product/cart/`;
-
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
-
       if (!response.ok) {
         throw new Error('Failed to fetch cart');
       }
-
       const data = await response.json();
-
       if (data.Response === 'False') {
         setErrorMessage(data.Error || 'Failed to fetch cart');
         setCart([]);
         return;
       }
-
       setCart(data);
     } catch (error) {
       console.error('Error fetching categories:', error);
       setErrorMessage('Error fetching categories. Please try again later...');
     }
-};
-  
-// fetch remove cart
-export const handleRemoveFromCart = async (id, e) => {
+  };
+
+  // fetch remove cart
+  const handleRemoveFromCart = async (id, e) => {
     e.preventDefault();
-
     const endpoint = '/product/cart/delete/';
-
     try {
       const response = await fetch(API_BASE_URL + endpoint, {
         ...DELETE_OPTIONS,
         body: JSON.stringify({ id: id }),
       });
       const data = await response.json();
-
       if (!response.ok) {
-        throw new Error('Failed to add to cart');
+        throw new Error('Failed to remove cart item');
       }
-
-      handleCartUpdate();
+      fetchCart();
     } catch (error) {
-      console.error('Error adding comment:', error);
-      setErrorMessage('Error adding comment. Please try again later...');
+      console.error('Error removing cart item:', error);
+      setErrorMessage('Error removing cart item. Please try again later...');
     }
-};
-  
+  };
 
-// USER FETCH FUNCTIONS //
-export const checkIfLogedIn = async () => {
+  // USER FETCH FUNCTIONS //
+  const checkIfLogedIn = async () => {
     const endpoint = '/customer/status/';
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
@@ -197,7 +187,7 @@ export const checkIfLogedIn = async () => {
     }
   };
 
-export const getUserInfo = async () => {
+  const getUserInfo = async () => {
     const userEndpoint = '/customer/user/';
     const isLogged = await checkIfLogedIn();
     if (!isLogged) {
@@ -219,3 +209,13 @@ export const getUserInfo = async () => {
       return null;
     }
   };
+
+  return {
+    fetchProducts,
+    fetchRecentProducts,
+    fetchCategories,
+    fetchCart,
+    handleRemoveFromCart,
+    getUserInfo,
+  };
+}
