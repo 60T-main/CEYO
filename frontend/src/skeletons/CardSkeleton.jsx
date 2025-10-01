@@ -24,6 +24,26 @@ const CardSkeleton = ({ variant }) => {
           <Skeleton width="100%" height="100%" />
         </div>
       )}
+      {variant === 'product-detail' && (
+        <>
+          <div className="card-skeleton-product">
+            <div className="card-skeleton-product-img">
+              <Skeleton width="100%" height="100%" />
+            </div>
+            <div className="card-skeleton-product-content">
+              <div className="card-skeleton-product-name">
+                <Skeleton width="100%" height="100%" />
+              </div>
+              <div className="card-skeleton-product-price">
+                <Skeleton width="100%" height="100%" />
+              </div>
+              <div className="card-skeleton-product-buttons">
+                <Skeleton width="100%" height="100%" count="2" />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

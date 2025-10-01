@@ -32,10 +32,6 @@ const AllProducts = ({
 
   const pages_num = Math.ceil(productList.length / postsPerPage);
 
-  useEffect(() => {
-    console.log('isLoading in all products', isLoading);
-  }, []);
-
   const handleOrderButton = async () => {
     overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');
   };

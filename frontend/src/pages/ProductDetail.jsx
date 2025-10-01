@@ -2,10 +2,15 @@ import React from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import { useApi } from '../services/api.jsx';
-
 import { useEffect, useState } from 'react';
 import CustomProducts from '../components/CustomProducts';
+
+import { useProductContext } from '../hooks/ProductStates.jsx';
+import { useErrorContext } from '../hooks/ErrorStates.jsx';
+
+import CardSkeleton from '../skeletons/CardSkeleton.jsx';
+
+import { useApi } from '../services/api.jsx';
 
 const ProductDetail = ({
   API_BASE_URL,
@@ -15,11 +20,9 @@ const ProductDetail = ({
   handleCartUpdate,
   recentProductList,
 }) => {
-  const { fetchRecentProducts } = useApi();
+  const { fetchRecentProducts, fetchProductDetail } = useApi();
 
   const { id } = useParams();
-  const [productDetail, setProductDetail] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
 
   const [commentList, setCommentList] = useState([]);
   const [name, setName] = useState('');
@@ -27,30 +30,8 @@ const ProductDetail = ({
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState(1);
 
-  const fetchProductDetail = async () => {
-    const endpoint = `/product/${id}/`;
-
-    try {
-      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch product details');
-      }
-
-      const data = await response.json();
-
-      if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch product details');
-        setProductDetail([]);
-        return;
-      }
-
-      setProductDetail(data);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-      setErrorMessage('Error fetching products. Please try again later...');
-    }
-  };
+  const { productDetail, isLoading } = useProductContext();
+  const { errorMessage, setErrorMessage } = useErrorContext();
 
   const fetchComments = async () => {
     const endpoint = `/product/comments/${id}/`;
@@ -119,11 +100,9 @@ const ProductDetail = ({
   };
 
   useEffect(() => {
-    fetchProductDetail();
+    fetchProductDetail(id);
     fetchRecentProducts();
     fetchComments();
-
-    console.log('recent products:', recentProductList);
   }, [id]);
 
   return (
@@ -140,17 +119,16 @@ const ProductDetail = ({
 
         {errorMessage && <div className="text-red-600 mb-4">{errorMessage}</div>}
       </div>
+
       {{ recentProductList } && (
-        <div className="recent-products-parent overflow-hidden">
-          <CustomProducts
-            Product={ProductComponent}
-            currentProduct={productDetail}
-            customProductsList={recentProductList || []}
-            handleCartUpdate={handleCartUpdate}
-            API_BASE_URL={API_BASE_URL}
-            variant="recent"
-          />
-        </div>
+        <CustomProducts
+          Product={ProductComponent}
+          currentProduct={productDetail}
+          customProductsList={recentProductList || []}
+          handleCartUpdate={handleCartUpdate}
+          API_BASE_URL={API_BASE_URL}
+          variant="recent"
+        />
       )}
       <section className="comments-section">
         <div className="add-comment-parent">

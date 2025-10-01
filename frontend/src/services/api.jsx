@@ -32,6 +32,7 @@ import { useErrorContext } from '../hooks/ErrorStates.jsx';
 export function useApi() {
   const {
     setProductList,
+    setProductDetail,
     setDateOrderedProducts,
     setRecentProductList,
     setCategoriesList,
@@ -67,6 +68,36 @@ export function useApi() {
         setProductList(data);
       }
     } catch (error) {
+      setErrorMessage('Error fetching products. Please try again later...');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Fetch single product
+  const fetchProductDetail = async (id) => {
+    setIsLoading(true);
+
+    const endpoint = `/product/${id}/`;
+
+    try {
+      const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch product details');
+      }
+
+      const data = await response.json();
+
+      if (data.Response === 'False') {
+        setErrorMessage(data.Error || 'Failed to fetch product details');
+        setProductDetail([]);
+        return;
+      }
+
+      setProductDetail(data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
       setErrorMessage('Error fetching products. Please try again later...');
     } finally {
       setIsLoading(false);
@@ -212,10 +243,12 @@ export function useApi() {
 
   return {
     fetchProducts,
+    fetchProductDetail,
     fetchRecentProducts,
     fetchCategories,
     fetchCart,
     handleRemoveFromCart,
     getUserInfo,
+    checkIfLogedIn,
   };
 }

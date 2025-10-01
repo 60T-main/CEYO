@@ -21,7 +21,7 @@ const User = ({ overlayState }) => {
           onClick={() => {
             handleUserNavigate();
           }}
-          class="bi bi-person icon user cursor-pointer"
+          className="bi bi-person icon user cursor-pointer"
         ></i>
       </div>
     );

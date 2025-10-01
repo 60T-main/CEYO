@@ -12,7 +12,7 @@ const Search = () => {
         onClick={() => {
           setOverlayState('search');
         }}
-        class="bi bi-search icon search cursor-pointer"
+        className="bi bi-search icon search cursor-pointer"
       ></i>
     );
   }

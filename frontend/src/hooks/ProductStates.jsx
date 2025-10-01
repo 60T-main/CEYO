@@ -6,6 +6,8 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   // All Products State
   const [productList, setProductList] = useState([]);
+  // All Products State
+  const [productDetail, setProductDetail] = useState([]);
   // Recent Products State
   const [recentProductList, setRecentProductList] = useState([]);
   // Date Ordered Products State
@@ -23,6 +25,8 @@ export const ProductProvider = ({ children }) => {
       value={{
         productList,
         setProductList,
+        productDetail,
+        setProductDetail,
         recentProductList,
         setRecentProductList,
         dateOrderedProducts,

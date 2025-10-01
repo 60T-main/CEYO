@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react';
 
-const ProfilePage = ({
-  loggedIn,
-  getUserInfo,
-  userInfo,
-  checkIfLogedIn,
-  PUT_OPTIONS,
-  POST_OPTIONS,
-  API_BASE_URL,
-  LogIn,
-}) => {
+import { useUserContext } from '../hooks/UserStates.jsx';
+import { useApi } from '../services/api.jsx';
+
+const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
+  const { loggedIn, userInfo } = useUserContext();
+  const { getUserInfo, checkIfLogedIn } = useApi();
+
   const [form, setForm] = useState({
     username: '',
     first_name: '',
@@ -83,9 +80,8 @@ const ProfilePage = ({
   useEffect(() => {
     checkIfLogedIn();
     getUserInfo();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
-  // Populate local state when userInfo changes
   useEffect(() => {
     if (userInfo) {
       setForm({
@@ -123,7 +119,6 @@ const ProfilePage = ({
     return Object.keys(form).some((k) => form[k] !== original[k]);
   }, [form, original]);
 
-  // Simple visual validation (no blocking): email format & phone digits length 7-15
   const emailInvalid =
     touched.email && form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
   const phoneInvalid = touched.phone && form.phone && !/^\+?\d{7,15}$/.test(form.phone);
@@ -135,7 +130,7 @@ const ProfilePage = ({
 
   const handleFakeSubmit = (e) => {
     e.preventDefault();
-    // Visual only: highlight touched fields as though attempted submit
+
     setTouched({
       username: true,
       first_name: true,
@@ -143,7 +138,6 @@ const ProfilePage = ({
       email: true,
       phone: true,
     });
-    // No actual API call yet.
   };
 
   if (!loggedIn) {
@@ -163,7 +157,7 @@ const ProfilePage = ({
         onSubmit={handleFakeSubmit}
         className="bg-white rounded-2xl shadow-sm p-5 md:p-8 flex flex-col gap-6 max-w-xl"
       >
-        {/* Username (read-only) */}
+        {/* Username */}
         <div className="flex flex-col gap-1">
           <label
             htmlFor="username"

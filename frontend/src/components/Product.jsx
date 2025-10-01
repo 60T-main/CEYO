@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import AddToCart from './AddToCart.jsx';
 import ScrollToTop from '../hooks/ScrollToTop.jsx';
 
 import { Link } from 'react-router-dom';
 
+import { usePageContext } from '../hooks/PageStates.jsx';
+
+import CardSkeleton from '../skeletons/CardSkeleton.jsx';
+
 const Product = ({
   product: { id, name, category, price, images },
+  variant,
   handleCartUpdate,
-  closeAllOverlays,
   API_BASE_URL,
   POST_OPTIONS,
-  variant,
 }) => {
+  const { isLoading } = usePageContext();
+
+  useEffect(() => {
+    console.log('loading:', isLoading);
+  }, [isLoading]);
   return (
     <>
       {variant === 'home' && (
@@ -22,7 +30,7 @@ const Product = ({
           className="card-parent-home"
         >
           <div className="card-img-parent-home">
-            <img src={images[0] ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+            <img src={images && images[0] ? images[0] : '/public/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-home ">
             <p className={'card-title-home'}>{name}</p>
@@ -31,27 +39,30 @@ const Product = ({
         </Link>
       )}
 
-      {variant === 'product-detail' && (
-        <div
-          to={`/product/${id}`}
-          style={{ textDecoration: 'none', color: 'inherit' }}
-          className="card-parent"
-        >
-          <div className="card-img-parent">
-            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+      {variant === 'product-detail' &&
+        (isLoading ? (
+          <CardSkeleton variant="product-detail" />
+        ) : (
+          <div
+            to={`/product/${id}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+            className="card-parent"
+          >
+            <div className="card-img-parent">
+              <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+            </div>
+            <div className="card-content-parent ">
+              <h3 className={'card-title'}>{name}</h3>
+              <p className={'card-price shadow'}>{price}₾</p>
+              <AddToCart
+                id={id}
+                handleCartUpdate={handleCartUpdate}
+                API_BASE_URL={API_BASE_URL}
+                POST_OPTIONS={POST_OPTIONS}
+              />
+            </div>
           </div>
-          <div className="card-content-parent ">
-            <h3 className={'card-title'}>{name}</h3>
-            <p className={'card-price shadow'}>{price}₾</p>
-            <AddToCart
-              id={id}
-              handleCartUpdate={handleCartUpdate}
-              API_BASE_URL={API_BASE_URL}
-              POST_OPTIONS={POST_OPTIONS}
-            />
-          </div>
-        </div>
-      )}
+        ))}
       {variant === 'all-products' && (
         <Link
           to={`/product/${id}`}
