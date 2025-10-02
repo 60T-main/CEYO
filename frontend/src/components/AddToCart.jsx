@@ -29,20 +29,20 @@ const AddToCart = ({ id, handleCartUpdate, POST_OPTIONS }) => {
 
   return (
     <div className="card-cart-parent">
-      <div className="cart-cart shadow">
-        <form onSubmit={handleAddToCart}>
-          <button className={'inline-font'} type="submit">
+      <form onSubmit={handleAddToCart} className="cart-form">
+        <div className="cart-cart shadow">
+          <button className={'inline-font w-full'} type="submit">
             დაამატე კალათაში
           </button>
-        </form>
-      </div>
-      <div className="cart-buy shadow">
-        <form onSubmit={handleAddToCart}>
-          <button className={'inline-font'} type="submit">
+        </div>
+      </form>
+      <form onSubmit={handleAddToCart} className="cart-form">
+        <div className="cart-buy shadow">
+          <button className={'inline-font w-full'} type="submit">
             იყიდე ახლავე
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

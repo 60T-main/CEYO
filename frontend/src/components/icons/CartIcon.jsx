@@ -22,9 +22,7 @@ const Cart = () => {
         <i className="bi bi-bag icon cart"></i>
 
         {cart.cart_items && cart.total_items > 0 && (
-          <div className="text-xs flex justify-center items-center rounded-3xl w-4 h-4 bg-[#ed1a2d] text-white absolute top-2 left-11">
-            {cart.total_items}
-          </div>
+          <div className="cart-number">{cart.total_items}</div>
         )}
       </div>
     );

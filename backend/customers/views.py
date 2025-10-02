@@ -8,8 +8,8 @@ from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .models import Customer
-from .serializers import CustomerSerializer
+from .models import Customer, Address
+from .serializers import CustomerSerializer, AddressSerializer
 
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
@@ -153,6 +153,67 @@ def EditUser(request):
 
     user.save()
     return Response({"message": "User Edited"})
+
+
+@csrf_exempt
+@api_view(['POST', 'PUT', 'GET'])
+@permission_classes([AllowAny])
+def HandleAddress(request):
+
+    user = None
+    full_name = request.data.get('full_name')
+    phone = request.data.get('phone')
+    email = request.data.get('email')
+    address_line1 = request.data.get('address_line1')
+    address_line2 = request.data.get('address_line2')
+    city = request.data.get('city')
+
+    if request.user.is_authenticated:
+        user = request.user
+    
+    if request.method == 'GET':
+        if not request.user.is_authenticated:
+            return Response({"message": 'user is not authenticated'},status=400)
+        
+        address, created = Address.objects.get_or_create(user=user)
+            
+        serializer = AddressSerializer(address, many=False)
+        return Response(serializer.data)
+
+    if request.method == 'POST':
+        address = Address(
+            user=user,
+            full_name=full_name,
+            phone=phone,
+            email=email,
+            address_line1=address_line1,
+            address_line2=address_line2,
+            city=city,
+        )
+        address.save()
+        return Response({"message": "Address Created"})
+
+    if request.method == 'PUT':
+        if not request.user.is_authenticated:
+            return Response({"error": "User Not Authenticated"},status=400)
+
+        address, created = Address.objects.get_or_create(user=user)
+        if email:
+            address.email = email
+        if full_name:
+            address.full_name = full_name
+        if phone:
+            address.phone = phone
+        if address_line1:
+            address.address_line1 = address_line1
+        if address_line2:
+            address.address_line2 = address_line2
+        if city:
+            address.city = city
+
+        address.save()
+
+        return Response({"message": "Address Edited"})
 
 
 

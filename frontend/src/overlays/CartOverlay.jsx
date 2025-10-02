@@ -1,9 +1,18 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { useProductContext } from '../hooks/ProductStates';
 import { useApi } from '../services/api';
-const CartOverlay = ({ overlayState, overlayClosing }) => {
+const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
   const { cart } = useProductContext();
   const { handleRemoveFromCart } = useApi();
+  const navigate = useNavigate();
+
+  const handleCheckoutNavigate = () => {
+    onOverlayClose(true);
+    navigate('/checkout');
+  };
+
   return (
     <div
       className={`${overlayClosing ? 'animate-slide-right' : 'animate-slide-left'} ${
@@ -32,6 +41,16 @@ const CartOverlay = ({ overlayState, overlayClosing }) => {
                 </button>
               </div>
             ))}
+        </div>
+        <div className="cart-purchase-div">
+          <button
+            className="cart-purchase-btn inline-font"
+            onClick={() => {
+              handleCheckoutNavigate();
+            }}
+          >
+            შეკვეთის გაფორმება <i class="bi bi-arrow-right"></i>
+          </button>
         </div>
       </div>
     </div>

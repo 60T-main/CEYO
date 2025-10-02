@@ -14,6 +14,7 @@ import Home from './pages/Home.jsx';
 import ProductDetail from './pages/ProductDetail.jsx';
 import AllProducts from './pages/AllProducts.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import Checkout from './pages/Checkout.jsx';
 
 // Component Imports
 import HeroBanner from './components/HeroBanner.jsx';
@@ -200,6 +201,7 @@ function App() {
             overlayState={overlayState}
             onFilter={onFilter}
             overlayClosing={overlayClosing}
+            onOverlayClose={onOverlayClose}
           />
         )}
         <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>
@@ -269,6 +271,7 @@ function App() {
               ></ProfilePage>
             }
           />
+          <Route path="/checkout" element={<Checkout></Checkout>} />
         </Routes>
         <Footer />
       </SkeletonTheme>

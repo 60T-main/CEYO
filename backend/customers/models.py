@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
 
-
 class Customer(AbstractUser):
     email = models.EmailField(blank=False, null=False, unique=True)
     phone = models.CharField(max_length=50, blank=True, null=True)
@@ -20,14 +19,15 @@ class Address(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='addresses'
+        related_name='addresses',
+        blank=True, null=True,
     )
     full_name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=20, blank=True)
+    phone = models.CharField(max_length=20, blank=False, null=False)
+    email = models.EmailField(blank=False, null=False)
     address_line1 = models.CharField(max_length=255)
     address_line2 = models.CharField(max_length=255, blank=True)
-    city = models.CharField(max_length=100)
-    postal_code = models.CharField(max_length=20)
+    city = models.CharField(max_length=100, blank=False, null=False)
     is_default = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)

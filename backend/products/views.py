@@ -147,7 +147,6 @@ def getComments(request, pk):
 @authentication_classes([]) # REMOVE THIS BEFORE PRODUCTION
 @csrf_exempt  # REMOVE THIS BEFORE PRODUCTION
 def addComment(request):
-    print("addComment called", request.user.is_authenticated, request.session.session_key)
     serializer = CommentSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

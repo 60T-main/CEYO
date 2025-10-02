@@ -50,7 +50,7 @@ input::placeholder {
 @theme {
   --font-main: 'MainFont';
   --color-primary-font: #2E2E2E;
-  --color-secondary-font: #6E6E6E;
+  --color-secondary-font: #858585;
   --color-primary-blue: #004684;
   --color-primary-red: #ee1b2e;
   --padding-x-large: 9.25rem;
@@ -266,6 +266,12 @@ input::placeholder {
     @apply text-lg flex justify-center items-center;
   }
 
+  .cart-div{
+    @apply relative;
+  }
+  .cart-number{
+    @apply text-xs flex justify-center items-center rounded-3xl w-4 h-4 bg-[#ed1a2d] text-white absolute top-2 left-2;
+  }
   .user{
     @apply !text-xl;
   }
@@ -386,12 +392,19 @@ input::placeholder {
     @apply flex justify-center items-center mb-10;
   }
   .cart-items-parent{
-    @apply flex flex-col gap-5 justify-center items-center;
+    @apply flex flex-col gap-5 justify-start items-center h-100 overflow-y-auto;
   }
 
   .cart-item {
     @apply flex flex-row gap-5;
     }
+
+  .cart-purchase-div{
+    @apply mx-auto mt-12 w-2/3 h-10 rounded-3xl bg-[var(--color-primary-blue)]
+  }
+  .cart-purchase-btn{
+    @apply flex justify-center items-center text-white w-full h-full;
+  }
 
   /* Menu Overlay */
 
@@ -518,7 +531,7 @@ input::placeholder {
       @apply !font-bold; 
     }
     .card-price{
-      @apply flex justify-center items-center w-1/3 h-6 rounded-xl bg-[#ed1a2d] font-bold text-[#FFF8F0];
+      @apply flex justify-center items-center w-1/3 md:w-1/4 h-8 rounded-xl bg-[#ed1a2d] font-bold text-[#FFF8F0] md:text-lg;
     }
     .card-img-parent{
       @apply flex justify-center mx-auto w-full min-[550px]:w-1/2;
@@ -528,11 +541,15 @@ input::placeholder {
     }
 
     .card-cart-parent{
-      @apply flex flex-col gap-2 lg:gap-5 lg:mt-2 justify-center items-center;
+      @apply flex flex-col gap-2 lg:gap-5 lg:mt-2 justify-center items-center w-full; 
     }
 
     .cart-cart, .cart-buy{
       @apply flex justify-center items-center w-full h-10 rounded-xl font-bold text-[#FFF8F0];
+    }
+
+    .cart-form{
+      @apply w-full;
     }
 
     .cart-cart{
@@ -615,7 +632,7 @@ input::placeholder {
    }
 
    .new-products-categories{
-    @apply text-[var(--color-secondary-font)] mt-2
+    @apply text-[var(--color-secondary-font)] mt-2;
    }
 
   .card-parent-home {
@@ -692,6 +709,23 @@ input::placeholder {
     .social-icon{
       @apply text-white text-lg;
     }
+
+
+    /* CHECKOUT PAGE */
+
+ .checkout-parent{
+  @apply mt-30;
+ }
+
+ .checkout-title-div{
+  @apply flex flex-col justify-center items-center;
+ }
+
+ .checkout-title-div p{
+  @apply text-sm text-[var(--color-secondary-font)];
+ }
+
+
 
 
 
