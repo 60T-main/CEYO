@@ -100,9 +100,6 @@ def getCart(request):
 
 
 @api_view(['POST', 'DELETE'])
-@permission_classes([AllowAny]) 
-@authentication_classes([])  # REMOVE THIS BEFORE PRODUCTION
-@csrf_exempt  # REMOVE THIS BEFORE PRODUCTION
 def handleCartItems(request):
 
     product_id = request.data.get('id')
@@ -118,9 +115,12 @@ def handleCartItems(request):
     item, created = CartItem.objects.get_or_create(cart=cart, product=product)
 
     if request.method == 'POST':
+        print('request add fired', 'on: ',cart.id)
         item.quantity = item.quantity + 1 if not created else 1
         item.save()
     elif request.method == 'DELETE':
+        print('request delete fired', 'on: ',cart.id)
+
         item.quantity -= 1
         if item.quantity <= 0:
             item.delete()

@@ -22,6 +22,10 @@ class Address(models.Model):
         related_name='addresses',
         blank=True, null=True,
     )
+    session_key = models.CharField(
+        max_length=40, blank=True, null=True,
+        help_text="For anonymous address before login"
+    )
     full_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20, blank=False, null=False)
     email = models.EmailField(blank=False, null=False)

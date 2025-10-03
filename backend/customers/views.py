@@ -161,6 +161,7 @@ def EditUser(request):
 def HandleAddress(request):
 
     user = None
+    session_key = None
     full_name = request.data.get('full_name')
     phone = request.data.get('phone')
     email = request.data.get('email')
@@ -170,6 +171,9 @@ def HandleAddress(request):
 
     if request.user.is_authenticated:
         user = request.user
+    if not request.session.session_key:
+        request.session.save()
+        session_key = request.session.session_key
     
     if request.method == 'GET':
         if not request.user.is_authenticated:
@@ -183,6 +187,7 @@ def HandleAddress(request):
     if request.method == 'POST':
         address = Address(
             user=user,
+            session_key=session_key,
             full_name=full_name,
             phone=phone,
             email=email,

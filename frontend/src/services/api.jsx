@@ -1,4 +1,5 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const csrftoken = getCookie('csrftoken');
 
 // FETCH OPTIONS //
 export const GET_OPTIONS = {
@@ -10,18 +11,18 @@ export const GET_OPTIONS = {
 export const POST_OPTIONS = {
   method: 'POST',
   credentials: 'include',
-  headers: { 'Content-Type': 'application/json' },
+  headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrftoken },
 };
 export const PUT_OPTIONS = {
   method: 'PUT',
   credentials: 'include',
-  headers: { 'Content-Type': 'application/json' },
+  headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrftoken },
 };
 
 export const DELETE_OPTIONS = {
   method: 'DELETE',
   credentials: 'include',
-  headers: { 'Content-Type': 'application/json' },
+  headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrftoken },
 };
 
 import { useProductContext } from '../hooks/ProductStates.jsx';
@@ -251,4 +252,20 @@ export function useApi() {
     getUserInfo,
     checkIfLogedIn,
   };
+}
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === name + '=') {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
 }
