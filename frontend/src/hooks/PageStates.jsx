@@ -3,7 +3,7 @@ import React, { useState, useContext, createContext } from 'react';
 export const PageStates = createContext();
 
 export const PageProvider = ({ children }) => {
-  // Overlay States: 'menu', 'search', 'cart', 'filter', 'order', 'none' or null
+  // Overlay States: 'menu', 'search', 'cart', 'filter', 'order', 'checkout', 'none' or null
   const [overlayState, setOverlayState] = useState('none');
   const [overlayClosing, setOverlayClosing] = useState(null);
 

@@ -102,6 +102,9 @@ function App() {
     if (overlay === 'order') {
       setOverlayState('order-close');
       setOverlayClosing(null);
+    } else if (overlay === 'checkout') {
+      setOverlayState('checkout-close');
+      setOverlayClosing(null);
     } else {
       setTimeout(() => {
         setOverlayState(null);
@@ -131,10 +134,11 @@ function App() {
   useEffect(() => {
     console.log('overlay state:', overlayState);
     const overlays = ['menu', 'cart', 'search', 'filter'];
+    const NoAnimation = ['order-close', 'order', 'checkout', 'checkout-close'];
     if (overlays.includes(overlayState)) {
       setHeaderAnimate('left');
       document.body.style.overflow = 'hidden';
-    } else if (overlayState === 'order-close' || overlayState === 'order') {
+    } else if (NoAnimation.includes(overlayState)) {
       setHeaderAnimate(null);
     } else if (!overlayState) {
       setHeaderAnimate('right');
@@ -271,7 +275,17 @@ function App() {
               ></ProfilePage>
             }
           />
-          <Route path="/checkout" element={<Checkout></Checkout>} />
+          <Route
+            path="/checkout"
+            element={
+              <Checkout
+                onOverlayClose={onOverlayClose}
+                overlayState={overlayState}
+                setOverlayState={setOverlayState}
+                setOverlayClosing={setOverlayClosing}
+              ></Checkout>
+            }
+          />
         </Routes>
         <Footer />
       </SkeletonTheme>

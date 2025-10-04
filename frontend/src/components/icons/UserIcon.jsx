@@ -13,6 +13,8 @@ const User = ({ overlayState }) => {
     !overlayState ||
     overlayState === 'none' ||
     overlayState === 'order' ||
+    overlayState === 'checkout' ||
+    overlayState === 'checkout-close' ||
     overlayState === 'order-close'
   ) {
     userIcon = (

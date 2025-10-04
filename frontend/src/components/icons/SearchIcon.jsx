@@ -6,7 +6,12 @@ const Search = () => {
   let searchIcon = null;
   const { overlayState, setOverlayState } = usePageContext();
 
-  if (!overlayState || overlayState === 'none') {
+  if (
+    !overlayState ||
+    overlayState === 'none' ||
+    overlayState === 'checkout' ||
+    overlayState === 'checkout-close'
+  ) {
     searchIcon = (
       <i
         onClick={() => {

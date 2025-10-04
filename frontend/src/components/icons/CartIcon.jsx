@@ -10,7 +10,9 @@ const Cart = () => {
     !overlayState ||
     overlayState === 'none' ||
     overlayState === 'order' ||
-    overlayState === 'order-close'
+    overlayState === 'order-close' ||
+    overlayState === 'checkout-close' ||
+    overlayState === 'checkout'
   ) {
     cartIcon = (
       <div

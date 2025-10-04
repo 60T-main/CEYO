@@ -653,7 +653,7 @@ input::placeholder {
   }
 
   .card-title-home {
-    @apply text-sm md:text-lg font-bold;
+    @apply text-sm md:text-base font-bold;
   }
 
   .card-price-home {
@@ -726,6 +726,41 @@ input::placeholder {
  }
 
 
+
+ /* checkout overlay */
+
+ .checkout-items-parent {
+   @apply flex flex-col justify-center bg-[var(--color-primary-blue)] w-9/10 lg:w-2/3 h-14 rounded-3xl md:h-15 rounded-3xl mx-auto text-white ;
+   transition: height 420ms cubic-bezier(.22, .9, .37, 1), opacity 220ms ease;
+ }
+
+    .checkout-items-parent.open{
+      @apply !h-100;
+    }
+
+    .checkout-items-header-absolute{
+      @apply absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-56 w-full;
+    }
+  
+    .checkout-items-header {
+      @apply flex justify-around px-4 py-3;
+    }
+  
+    .checkout-items-title {
+      @apply flex items-center gap-2;
+    }
+  
+    .checkout-items-title p {
+      @apply !mb-0 text-sm ;
+    }
+  
+    .checkout-items-close {
+      @apply border-1 rounded-3xl p-2 cursor-pointer;
+    }
+  
+    .checkout-items-close p {
+      @apply !mb-0 text-xs select-none;
+    }
 
 
 

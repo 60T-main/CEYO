@@ -92,7 +92,6 @@ def RegisterView(request):
     if user_auth:
         login(request, user_auth)  
 
-
     try:
         send_mail(
             subject="მოგესალმებით CEYO-ში!",
@@ -155,11 +154,9 @@ def EditUser(request):
     return Response({"message": "User Edited"})
 
 
-@csrf_exempt
-@api_view(['POST', 'PUT', 'GET'])
-@permission_classes([AllowAny])
-def HandleAddress(request):
 
+@api_view(['POST', 'PUT', 'GET'])
+def HandleAddress(request):
     user = None
     session_key = None
     full_name = request.data.get('full_name')
