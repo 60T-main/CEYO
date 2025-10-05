@@ -406,6 +406,10 @@ input::placeholder {
     @apply flex justify-center items-center text-white w-full h-full;
   }
 
+  .cart-empty{
+    @apply text-base !text-[var(--color-secondary-font)];
+  }
+
   /* Menu Overlay */
 
     .category-content-parent{
@@ -729,13 +733,12 @@ input::placeholder {
 
  /* checkout overlay */
 
- .checkout-items-parent {
-   @apply flex flex-col justify-center bg-[var(--color-primary-blue)] w-9/10 lg:w-2/3 h-14 rounded-3xl md:h-15 rounded-3xl mx-auto text-white ;
-   transition: height 420ms cubic-bezier(.22, .9, .37, 1), opacity 220ms ease;
- }
+.checkout-items-parent {
+  @apply flex flex-col justify-center w-9/10 lg:w-2/3 h-14 md:h-15 mx-auto text-white transition-all duration-200 ease-in-out overflow-hidden;
+}
 
     .checkout-items-parent.open{
-      @apply !h-100;
+      @apply !h-120 justify-start items-center;
     }
 
     .checkout-items-header-absolute{
@@ -743,7 +746,10 @@ input::placeholder {
     }
   
     .checkout-items-header {
-      @apply flex justify-around px-4 py-3;
+      @apply flex justify-around mx-4 py-3 bg-[var(--color-primary-blue)] rounded-3xl transition-all duration-200 ease-in-out;
+    }
+    .checkout-items-header.open {
+      @apply rounded-b-none;
     }
   
     .checkout-items-title {
@@ -755,13 +761,56 @@ input::placeholder {
     }
   
     .checkout-items-close {
-      @apply border-1 rounded-3xl p-2 cursor-pointer;
+      @apply w-18 border-1 rounded-3xl p-2 cursor-pointer;
     }
   
     .checkout-items-close p {
-      @apply !mb-0 text-xs select-none;
+      @apply !mb-0 text-xs select-none text-center;
+    }
+    .checkout-items{
+      @apply flex flex-col justify-start mt-20 pl-2 overflow-y-auto w-full gap-2;
+    }
+    .checkout-item{
+      @apply text-[var(--color-primary-font)] flex justify-between mt-2;
+    }
+    .checkout-item-details{
+      @apply flex flex-col;
+    }
+    .checkout-item-details p:last-child{
+      @apply text-xs text-[var(--color-secondary-font)];
+    }
+    .checkout-item-details p:first-child{
+      @apply text-xs font-bold;
     }
 
+    .product-price-quantity{
+      @apply flex flex-col justify-center items-start;
+    }
+
+    .product-quantity{
+      @apply text-xs flex justify-center items-center text-[var(--color-secondary-font)] ;
+    }
+
+    .product-price{
+      @apply flex justify-end items-center text-sm text-[var(--color-primary-font)] font-bold;
+    }
+
+    .checkout-img{
+      @apply w-14
+    }
+
+    .checkout-items-total{
+      @apply text-white w-full rounded-b-3xl bg-[var(--color-primary-blue)] px-4 pt-3
+    }
+
+    .products-sum, .products-delivery, .products-total{
+      @apply flex flex-row justify-between
+    }
+
+    .checkout-items-total p:first-child {
+          @apply text-sm
+        }
+    
 
 
 /* Wrapper of the whole comment feature */

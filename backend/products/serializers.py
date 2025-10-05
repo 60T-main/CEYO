@@ -6,7 +6,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ["id", 'name', 'description', 'category', 'price', 'stock_qty', 'last_modified', 'images']
+        fields = ["id", 'name','color','size', 'description', 'category', 'price', 'stock_qty', 'last_modified', 'images']
 
     def get_images(self, obj):
         return [img.image for img in obj.images.all()]
@@ -21,6 +21,7 @@ class CartSerializer(serializers.ModelSerializer):
     cart_items = serializers.SerializerMethodField()
     total_price = serializers.ReadOnlyField()
     total_items = serializers.ReadOnlyField()
+    
 
     class Meta:
         model = Cart
@@ -32,6 +33,9 @@ class CartSerializer(serializers.ModelSerializer):
                 "id": item.product.id,
                 "cart_item_id": item.id,
                 "name": item.product.name,
+                "color": item.product.color,
+                "size": item.product.size,
+                "images": [img.image.url if hasattr(img.image, 'url') else str(img.image) for img in item.product.images.all()],
                 "quantity": item.quantity,
                 "unit_price": float(item.product.price),
                 "subtotal": float(item.subtotal),

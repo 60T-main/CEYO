@@ -24,7 +24,7 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
           <h2 className="inline-font">კალათა</h2>
         </div>
         <div className="cart-items-parent">
-          {cart.cart_items &&
+          {cart.cart_items && cart.cart_items.length > 0 ? (
             cart.cart_items.map((cart_item) => (
               <div className="cart-item" key={cart_item.id}>
                 <h3 style={{ fontSize: 16 }}>{cart_item.name}</h3>
@@ -40,18 +40,23 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
                   Remove
                 </button>
               </div>
-            ))}
+            ))
+          ) : (
+            <p className={'cart-empty'}>კალათა ცარიელია</p>
+          )}
         </div>
-        <div className="cart-purchase-div">
-          <button
-            className="cart-purchase-btn inline-font"
-            onClick={() => {
-              handleCheckoutNavigate();
-            }}
-          >
-            შეკვეთის გაფორმება <i class="bi bi-arrow-right"></i>
-          </button>
-        </div>
+        {cart.cart_items && cart.cart_items.length > 0 && (
+          <div className="cart-purchase-div">
+            <button
+              className="cart-purchase-btn inline-font"
+              onClick={() => {
+                handleCheckoutNavigate();
+              }}
+            >
+              შეკვეთის გაფორმება <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
