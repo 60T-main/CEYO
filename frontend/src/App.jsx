@@ -105,6 +105,9 @@ function App() {
     } else if (overlay === 'checkout') {
       setOverlayState('checkout-close');
       setOverlayClosing(null);
+    } else if (overlay === 'cart') {
+      setOverlayState('cart-close');
+      setOverlayClosing(null);
     } else {
       setTimeout(() => {
         setOverlayState(null);
@@ -139,6 +142,10 @@ function App() {
       setHeaderAnimate('left');
       document.body.style.overflow = 'hidden';
     } else if (NoAnimation.includes(overlayState)) {
+      if (overlayState === 'checkout' || overlayState === 'checkout-close') {
+        document.body.style.overflow = 'auto';
+      }
+
       setHeaderAnimate(null);
     } else if (!overlayState) {
       setHeaderAnimate('right');

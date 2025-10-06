@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CheckoutProducts from '../components/CheckoutProducts';
+import CheckoutDelivery from '../components/CheckoutDelivery';
 
 const Checkout = ({ onOverlayClose, setOverlayState, setOverlayClosing, overlayState }) => {
   return (
@@ -14,6 +15,7 @@ const Checkout = ({ onOverlayClose, setOverlayState, setOverlayClosing, overlayS
         setOverlayState={setOverlayState}
         setOverlayClosing={setOverlayClosing}
       />
+      <CheckoutDelivery />
     </div>
   );
 };

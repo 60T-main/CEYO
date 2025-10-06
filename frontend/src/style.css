@@ -730,40 +730,54 @@ input::placeholder {
  }
 
 
+ /* checkout headers */
+
+  .checkout-items-header,
+  .checkout-delivery-header {
+    @apply flex justify-between py-3 px-6 mx-10 bg-[var(--color-primary-blue)] text-white rounded-3xl transition-all duration-200 ease-in-out;
+  }
+
+  .checkout-delivery-header{
+    @apply !rounded-b-none justify-start;
+  }
+
+  .checkout-items-title,
+  .checkout-delivery-title {
+    @apply flex items-center gap-2;
+  }
+
+  .checkout-items-title p , .checkout-delivery-title p {
+    @apply !mb-0 text-sm;
+  }
+
 
  /* checkout overlay */
 
-.checkout-items-parent {
-  @apply flex flex-col justify-center w-9/10 lg:w-2/3 h-14 md:h-15 mx-auto text-white transition-all duration-200 ease-in-out overflow-hidden;
-}
 
-    .checkout-items-parent.open{
+ .checkout-items-parent {
+   @apply flex flex-col justify-center w-full h-14 md:h-15 px-10 transition-all duration-200 ease-in-out overflow-hidden;
+  }
+  
+  .checkout-items-parent.open{
       @apply !h-120 justify-start items-center;
     }
-
+    
     .checkout-items-header-absolute{
       @apply absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-56 w-full;
     }
-  
-    .checkout-items-header {
-      @apply flex justify-around mx-4 py-3 bg-[var(--color-primary-blue)] rounded-3xl transition-all duration-200 ease-in-out;
-    }
+    
+    
     .checkout-items-header.open {
       @apply rounded-b-none;
     }
-  
-    .checkout-items-title {
-      @apply flex items-center gap-2;
-    }
-  
-    .checkout-items-title p {
-      @apply !mb-0 text-sm ;
-    }
-  
+    
+    
+    
+    
     .checkout-items-close {
       @apply w-18 border-1 rounded-3xl p-2 cursor-pointer;
     }
-  
+    
     .checkout-items-close p {
       @apply !mb-0 text-xs select-none text-center;
     }
@@ -786,31 +800,74 @@ input::placeholder {
     .product-price-quantity{
       @apply flex flex-col justify-center items-start;
     }
-
+    
     .product-quantity{
       @apply text-xs flex justify-center items-center text-[var(--color-secondary-font)] ;
     }
-
+    
     .product-price{
       @apply flex justify-end items-center text-sm text-[var(--color-primary-font)] font-bold;
     }
-
+    
     .checkout-img{
       @apply w-14
     }
-
+    
     .checkout-items-total{
       @apply text-white w-full rounded-b-3xl bg-[var(--color-primary-blue)] px-4 pt-3
     }
-
+    
     .products-sum, .products-delivery, .products-total{
       @apply flex flex-row justify-between
     }
-
-    .checkout-items-total p:first-child {
-          @apply text-sm
-        }
     
+    .checkout-items-total p:first-child {
+      @apply text-sm
+    }
+    
+    /* chekout delivery */
+    
+    .checkout-delivery-parent{
+      @apply mt-12 
+  }
+  .checkout-delivery-content{
+    @apply mx-6
+  }
+  
+  .checkout-fill-out{
+    @apply border-l-4 border-[var(--color-primary-red)] mx-4 h-10 pl-2 flex  items-center 
+  }
+  .checkout-fill-out p{
+    @apply !mb-0 !pb-0 text-[var(--color-primary-font)] text-sm
+  }
+    
+  .checkout-delivery-form{
+    @apply flex flex-col gap-6 bg-white rounded-2xl p-6 shadow-md w-full mx-auto
+  }
+
+  .checkout-delivery-label{
+    @apply flex flex-col gap-1 text-xs font-bold text-[var(--color-primary-font)]
+  }
+
+  .checkout-delivery-input{
+    @apply bg-white border border-gray-300 rounded-md w-full px-3 py-2 text-xs outline-none transition focus:border-[var(--color-primary-blue)] focus:ring-2 focus:ring-[var(--color-primary-blue)]
+  }
+  
+  .checkout-delivery-input-text{
+    @apply bg-white border border-gray-300 rounded-md px-3 py-2 w-full text-sm outline-none transition min-h-24 !resize-none focus:border-[var(--color-primary-blue)] focus:ring-2 focus:ring-[var(--color-primary-blue)]
+  }
+
+.checkout-delivery-btn{
+  @apply flex justify-center items-center w-full h-10 rounded-xl font-bold text-[#FFF8F0] bg-[var(--color-primary-blue)] transition cursor-pointer;
+}
+
+.checkout-delivery-btn:hover {
+  @apply bg-[#00345f];
+}
+
+.checkout-delivery-btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
 
 
 /* Wrapper of the whole comment feature */

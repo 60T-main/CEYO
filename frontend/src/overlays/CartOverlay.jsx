@@ -9,7 +9,7 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
   const navigate = useNavigate();
 
   const handleCheckoutNavigate = () => {
-    onOverlayClose(true);
+    onOverlayClose('cart');
     navigate('/checkout');
   };
 
