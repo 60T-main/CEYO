@@ -17,6 +17,9 @@ export const PageProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(4);
 
+  // Checkout page state
+  const [checkoutPageState, setCheckoutPageState] = useState('delivery');
+
   return (
     <PageStates.Provider
       value={{
@@ -32,6 +35,8 @@ export const PageProvider = ({ children }) => {
         setCurrentPage,
         postsPerPage,
         setPostsPerPage,
+        checkoutPageState,
+        setCheckoutPageState,
       }}
     >
       {children}

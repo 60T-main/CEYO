@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const CheckoutDelivery = ({}) => {
+const CheckoutDelivery = ({ onNavigateBtnClick }) => {
   return (
     <div className="checkout-delivery-parent">
       <div className={`checkout-delivery-header`}>
         <div className="checkout-delivery-title">
-          <i class="bi bi-pin-map"></i>
+          <i className="bi bi-pin-map"></i>
           <p>მიწოდების ინფორმაცია</p>
         </div>
       </div>
@@ -18,23 +18,23 @@ const CheckoutDelivery = ({}) => {
           <form className="checkout-delivery-form">
             <label className="checkout-delivery-label">
               <p className="flex gap-1">
-                სახელი და გვარი <p className="text-[var(--color-primary-red)]">*</p>
+                სახელი და გვარი <span className="text-[var(--color-primary-red)]">*</span>
               </p>
               <input
                 type="text"
                 className="checkout-delivery-input"
-                placeholder="მაგ: ბუსა ნადირაძე"
+                placeholder="მაგ: გურამ ნადირაძე"
               />
             </label>
             <label className="checkout-delivery-label">
               <p className="flex gap-1">
-                ქალაქი <p className="text-[var(--color-primary-red)]">*</p>
+                ქალაქი <span className="text-[var(--color-primary-red)]">*</span>
               </p>
               <input type="text" className="checkout-delivery-input" placeholder="მაგ: თბილისი" />
             </label>
             <label className="checkout-delivery-label">
               <p className="flex gap-1">
-                ქუჩა და ნომერი <p className="text-[var(--color-primary-red)]">*</p>
+                ქუჩა და ნომერი <span className="text-[var(--color-primary-red)]">*</span>
               </p>
               <input
                 type="text"
@@ -44,7 +44,7 @@ const CheckoutDelivery = ({}) => {
             </label>
             <label className="checkout-delivery-label">
               <p className="flex gap-1">
-                ტელეფონის ნომერი <p className="text-[var(--color-primary-red)]">*</p>
+                ტელეფონის ნომერი <span className="text-[var(--color-primary-red)]">*</span>
               </p>
               <input
                 type="text"
@@ -54,7 +54,7 @@ const CheckoutDelivery = ({}) => {
             </label>
             <label className="checkout-delivery-label">
               <p className="flex gap-1">
-                ელ-ფოსტა <p className="text-[var(--color-primary-red)]">*</p>
+                ელ-ფოსტა <span className="text-[var(--color-primary-red)]">*</span>
               </p>
               <input
                 type="email"
@@ -69,9 +69,17 @@ const CheckoutDelivery = ({}) => {
                 placeholder="სართული, ბინის ნომერი, კოდი და სხვა"
               ></textarea>
             </label>
-            <button type="button" className="checkout-delivery-btn">
-              შეკვეთის გაფორმება
-            </button>
+            <div className="checkout-delivery-btn-div">
+              <button
+                onClick={() => {
+                  onNavigateBtnClick('payment');
+                }}
+                type="button"
+                className="checkout-delivery-btn"
+              >
+                გაგრძელება
+              </button>
+            </div>
           </form>
         </div>
       </div>
