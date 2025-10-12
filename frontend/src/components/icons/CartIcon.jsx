@@ -30,7 +30,22 @@ const Cart = () => {
     );
   }
 
-  return <div className="cart-div">{cartIcon}</div>;
+  return (
+    <div
+      className={`cart-div ${
+        !overlayState ||
+        overlayState === 'none' ||
+        overlayState === 'order' ||
+        overlayState === 'order-close' ||
+        overlayState === 'checkout-close' ||
+        overlayState === 'checkout'
+          ? 'show'
+          : 'hide'
+      }`}
+    >
+      {cartIcon}
+    </div>
+  );
 };
 
 export default Cart;

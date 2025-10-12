@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const CheckoutPayment = ({ onNavigateBtnClick }) => {
-  const [selected, setSelected] = useState('card');
+  const [selected, setSelected] = useState('cash');
 
   return (
     <div className="checkout-delivery-parent">
@@ -11,12 +11,12 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
           <p>გადახდის მეთოდი</p>
         </div>
       </div>
-      <div className="checkout-delivery-content border-1 border-gray-200 rounded-b-3xl py-3 px-6 mx-10">
+      <div className="checkout-payment-content">
         <form className="flex flex-col gap-3 mt-6">
           <label
             className={`!flex items-center gap-3 p-4 rounded-3xl border-2 shadow-sm cursor-pointer transition-all focus-within:ring-2 focus-within:ring-yellow-400 
               ${
-                selected === 'card'
+                selected === 'cash'
                   ? 'border-yellow-400 bg-yellow-100 bg-opacity-40'
                   : 'border-gray-200 bg-white'
               }`}
@@ -24,12 +24,12 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
             <input
               type="radio"
               name="payment"
-              value="card"
-              className="accent-yellow-500 w-5 h-5"
-              checked={selected === 'card'}
-              onChange={() => setSelected('card')}
+              value="cash"
+              className="accent-yellow-500"
+              checked={selected === 'cash'}
+              onChange={() => setSelected('cash')}
             />
-            <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium">
+            <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium text-nowrap">
               <i class="bi bi-cash"></i>
               ნაღდით კურიერთან
             </span>
@@ -46,12 +46,12 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
               type="radio"
               name="payment"
               value="bank"
-              className="accent-blue-500 w-5 h-5"
+              className="accent-blue-500 "
               checked={selected === 'bank'}
               onChange={() => setSelected('bank')}
             />
-            <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium">
-              <i className="bi bi-credit-card text-lg"></i>
+            <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium text-nowrap">
+              <i className="bi bi-credit-card"></i>
               ბარათით გადახდა
             </span>
           </label>
@@ -65,7 +65,7 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
           type="button"
           className="checkout-back-btn"
         >
-          უკან დაბრუნება
+          უკან
         </button>
         <button
           onClick={() => {

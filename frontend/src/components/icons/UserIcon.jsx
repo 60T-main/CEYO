@@ -29,7 +29,22 @@ const User = ({ overlayState }) => {
     );
   }
 
-  return <div>{userIcon}</div>;
+  return (
+    <div
+      className={`user-div ${
+        !overlayState ||
+        overlayState === 'none' ||
+        overlayState === 'order' ||
+        overlayState === 'checkout' ||
+        overlayState === 'checkout-close' ||
+        overlayState === 'order-close'
+          ? 'show'
+          : 'hide'
+      }`}
+    >
+      {userIcon}
+    </div>
+  );
 };
 
 export default User;

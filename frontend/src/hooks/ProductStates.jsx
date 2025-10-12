@@ -20,6 +20,20 @@ export const ProductProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
+  // Delivery Cost State
+  const [deliveryCost, setDeliveryCost] = useState(null);
+
+  // Address Form
+
+  const [form, setForm] = useState({
+    full_name: '',
+    city: '',
+    address_line1: '',
+    address_line2: '',
+    email: '',
+    phone: '',
+  });
+
   return (
     <ProductContext.Provider
       value={{
@@ -38,6 +52,10 @@ export const ProductProvider = ({ children }) => {
         searchTerm,
         setSearchTerm,
         debouncedSearchTerm,
+        form,
+        setForm,
+        deliveryCost,
+        setDeliveryCost,
       }}
     >
       {children}

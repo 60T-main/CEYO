@@ -170,13 +170,16 @@ def HandleAddress(request):
         user = request.user
     if not request.session.session_key:
         request.session.save()
-        session_key = request.session.session_key
+    session_key = request.session.session_key
     
     if request.method == 'GET':
-        if not request.user.is_authenticated:
-            return Response({"message": 'user is not authenticated'},status=400)
+        if request.user.is_authenticated:
+            address, created = Address.objects.get_or_create(user=user)
+        else:
+            address, created = Address.objects.get_or_create(session_key=session_key)
+            print(session_key)
         
-        address, created = Address.objects.get_or_create(user=user)
+
             
         serializer = AddressSerializer(address, many=False)
         return Response(serializer.data)
@@ -197,9 +200,10 @@ def HandleAddress(request):
 
     if request.method == 'PUT':
         if not request.user.is_authenticated:
-            return Response({"error": "User Not Authenticated"},status=400)
-
-        address, created = Address.objects.get_or_create(user=user)
+            address, created = Address.objects.get_or_create(session_key=session_key)
+        else:
+            address, created = Address.objects.get_or_create(user=user)
+            
         if email:
             address.email = email
         if full_name:

@@ -6,8 +6,8 @@ import { useProductContext } from '../hooks/ProductStates';
 import Checkout from '../pages/Checkout';
 
 const CheckoutProducts = ({ onOverlayClose, children }) => {
-  const { setOverlayState, overlayState } = usePageContext();
-  const { cart } = useProductContext();
+  const { setOverlayState, overlayState, isLoading } = usePageContext();
+  const { cart, deliveryCost } = useProductContext();
   const [showItems, setShowItems] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,6 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
 
   const handleOverlayButton = async () => {
     overlayState === 'checkout' ? onOverlayClose('checkout') : setOverlayState('checkout');
-    console.log(overlayState);
   };
   return (
     <div className={`checkout-items-parent${overlayState === 'checkout' ? ' open' : ''}`}>
@@ -46,7 +45,10 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
         </div>
       </div>
       <div className="checkout-items">
-        {overlayState === 'checkout' &&
+        {isLoading ? (
+          <span className="loader products" />
+        ) : (
+          overlayState === 'checkout' &&
           showItems &&
           (cart.cart_items ? (
             cart.cart_items.map((cart_item) => (
@@ -65,21 +67,29 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
             ))
           ) : (
             <p className={'text-sm !text-white'}>კალათა ცარიელია</p>
-          ))}
+          ))
+        )}
       </div>
       {overlayState === 'checkout' && showItems && (
         <div className="checkout-items-total">
           <div className="products-sum">
             <p>პროდუქტების ჯამი</p>
-            <p>{cart.total_price} ₾</p>
+            <p>{cart.total_price && cart.total_price} ₾</p>
           </div>
           <div className="products-delivery">
             <p>მიწოდება</p>
-            <p>... ₾</p>
+            <p className={deliveryCost ? '' : 'text-sm'}>
+              {deliveryCost ? `${deliveryCost} ₾` : 'აირჩიეთ ქალაქი'}
+            </p>
           </div>
           <div className="products-total">
             <p>ჯამური ღირებულება</p>
-            <p>... ₾</p>
+            <p>
+              {deliveryCost && cart.total_price
+                ? cart.total_price + deliveryCost
+                : cart.total_price}{' '}
+              ₾
+            </p>
           </div>
         </div>
       )}

@@ -14,6 +14,7 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
     email: '',
     phone: '',
   });
+
   const [touched, setTouched] = useState({});
   const [messege, setMessege] = useState(null);
 
@@ -128,18 +129,6 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
     setTouched({});
   };
 
-  const handleFakeSubmit = (e) => {
-    e.preventDefault();
-
-    setTouched({
-      username: true,
-      first_name: true,
-      last_name: true,
-      email: true,
-      phone: true,
-    });
-  };
-
   if (!loggedIn) {
     return <LogIn POST_OPTIONS={POST_OPTIONS} API_BASE_URL={API_BASE_URL}></LogIn>;
   }
@@ -153,10 +142,7 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
         </p>
       </div>
 
-      <form
-        onSubmit={handleFakeSubmit}
-        className="bg-white rounded-2xl shadow-sm p-5 md:p-8 flex flex-col gap-6 max-w-xl"
-      >
+      <form className="bg-white rounded-2xl shadow-sm p-5 md:p-8 flex flex-col gap-6 max-w-xl">
         {/* Username */}
         <div className="flex flex-col gap-1">
           <label
@@ -220,7 +206,7 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
             htmlFor="email"
             className="text-xs font-semibold text-[var(--color-secondary-font)] tracking-wide"
           >
-            ემაილი
+            ელ-ფოსტა
           </label>
           <input
             id="email"
@@ -301,7 +287,7 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
         {messege && <h4 className="messege !text-green-600">{messege}</h4>}
       </form>
 
-      <div className="bg-red-500 rounded-3xl w-25 h-10 flex justify-center items-center">
+      <div className="bg-red-500 rounded-3xl w-full h-10 flex justify-center items-center">
         <button
           className=""
           onClick={() => {

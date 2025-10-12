@@ -10,4 +10,4 @@ class CustomerSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ['user','full_name', 'phone', 'email', 'address_line1', 'address_line2', 'city']
+        fields = ['user', 'session_key', 'full_name', 'phone', 'email', 'address_line1', 'address_line2', 'city']

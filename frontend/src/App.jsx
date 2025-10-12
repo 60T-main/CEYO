@@ -112,7 +112,7 @@ function App() {
       setTimeout(() => {
         setOverlayState(null);
         setOverlayClosing(null);
-      }, 300);
+      }, 200);
     }
   };
 
@@ -290,6 +290,7 @@ function App() {
                 overlayState={overlayState}
                 setOverlayState={setOverlayState}
                 setOverlayClosing={setOverlayClosing}
+                API_BASE_URL={API_BASE_URL}
               ></Checkout>
             }
           />

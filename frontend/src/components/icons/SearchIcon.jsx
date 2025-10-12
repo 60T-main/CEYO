@@ -23,7 +23,16 @@ const Search = () => {
   }
 
   return (
-    <div className="search">
+    <div
+      className={`search-div ${
+        !overlayState ||
+        overlayState === 'none' ||
+        overlayState === 'checkout' ||
+        overlayState === 'checkout-close'
+          ? 'show'
+          : 'hide'
+      }`}
+    >
       <div className="search-bar">{searchIcon}</div>
     </div>
   );

@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const csrftoken = getCookie('csrftoken');
 
 // FETCH OPTIONS //
@@ -161,6 +161,7 @@ export function useApi() {
 
   //  Fetch Cart
   const fetchCart = async () => {
+    setIsLoading(true);
     const endpoint = `/product/cart/`;
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
@@ -177,6 +178,8 @@ export function useApi() {
     } catch (error) {
       console.error('Error fetching categories:', error);
       setErrorMessage('Error fetching categories. Please try again later...');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -243,6 +246,10 @@ export function useApi() {
   };
 
   return {
+    API_BASE_URL,
+    GET_OPTIONS,
+    POST_OPTIONS,
+    PUT_OPTIONS,
     fetchProducts,
     fetchProductDetail,
     fetchRecentProducts,
