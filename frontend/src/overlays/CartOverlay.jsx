@@ -5,7 +5,8 @@ import { useProductContext } from '../hooks/ProductStates';
 import { useApi } from '../services/api';
 const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
   const { cart } = useProductContext();
-  const { handleRemoveFromCart } = useApi();
+  const { handleRemoveFromCart, handleAddToCart } = useApi();
+
   const navigate = useNavigate();
 
   const handleCheckoutNavigate = () => {
@@ -27,18 +28,43 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
           {cart.cart_items && cart.cart_items.length > 0 ? (
             cart.cart_items.map((cart_item) => (
               <div className="cart-item" key={cart_item.id}>
-                <h3 style={{ fontSize: 16 }}>{cart_item.name}</h3>
-                <h4 style={{ fontSize: 16 }}>GEL {cart_item.unit_price}</h4>
-                <h4 style={{ fontSize: 16 }}>{cart_item.quantity}x</h4>
-                <h3 style={{ fontSize: 16 }}>GEL {cart_item.subtotal}</h3>
-                <button
-                  onClick={(e) => {
-                    handleRemoveFromCart(cart_item.id, e);
-                  }}
-                  className="cursor-pointer w-20 h-10 text-red-600 border-2 rounded-3xl flex items-center justify-center font-bold"
-                >
-                  Remove
-                </button>
+                <img
+                  className="cart-item-img"
+                  src={cart_item.images ? cart_item.images[0] : '/public/no-img.jpg'}
+                  alt=""
+                />
+
+                <div className="cart-item-content">
+                  <div className="title-color-size-div">
+                    <p className="item-title">{cart_item.name}</p>
+                    <div className="color-size-div">
+                      <p className="item-color">{cart_item.color}</p>
+                      <p className="item-color">•</p>
+                      <p className="item-size">{cart_item.size}</p>
+                    </div>
+                  </div>
+                  <div className="price-quantity-div">
+                    <p>{cart_item.unit_price} ₾</p>
+                  </div>
+                  <div className="cart-item-buttons">
+                    <button
+                      onClick={(e) => {
+                        handleRemoveFromCart(cart_item.id, e);
+                      }}
+                    >
+                      <i class="bi bi-dash-circle"></i>
+                    </button>
+                    <p>{cart_item.quantity}</p>
+                    <button
+                      onClick={(e) => {
+                        handleAddToCart(cart_item.id, e);
+                      }}
+                    >
+                      <i class="bi bi-plus-circle"></i>
+                    </button>
+                  </div>
+                </div>
+                <p className="item-subtotal">{cart_item.subtotal} ₾</p>
               </div>
             ))
           ) : (
@@ -46,15 +72,27 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose }) => {
           )}
         </div>
         {cart.cart_items && cart.cart_items.length > 0 && (
-          <div className="cart-purchase-div">
-            <button
-              className="cart-purchase-btn inline-font"
-              onClick={() => {
-                handleCheckoutNavigate();
-              }}
-            >
-              შეკვეთის გაფორმება <i class="bi bi-arrow-right"></i>
-            </button>
+          <div className="cart-buttons-div">
+            <div className="cart-purchase-div">
+              <button
+                className="cart-purchase-btn inline-font"
+                onClick={() => {
+                  handleCheckoutNavigate();
+                }}
+              >
+                შეკვეთის გაფორმება &nbsp;<i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+            <div className="cart-close-div">
+              <button
+                className="cart-purchase-btn inline-font"
+                onClick={() => {
+                  onOverlayClose('true');
+                }}
+              >
+                დახურვა
+              </button>
+            </div>
           </div>
         )}
       </div>

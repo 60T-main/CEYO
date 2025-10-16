@@ -15,6 +15,8 @@ const User = ({ overlayState }) => {
     overlayState === 'order' ||
     overlayState === 'checkout' ||
     overlayState === 'checkout-close' ||
+    overlayState === 'category' ||
+    overlayState === 'category-close' ||
     overlayState === 'order-close'
   ) {
     userIcon = (
@@ -37,6 +39,8 @@ const User = ({ overlayState }) => {
         overlayState === 'order' ||
         overlayState === 'checkout' ||
         overlayState === 'checkout-close' ||
+        overlayState === 'category' ||
+        overlayState === 'category-close' ||
         overlayState === 'order-close'
           ? 'show'
           : 'hide'

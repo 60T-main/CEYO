@@ -43,7 +43,7 @@ const CheckoutDelivery = ({ onNavigateBtnClick }) => {
   };
 
   const isValid = () => {
-    if (emailInvalid && phoneInvalid && cityInvalid && nameInvalid && addressInvalid) {
+    if (emailInvalid || phoneInvalid || cityInvalid || nameInvalid || addressInvalid) {
       return false;
     } else {
       return true;
@@ -141,8 +141,8 @@ const CheckoutDelivery = ({ onNavigateBtnClick }) => {
   };
 
   const emailInvalid =
-    touched.email && form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
-  const phoneInvalid = touched.phone && form.phone && !/^\+?\d{7,15}$/.test(form.phone);
+    touched.email && !form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+  const phoneInvalid = touched.phone && !form.phone && !/^\+?\d{7,15}$/.test(form.phone);
   const cityInvalid = touched.city && !form.city;
   const nameInvalid = touched.full_name && !form.full_name;
   const addressInvalid = touched.address_line1 && !form.address_line1;
@@ -312,6 +312,7 @@ const CheckoutDelivery = ({ onNavigateBtnClick }) => {
                 }}
                 type="button"
                 className="checkout-delivery-btn"
+                disabled={isLoading}
               >
                 {isLoading ? <span className="loader"></span> : 'გაგრძელება'}
               </button>

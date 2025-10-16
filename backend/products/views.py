@@ -14,10 +14,22 @@ from rest_framework.permissions import AllowAny
 from .serializers import ProductSerializer, CategorySerializer, CartSerializer, CommentSerializer
 
 
+
+
+
 @api_view(['GET'])
 def ProductList(request):
 
-    products = Product.objects.all()
+    products = (
+        Product.objects
+        .prefetch_related(
+            "category",
+            "variants__images",
+            "variants__attributes",
+            "variants__attributes__attribute", 
+            "comments"
+        )
+    )
 
     # search by name
     search = request.GET.get('search')
@@ -41,7 +53,7 @@ def ProductList(request):
 
     # ordering
     order_by = request.GET.get('order_by')
-    if order_by in ['last_modified', '-last_modified', 'name', '-name', 'price', '-price']:
+    if order_by in ['created_at', '-created_at', 'name', '-name', 'price', '-price']:
         products = products.order_by(order_by)
 
     serializer = ProductSerializer(products, many=True)
@@ -52,7 +64,13 @@ def ProductList(request):
 
 @api_view(['GET'])
 def ProductDetail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
+    product = Product.objects.prefetch_related(
+        "category",
+        "variants__images",
+        "variants__attributes",
+        "variants__attributes__attribute",
+        "comments"
+    ).get(pk=pk)
 
     add_product_history(request, pk)
 
@@ -66,11 +84,13 @@ def ProductDetail(request, pk):
 def RecentlyVisitedProducts(request):
     product_ids = request.session.get('visited_products', [])
 
-    products = []
-
-    for pk in product_ids:
-        product = get_object_or_404(Product, pk=pk)
-        products.append(product)
+    products = Product.objects.filter(pk__in=product_ids).prefetch_related(
+        "category",
+        "variants__images",
+        "variants__attributes",
+        "variants__attributes__attribute",
+        "comments"
+    )
 
     
 

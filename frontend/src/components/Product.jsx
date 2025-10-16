@@ -10,7 +10,7 @@ import { usePageContext } from '../hooks/PageStates.jsx';
 import CardSkeleton from '../skeletons/CardSkeleton.jsx';
 
 const Product = ({
-  product: { id, name, category, price, images },
+  product: { id, name, category, product_variants, images },
   variant,
   handleCartUpdate,
   API_BASE_URL,
@@ -30,7 +30,7 @@ const Product = ({
           className="card-parent-home"
         >
           <div className="card-img-parent-home">
-            <img src={images && images[0] ? images[0] : '/public/no-img.jpg'} alt="no image" />
+            <img src={images && images[0] ? images[0] : '/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-home ">
             <p className={'card-title-home'}>{name}</p>
@@ -49,7 +49,7 @@ const Product = ({
             className="card-parent"
           >
             <div className="card-img-parent">
-              <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+              <img src={images && images[0] ? `${images[0]}` : '/no-img.jpg'} alt="no image" />
             </div>
             <div className="card-content-parent ">
               <h3 className={'card-title'}>{name}</h3>
@@ -70,11 +70,13 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+            <img src={images && images[0] ? `${images[0]}` : '/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-all ">
             <h4 className={'card-title-all'}>{name}</h4>
-            <p className={'card-price-all'}>{price}₾</p>
+            <p className={'card-price-all'}>
+              {product_variants && product_variants[0] && product_variants[0].price}₾
+            </p>
           </div>
         </Link>
       )}
@@ -86,7 +88,7 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img src={images ? `${images[0]}` : '/public/no-img.jpg'} alt="no image" />
+            <img src={images && images[0] ? `${images[0]}` : '/no-img.jpg'} alt="no image" />
           </div>
           <div className="card-content-parent-all ">
             <h4 className={'card-title-all'}>{name}</h4>

@@ -23,6 +23,9 @@ export const ProductProvider = ({ children }) => {
   // Delivery Cost State
   const [deliveryCost, setDeliveryCost] = useState(null);
 
+  // Payment Method State
+  const [selectedPayment, setSelectedPayment] = useState('cash');
+
   // Address Form
 
   const [form, setForm] = useState({
@@ -56,6 +59,8 @@ export const ProductProvider = ({ children }) => {
         setForm,
         deliveryCost,
         setDeliveryCost,
+        selectedPayment,
+        setSelectedPayment,
       }}
     >
       {children}

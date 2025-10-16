@@ -10,6 +10,8 @@ const Search = () => {
     !overlayState ||
     overlayState === 'none' ||
     overlayState === 'checkout' ||
+    overlayState === 'category' ||
+    overlayState === 'category-close' ||
     overlayState === 'checkout-close'
   ) {
     searchIcon = (
@@ -28,6 +30,8 @@ const Search = () => {
         !overlayState ||
         overlayState === 'none' ||
         overlayState === 'checkout' ||
+        overlayState === 'category' ||
+        overlayState === 'category-close' ||
         overlayState === 'checkout-close'
           ? 'show'
           : 'hide'

@@ -62,7 +62,7 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
                     ფერი: {cart_item.color} • ზომა: {cart_item.size}
                   </p>
                 </div>
-                <p className="product-quantity">რაოდენობა: {cart_item.quantity}</p>
+                <p className="product-quantity">რაოდ: {cart_item.quantity}</p>
               </div>
             ))
           ) : (

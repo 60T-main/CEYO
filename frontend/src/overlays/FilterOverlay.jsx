@@ -10,6 +10,8 @@ const FilterOverlay = ({ onFilter }) => {
   const [maxPrice, setMaxPrice] = useState('');
   const [chosenCategory, setChosenCategory] = useState('');
 
+  const parentCattegories = ['ქალი', 'კაცი', 'ბავშვი'];
+
   async function handleFilter(event) {
     event.preventDefault();
     onFilter({
@@ -41,21 +43,24 @@ const FilterOverlay = ({ onFilter }) => {
           name="category-radio"
           onChange={(e) => setChosenCategory(e.target.value)}
         >
-          <legend>კატეგორია:</legend>
+          <h3>კატეგორია:</h3>
 
-          {categoriesList.map((element) => (
-            <div key={element.category_id}>
-              <input
-                type="radio"
-                id={element.name}
-                name="category-radio"
-                value={element.name}
-                checked={chosenCategory === element.name}
-                onChange={(e) => setChosenCategory(e.target.value)}
-              />
-              <label htmlFor={element.name}>{element.name}</label>
-            </div>
-          ))}
+          {categoriesList.map(
+            (element) =>
+              !element.parent && (
+                <div key={element.category_id}>
+                  <input
+                    type="radio"
+                    id={element.name}
+                    name="category-radio"
+                    value={element.name}
+                    checked={chosenCategory === element.name}
+                    onChange={(e) => setChosenCategory(e.target.value)}
+                  />
+                  <label htmlFor={element.name}>{element.name}</label>
+                </div>
+              )
+          )}
         </fieldset>
         <input
           type="number"

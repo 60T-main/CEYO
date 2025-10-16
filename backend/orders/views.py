@@ -28,6 +28,7 @@ def OrderView(request):
         return Response({"error": "Missing products"}, status=400)
     
     total_amount = request.data.get('total_amount')
+    delivery_cost = request.data.get('delivery_cost')
     
     if request.user.is_authenticated:
         user = request.user
@@ -40,7 +41,8 @@ def OrderView(request):
             order_id=order_id,
             customer=user,
             session_key=session_key,
-            total_amount=total_amount
+            total_amount=total_amount,
+            delivery_cost=delivery_cost
         )
     order.save()
 

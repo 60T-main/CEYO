@@ -108,6 +108,9 @@ function App() {
     } else if (overlay === 'cart') {
       setOverlayState('cart-close');
       setOverlayClosing(null);
+    } else if (overlay === 'category') {
+      setOverlayState('category-close');
+      setOverlayClosing(null);
     } else {
       setTimeout(() => {
         setOverlayState(null);
@@ -125,7 +128,6 @@ function App() {
   useEffect(() => {
     fetchCategories();
     fetchCart();
-    fetchProducts({ order_by: 'last_modified' });
     getUserInfo();
 
     return () => {

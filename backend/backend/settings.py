@@ -27,6 +27,10 @@ env = environ.Env(
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles" 
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -52,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'import_export', 
+    "debug_toolbar",
     'products',
     'customers',
     'orders',
@@ -62,6 +67,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -69,6 +75,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Custom middleware
     'products.middleware.ProductMiddleware',
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -114,15 +124,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DATABASE_NAME"),
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST"),
+        "PORT": env("DATABASE_PORT"),
+        "OPTIONS": {
+            "sslmode": env("DATABASE_OPTIONS", default="require"),
+        },
     }
 }
+
+DATABASES["default"]["CONN_MAX_AGE"] = 60
 
 
 # Password validation

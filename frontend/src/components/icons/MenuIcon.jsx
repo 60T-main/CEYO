@@ -10,6 +10,8 @@ const Menu = ({ setOverlayState, onOverlayClose, overlayState }) => {
       overlayState !== 'order' &&
       overlayState !== 'checkout' &&
       overlayState !== 'checkout-close' &&
+      overlayState !== 'category-close' &&
+      overlayState !== 'category' &&
       overlayState !== 'order-close' ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

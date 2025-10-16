@@ -19,6 +19,7 @@ class OrderSerializer(serializers.ModelSerializer):
                 "size": item.product.size,
                 "quantity": item.quantity,
                 "unit_price": float(item.product.price),
+                "subtotal": float(item.subtotal),
             }
             for item in obj.items.all()
         ]

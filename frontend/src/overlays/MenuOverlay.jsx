@@ -8,6 +8,7 @@ const MenuOverlay = ({
   onOverlayClose,
   onFilter,
 }) => {
+  const parentCattegories = ['ქალი', 'კაცი', 'ბავშვი'];
   return (
     <div
       className={`${overlayClosing ? 'animate-slide-up' : 'animate-slide-down'} ${
@@ -15,18 +16,21 @@ const MenuOverlay = ({
       }`}
     >
       <div className="category-content-parent">
-        {categoriesList.map((category) => (
-          <Link
-            key={category.category_id}
-            onClick={() => {
-              onFilter({ category: category.name });
-              onOverlayClose('menu');
-            }}
-            to={`/product`}
-          >
-            <h3 key={category.category_id}>{category.name}</h3>
-          </Link>
-        ))}
+        {categoriesList.map(
+          (category) =>
+            parentCattegories.includes(category.name) && (
+              <Link
+                key={category.id}
+                onClick={() => {
+                  onFilter({ category: category.name });
+                  onOverlayClose('menu');
+                }}
+                to={`/product`}
+              >
+                <h3 key={category.id}>{category.name}</h3>
+              </Link>
+            )
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
+import { useProductContext } from '../hooks/ProductStates';
+
 const CheckoutPayment = ({ onNavigateBtnClick }) => {
-  const [selected, setSelected] = useState('cash');
+  const { selectedPayment, setSelectedPayment } = useProductContext();
 
   return (
     <div className="checkout-delivery-parent">
@@ -16,7 +18,7 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
           <label
             className={`!flex items-center gap-3 p-4 rounded-3xl border-2 shadow-sm cursor-pointer transition-all focus-within:ring-2 focus-within:ring-yellow-400 
               ${
-                selected === 'cash'
+                selectedPayment === 'cash'
                   ? 'border-yellow-400 bg-yellow-100 bg-opacity-40'
                   : 'border-gray-200 bg-white'
               }`}
@@ -26,18 +28,18 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
               name="payment"
               value="cash"
               className="accent-yellow-500"
-              checked={selected === 'cash'}
-              onChange={() => setSelected('cash')}
+              checked={selectedPayment === 'cash'}
+              onChange={() => setSelectedPayment('cash')}
             />
             <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium text-nowrap">
-              <i class="bi bi-cash"></i>
+              <i className="bi bi-cash"></i>
               ნაღდით კურიერთან
             </span>
           </label>
           <label
             className={`!flex items-center gap-3 p-4 rounded-3xl border-2 shadow-sm cursor-pointer transition-all focus-within:ring-2 focus-within:ring-blue-300 
               ${
-                selected === 'bank'
+                selectedPayment === 'bank'
                   ? 'border-blue-400 bg-blue-100 bg-opacity-30'
                   : 'border-gray-200 bg-white'
               }`}
@@ -47,8 +49,8 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
               name="payment"
               value="bank"
               className="accent-blue-500 "
-              checked={selected === 'bank'}
-              onChange={() => setSelected('bank')}
+              checked={selectedPayment === 'bank'}
+              onChange={() => setSelectedPayment('bank')}
             />
             <span className="flex items-center gap-2 text-[var(--color-primary-font)] text-sm font-medium text-nowrap">
               <i className="bi bi-credit-card"></i>

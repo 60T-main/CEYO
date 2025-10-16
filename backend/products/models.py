@@ -4,53 +4,108 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(models.Model):
-    MEN = 'Men'
-    WOMEN = 'Women'
-    KIDS = 'Kids'
-
-    CATEGORY_CHOICES = [
-        ('კაცი', 'კაცი'),
-        ('ქალი', 'ქალი'),
-        ('ბავშვი', 'ბავშვი'),
-    ]
-
-    category_id = models.AutoField(primary_key=True)
-    name = models.CharField(
-        max_length=10,
-        choices=CATEGORY_CHOICES,
-        unique=True
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(unique=True)
+    name_tr = models.CharField(unique=True,blank=True, null=True)
+    parent = models.ForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        related_name="children",
+        blank=True,
+        null=True
     )
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "categories"
 
     def __str__(self):
-        return self.name
+
+        names = [self.name]
+        parent = self.parent
+        visited = {self.pk}
+        depth = 0
+        MAX_DEPTH = 20
+        while parent and depth < MAX_DEPTH:
+            if parent.pk in visited:
+                names.append("…")
+                break
+            names.append(parent.name)
+            visited.add(parent.pk)
+            parent = parent.parent
+            depth += 1
+        return " > ".join(reversed(names))
+
 
 
 
 class Product(models.Model):
-    sku = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=200)
-    color = models.TextField(max_length=50)
-    size = models.TextField(max_length=50)
     description = models.TextField(blank=True)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    stock_qty = models.IntegerField(default=0)
-    last_modified = models.DateTimeField(auto_now=True)
+    category = models.ManyToManyField(Category, related_name='products')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.sku} - {self.name} - {self.color} - {self.size}"
+        return self.name
     
 
+class Attribute(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+    
+class AttributeValue(models.Model):
+    attribute = models.ForeignKey(Attribute, on_delete=models.CASCADE, related_name="values")
+    value = models.CharField(max_length=50)
+    value_tr = models.CharField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.attribute.name}: {self.value}"
+    
+
+class ProductVariant(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="variants")
+    sku = models.CharField(max_length=100, unique=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    stock_main = models.PositiveIntegerField(default=0)
+    stock_shop = models.PositiveIntegerField(default=0)
+    attributes = models.ManyToManyField(AttributeValue, related_name="variants")
+
+    class Meta:
+        unique_together = ("product", "sku")
+
+    def __str__(self):
+        try:
+            product_name = self.product.name if getattr(self, "product_id", None) else "Unassigned product"
+            # Only access M2M if we have a primary key; unsaved instances don't support M2M
+            if self.pk:
+                try:
+                    values = [av.value for av in self.attributes.all()[:3]]
+                except Exception:
+                    values = []
+                attrs = ", ".join(values)
+                suffix = f" ({attrs})" if attrs else ""
+            else:
+                suffix = ""
+            return f"{product_name}{suffix}"
+        except Exception:
+            return f"Variant {getattr(self, 'sku', '') or 'unsaved'}"
+
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)
+    product_variant = models.ForeignKey(ProductVariant, related_name="images", on_delete=models.CASCADE)
     image = models.URLField(max_length=500)
     alt_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        return f"Image for {self.product.name}"
+        try:
+            if getattr(self, "product_variant_id", None) and getattr(self.product_variant, "product_id", None):
+                name = self.product_variant.product.name
+            else:
+                name = "Unassigned product"
+        except Exception:
+            name = "Unknown"
+        return f"Image for {name}"
     
 
 
@@ -132,7 +187,15 @@ class ProductLog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'log for {self.product.name} : {self.message[:30]}'
+        try:
+            product_name = self.product.name if getattr(self, "product_id", None) else "Unknown product"
+        except Exception:
+            product_name = "Unknown product"
+        try:
+            preview = (self.message or "")[:30]
+        except Exception:
+            preview = ""
+        return f'log for {product_name} : {preview}'
 
 
 

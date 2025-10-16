@@ -23,7 +23,7 @@ const AllProducts = ({
     isLoading,
   } = usePageContext();
 
-  const cardCount = 10;
+  const cardCount = 20;
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
@@ -66,7 +66,7 @@ const AllProducts = ({
 
         <div className={`all-products-content ${overlayState === 'filter' ? 'blurred' : ''}`}>
           <div className="page-title">
-            <h2>ფეხსაცმელი</h2>
+            <h2>კატალოგი</h2>
           </div>
           <div className="filter-order-parent">
             <button
@@ -100,18 +100,63 @@ const AllProducts = ({
           </div>
           <div className="pages-parent">
             <div className="pages">
-              {[...Array(pages_num)].map((_, index) => (
-                <div className="page">
-                  <button
-                    key={index + 1}
-                    onClick={() => {
-                      setCurrentPage(index + 1);
-                    }}
-                  >
-                    {index + 1}
-                  </button>
-                </div>
-              ))}
+              {!(currentPage === 1) && (
+                <>
+                  {!(currentPage === 2) && (
+                    <div className="last-page">
+                      <p
+                        onClick={() => {
+                          setCurrentPage(1);
+                        }}
+                        key={1}
+                      >
+                        {'<<'}
+                      </p>
+                    </div>
+                  )}
+                  <div className="prev-page">
+                    <p
+                      onClick={() => {
+                        setCurrentPage(currentPage - 1);
+                      }}
+                      key={currentPage}
+                    >
+                      {currentPage - 1}
+                    </p>
+                  </div>
+                </>
+              )}
+
+              <div className="current-page">
+                <p>{currentPage}</p>
+              </div>
+
+              {!(currentPage === pages_num) && (
+                <>
+                  <div className="next-page">
+                    <p
+                      onClick={() => {
+                        setCurrentPage(currentPage + 1);
+                      }}
+                      key={currentPage}
+                    >
+                      {currentPage + 1}
+                    </p>
+                  </div>
+                  {!(currentPage === pages_num - 1) && (
+                    <div className="last-page">
+                      <p
+                        onClick={() => {
+                          setCurrentPage(pages_num);
+                        }}
+                        key={pages_num}
+                      >
+                        {'>>'}
+                      </p>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>

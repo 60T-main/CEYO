@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import { useProductContext } from '../hooks/ProductStates';
 import { useApi } from '../services/api';
 
-const CheckoutPayment = ({ onNavigateBtnClick }) => {
-  const [selected, setSelected] = useState('card');
-
-  const { form, cart } = useProductContext();
+const CheckoutFinal = ({ onNavigateBtnClick }) => {
+  const { form, cart, deliveryCost, selectedPayment } = useProductContext();
 
   const { POST_OPTIONS, API_BASE_URL } = useApi();
 
@@ -23,7 +21,9 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
         ...POST_OPTIONS,
         body: JSON.stringify({
           products: products,
-          total_amount: cart.total_price,
+          delivery_cost: deliveryCost ? deliveryCost : 0,
+          total_amount:
+            deliveryCost && cart.total_price ? cart.total_price + deliveryCost : cart.total_price,
         }),
       });
 
@@ -47,46 +47,46 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
     <div className="checkout-delivery-parent">
       <div className="checkout-delivery-header ">
         <div className="checkout-delivery-title">
-          <i class="bi bi-box-seam"></i>
+          <i className="bi bi-box-seam"></i>
           <p>შეკვეთის დადასტურება</p>
         </div>
       </div>
       <div className="checkout-final-delivery-parent">
         <div className="checkout-final-delivery-title">
-          <i class="bi bi-pin-map-fill"></i>
+          <i className="bi bi-pin-map-fill"></i>
           <p>მიწოდების ინფორმაცია</p>
         </div>
         <div className="checkout-final-delivery-content-parent">
           <div className="checkout-final-delivery-content">
-            <i class="bi bi-person"></i>
+            <i className="bi bi-person"></i>
             <div className="checkout-final-delivery-names">
               <p>სახელი</p>
               <p>{form.full_name}</p>
             </div>
           </div>
           <div className="checkout-final-delivery-content">
-            <i class="bi bi-buildings"></i>
+            <i className="bi bi-buildings"></i>
             <div className="checkout-final-delivery-names">
               <p>ქალაქი</p>
               <p>{form.city}</p>
             </div>
           </div>
           <div className="checkout-final-delivery-content">
-            <i class="bi bi-house"></i>
+            <i className="bi bi-house"></i>
             <div className="checkout-final-delivery-names">
               <p>ქუჩა</p>
               <p>{form.address_line1}</p>
             </div>
           </div>
           <div className="checkout-final-delivery-content">
-            <i class="bi bi-phone"></i>
+            <i className="bi bi-phone"></i>
             <div className="checkout-final-delivery-names">
               <p>ტელეფონი</p>
               <p>{form.phone}</p>
             </div>
           </div>
           <div className="checkout-final-delivery-content">
-            <i class="bi bi-phone"></i>
+            <i className="bi bi-phone"></i>
             <div className="checkout-final-delivery-names">
               <p>ფოსტა</p>
               <p>{form.email}</p>
@@ -96,31 +96,50 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
       </div>
       <div className="checkout-final-payment-parent">
         <div className="checkout-final-payment-title">
-          <i class="bi bi-credit-card-2-back-fill"></i>
+          <i className="bi bi-credit-card-fill"></i>
           <p>გადახდის მეთოდი</p>
         </div>
         <div className="checkout-final-payment-content">
-          <i class="bi bi-credit-card-2-back-fill"></i>
-          <p>ნაღდი ანგარიშწორებით</p>
+          {selectedPayment === 'cash' && (
+            <>
+              <i className="bi bi-cash"></i>
+              <p>
+                ნაღდი ანგარიშწორებით <br />
+                <span className="!text-xs !text-[var(--color-secondary-font)] font-normal">
+                  კურიერთან
+                </span>
+              </p>
+            </>
+          )}
+          {selectedPayment === 'bank' && (
+            <>
+              <i className="bi bi-credit-card"></i>
+              <p>ბარათით გადახდა</p>
+            </>
+          )}
         </div>
       </div>
       <div className="checkout-final-sum-parent">
         <div className="checkout-final-sum-title">
-          <i class="bi bi-box-seam-fill"></i>
+          <i className="bi bi-box-seam-fill"></i>
           <p>შეკვეთის დეტალები</p>
         </div>
         <div className="checkout-final-items-total">
           <div className="products-sum">
             <p>პროდუქტების ჯამი</p>
-            <p>... ₾</p>
+            <p>{cart.total_price} ₾</p>
           </div>
           <div className="checkout-final-delivery">
             <p>მიწოდება</p>
-            <p>... ₾</p>
+            <p>{deliveryCost ? `${deliveryCost} ₾` : 'აირჩიეთ ქალაქი'}</p>
           </div>
           <div className="checkout-final-total">
             <p>ჯამური ღირებულება</p>
-            <p>... ₾</p>
+            <p>
+              {deliveryCost && cart.total_price
+                ? `${deliveryCost + cart.total_price} ₾`
+                : cart.total_price}
+            </p>
           </div>
         </div>
       </div>
@@ -131,9 +150,10 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
               onOrderSubmit();
             }}
             type="button"
-            className="checkout-payment-btn full"
+            className="checkout-payment-btn full button-animation"
           >
-            შეკვეთის დადასტურება
+            <i className="bi bi-check-square"></i>
+            <span className="ml-2">შეკვეთის დადასტურება</span>
           </button>
         </div>
         <div className="checkout-final-back">
@@ -152,4 +172,4 @@ const CheckoutPayment = ({ onNavigateBtnClick }) => {
   );
 };
 
-export default CheckoutPayment;
+export default CheckoutFinal;

@@ -1,6 +1,15 @@
 from django.contrib import admin
-from .models import Order, OrderItem
 from import_export.admin import ImportExportModelAdmin
+from django.apps import apps
 
 
-admin.site.register([Order, OrderItem ])
+# Get all models from your app
+app_models = apps.get_app_config('orders').get_models()
+
+for model in app_models:
+    try:
+        class GenericAdmin(ImportExportModelAdmin):
+            pass
+        admin.site.register(model, GenericAdmin)
+    except admin.sites.AlreadyRegistered:
+        pass
