@@ -556,6 +556,9 @@ input::placeholder {
     .parent_category{
       @apply flex text-[var(--color-primary-blue)] w-full justify-between px-6;
     }
+    .parent_category i{
+      @apply text-lg;
+    }
 
 
 
@@ -663,24 +666,24 @@ input::placeholder {
     }
 
     .card-parent-all {
-      @apply mt-12 flex flex-col items-center;
+      @apply mt-12 flex flex-col items-start;
     }
 
     .card-content-parent-all{
-      @apply flex flex-col justify-center items-center;
+      @apply flex flex-col justify-center items-start;
     }
 
     .card-img-parent-all{
-      @apply flex w-35 md:w-50 lg:w-80;
+      @apply flex w-35 h-35 md:w-50 lg:w-80;
     }
 
 
     .card-title-all {
-      @apply font-normal;
+      @apply font-normal !text-[var(--color-secondary-font)];
     }
 
     .card-price-all {
-      @apply font-bold;
+      @apply font-bold text-[var(--color-primary-blue)];
     }
 
     /* Product Detail Card */
@@ -763,7 +766,7 @@ input::placeholder {
   }
 
   .new-products{
-    @apply flex flex-row gap-4 overflow-x-auto mt-10 md:grid grid-cols-4;
+    @apply flex flex-row overflow-x-auto mt-10 md:grid grid-cols-4;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none
   }
@@ -802,7 +805,7 @@ input::placeholder {
    }
 
   .card-parent-home {
-    @apply flex flex-col justify-center items-center min-w-[10rem];
+    @apply flex flex-col justify-center items-start pl-4 min-w-[10rem];
     transition: transform 0.3s;
   }
 
@@ -814,22 +817,29 @@ input::placeholder {
   }
 
   .card-content-parent-home {
-    @apply flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center items-start gap-1;
     
   }
 
   .card-title-home {
-    @apply text-sm md:text-base font-bold;
+    @apply text-xs md:text-base font-bold text-[var(--color-secondary-font)] !mb-0;
   }
 
   .card-price-home {
-    @apply font-bold text-xs md:text-sm text-[var(--color-primary-font)];
+    @apply text-sm md:text-sm text-[var(--color-primary-font)];
   }
 
 .card-img-parent-home img {
-  @apply flex w-25 md:w-50 lg:w-80;
+  @apply flex w-40 h-40 md:w-50 lg:w-80;
 }
 
+.card-content-color, .card-content-color-all{
+  @apply text-[var(--color-primary-blue)] text-xs !mb-0 relative bottom-10 font-bold
+}
+
+.card-content-color-all{
+ @apply bottom-5 right-0
+}
 
 
 

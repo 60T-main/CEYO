@@ -63,12 +63,13 @@ export function useApi() {
         return;
       }
 
+      const filtered = data.filter(
+        (product) => product.product_variants.length > 0 && product.images.length > 0
+      );
+
       if (filters.order_by === 'created_at') {
-        setDateOrderedProducts(data);
+        setDateOrderedProducts(filtered);
       } else {
-        const filtered = data.filter(
-          (product) => product.product_variants.length > 0 && product.images.length > 0
-        );
         setProductList(filtered);
       }
     } catch (error) {

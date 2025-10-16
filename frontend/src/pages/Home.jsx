@@ -6,7 +6,8 @@ const Home = ({ HeroBanner, children }) => {
   const { fetchProducts } = useApi();
 
   useEffect(() => {
-    fetchProducts({ order_by: 'last_modified' });
+    fetchProducts({ order_by: 'created_at' });
+    console.log('fetched last modified products');
   }, []);
 
   return (

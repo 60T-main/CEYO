@@ -35,7 +35,7 @@ class ProductSerializer(serializers.ModelSerializer):
                 "variant_id": variant.id,
                 "name": obj.name,
                 "attributes": [
-                    {"id": attr.id, "attribute_id": attr.attribute_id, "value": attr.value, "value_tr": attr.value_tr}
+                    {"id": attr.id, "attribute_id": attr.attribute_id, "name":attr.attribute.name, "value": attr.value, "value_tr": attr.value_tr}
                     for attr in attrs
                 ],
                 "images": [
