@@ -34,7 +34,7 @@ const Product = ({
           </div>
           <div className="card-content-parent-home ">
             <p className={'card-title-home'}>{name}</p>
-            <p className={'card-price-home'}>{price}₾</p>
+            <p className={'card-price-home'}>{product_variants && product_variants[0] && product_variants[0].price}₾</p>
           </div>
         </Link>
       )}
@@ -53,7 +53,7 @@ const Product = ({
             </div>
             <div className="card-content-parent ">
               <h3 className={'card-title'}>{name}</h3>
-              <p className={'card-price shadow'}>{price}₾</p>
+              <p className={'card-price shadow'}>{product_variants && product_variants[0] && product_variants[0].price}₾</p>
               <AddToCart
                 id={id}
                 handleCartUpdate={handleCartUpdate}

@@ -47,6 +47,10 @@ input::placeholder {
   @apply !no-underline;
 }
 
+.separator{
+  @apply !m-0 !bg-[var(--color-secondary-font)] w-full
+}
+
 
 
 @theme {
@@ -546,7 +550,11 @@ input::placeholder {
   /* Menu Overlay */
 
     .category-content-parent{
-      @apply mt-30 ml-12 w-25 flex flex-col gap-2 cursor-pointer;
+      @apply mt-30  w-full flex flex-col gap-4 cursor-pointer;
+    }
+
+    .parent_category{
+      @apply flex text-[var(--color-primary-blue)] w-full justify-between px-6;
     }
 
 
@@ -564,7 +572,7 @@ input::placeholder {
     }
 
     .page-title{
-      @apply flex justify-center items-center mb-25;
+      @apply flex justify-center items-start h-20;
     }
 
 
@@ -591,6 +599,9 @@ input::placeholder {
 
     .filter-order-parent{
       @apply flex justify-around;
+    }
+    .filter-order-parent p {
+      @apply border-1 bg-[var(--color-primary-blue)] text-white w-2/5 h-8 rounded-3xl flex items-center justify-center cursor-pointer gap-2 !mb-0
     }
 
     .filter-parent{
@@ -625,15 +636,25 @@ input::placeholder {
     /* Order overlay */
 
     .order-parent{
-      @apply absolute right-5 top-70 w-1/2 h-35 bg-white rounded-xl drop-shadow-2xl shadow-2xl z-999;
+      @apply absolute right-5 top-59 w-2/5 h-auto bg-white rounded-xl drop-shadow-2xl shadow-2xl z-999 border-1 border-[var(--color-secondary-font)];
     }
 
     .order-content{
-      @apply flex flex-col justify-center items-start ml-5 gap-5;
+      @apply flex flex-col justify-center items-start gap-2;
+    }
+    .order-content button{
+      @apply w-full flex
+    }
+    .order-content button i{
+      @apply ml-1
     }
 
     .clear-div{
-      @apply mt-5
+      @apply my-2
+    }
+
+    .by-name-div, .by-price-div, .clear-div {
+      @apply w-full flex items-center justify-start  ml-2
     }
     /* Product Card All Products */
 

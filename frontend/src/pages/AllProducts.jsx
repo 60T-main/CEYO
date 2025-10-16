@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useProductContext } from '../hooks/ProductStates.jsx';
 import { usePageContext } from '../hooks/PageStates.jsx';
 
+
 const AllProducts = ({
   Product,
   handleCartUpdate,
@@ -12,7 +13,7 @@ const AllProducts = ({
   onFilter,
   CardSkeleton,
 }) => {
-  const { productList } = useProductContext();
+  const { productList,priceState, nameState,} = useProductContext();
   const {
     setOverlayState,
     overlayState,
@@ -21,7 +22,10 @@ const AllProducts = ({
     postsPerPage,
     setCurrentPage,
     isLoading,
+
   } = usePageContext();
+
+
 
   const cardCount = 20;
 
@@ -69,22 +73,31 @@ const AllProducts = ({
             <h2>კატალოგი</h2>
           </div>
           <div className="filter-order-parent">
-            <button
+            <p
               onClick={() => {
                 setOverlayState('filter');
               }}
-              className="filter-button"
+              className="filter-p"
             >
+              <i class="bi bi-funnel-fill"></i>
               გაფილტვრა
-            </button>
-            <button
-              className="order-button"
+            </p>
+            <p
+              className="order-p"
               onClick={() => {
                 handleOrderButton();
               }}
             >
+              {(priceState || nameState) ? 
+                (nameState == 'descensing' || priceState == 'descensing') ? 
+                  <i className="bi bi-sort-down"></i> : 
+                  (nameState == 'ascending' || priceState == 'ascending') ? 
+                    <i className="bi bi-sort-up"></i> : 
+                    <i className="bi bi-sort-down"></i>
+                : <i className="bi bi-sort-down"></i>
+              }
               დალაგება
-            </button>
+            </p>
           </div>
           <div className="cards-parent-all">
             {isLoading
