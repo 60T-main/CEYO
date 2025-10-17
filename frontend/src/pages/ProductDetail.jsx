@@ -117,7 +117,9 @@ const ProductDetail = ({
           variant="product-detail"
         />
 
-        {errorMessage && <div className="text-red-600 mb-4">{errorMessage}</div>}
+        {errorMessage && (
+          <div className="flex items-center justify-center text-red-600 my-2">{errorMessage}</div>
+        )}
       </div>
 
       {{ recentProductList } && (

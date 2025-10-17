@@ -21,7 +21,13 @@ class ProductSerializer(serializers.ModelSerializer):
         variants = self._prefetched_list(obj, 'variants')
         for variant in variants:
             variant_images = self._prefetched_list(variant, 'images')
-            images.extend([img.image for img in variant_images])
+            color = ''
+            for attr in variant.attributes.all():
+                if attr.attribute.name == 'ფერი':
+                    color = attr.value
+                    
+            images.append({'color': color,
+                           'images' : [img.image for img in variant_images]})
         return images
 
     def get_product_variants(self, obj):
