@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView, View
 
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import Product, Category, Cart, CartItem, Comment
+from .models import Product, Category, Cart, CartItem, Comment, ProductVariant
 from .utils import get_or_create_cart,add_product_history
 
 from rest_framework.response import Response
@@ -113,24 +113,33 @@ def CategoryList(request):
 @api_view(['GET'])
 def getCart(request):
     cart = get_or_create_cart(request)
-
+    # Prefetch related objects for performance
+    cart = Cart.objects.prefetch_related(
+    "items__product__images",
+    "items__product__attributes",
+    "items__product__attributes__attribute",
+).select_related("user").get(pk=cart.pk)
     serializer = CartSerializer(cart, many=False)
-    
     return Response(serializer.data)
 
 
 @api_view(['POST', 'DELETE'])
 def handleCartItems(request):
-
     product_id = request.data.get('id')
     if not product_id:
         return Response({"error": "Missing product id"}, status=400)
 
     cart = get_or_create_cart(request)
+    # Prefetch related objects for performance
+    cart = Cart.objects.prefetch_related(
+    "items__product__images",
+    "items__product__attributes",
+    "items__product__attributes__attribute",
+).select_related("user").get(pk=cart.pk)
     try:
-        product = get_object_or_404(Product, pk=product_id)
+        product = get_object_or_404(ProductVariant, pk=product_id)
     except Exception:
-        return Response({"error": "Product not found"}, status=404)
+        return Response({"error": "Product variant not found"}, status=404)
 
     item, created = CartItem.objects.get_or_create(cart=cart, product=product)
 
@@ -140,7 +149,6 @@ def handleCartItems(request):
         item.save()
     elif request.method == 'DELETE':
         print('request delete fired', 'on: ',cart.id)
-
         item.quantity -= 1
         if item.quantity <= 0:
             item.delete()

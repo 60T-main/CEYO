@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { useProductContext } from '../hooks/ProductStates.jsx';
 import { usePageContext } from '../hooks/PageStates.jsx';
-
 
 const AllProducts = ({
   Product,
@@ -13,7 +12,7 @@ const AllProducts = ({
   onFilter,
   CardSkeleton,
 }) => {
-  const { productList,priceState, nameState,} = useProductContext();
+  const { productList, priceState, nameState } = useProductContext();
   const {
     setOverlayState,
     overlayState,
@@ -22,10 +21,22 @@ const AllProducts = ({
     postsPerPage,
     setCurrentPage,
     isLoading,
-
   } = usePageContext();
 
+  const overlayRef = useRef();
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (overlayRef.current && !overlayRef.current.contains(event.target)) {
+        onOverlayClose('filter');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const cardCount = 20;
 
@@ -48,18 +59,16 @@ const AllProducts = ({
             className={`${overlayClosing ? 'animate-slide-left-2' : 'animate-slide-right-2'} ${
               overlayState ? 'filter-active' : 'hidden'
             }`}
+            ref={overlayRef}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
+            <div
               onClick={() => {
-                onOverlayClose('true');
+                onOverlayClose('filter');
               }}
-              class="bi bi-x-lg icon close"
-              viewBox="0 0 16 16"
+              class="close filter"
             >
-              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-            </svg>
+              დახურვა
+            </div>
             <div className="filter-overlay-parent">{children}</div>
           </div>
         )}
@@ -88,14 +97,17 @@ const AllProducts = ({
                 handleOrderButton();
               }}
             >
-              {(priceState || nameState) ? 
-                (nameState == 'descensing' || priceState == 'descensing') ? 
-                  <i className="bi bi-sort-down"></i> : 
-                  (nameState == 'ascending' || priceState == 'ascending') ? 
-                    <i className="bi bi-sort-up"></i> : 
-                    <i className="bi bi-sort-down"></i>
-                : <i className="bi bi-sort-down"></i>
-              }
+              {priceState || nameState ? (
+                nameState == 'descensing' || priceState == 'descensing' ? (
+                  <i className="bi bi-sort-down"></i>
+                ) : nameState == 'ascending' || priceState == 'ascending' ? (
+                  <i className="bi bi-sort-up"></i>
+                ) : (
+                  <i className="bi bi-sort-down"></i>
+                )
+              ) : (
+                <i className="bi bi-sort-down"></i>
+              )}
               დალაგება
             </p>
           </div>

@@ -9,6 +9,7 @@ const FilterOverlay = ({ onFilter }) => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [chosenCategory, setChosenCategory] = useState('');
+  const [chosenSubCategory, setChosenSubCategory] = useState('');
 
   const parentCattegories = ['ქალი', 'კაცი', 'ბავშვი'];
 
@@ -38,23 +39,46 @@ const FilterOverlay = ({ onFilter }) => {
   return (
     <div className="filter">
       <form className={'filter-form'} onSubmit={handleFilter}>
+        <div className="filter-price-parent">
+          <h4 className="inline-font">ფასი:</h4>
+          <div className="filter-price">
+            <div className="input-div">
+              <input
+                type="number"
+                placeholder="მინიმუნი"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+              />
+              ₾
+            </div>
+            <div className="input-div">
+              <input
+                type="number"
+                placeholder="მაქსიმუმი"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+              />
+              ₾
+            </div>
+          </div>
+        </div>
         <fieldset
           id="category-radio"
           name="category-radio"
           onChange={(e) => setChosenCategory(e.target.value)}
         >
-          <h3>კატეგორია:</h3>
+          <h4 className="inline-font">კატეგორია:</h4>
 
           {categoriesList.map(
             (element) =>
               !element.parent && (
-                <div key={element.category_id}>
+                <div className="category-radio-div" key={element.id}>
                   <input
                     type="radio"
                     id={element.name}
                     name="category-radio"
-                    value={element.name}
-                    checked={chosenCategory === element.name}
+                    value={String(element.id)}
+                    checked={chosenCategory === String(element.id)}
                     onChange={(e) => setChosenCategory(e.target.value)}
                   />
                   <label htmlFor={element.name}>{element.name}</label>
@@ -62,18 +86,36 @@ const FilterOverlay = ({ onFilter }) => {
               )
           )}
         </fieldset>
-        <input
-          type="number"
-          placeholder="min"
-          value={minPrice}
-          onChange={(e) => setMinPrice(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="max"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-        />
+        <fieldset
+          id="subcategory-radio"
+          name="subcategory-radio"
+          onChange={(e) => setChosenSubCategory(e.target.value)}
+        >
+          <h4 className="inline-font">ქვეკატეგორია:</h4>
+
+          {chosenCategory ? (
+            categoriesList.map(
+              (element) =>
+                element.parent &&
+                String(element.parent) === String(chosenCategory) && (
+                  <div className="category-radio-div" key={element.id}>
+                    <input
+                      type="radio"
+                      id={element.id}
+                      name="subcategory-radio"
+                      value={String(element.id)}
+                      checked={chosenSubCategory === String(element.id)}
+                      onChange={(e) => setChosenSubCategory(e.target.value)}
+                    />
+                    <label htmlFor={element.name}>{element.name}</label>
+                  </div>
+                )
+            )
+          ) : (
+            <p className="text-sm text-[var(--color-secondary-font)]">გთხოვთ აირჩიეთ კატეგორია</p>
+          )}
+        </fieldset>
+
         <div className="filter-btns-parent">
           <button
             className="clear-btn"

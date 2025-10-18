@@ -180,8 +180,8 @@ export function useApi() {
       }
       setCart(data);
     } catch (error) {
-      console.error('Error fetching categories:', error);
-      setErrorMessage('Error fetching categories. Please try again later...');
+      console.error('Error fetching cart:', error);
+      setErrorMessage('Error fetching cart. Please try again later...');
     } finally {
       setIsLoading(false);
     }
@@ -189,6 +189,7 @@ export function useApi() {
 
   // fetch add/remove cart
   const handleRemoveFromCart = async (id, e) => {
+    setIsLoading(true);
     e.preventDefault();
     const endpoint = '/product/cart/delete/';
     try {
@@ -200,7 +201,7 @@ export function useApi() {
       if (!response.ok) {
         throw new Error('Failed to remove cart item');
       }
-      fetchCart();
+      handleCartUpdate();
     } catch (error) {
       console.error('Error removing cart item:', error);
       setErrorMessage('Error removing cart item. Please try again later...');
@@ -208,6 +209,7 @@ export function useApi() {
   };
 
   const handleAddToCart = async (id, e) => {
+    setIsLoading(true);
     e.preventDefault();
     const endpoint = '/product/cart/add/';
     try {
@@ -219,11 +221,15 @@ export function useApi() {
       if (!response.ok) {
         throw new Error('Failed to add cart item');
       }
-      fetchCart();
+      handleCartUpdate();
     } catch (error) {
       console.error('Error adding cart item:', error);
       setErrorMessage('Error adding cart item. Please try again later...');
     }
+  };
+
+  const handleCartUpdate = async () => {
+    await fetchCart();
   };
 
   // USER FETCH FUNCTIONS //
@@ -282,6 +288,7 @@ export function useApi() {
     handleAddToCart,
     getUserInfo,
     checkIfLogedIn,
+    handleCartUpdate,
   };
 }
 

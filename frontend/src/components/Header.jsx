@@ -30,7 +30,11 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
 
   return (
     <>
-      <header className={`header ${overlayState === 'category' ? '!rounded-b-none' : ''}`}>
+      <header
+        className={`header ${overlayState === 'category' ? '!rounded-b-none' : ''} ${
+          overlayState === 'filter' ? 'blurred' : ''
+        }`}
+      >
         <MenuComponent
           setOverlayState={setOverlayState}
           onOverlayClose={onOverlayClose}

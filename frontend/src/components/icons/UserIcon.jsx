@@ -15,6 +15,8 @@ const User = ({ overlayState }) => {
     overlayState === 'order' ||
     overlayState === 'checkout' ||
     overlayState === 'checkout-close' ||
+    overlayState === 'filter' ||
+    overlayState === 'filter-close' ||
     overlayState === 'category' ||
     overlayState === 'category-close' ||
     overlayState === 'order-close'
@@ -39,6 +41,8 @@ const User = ({ overlayState }) => {
         overlayState === 'order' ||
         overlayState === 'checkout' ||
         overlayState === 'checkout-close' ||
+        overlayState === 'filter' ||
+        overlayState === 'filter-close' ||
         overlayState === 'category' ||
         overlayState === 'category-close' ||
         overlayState === 'order-close'

@@ -55,7 +55,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 function App() {
   const location = useLocation();
 
-  const { fetchCategories, fetchCart, fetchProducts, getUserInfo } = useApi();
+  const { fetchCategories, fetchCart, fetchProducts, getUserInfo, handleCartUpdate } = useApi();
 
   // States
   const { productList, categoriesList, searchTerm, setSearchTerm, debouncedSearchTerm } =
@@ -73,10 +73,6 @@ function App() {
   // Screen Size State
   const MOBILE_BREAKPOINT = 768;
   const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
-
-  const handleCartUpdate = async () => {
-    await fetchCart();
-  };
 
   const onFilter = async (filter = {}) => {
     const expectedKeys = ['category', 'min_price', 'max_price', 'search', 'order_by'];
@@ -111,6 +107,11 @@ function App() {
     } else if (overlay === 'category') {
       setOverlayState('category-close');
       setOverlayClosing(null);
+    } else if (overlay === 'filter') {
+      setTimeout(() => {
+        setOverlayState('filter-close');
+        setOverlayClosing(null);
+      }, 200);
     } else {
       setTimeout(() => {
         setOverlayState(null);
@@ -137,9 +138,15 @@ function App() {
 
   // Header Logo Animations
   useEffect(() => {
-    console.log('overlay state:', overlayState);
-    const overlays = ['menu', 'cart', 'search', 'filter'];
-    const NoAnimation = ['order-close', 'order', 'checkout', 'checkout-close'];
+    const overlays = ['menu', 'cart', 'search'];
+    const NoAnimation = [
+      'order-close',
+      'order',
+      'checkout',
+      'checkout-close',
+      'filter',
+      'filter-close',
+    ];
     if (overlays.includes(overlayState)) {
       setHeaderAnimate('left');
       document.body.style.overflow = 'hidden';
@@ -218,8 +225,7 @@ function App() {
           />
         )}
         <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>
-          {location.pathname !== '/product' && location.pathname !== '/product/' && <Search />}
-
+          <Search />
           <Cart />
           <User overlayState={overlayState} />
         </Header>
@@ -268,7 +274,6 @@ function App() {
                 CardSkeleton={CardSkeleton}
                 isLoading={isLoading}
               >
-                <SearchInput />
                 <FilterOverlay onFilter={onFilter} debouncedSearchTerm={debouncedSearchTerm} />
               </AllProducts>
             }

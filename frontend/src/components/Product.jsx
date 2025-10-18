@@ -118,7 +118,10 @@ const Product = ({
           className="card-parent-home"
         >
           <div className="card-img-parent-home">
-            <img src={images && images[0] ? images[0] : '/no-img.jpg'} alt="no image" />
+            <img
+              src={images && images[0] && images[0].images[0] ? images[0].images[0] : '/no-img.jpg'}
+              alt="no image"
+            />
           </div>
           <div className="card-content-parent-home">
             {colors.length > 0 && (
@@ -133,7 +136,6 @@ const Product = ({
           </div>
         </Link>
       )}
-
       {variant === 'product-detail' &&
         (isLoading ? (
           <CardSkeleton variant="product-detail" />
@@ -244,7 +246,10 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img src={images && images[0] ? `${images[0]}` : '/no-img.jpg'} alt="no image" />
+            <img
+              src={images && images[0] && images[0].images[0] ? images[0].images[0] : '/no-img.jpg'}
+              alt="no image"
+            />
           </div>
           <div className="card-content-parent-all ">
             {colors.length > 0 && (
@@ -267,7 +272,10 @@ const Product = ({
           className="card-parent-all"
         >
           <div className="card-img-parent-all">
-            <img src={images && images[0] ? `${images[0]}` : '/no-img.jpg'} alt="no image" />
+            <img
+              src={images && images[0] && images[0].images[0] ? images[0].images[0] : '/no-img.jpg'}
+              alt="no image"
+            />
           </div>
           <div className="card-content-parent-all ">
             <h4 className={'card-title-all'}>{name}</h4>

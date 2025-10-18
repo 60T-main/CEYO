@@ -19,19 +19,20 @@ const MenuOverlay = ({
         {categoriesList.map(
           (category) =>
             parentCattegories.includes(category.name) && (
-
-              <div
+              <Link
+                onClick={() => {
+                  onFilter({ category: category.name });
+                  onOverlayClose('menu');
+                }}
                 key={category.id}
-                // onClick={() => {
-                //   onFilter({ category: category.name });
-                //   onOverlayClose('menu');
-                // }}
-                className='parent_category'
+                className="parent_category"
+                to={`/product`}
               >
-                <h3 className='inline-font !font-bold' key={category.id}>{category.name}</h3>
-<i className="bi bi-arrow-right-circle"></i>
-              </div>
-
+                <h3 className="inline-font !font-bold" key={category.id}>
+                  {category.name}
+                </h3>
+                <i className="bi bi-arrow-right-circle"></i>
+              </Link>
             )
         )}
       </div>

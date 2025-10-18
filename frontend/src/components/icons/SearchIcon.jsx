@@ -9,7 +9,11 @@ const Search = () => {
   if (
     !overlayState ||
     overlayState === 'none' ||
+    overlayState === 'order' ||
+    overlayState === 'order-close' ||
     overlayState === 'checkout' ||
+    overlayState === 'filter' ||
+    overlayState === 'filter-close' ||
     overlayState === 'category' ||
     overlayState === 'category-close' ||
     overlayState === 'checkout-close'
@@ -29,7 +33,11 @@ const Search = () => {
       className={`search-div ${
         !overlayState ||
         overlayState === 'none' ||
+        overlayState === 'order' ||
+        overlayState === 'order-close' ||
         overlayState === 'checkout' ||
+        overlayState === 'filter' ||
+        overlayState === 'filter-close' ||
         overlayState === 'category' ||
         overlayState === 'category-close' ||
         overlayState === 'checkout-close'

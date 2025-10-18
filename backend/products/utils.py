@@ -26,7 +26,7 @@ def get_or_create_cart(request):
 
         if guest_cart:
             # Merge items by product
-            existing_products = {ci.product_id: ci for ci in user_cart.items.all()}
+            existing_products = {cart_item.product_id: cart_item for cart_item in user_cart.items.all()}
             for guest_item in guest_cart.items.all():
                 existing = existing_products.get(guest_item.product_id)
                 if existing:

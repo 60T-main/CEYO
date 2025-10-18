@@ -66,6 +66,15 @@ class CartSerializer(serializers.ModelSerializer):
     cart_items = serializers.SerializerMethodField()
     total_price = serializers.ReadOnlyField()
     total_items = serializers.ReadOnlyField()
+
+
+    def _prefetched_list(self, instance, rel_name: str):
+        cache = getattr(instance,   "_prefetched_objects_cache", None)
+        if cache and rel_name in cache:
+            return cache[rel_name]
+        manager = getattr(instance, rel_name)
+        return list(manager.all())
+
     
 
     class Meta:
@@ -73,20 +82,25 @@ class CartSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_cart_items(self, obj):
-        return [
-            {
+        items = self._prefetched_list(obj, 'items')
+        result = []
+        for item in items:
+            attributes = {}
+            product_attributes = self._prefetched_list(item.product, 'attributes')
+            for attribute in product_attributes:
+                attributes[attribute.attribute.name] = attribute.value
+            images = self._prefetched_list(item.product, 'images')
+            result.append({
                 "id": item.product.id,
                 "cart_item_id": item.id,
-                "name": item.product.name,
-                "color": item.product.color,
-                "size": item.product.size,
-                "images": [img.image.url if hasattr(img.image, 'url') else str(img.image) for img in item.product.images.all()],
+                "name": item.product.product.name,  
+                "attributes": attributes,
+                "images": [img.image.url if hasattr(img.image, 'url') else str(img.image) for   img in images],
                 "quantity": item.quantity,
                 "unit_price": float(item.product.price),
                 "subtotal": float(item.subtotal),
-            }
-            for item in obj.items.all()
-        ]
+            })
+        return result
     
 
 class CommentSerializer(serializers.ModelSerializer):

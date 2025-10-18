@@ -9,6 +9,8 @@ const Cart = () => {
   if (
     !overlayState ||
     overlayState === 'none' ||
+    overlayState === 'filter' ||
+    overlayState === 'filter-close' ||
     overlayState === 'category' ||
     overlayState === 'category-close' ||
     overlayState === 'order' ||
@@ -37,6 +39,8 @@ const Cart = () => {
       className={`cart-div ${
         !overlayState ||
         overlayState === 'none' ||
+        overlayState === 'filter' ||
+        overlayState === 'filter-close' ||
         overlayState === 'category' ||
         overlayState === 'category-close' ||
         overlayState === 'order' ||
