@@ -19,6 +19,7 @@ const ProductDetail = ({
   ProductComponent,
   handleCartUpdate,
   recentProductList,
+  handleCheckoutNavigate,
 }) => {
   const { fetchRecentProducts, fetchProductDetail } = useApi();
 
@@ -114,6 +115,7 @@ const ProductDetail = ({
           handleCartUpdate={handleCartUpdate}
           API_BASE_URL={API_BASE_URL}
           POST_OPTIONS={POST_OPTIONS}
+          handleCheckoutNavigate={handleCheckoutNavigate}
           variant="product-detail"
         />
 

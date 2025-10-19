@@ -220,10 +220,24 @@ input::placeholder {
 
     }
   }
+  @keyframes slide-up-category {
+    0% {
+      height: 22rem;
+
+    }
+
+    100% {
+      height: 0;
+
+    }
+  }
 }
 
 .slide-down-category{
   animation: slide-down-category 0.5s cubic-bezier(0.57, 0, 0.2, 1) forwards;
+}
+.slide-up-category{
+  animation: slide-up-category 0.5s cubic-bezier(0.57, 0, 0.2, 1) forwards;
 }
 
 .animate-slide-down {
@@ -307,10 +321,10 @@ input::placeholder {
   }
 
   .close{
-    @apply w-4 absolute left-4 md:left-auto md:right-10;
+    @apply w-4 absolute left-4 md:left-auto md:right-10 cursor-pointer;
   }
   .close.filter{
-    @apply top-1 text-center border-1 p-1 text-base font-bold w-25 rounded-3xl;
+    @apply top-1 text-center border-1 p-1 text-base font-bold w-25 rounded-3xl cursor-pointer;
 
   }
 
@@ -415,7 +429,7 @@ input::placeholder {
   .search-active,
   .cart-active,
   .filter-active {
-    @apply top-0 left-0 bg-gray-50 z-500;
+    @apply top-0 left-0 bg-gray-50 z-500 overflow-y-auto;
   }
 
   .menu-active,
@@ -425,11 +439,11 @@ input::placeholder {
   }
 
   .filter-active{
-    @apply h-full fixed w-7/10 shadow-2xl drop-shadow-2xl z-1005 overflow-y-auto;
+    @apply h-full fixed w-7/10 md:w-1/3 lg:w-1/4 shadow-2xl drop-shadow-2xl z-1005 ;
   }
 
   .search-active{
-    @apply fixed inset-0 h-screen w-screen overflow-y-auto z-50 w-full;
+    @apply fixed inset-0 h-screen w-screen z-50 w-full;
   }
 
 
@@ -472,11 +486,11 @@ input::placeholder {
     @apply flex justify-center items-center mb-10;
   }
   .cart-items-parent{
-    @apply flex flex-col gap-5 justify-start items-center h-auto max-h-90 overflow-y-auto;
+    @apply flex flex-col gap-5 justify-start items-center h-auto max-h-90 md:max-h-120 lg:max-h-140 overflow-y-auto;
   }
 
   .cart-item-img{
-    @apply w-20 h-20
+    @apply w-20 h-20 md:w-30 md:h-30 lg:w-50 lg:h-50 object-contain overflow-visible
   }
 
   .item-title{
@@ -484,28 +498,28 @@ input::placeholder {
   }
 
   .cart-item {
-    @apply flex flex-row items-center justify-around w-full;
+    @apply flex flex-row items-center justify-around w-full !overflow-visible;
     }
   .cart-item p{
     @apply !mb-0 !pb-0;
     }
 
     .cart-item-content{
-      @apply flex flex-col w-40 gap-1;
+      @apply flex flex-col md:items-center w-40 gap-1 md:w-100 lg:w-150 md:flex-row md:justify-around;
     }
 
     .price-quantity-div{
-      @apply flex
+      @apply flex md:w-12 md:items-center md:justify-center
     }
     .price-quantity-div p{
       @apply text-[var(--color-secondary-font)];
     }
 
     .title-color-size-div{
-      @apply flex flex-col 
+      @apply flex flex-col md:w-40 
     }
     .title-color-size-div p{
-      @apply !mb-0 !pb-0;
+      @apply !mb-0 !pb-0 md:text-base;
     }
 
     .color-size-div{
@@ -546,10 +560,10 @@ input::placeholder {
   }
 
   .cart-item-buttons{
-    @apply flex justify-center items-center rounded-3xl gap-3 items-center bg-[var(--color-primary-blue)] text-white w-20 h-8;
+    @apply flex justify-center items-center rounded-3xl gap-3 items-center bg-[var(--color-primary-blue)] text-white w-20 md:w-30 h-8 md:h-10;
   }
   .cart-item-buttons p{
-    @apply !mb-0 !pb-0;
+    @apply !mb-0 !pb-0 md:text-lg;
   }
 
 
@@ -611,7 +625,7 @@ input::placeholder {
       @apply flex justify-around;
     }
     .filter-order-parent p {
-      @apply border-1 bg-[var(--color-primary-blue)] text-white w-2/5 h-8 rounded-3xl flex items-center justify-center cursor-pointer gap-2 !mb-0
+      @apply border-1 bg-[var(--color-primary-blue)] text-white w-2/5 md:w-1/4 h-8 rounded-3xl flex items-center justify-center cursor-pointer gap-2 !mb-0
     }
 
     .filter-parent{
@@ -670,7 +684,7 @@ input::placeholder {
     /* Order overlay */
 
     .order-parent{
-      @apply absolute right-5 top-59 w-2/5 h-auto bg-white rounded-xl drop-shadow-2xl shadow-2xl z-999 border-1 border-[var(--color-secondary-font)];
+      @apply absolute right-5 top-59 w-2/5 md:w-2/7 md:right-1/9 h-auto bg-white rounded-xl drop-shadow-2xl shadow-2xl z-999 border-1 border-[var(--color-secondary-font)];
     }
 
     .order-content{
@@ -704,8 +718,17 @@ input::placeholder {
       @apply flex flex-col justify-center items-start;
     }
 
-    .card-img-parent-all{
-      @apply flex w-35 h-35 md:w-50 lg:w-80;
+    
+    .card-img-parent-all {
+      @apply !overflow-visible !overflow-x-visible !overflow-y-visible
+    }
+    
+    .card-img-parent-all img {
+      @apply flex w-35 h-35 md:w-50 md:h-35 lg:w-80 lg:h-80 object-contain transition-all duration-75;
+    }
+
+    .card-img-parent-all img:hover {
+      transform: scale(1.08);
     }
 
 
@@ -765,7 +788,7 @@ input::placeholder {
     }
 
     .card-skeleton-product-img{
-      @apply mx-auto w-3/4 h-70 min-[550px]:w-1/2;;
+      @apply mx-auto w-3/4 h-70 min-[550px]:w-1/2;
     }
     .card-skeleton-product-content{
       @apply flex flex-col mx-auto w-3/4 mt-4 lg:w-100 lg:justify-center gap-2;
@@ -821,11 +844,11 @@ input::placeholder {
   /* Product Card Home */
 
   .new-products-section{
-    @apply mt-10 mx-2 lg:mx-12 lg:px-[var(--padding-x-large)];
+    @apply mt-4 lg:mx-12 lg:mx-[var(--padding-x-large)];
   }
 
   .new-products{
-    @apply flex flex-row overflow-x-auto mt-10 md:grid grid-cols-4;
+    @apply flex flex-row overflow-x-auto overflow-y-hidden md:overflow-visible mt-10 md:grid md:grid-cols-4;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none
   }
@@ -865,35 +888,35 @@ input::placeholder {
 
   .card-parent-home {
     @apply flex flex-col justify-center items-start pl-4 min-w-[10rem];
-    transition: transform 0.3s;
   }
 
-  .card-parent-home:hover {
-      transform: scale(1.08);
-  }
-  .card-parent-home:active {
-      transform: scale(0.98);
-  }
-
+  
   .card-content-parent-home {
     @apply flex flex-col justify-center items-start gap-1;
     
   }
-
+  
   .card-title-home {
-    @apply text-xs md:text-base font-bold text-[var(--color-secondary-font)] !mb-0;
+    @apply text-xs md:text-base lg:text-lg font-bold text-[var(--color-secondary-font)] !mb-0;
   }
-
+  
   .card-price-home {
-    @apply text-sm md:text-sm text-[var(--color-primary-font)];
+    @apply text-sm font-bold md:text-sm lg:text-base text-[var(--color-primary-font)];
   }
 
-.card-img-parent-home img {
-  @apply flex w-40 h-40 md:w-50 lg:w-80;
-}
+  .card-img-parent-home{
+    @apply !overflow-visible !overflow-x-visible !overflow-y-visible
+  }
+  
+  .card-img-parent-home img {
+    @apply flex w-40 h-40 md:w-50 md:h-50 lg:w-80 lg:h-80 object-contain transition-all duration-75;
+  }
+  .card-img-parent-home img:hover {
+      transform: scale(1.08);
+  }
 
 .card-content-color, .card-content-color-all{
-  @apply text-[var(--color-primary-blue)] text-xs !mb-0 relative bottom-10 font-bold
+  @apply text-[var(--color-primary-blue)] text-xs md:text-sm !mb-0 relative bottom-10 font-bold
 }
 
 .card-content-color-all{
@@ -1020,9 +1043,9 @@ input::placeholder {
       @apply text-[var(--color-primary-font)] flex justify-between mt-2;
     }
     .checkout-item-details{
-      @apply flex flex-col;
+      @apply flex flex-col min-w-30;
     }
-    .checkout-item-details p:last-child{
+    .checkout-item-attributes{
       @apply text-xs text-[var(--color-secondary-font)];
     }
     .checkout-item-details p:first-child{
@@ -1200,7 +1223,36 @@ input::placeholder {
 }
 
 
+/* checkout-thankyou */
 
+.checkout-thankyou-parent{
+  @apply flex flex-col gap-2
+}
+
+.checkout-thankyou-parent h2{
+  @apply w-full text-center 
+}
+.checkout-thankyou-parent p{
+  @apply px-6 w-full
+}
+
+.check-icon-div{
+  @apply flex w-full items-center justify-center mb-2
+}
+.check-icon-div i{
+  @apply text-[var(--color-primary-blue)] text-3xl 
+}
+
+.contact-details p{
+  @apply !mb-0 !pb-0
+}
+
+
+/* profile page */
+
+.profile-login-form{
+  @apply bg-white rounded-2xl shadow-sm p-5 md:p-0 flex flex-col gap-6 max-w-xl w-full
+}
 
 
 /* Loaders, Spinners, etc... */

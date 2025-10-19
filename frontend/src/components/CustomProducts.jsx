@@ -51,9 +51,9 @@ const CustomProducts = ({
 
         <div
           className={
-            variant === 'recent' && CustomProducts
+            variant === 'recent' && customProducts
               ? 'new-products'
-              : variant === 'new' && CustomProducts
+              : variant === 'new' && customProducts
               ? 'new-products'
               : 'hidden'
           }

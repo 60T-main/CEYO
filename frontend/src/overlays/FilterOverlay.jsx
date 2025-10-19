@@ -15,6 +15,7 @@ const FilterOverlay = ({ onFilter }) => {
 
   async function handleFilter(event) {
     event.preventDefault();
+    const category = chosenSubCategory ? chosenSubCategory : chosenCategory;
     onFilter({
       search: debouncedSearchTerm,
       category: chosenCategory,
@@ -107,7 +108,7 @@ const FilterOverlay = ({ onFilter }) => {
                       checked={chosenSubCategory === String(element.id)}
                       onChange={(e) => setChosenSubCategory(e.target.value)}
                     />
-                    <label htmlFor={element.name}>{element.name}</label>
+                    <label htmlFor={element.id}>{element.name}</label>
                   </div>
                 )
             )

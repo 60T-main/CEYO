@@ -12,6 +12,7 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
 
   useEffect(() => {
     setOverlayState('checkout');
+    console.log(cart.cart_items);
   }, []);
 
   useEffect(() => {
@@ -58,9 +59,8 @@ const CheckoutProducts = ({ onOverlayClose, children }) => {
                 </div>
                 <div className="checkout-item-details">
                   <p>{cart_item.name}</p>
-                  <p>
-                    ფერი: {cart_item.color} • ზომა: {cart_item.size}
-                  </p>
+                  <p className="checkout-item-attributes">ფერი: {cart_item.attributes.ფერი}</p>
+                  <p className="checkout-item-attributes">ზომა: {cart_item.attributes.ზომა}</p>
                 </div>
                 <p className="product-quantity">რაოდ: {cart_item.quantity}</p>
               </div>

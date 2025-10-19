@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useProductContext } from '../hooks/ProductStates';
+import { usePageContext } from '../hooks/PageStates';
 import { useApi } from '../services/api';
 
 const CheckoutFinal = ({ onNavigateBtnClick }) => {
   const { form, cart, deliveryCost, selectedPayment } = useProductContext();
+  const { setIsLoading, isLoading } = usePageContext();
 
   const { POST_OPTIONS, API_BASE_URL } = useApi();
 
   const onOrderSubmit = async () => {
+    setIsLoading(true);
+
     let products = {};
 
     cart.cart_items.map((item) => {
@@ -34,12 +38,16 @@ const CheckoutFinal = ({ onNavigateBtnClick }) => {
 
       const data = await response.json();
 
+      onNavigateBtnClick('thankyou');
+
       if (data.Response === 'False') {
         setErrorMessage(data.error || 'Failed to create order');
         return;
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -88,7 +96,7 @@ const CheckoutFinal = ({ onNavigateBtnClick }) => {
           <div className="checkout-final-delivery-content">
             <i className="bi bi-phone"></i>
             <div className="checkout-final-delivery-names">
-              <p>ფოსტა</p>
+              <p>ელ-ფოსტა</p>
               <p>{form.email}</p>
             </div>
           </div>
@@ -152,8 +160,14 @@ const CheckoutFinal = ({ onNavigateBtnClick }) => {
             type="button"
             className="checkout-payment-btn full button-animation"
           >
-            <i className="bi bi-check-square"></i>
-            <span className="ml-2">შეკვეთის დადასტურება</span>
+            {isLoading ? (
+              <span className="loader"></span>
+            ) : (
+              <>
+                <i className="bi bi-check-square"></i>
+                <span className="ml-2">შეკვეთის დადასტურება</span>
+              </>
+            )}
           </button>
         </div>
         <div className="checkout-final-back">

@@ -65,7 +65,7 @@ const AllProducts = ({
               onClick={() => {
                 onOverlayClose('filter');
               }}
-              class="close filter"
+              className="close filter"
             >
               დახურვა
             </div>
@@ -78,7 +78,7 @@ const AllProducts = ({
         </div>
 
         <div className={`all-products-content ${overlayState === 'filter' ? 'blurred' : ''}`}>
-          <div className="page-title">
+          <div className="page-title inline-font">
             <h2>კატალოგი</h2>
           </div>
           <div className="filter-order-parent">

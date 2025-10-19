@@ -26,7 +26,7 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(
-        'products.Product',
+        'products.ProductVariant',
         on_delete=models.PROTECT,
         related_name="order_items"
     )

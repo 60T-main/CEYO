@@ -59,7 +59,7 @@ const LogIn = ({ POST_OPTIONS, API_BASE_URL }) => {
           გთხოვთ შეიყვანოთ თქვენი მონაცემები სისტემაში შესასვლელად.
         </p>
       </div>
-      <form className="bg-white rounded-2xl shadow-sm p-5 md:p-8 flex flex-col gap-6 max-w-xl w-full">
+      <form className=" profile-login-form ">
         {/* Username or Email */}
         <div className="flex flex-col gap-1">
           <label

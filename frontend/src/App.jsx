@@ -9,6 +9,8 @@ import CardSkeleton from './skeletons/CardSkeleton.jsx';
 
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import { useNavigate } from 'react-router-dom';
+
 // Page Imports
 import Home from './pages/Home.jsx';
 import ProductDetail from './pages/ProductDetail.jsx';
@@ -120,6 +122,14 @@ function App() {
     }
   };
 
+  // Functions
+  const navigate = useNavigate();
+
+  const handleCheckoutNavigate = () => {
+    onOverlayClose('cart');
+    navigate('/checkout');
+  };
+
   // UseEffects
 
   useEffect(() => {
@@ -146,6 +156,8 @@ function App() {
       'checkout-close',
       'filter',
       'filter-close',
+      'category',
+      'category-close',
     ];
     if (overlays.includes(overlayState)) {
       setHeaderAnimate('left');
@@ -222,6 +234,7 @@ function App() {
             onFilter={onFilter}
             overlayClosing={overlayClosing}
             onOverlayClose={onOverlayClose}
+            useNavigate={useNavigate}
           />
         )}
         <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>
@@ -257,6 +270,7 @@ function App() {
                 handleCartUpdate={handleCartUpdate}
                 isLoading={isLoading}
                 CardSkeleton={CardSkeleton}
+                handleCheckoutNavigate={handleCheckoutNavigate}
               ></ProductDetail>
             }
           />

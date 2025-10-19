@@ -4,10 +4,17 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 import { useErrorContext } from '../hooks/ErrorStates';
 
-const AddToCart = ({ id, handleCartUpdate, POST_OPTIONS, selectedColor, selectedSize }) => {
+const AddToCart = ({
+  id,
+  handleCartUpdate,
+  POST_OPTIONS,
+  selectedColor,
+  selectedSize,
+  handleCheckoutNavigate,
+}) => {
   const { setErrorMessage } = useErrorContext();
 
-  const handleAddToCart = async (e) => {
+  const handleAddToCart = async (e, buyNow) => {
     e.preventDefault();
 
     if (!(selectedColor && selectedSize) && !id) {
@@ -24,8 +31,10 @@ const AddToCart = ({ id, handleCartUpdate, POST_OPTIONS, selectedColor, selected
         const data = await response.json();
 
         if (!response.ok) {
-          throw new Error('Failed to add to cart');
+          throw new Error('Failed to add to cart:', data);
         }
+
+        buyNow && handleCheckoutNavigate();
       } catch (error) {
         console.error('Error adding to cart:', error);
         setErrorMessage('Error adding to cart. Please try again later...');
@@ -37,7 +46,7 @@ const AddToCart = ({ id, handleCartUpdate, POST_OPTIONS, selectedColor, selected
 
   return (
     <div className="card-cart-parent">
-      <form onSubmit={handleAddToCart} className="cart-form">
+      <form onSubmit={(e) => handleAddToCart(e, true)} className="cart-form">
         <div className="cart-buy shadow button-animation">
           <button className={'inline-font w-full'} type="submit">
             იყიდე ახლავე

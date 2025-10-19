@@ -19,7 +19,6 @@ from .serializers import ProductSerializer, CategorySerializer, CartSerializer, 
 
 @api_view(['GET'])
 def ProductList(request):
-
     products = (
         Product.objects
         .prefetch_related(
@@ -39,7 +38,7 @@ def ProductList(request):
     # filter by category
     category = request.GET.get('category')
     if category:
-        products = products.filter(category__name__iexact=category)
+        products = products.filter(category__id__iexact=category)
 
     # filter by max price
     max_price = request.GET.get('max_price')

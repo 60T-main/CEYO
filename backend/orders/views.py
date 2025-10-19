@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from .models import Order,OrderItem
-from products.models import Product
+from products.models import Product, ProductVariant
 from .serializers import OrderSerializer
 
 from rest_framework.decorators import api_view
@@ -48,7 +48,7 @@ def OrderView(request):
 
     
     for id, qty in products.items():
-        product = get_object_or_404(Product,id=id)
+        product = get_object_or_404(ProductVariant,id=id)
 
         order_item = OrderItem(
             order=order,

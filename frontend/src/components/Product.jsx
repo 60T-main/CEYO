@@ -15,6 +15,7 @@ const Product = ({
   handleCartUpdate,
   API_BASE_URL,
   POST_OPTIONS,
+  handleCheckoutNavigate,
 }) => {
   const { isLoading } = usePageContext();
 
@@ -235,6 +236,7 @@ const Product = ({
                 selectedColor={selectedColor}
                 selectedSize={selectedSize}
                 checkVariant={checkVariant}
+                handleCheckoutNavigate={handleCheckoutNavigate}
               />
             </div>
           </div>

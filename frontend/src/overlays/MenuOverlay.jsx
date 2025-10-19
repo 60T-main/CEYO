@@ -21,7 +21,7 @@ const MenuOverlay = ({
             parentCattegories.includes(category.name) && (
               <Link
                 onClick={() => {
-                  onFilter({ category: category.name });
+                  onFilter({ category: category.id });
                   onOverlayClose('menu');
                 }}
                 key={category.id}
@@ -35,6 +35,17 @@ const MenuOverlay = ({
               </Link>
             )
         )}
+        <Link
+          onClick={() => {
+            onFilter();
+            onOverlayClose('menu');
+          }}
+          className="parent_category"
+          to={`/product`}
+        >
+          <h3 className="inline-font !font-bold">ყველა ფეხსაცმელი</h3>
+          <i className="bi bi-arrow-right-circle"></i>
+        </Link>
       </div>
     </div>
   );

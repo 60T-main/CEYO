@@ -10,16 +10,18 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_order_items(self, obj):
-        return [
-            {
+        result = []
+        for item in obj.items.all():
+            attributes = {}
+            for attribute in item.product.attributes.all():
+                attributes[attribute.attribute.name] = attribute.value
+            result.append({
                 "id": item.product.id,
                 "cart_item_id": item.id,
-                "name": item.product.name,
-                "color": item.product.color,
-                "size": item.product.size,
+                "name": item.product.product.name,
+                "attributes": attributes,
                 "quantity": item.quantity,
                 "unit_price": float(item.product.price),
                 "subtotal": float(item.subtotal),
-            }
-            for item in obj.items.all()
-        ]
+            })
+        return result

@@ -67,7 +67,7 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
                   }}
                   key={category.id}
                   onClick={() => {
-                    onFilter({ category: category.name });
+                    onFilter({ category: category.id });
                     onOverlayClose('menu');
                   }}
                   to={`/product`}
@@ -91,7 +91,7 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
           onMouseLeave={() => {
             setMouseLeftOverlay(true);
           }}
-          className={`${overlayClosing ? 'animate-slide-up' : 'slide-down-category'} ${
+          className={`${overlayClosing ? 'slide-up-category' : 'slide-down-category'} ${
             overlayState === 'category' ? 'header-category-overlay' : 'hidden'
           }`}
         >
