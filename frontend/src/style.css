@@ -560,7 +560,7 @@ input::placeholder {
   }
 
   .cart-item-buttons{
-    @apply flex justify-center items-center rounded-3xl gap-3 items-center bg-[var(--color-primary-blue)] text-white w-20 md:w-30 h-8 md:h-10;
+    @apply flex justify-center items-center rounded-3xl gap-3 items-center bg-[var(--color-primary-blue)] text-white w-20 md:w-25 h-8 md:h-10;
   }
   .cart-item-buttons p{
     @apply !mb-0 !pb-0 md:text-lg;
@@ -672,7 +672,7 @@ input::placeholder {
     }
 
     .card-skeleton-products{
-      @apply w-35 h-45;
+      @apply w-4/5 h-55 md:w-2/3 md:h-55 lg:w-6/7 lg:h-75 xl:w-9/10 xl:h-120 mx-auto mt-4;
     }
 
     /* Filter overlay */
@@ -720,7 +720,7 @@ input::placeholder {
 
     
     .card-img-parent-all {
-      @apply !overflow-visible !overflow-x-visible !overflow-y-visible
+      @apply !overflow-visible !overflow-x-visible !overflow-y-visible mx-auto;
     }
     
     .card-img-parent-all img {
@@ -923,6 +923,13 @@ input::placeholder {
  @apply bottom-5 right-0
 }
 
+.card-skeleton-home-img{
+  @apply md:h-70 md:w-4/5
+}
+
+.card-skeleton-home-text{
+  @apply my-4 w-1/2;
+}
 
 
   /* Home Info Section */
@@ -988,7 +995,7 @@ input::placeholder {
 
   .checkout-items-header,
   .checkout-delivery-header {
-    @apply flex justify-between py-3 px-6 mx-10 bg-[var(--color-primary-blue)] text-white rounded-3xl transition-all duration-200 ease-in-out;
+    @apply flex justify-between py-3 px-6 mx-10 bg-[var(--color-primary-blue)] text-white rounded-3xl transition-all duration-200 ease-in-out md:w-2/3 md:mx-auto;
   }
 
   .checkout-delivery-header{
@@ -1009,7 +1016,7 @@ input::placeholder {
 
 
 .checkout-items-parent {
-  @apply flex flex-col justify-center w-full max-h-12 px-10 overflow-hidden transition-all duration-500 ease-in-out;
+  @apply flex flex-col justify-center w-full max-h-12 px-10 overflow-hidden transition-all duration-500 ease-in-out md:w-2/3 md:mx-auto md:px-0;
   height: auto; /* fallback for open state */
 }
   
@@ -1043,13 +1050,13 @@ input::placeholder {
       @apply text-[var(--color-primary-font)] flex justify-between mt-2;
     }
     .checkout-item-details{
-      @apply flex flex-col min-w-30;
+      @apply flex flex-col min-w-30 md:min-w-50;
     }
     .checkout-item-attributes{
       @apply text-xs text-[var(--color-secondary-font)];
     }
     .checkout-item-details p:first-child{
-      @apply text-xs font-bold;
+      @apply text-xs font-bold md:text-sm;
     }
 
     .product-price-quantity{
@@ -1057,7 +1064,7 @@ input::placeholder {
     }
     
     .product-quantity{
-      @apply text-xs flex justify-center items-center text-[var(--color-secondary-font)] ;
+      @apply text-xs flex justify-center items-center text-[var(--color-secondary-font)] md:text-sm md:min-w-20;
     }
     
     .product-price{
@@ -1065,7 +1072,7 @@ input::placeholder {
     }
     
     .checkout-img{
-      @apply w-14
+      @apply w-14 md:w-30
     }
     
     .checkout-items-total{
@@ -1086,11 +1093,11 @@ input::placeholder {
       @apply mt-12 
   }
   .checkout-delivery-content{
-    @apply mx-6
+    @apply mx-10 md:mx-auto  md:w-2/3
   }
   
   .checkout-fill-out{
-    @apply border-l-4 border-[var(--color-primary-red)] mx-4 h-10 pl-2 flex  items-center 
+    @apply border-l-4 border-[var(--color-primary-red)] h-10 pl-2 flex  items-center 
   }
   .checkout-fill-out p{
     @apply !mb-0 !pb-0 text-[var(--color-primary-font)] text-sm
@@ -1150,14 +1157,14 @@ input::placeholder {
 }
 
 .checkout-payment-content{
-  @apply border-1 border-gray-200 rounded-b-3xl mx-10
+  @apply border-1 border-gray-200 rounded-b-3xl mx-10 md:mx-auto md:w-2/3
 }
 
 
 /* Checkout Final */
 
 .checkout-final-delivery-parent, .checkout-final-payment-parent, .checkout-final-sum-parent{
-  @apply flex flex-col mx-14 mt-2 gap-4;
+  @apply flex flex-col mx-14 mt-2 gap-4 md:mx-auto md:w-2/3;
 }
 
 
@@ -1226,14 +1233,14 @@ input::placeholder {
 /* checkout-thankyou */
 
 .checkout-thankyou-parent{
-  @apply flex flex-col gap-2
+  @apply flex flex-col justify-center gap-2 md:min-h-180
 }
 
 .checkout-thankyou-parent h2{
   @apply w-full text-center 
 }
 .checkout-thankyou-parent p{
-  @apply px-6 w-full
+  @apply px-6 w-full md:mx-auto md:w-2/3 md:!mt-5
 }
 
 .check-icon-div{
@@ -1251,7 +1258,7 @@ input::placeholder {
 /* profile page */
 
 .profile-login-form{
-  @apply bg-white rounded-2xl shadow-sm p-5 md:p-0 flex flex-col gap-6 max-w-xl w-full
+  @apply bg-white rounded-2xl shadow-sm p-0 md:p-5 flex flex-col gap-6 max-w-xl w-full
 }
 
 

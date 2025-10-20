@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const CheckoutThankYou = () => {
   const user = 'info';

@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import { usePageContext } from '../hooks/PageStates';
-import { useProductContext } from '../hooks/ProductStates';
-import Checkout from '../pages/Checkout';
+import { usePageContext } from '@/hooks/PageStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const CheckoutProducts = ({ onOverlayClose, children }) => {
   const { setOverlayState, overlayState, isLoading } = usePageContext();

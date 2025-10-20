@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePageContext } from '../../hooks/PageStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
 
 const Search = () => {
   let searchIcon = null;

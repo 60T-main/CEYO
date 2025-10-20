@@ -17,6 +17,11 @@ const Register = ({ POST_OPTIONS, API_BASE_URL, handleLogin }) => {
 
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const [touched, setTouched] = useState({});
+
+  const emailInvalid =
+    touched.username && form.username && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.username);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, email: value, [name]: value }));
@@ -26,49 +31,65 @@ const Register = ({ POST_OPTIONS, API_BASE_URL, handleLogin }) => {
     setPasswords((p) => ({ ...p, [name === 'password-repeat' ? 'repeatPassword' : name]: value }));
   };
 
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched((t) => ({ ...t, [name]: true }));
+  };
+
   useEffect(() => {
     if (passwords.repeatPassword !== passwords.password) {
       setPasswordsMatch(false);
-      setErrorMessage('პაროლი არ ემთხვევა!');
+      setErrorMessage('პაროლი არ ემთხვევა.');
     } else {
       setPasswordsMatch(true);
       setErrorMessage(null);
     }
   }, [passwords]);
 
+  const validateRegister = async () => {
+    if (!passwords.password || !form.username) {
+      setErrorMessage('გთხოვთ მიუთითეთ მომხმარებელი და პაროლი.');
+      return;
+    }
+    if (!passwordsMatch) {
+      setErrorMessage('პაროლი არ ემთხვევა.');
+      return;
+    }
+    if (emailInvalid) {
+      setErrorMessage('შეიყვანეთ ვალიდური ელფოსტა.');
+      return;
+    }
+    await handleRegister();
+  };
+
   const handleRegister = async () => {
-    if (passwordsMatch) {
-      const endpoint = '/customer/register/';
-      try {
-        const response = await fetch(API_BASE_URL + endpoint, {
-          ...POST_OPTIONS,
-          body: JSON.stringify({ ...form, password: passwords.password }),
-          headers: {
-            ...(POST_OPTIONS.headers || {}),
-            'Content-Type': 'application/json',
-          },
-        });
+    const endpoint = '/customer/register/';
+    try {
+      const response = await fetch(API_BASE_URL + endpoint, {
+        ...POST_OPTIONS,
+        body: JSON.stringify({ ...form, password: passwords.password }),
+        headers: {
+          ...(POST_OPTIONS.headers || {}),
+          'Content-Type': 'application/json',
+        },
+      });
 
-        if (!response.ok) {
-          const data = await response.json();
-          throw new Error(data.error);
-        }
-
+      if (!response.ok) {
         const data = await response.json();
-
-        window.location.reload();
-
-        if (data.Response === 'False') {
-          setErrorMessage(data.error || 'Failed to register user data');
-          return;
-        }
-      } catch (error) {
-        console.error(error);
-        error.message === 'Username already exists' &&
-          setErrorMessage('მომხმარებელი უკვე არსებობს');
+        throw new Error(data.error);
       }
-    } else {
-      setErrorMessage('პაროლი არ ემთხვევა, გთხოვთ სცადოთ ხელახლა');
+
+      const data = await response.json();
+
+      window.location.reload();
+
+      if (data.Response === 'False') {
+        setErrorMessage(data.error || 'Failed to register user data');
+        return;
+      }
+    } catch (error) {
+      console.error(error);
+      error.message === 'Username already exists' && setErrorMessage('მომხმარებელი უკვე არსებობს');
     }
   };
 
@@ -97,8 +118,16 @@ const Register = ({ POST_OPTIONS, API_BASE_URL, handleLogin }) => {
             placeholder="მაგ: user@mail.com"
             value={form.username}
             onChange={handleChange}
-            className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:border-[var(--color-primary-blue)] focus:ring-2 focus:ring-[var(--color-primary-blue)]"
+            onBlur={handleBlur}
+            className={`w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:border-[var(--color-primary-blue)] focus:ring-2 focus:ring-[var(--color-primary-blue)] ${
+              emailInvalid
+                ? 'border-red-500 ring-2 ring-red-400 focus:ring-red-400 focus:border-red-500'
+                : 'border-gray-300'
+            }`}
           />
+          {emailInvalid && (
+            <p className="text-[10px] text-red-600 font-medium">შეიყვანეთ ვალიდური ელფოსტა.</p>
+          )}
         </div>
 
         {/* Password */}
@@ -116,6 +145,7 @@ const Register = ({ POST_OPTIONS, API_BASE_URL, handleLogin }) => {
             placeholder="••••••••"
             value={passwords.password}
             onChange={handlePassword}
+            onBlur={handleBlur}
             className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:border-[var(--color-primary-blue)] focus:ring-2 focus:ring-[var(--color-primary-blue)]"
           />
           <label
@@ -141,7 +171,7 @@ const Register = ({ POST_OPTIONS, API_BASE_URL, handleLogin }) => {
             type="button"
             className="flex-1 h-10 rounded-xl font-bold text-sm transition bg-[var(--color-primary-blue)] text-white hover:bg-[#00345f]"
             onClick={() => {
-              handleRegister();
+              validateRegister();
             }}
           >
             რეგისტრაცია

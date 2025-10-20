@@ -1,15 +1,22 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
+import { usePageContext } from '@/hooks/PageStates';
 
 const FilterOverlay = ({ onFilter }) => {
-  const { categoriesList, debouncedSearchTerm } = useProductContext();
-
-  const [minPrice, setMinPrice] = useState('');
-  const [maxPrice, setMaxPrice] = useState('');
-  const [chosenCategory, setChosenCategory] = useState('');
-  const [chosenSubCategory, setChosenSubCategory] = useState('');
+  const {
+    categoriesList,
+    debouncedSearchTerm,
+    minPrice,
+    setMinPrice,
+    maxPrice,
+    setMaxPrice,
+    chosenCategory,
+    setChosenCategory,
+    chosenSubCategory,
+    setChosenSubCategory,
+  } = useProductContext();
 
   const parentCattegories = ['ქალი', 'კაცი', 'ბავშვი'];
 
@@ -18,7 +25,7 @@ const FilterOverlay = ({ onFilter }) => {
     const category = chosenSubCategory ? chosenSubCategory : chosenCategory;
     onFilter({
       search: debouncedSearchTerm,
-      category: chosenCategory,
+      category: category,
       min_price: minPrice,
       max_price: maxPrice,
     });
@@ -36,6 +43,8 @@ const FilterOverlay = ({ onFilter }) => {
       max_price: '',
     });
   }
+
+  // Remove useEffect that resets subcategory on every mount
 
   return (
     <div className="filter">
@@ -66,7 +75,10 @@ const FilterOverlay = ({ onFilter }) => {
         <fieldset
           id="category-radio"
           name="category-radio"
-          onChange={(e) => setChosenCategory(e.target.value)}
+          onChange={(e) => {
+            setChosenSubCategory('');
+            setChosenCategory(e.target.value);
+          }}
         >
           <h4 className="inline-font">კატეგორია:</h4>
 
@@ -79,7 +91,7 @@ const FilterOverlay = ({ onFilter }) => {
                     id={element.name}
                     name="category-radio"
                     value={String(element.id)}
-                    checked={chosenCategory === String(element.id)}
+                    checked={String(chosenCategory) === String(element.id)}
                     onChange={(e) => setChosenCategory(e.target.value)}
                   />
                   <label htmlFor={element.name}>{element.name}</label>
@@ -105,7 +117,7 @@ const FilterOverlay = ({ onFilter }) => {
                       id={element.id}
                       name="subcategory-radio"
                       value={String(element.id)}
-                      checked={chosenSubCategory === String(element.id)}
+                      checked={String(chosenSubCategory) === String(element.id)}
                       onChange={(e) => setChosenSubCategory(e.target.value)}
                     />
                     <label htmlFor={element.id}>{element.name}</label>

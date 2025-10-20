@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import AddToCart from './AddToCart.jsx';
-import ScrollToTop from '../hooks/ScrollToTop.jsx';
+import AddToCart from '@/pages/allproducts/AddToCart.jsx';
 
 import { Link } from 'react-router-dom';
 
-import { usePageContext } from '../hooks/PageStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
 
-import CardSkeleton from '../skeletons/CardSkeleton.jsx';
+import CardSkeleton from '@/skeletons/CardSkeleton.jsx';
 
 const Product = ({
   product: { id, name, category, product_variants, images },

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useApi } from '../services/api';
+import { useApi } from '@/services/api';
 
 const Home = ({ HeroBanner, children }) => {
   const { fetchProducts } = useApi();

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CheckoutProducts from '../components/CheckoutProducts';
-import CheckoutDelivery from '../components/CheckoutDelivery';
-import CheckoutPayment from '../components/CheckoutPayment';
-import CheckoutFinal from '../components/CheckoutFinal';
-import CheckoutThankYou from '../components/CheckoutThankYou';
-import { usePageContext } from '../hooks/PageStates';
+import CheckoutProducts from './CheckoutProducts';
+import CheckoutDelivery from './CheckoutDelivery';
+import CheckoutPayment from './CheckoutPayment';
+import CheckoutFinal from './CheckoutFinal';
+import CheckoutThankYou from './CheckoutThankYou';
+import { usePageContext } from '@/hooks/PageStates';
 
 const Checkout = ({ onOverlayClose, setOverlayState, setOverlayClosing, overlayState }) => {
   const { checkoutPageState, setCheckoutPageState } = usePageContext();

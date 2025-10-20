@@ -1,12 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const OrderOverlay = ({ onFilter }) => {
-
-  const {priceState, setPriceState, nameState,setNameState} = useProductContext();
-
+  const { priceState, setPriceState, nameState, setNameState } = useProductContext();
 
   const handleOrder = async (orderBy) => {
     if (orderBy === 'price') {
@@ -48,12 +46,17 @@ const OrderOverlay = ({ onFilter }) => {
             }}
             className={nameState && 'font-bold'}
           >
-            სახელით {!priceState && nameState && (nameState === 'ascending' ? <i class="bi bi-sort-alpha-up"></i>
- : <i class="bi bi-sort-alpha-down"></i>
-)} 
+            სახელით{' '}
+            {!priceState &&
+              nameState &&
+              (nameState === 'ascending' ? (
+                <i class="bi bi-sort-alpha-up"></i>
+              ) : (
+                <i class="bi bi-sort-alpha-down"></i>
+              ))}
           </button>
         </div>
-          <hr className='separator'/>
+        <hr className="separator" />
         <div className="by-price-div">
           <button
             onClick={() => {
@@ -61,10 +64,17 @@ const OrderOverlay = ({ onFilter }) => {
             }}
             className={priceState && 'font-bold'}
           >
-             ფასით{priceState && !nameState && (priceState === 'ascending' ? <i class="bi bi-sort-numeric-up"></i> : <i class="bi bi-sort-numeric-down"></i>)} 
+            ფასით
+            {priceState &&
+              !nameState &&
+              (priceState === 'ascending' ? (
+                <i class="bi bi-sort-numeric-up"></i>
+              ) : (
+                <i class="bi bi-sort-numeric-down"></i>
+              ))}
           </button>
         </div>
-        <hr className='separator'/>
+        <hr className="separator" />
         <div className="clear-div">
           <button
             onClick={() => {

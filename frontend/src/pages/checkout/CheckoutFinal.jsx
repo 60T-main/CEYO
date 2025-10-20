@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
-import { usePageContext } from '../hooks/PageStates';
-import { useApi } from '../services/api';
+import { useProductContext } from '@/hooks/ProductStates';
+import { usePageContext } from '@/hooks/PageStates';
+import { useApi } from '@/services/api';
 
 const CheckoutFinal = ({ onNavigateBtnClick }) => {
   const { form, cart, deliveryCost, selectedPayment } = useProductContext();

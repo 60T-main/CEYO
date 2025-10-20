@@ -2,7 +2,7 @@ import React from 'react';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-import { useErrorContext } from '../hooks/ErrorStates';
+import { useErrorContext } from '@/hooks/ErrorStates';
 
 const AddToCart = ({
   id,

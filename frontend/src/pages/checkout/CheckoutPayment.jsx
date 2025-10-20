@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const CheckoutPayment = ({ onNavigateBtnClick }) => {
   const { selectedPayment, setSelectedPayment } = useProductContext();

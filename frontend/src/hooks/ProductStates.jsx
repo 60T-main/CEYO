@@ -30,6 +30,11 @@ export const ProductProvider = ({ children }) => {
   const [priceState, setPriceState] = useState(null);
   const [nameState, setNameState] = useState(null);
 
+  // Filter States
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
+  const [chosenCategory, setChosenCategory] = useState('');
+  const [chosenSubCategory, setChosenSubCategory] = useState('');
 
   // Address Form
 
@@ -66,10 +71,18 @@ export const ProductProvider = ({ children }) => {
         setDeliveryCost,
         selectedPayment,
         setSelectedPayment,
-        priceState, 
+        priceState,
         setPriceState,
-        nameState, 
+        nameState,
         setNameState,
+        minPrice,
+        setMinPrice,
+        maxPrice,
+        setMaxPrice,
+        chosenCategory,
+        setChosenCategory,
+        chosenSubCategory,
+        setChosenSubCategory,
       }}
     >
       {children}

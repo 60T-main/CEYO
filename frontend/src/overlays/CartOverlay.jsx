@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
-import { usePageContext } from '../hooks/PageStates';
-import { useApi } from '../services/api';
+import { useProductContext } from '@/hooks/ProductStates';
+import { usePageContext } from '@/hooks/PageStates';
+import { useApi } from '@/services/api';
 const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose, handleCheckoutNavigate }) => {
   const { cart } = useProductContext();
   const { isLoading } = usePageContext();

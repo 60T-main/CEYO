@@ -1,6 +1,6 @@
 import React from 'react';
-import { usePageContext } from '../../hooks/PageStates.jsx';
-import { useProductContext } from '../../hooks/ProductStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
 
 const Cart = () => {
   let cartIcon = null;

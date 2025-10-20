@@ -1,4 +1,4 @@
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const CustomProducts = ({
   Product,

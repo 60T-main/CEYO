@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 
-import { useUserContext } from '../hooks/UserStates.jsx';
-import { useApi } from '../services/api.jsx';
+import { useUserContext } from '@/hooks/UserStates.jsx';
+import { useApi } from '@/services/api.jsx';
 
 const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
   const { loggedIn, userInfo } = useUserContext();
@@ -287,7 +287,7 @@ const ProfilePage = ({ PUT_OPTIONS, POST_OPTIONS, API_BASE_URL, LogIn }) => {
         {messege && <h4 className="messege !text-green-600">{messege}</h4>}
       </form>
 
-      <div className="bg-red-500 rounded-3xl w-full h-10 flex justify-center items-center">
+      <div className="bg-red-500 rounded-3xl w-full md:w-1/2 h-10 flex justify-center items-center">
         <button
           className=""
           onClick={() => {

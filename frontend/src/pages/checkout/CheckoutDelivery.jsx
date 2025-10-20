@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import { useApi } from '../services/api.jsx';
-import { useErrorContext } from '../hooks/ErrorStates.jsx';
-import { usePageContext } from '../hooks/PageStates.jsx';
-import { useProductContext } from '../hooks/ProductStates.jsx';
+import { useApi } from '@/services/api.jsx';
+import { useErrorContext } from '@/hooks/ErrorStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
 
 const CheckoutDelivery = ({ onNavigateBtnClick }) => {
   const { API_BASE_URL, GET_OPTIONS, PUT_OPTIONS } = useApi();

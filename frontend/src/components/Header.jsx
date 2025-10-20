@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { usePageContext } from '../hooks/PageStates.jsx';
-import { useProductContext } from '../hooks/ProductStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
 
 const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
   const { overlayState, setOverlayState, headerAnimate, overlayClosing } = usePageContext();
@@ -16,7 +16,6 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
 
   useEffect(() => {
     mouseLeftOverlay && mouseLeftName && onOverlayClose('category');
-    console.log(mouseLeftOverlay, mouseLeftName);
   }, [mouseLeftOverlay, mouseLeftName]);
 
   useEffect(() => {
@@ -83,7 +82,7 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
           )}
         </div>
         <div className="header-children">{children}</div>
-        <div
+        {/* <div
           onMouseEnter={() => {
             setOverlayState('category');
             setMouseLeftOverlay(false);
@@ -96,7 +95,7 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
           }`}
         >
           {showItems && <div>sub-categories</div>}
-        </div>
+        </div> */}
       </header>
     </>
   );

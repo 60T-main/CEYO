@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useProductContext } from '../hooks/ProductStates';
+import { useProductContext } from '@/hooks/ProductStates';
 
 const SearchOverlay = () => {
   const { searchTerm, setSearchTerm } = useProductContext();

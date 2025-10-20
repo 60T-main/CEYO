@@ -12,15 +12,15 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { useNavigate } from 'react-router-dom';
 
 // Page Imports
-import Home from './pages/Home.jsx';
-import ProductDetail from './pages/ProductDetail.jsx';
-import AllProducts from './pages/AllProducts.jsx';
-import ProfilePage from './pages/ProfilePage.jsx';
-import Checkout from './pages/Checkout.jsx';
+import Home from './pages/home/Home.jsx';
+import ProductDetail from './pages/productdetail/ProductDetail.jsx';
+import AllProducts from './pages/allproducts/AllProducts.jsx';
+import ProfilePage from './pages/profile/ProfilePage.jsx';
+import Checkout from './pages/checkout/Checkout.jsx';
 
 // Component Imports
-import HeroBanner from './components/HeroBanner.jsx';
-import InfoSection from './components/InfoSection.jsx';
+import HeroBanner from './pages/home/HeroBanner.jsx';
+import InfoSection from './pages/home/InfoSection.jsx';
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -30,7 +30,7 @@ import Cart from './components/icons/CartIcon.jsx';
 import Search from './components/icons/SearchIcon.jsx';
 import SearchInput from './components/SearchInput.jsx';
 import User from './components/icons/UserIcon.jsx';
-import LogIn from './components/LogIn.jsx';
+import LogIn from './pages/profile/LogIn.jsx';
 import CustomProducts from './components/CustomProducts.jsx';
 
 // Overlay Imports
@@ -235,6 +235,7 @@ function App() {
             overlayClosing={overlayClosing}
             onOverlayClose={onOverlayClose}
             useNavigate={useNavigate}
+            handleCheckoutNavigate={handleCheckoutNavigate}
           />
         )}
         <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>

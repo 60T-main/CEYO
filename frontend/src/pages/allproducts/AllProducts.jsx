@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useProductContext } from '../hooks/ProductStates.jsx';
-import { usePageContext } from '../hooks/PageStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
+import { usePageContext } from '@/hooks/PageStates.jsx';
 
 const AllProducts = ({
   Product,

@@ -11,11 +11,11 @@ const CardSkeleton = ({ variant }) => {
       )}
       {variant === 'home' && (
         <div className="card-skeleton-home">
-          <div className="ml-5">
-            <Skeleton width={100} height={100} />
+          <div className="card-skeleton-home-img">
+            <Skeleton width="100%" height="100%" />
           </div>
-          <div className="ml-5">
-            <Skeleton />
+          <div className="card-skeleton-home-text">
+            <Skeleton width="100%" height="100%" count={2} />
           </div>
         </div>
       )}

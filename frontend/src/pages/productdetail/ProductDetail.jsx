@@ -3,14 +3,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
-import CustomProducts from '../components/CustomProducts';
+import CustomProducts from '@/components/CustomProducts';
 
-import { useProductContext } from '../hooks/ProductStates.jsx';
-import { useErrorContext } from '../hooks/ErrorStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
+import { useErrorContext } from '@/hooks/ErrorStates.jsx';
 
-import CardSkeleton from '../skeletons/CardSkeleton.jsx';
-
-import { useApi } from '../services/api.jsx';
+import { useApi } from '@/services/api.jsx';
 
 const ProductDetail = ({
   API_BASE_URL,
