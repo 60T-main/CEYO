@@ -10,8 +10,7 @@ CEYO is a full-stack e-commerce web application, featuring a modern React fronte
 
 ### Why CEYO Satisfies the Requirements
 
-- **Distinctiveness:** CEYO stands out by combining a custom React overlay filter system with persistent state management using context, ensuring a smooth and intuitive user experience.
-  The filter overlay is built as a custom React component that leverages context-based state management, allowing users to select categories and subcategories. When a user selects a category, only relevant subcategories are shown and any previously chosen subcategory is automatically cleared. Filtering also supports price ranges and debounced search input, enabling users to combine multiple criteria for precise results. The backend leverages Django's ORM and REST framework for secure, efficient data handling, and includes custom serializers and model relationships for complex product, order, and customer logic.
+- **Distinctiveness:** CEYO stands out by combining a custom React overlay filter system with persistent state management using context, ensuring a smooth and intuitive user experience. The filter overlay is built as a custom React component that leverages context-based state management, allowing users to select categories and subcategories. When a user selects a category, only relevant subcategories are shown and any previously chosen subcategory is automatically cleared. Filtering also supports price ranges and debounced search input, enabling users to combine multiple criteria for precise results. The backend leverages Django's ORM and REST framework for secure, efficient data handling, and includes custom serializers and model relationships for complex product, order, and customer logic. The backend also features email sending functionality for user registration and notifications, enhancing user engagement and communication.
 - **Complexity:** The project features:
   - Context-based state management for filters and overlays in React.
   - Dynamic category/subcategory filtering.
@@ -19,6 +18,8 @@ CEYO is a full-stack e-commerce web application, featuring a modern React fronte
   - RESTful API endpoints for products, orders, and customers.
   - Custom middleware and utility functions for backend logic.
   - Real-time UI updates and debounced search functionality.
+  - Email sending functionality for registration and notifications.
+  - Integrated Django Debug Toolbar for advanced debugging and development insights.
 
 ---
 
@@ -60,37 +61,62 @@ CEYO is a full-stack e-commerce web application, featuring a modern React fronte
 ### Backend (Django)
 
 1. Install Python 3.10+ and pip.
+
 2. Create and activate a virtual environment:
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\activate
-   ```
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
 3. Navigate to the `backend` directory.
-4. Install dependencies:
-   ```powershell
-   pip install -r requirements.txt
-   ```
-5. Run migrations:
-   ```powershell
-   python manage.py migrate
-   ```
-6. Start the server:
-   ```powershell
-   python manage.py runserver
-   ```
+
+4. Create a `.env` file in the `backend` directory with the following required variables:
+
+```env
+DATABASE_NAME=your_db_name
+DATABASE_USER=your_db_user
+DATABASE_PASSWORD=your_db_password
+DATABASE_HOST=your_db_host
+DATABASE_PORT=your_db_port
+EMAIL_HOST_USER=your_email@example.com
+EMAIL_HOST_PASSWORD=your_email_password
+```
+
+Adjust values as needed for your environment. 5. Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+6. Run migrations:
+
+```powershell
+python manage.py migrate
+```
+
+7. Start the server:
+
+```powershell
+python manage.py runserver
+```
 
 ### Frontend (React)
 
 1. Navigate to the `frontend` directory.
 2. Install Node.js (v18+) and npm.
 3. Install dependencies:
-   ```powershell
-   npm install
-   ```
+
+```powershell
+npm install
+```
+
 4. Start the development server:
-   ```powershell
-   npm run dev
-   ```
+
+```powershell
+npm run dev
+```
+
 5. Access the app at `http://localhost:5173` (default Vite port).
 
 ---
