@@ -43,12 +43,12 @@ def ProductList(request):
     # filter by max price
     max_price = request.GET.get('max_price')
     if max_price:
-        products = products.filter(price__lte=max_price)
+        products = [product for product in products if product.variants.first() and product.variants.first().price <= float(max_price)]
 
     # filter by min price
     min_price = request.GET.get('min_price')
     if min_price:
-        products = products.filter(price__gte=min_price)
+        products = [product for product in products if product.variants.first() and product.variants.first().price >= float(min_price)]
 
     # ordering
     order_by = request.GET.get('order_by')
