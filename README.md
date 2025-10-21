@@ -85,6 +85,14 @@ EMAIL_HOST_PASSWORD=your_email_password
 
 Adjust values as needed for your environment. 5. Install dependencies:
 
+5. (Frontend) Create a `.env` file in the `frontend` directory with the following required variable:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+Set `VITE_API_BASE_URL` to match your backend server URL if different.
+
 ```powershell
 pip install -r requirements.txt
 ```
