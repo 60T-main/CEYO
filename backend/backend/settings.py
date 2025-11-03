@@ -39,9 +39,14 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 SECRET_KEY = 'django-insecure-^bsm1gyphj!dt4jd7fdgt+x7r^di@%*420f67lewvp(bhv+#%u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG", default=False)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "ceyo-production.up.railway.app",
+    "ceyo.netlify.app",
+]
 
 
 # Application definition
@@ -83,11 +88,11 @@ INTERNAL_IPS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    'ceyo-production.up.railway.app',
+    "https://ceyo-production.up.railway.app",
+    "https://ceyo.netlify.app",
 ]
-
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:5173","https://ceyo-production.up.railway.app","https://ceyo.netlify.app/"]
 
 CORS_ALLOW_METHODS = [
     'GET',
@@ -172,11 +177,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -189,10 +189,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTH_USER_MODEL = 'customers.Customer'
 
-# Allow CSRF for the Vite dev server when using cookie-based auth/session
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:5173',
-]
 
 
 # EMAIL
@@ -205,4 +201,4 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
-DEFAULT_FROM_EMAILS = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
