@@ -36,6 +36,7 @@ const FilterOverlay = ({ onFilter }) => {
     setMinPrice('');
     setMaxPrice('');
     setChosenCategory('');
+    setChosenSubCategory('');
     onFilter({
       search: '',
       category: '',

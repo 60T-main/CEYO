@@ -743,7 +743,7 @@ input::placeholder {
     /* Product Detail Card */
 
     .card-parent{
-      @apply flex flex-col justify-center mx-10 2xl:flex-row  2xl:gap-12;
+      @apply flex flex-col justify-center mx-10 2xl:flex-row 2xl:gap-12 2xl:mt-4;
     }
 
     .card-content-parent{
@@ -848,7 +848,7 @@ input::placeholder {
   }
 
   .new-products{
-    @apply flex flex-row overflow-x-auto overflow-y-hidden md:overflow-visible mt-10 md:grid md:grid-cols-4;
+    @apply flex flex-row overflow-x-auto overflow-y-hidden md:overflow-visible mt-2 md:grid md:grid-cols-4;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none
   }
@@ -892,12 +892,19 @@ input::placeholder {
 
   
   .card-content-parent-home {
-    @apply flex flex-col justify-center items-start gap-1;
+    @apply flex flex-col justify-center items-start;
     
+  }
+
+  .title-price-div{
+    @apply flex flex-col gap-1 -mt-5
+  }
+  .title-price-div p{
+    @apply !mb-0
   }
   
   .card-title-home {
-    @apply text-xs md:text-base lg:text-lg font-bold text-[var(--color-secondary-font)] !mb-0;
+    @apply text-xs md:text-base lg:text-lg font-bold text-[var(--color-secondary-font)];
   }
   
   .card-price-home {
