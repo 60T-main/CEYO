@@ -6,7 +6,7 @@ const InfoSection = ({}) => {
       <section className="info-section">
         <div className="info-why-div">
           <h2 className="info-why inline-font text-black">რატომ</h2>
-          <img src="/public/logo.svg" alt="logo black" />
+          <img src="/logo.svg" alt="logo black" />
         </div>
         <div className="info-div">
           <div className="info-1">
