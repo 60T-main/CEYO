@@ -83,6 +83,7 @@ INTERNAL_IPS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    'ceyo-production.up.railway.app',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
