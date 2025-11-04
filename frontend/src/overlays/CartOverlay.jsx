@@ -49,7 +49,7 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose, handleCheck
                         <>
                           <button
                             onClick={(e) => {
-                              handleRemoveFromCart(cart_item.id, e);
+                              handleRemoveFromCart(e, cart_item.id);
                             }}
                           >
                             <i class="bi bi-dash-circle"></i>
@@ -57,7 +57,7 @@ const CartOverlay = ({ overlayState, overlayClosing, onOverlayClose, handleCheck
                           <p>{cart_item.quantity}</p>
                           <button
                             onClick={(e) => {
-                              handleAddToCart(cart_item.id, e);
+                              handleAddToCart(e, false, cart_item.id);
                             }}
                           >
                             <i class="bi bi-plus-circle"></i>

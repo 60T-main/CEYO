@@ -122,14 +122,6 @@ function App() {
     }
   };
 
-  // Functions
-  const navigate = useNavigate();
-
-  const handleCheckoutNavigate = () => {
-    onOverlayClose('cart');
-    navigate('/checkout');
-  };
-
   // UseEffects
 
   useEffect(() => {
@@ -235,7 +227,6 @@ function App() {
             overlayClosing={overlayClosing}
             onOverlayClose={onOverlayClose}
             useNavigate={useNavigate}
-            handleCheckoutNavigate={handleCheckoutNavigate}
           />
         )}
         <Header MenuComponent={Menu} onOverlayClose={onOverlayClose} onFilter={onFilter}>
@@ -271,7 +262,6 @@ function App() {
                 handleCartUpdate={handleCartUpdate}
                 isLoading={isLoading}
                 CardSkeleton={CardSkeleton}
-                handleCheckoutNavigate={handleCheckoutNavigate}
               ></ProductDetail>
             }
           />

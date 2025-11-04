@@ -61,7 +61,24 @@ class AttributeValue(models.Model):
     value_tr = models.CharField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.attribute.name}: {self.value}"
+        """Avoid DB hits: use cached attribute if available, else fallback."""
+        attr_name = None
+        if 'attribute' in self.__dict__ and getattr(self, 'attribute', None):
+            try:
+                attr_name = self.attribute.name
+            except Exception:
+                attr_name = None
+        if not attr_name:
+            # Fallback without hitting DB
+            if getattr(self, 'attribute_id', None):
+                attr_name = f"Attribute #{self.attribute_id}"
+            else:
+                attr_name = "Attribute"
+        try:
+            val = self.value or ""
+        except Exception:
+            val = ""
+        return f"{attr_name}: {val}"
     
 
 class ProductVariant(models.Model):
@@ -76,21 +93,35 @@ class ProductVariant(models.Model):
         unique_together = ("product", "sku")
 
     def __str__(self):
-        try:
-            product_name = self.product.name if getattr(self, "product_id", None) else "Unassigned product"
-            # Only access M2M if we have a primary key; unsaved instances don't support M2M
-            if self.pk:
-                try:
-                    values = [av.value for av in self.attributes.all()[:3]]
-                except Exception:
-                    values = []
-                attrs = ", ".join(values)
-                suffix = f" ({attrs})" if attrs else ""
-            else:
-                suffix = ""
-            return f"{product_name}{suffix}"
-        except Exception:
-            return f"Variant {getattr(self, 'sku', '') or 'unsaved'}"
+        """
+        Safe string representation that avoids triggering extra DB queries.
+        - Uses cached/prefetched relations only (product, attributes)
+        - Falls back to lightweight labels if relations aren't loaded
+        """
+        # Base label uses SKU or PK without hitting DB
+        base_label = f"Variant {self.sku or self.pk or 'unsaved'}"
+
+        # Try to use cached product name if relation already loaded (no DB call)
+        product_name = None
+        if 'product' in self.__dict__ and getattr(self, 'product', None):
+            try:
+                product_name = self.product.name
+            except Exception:
+                product_name = None
+
+        # Try to use prefetched attributes only (do NOT query if not prefetched)
+        attrs_suffix = ""
+        cache = getattr(self, "_prefetched_objects_cache", None)
+        if cache and 'attributes' in cache:
+            try:
+                values = [av.value for av in cache['attributes'][:3]]
+                if values:
+                    attrs_suffix = f" ({', '.join(values)})"
+            except Exception:
+                attrs_suffix = ""
+
+        label = product_name or base_label
+        return f"{label}{attrs_suffix}"
 
 class ProductImage(models.Model):
     product_variant = models.ForeignKey(ProductVariant, related_name="images", on_delete=models.CASCADE)
@@ -98,14 +129,20 @@ class ProductImage(models.Model):
     alt_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        try:
-            if getattr(self, "product_variant_id", None) and getattr(self.product_variant, "product_id", None):
-                name = self.product_variant.product.name
-            else:
-                name = "Unassigned product"
-        except Exception:
-            name = "Unknown"
-        return f"Image for {name}"
+        """Avoid DB hits: only use cached relations for label."""
+        # Default lightweight label (no DB)
+        base = f"Image #{self.pk or ''}".strip()
+        name = None
+        # Use cached product_variant if already loaded (no implicit fetch)
+        if 'product_variant' in self.__dict__ and getattr(self, 'product_variant', None):
+            pv = self.product_variant
+            # Use cached parent product if already loaded
+            if hasattr(pv, '__dict__') and 'product' in pv.__dict__ and getattr(pv, 'product', None):
+                try:
+                    name = pv.product.name
+                except Exception:
+                    name = None
+        return f"Image for {name}" if name else base
     
 
 
@@ -153,7 +190,19 @@ class CartItem(models.Model):
         unique_together = ('cart', 'product')
 
     def __str__(self):
-        return f"{self.quantity} × {self.product.name}"
+        """Avoid DB hits in admin by only using cached relations."""
+        product_label = None
+        # Access cached product variant if available
+        if 'product' in self.__dict__ and getattr(self, 'product', None):
+            pv = self.product
+            # Access cached parent product if available
+            if hasattr(pv, '__dict__') and 'product' in pv.__dict__ and getattr(pv, 'product', None):
+                try:
+                    product_label = pv.product.name
+                except Exception:
+                    product_label = None
+        product_label = product_label or f"Variant {getattr(self, 'product_id', '')}"
+        return f"{self.quantity} × {product_label}"
 
     @property
     def subtotal(self):

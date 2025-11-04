@@ -25,9 +25,11 @@ def get_or_create_cart(request):
         )
 
         if guest_cart:
-            # Merge items by product
-            existing_products = {cart_item.product_id: cart_item for cart_item in user_cart.items.all()}
-            for guest_item in guest_cart.items.all():
+            # Merge items by product, optimize with select_related
+            user_cart_items = user_cart.items.select_related('product').all()
+            guest_cart_items = guest_cart.items.select_related('product').all()
+            existing_products = {cart_item.product_id: cart_item for cart_item in user_cart_items}
+            for guest_item in guest_cart_items:
                 existing = existing_products.get(guest_item.product_id)
                 if existing:
                     existing.quantity += guest_item.quantity

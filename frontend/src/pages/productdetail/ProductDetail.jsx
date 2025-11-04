@@ -7,6 +7,7 @@ import CustomProducts from '@/components/CustomProducts';
 
 import { useProductContext } from '@/hooks/ProductStates.jsx';
 import { useErrorContext } from '@/hooks/ErrorStates.jsx';
+import { ErrorContext } from '../../hooks/ErrorStates';
 
 import { useApi } from '@/services/api.jsx';
 
@@ -29,12 +30,9 @@ const ProductDetail = ({
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState(1);
 
-  const { productDetail, isLoading } = useProductContext();
-  const [errorMessage, setErrorMessage] = useState(null);
+  const { errorMessageCart } = useErrorContext();
 
-  const onCartError = (message) => {
-    setErrorMessage(message);
-  };
+  const { productDetail, isLoading } = useProductContext();
 
   const fetchComments = async () => {
     const endpoint = `/product/comments/${id}/`;
@@ -117,11 +115,10 @@ const ProductDetail = ({
           POST_OPTIONS={POST_OPTIONS}
           handleCheckoutNavigate={handleCheckoutNavigate}
           variant="product-detail"
-          onCartError={onCartError}
         />
 
         <div className="flex items-center justify-center text-red-600 mt-4 font-bold h-4">
-          {errorMessage ? errorMessage : ''}
+          {errorMessageCart ? errorMessageCart : ''}
         </div>
       </div>
 

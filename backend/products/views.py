@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView, View
+from django.db.models import Prefetch
 
 from django.views.decorators.csrf import csrf_exempt
 
@@ -112,12 +113,22 @@ def CategoryList(request):
 @api_view(['GET'])
 def getCart(request):
     cart = get_or_create_cart(request)
-    # Prefetch related objects for performance
-    cart = Cart.objects.prefetch_related(
-    "items__product__images",
-    "items__product__attributes",
-    "items__product__attributes__attribute",
-).select_related("user").get(pk=cart.pk)
+    # Prefetch items with a queryset that selects FKs and prefetches M2M to avoid N+1
+    items_qs = (
+        CartItem.objects
+        .select_related("product", "product__product")
+        .prefetch_related(
+            "product__images",
+            "product__attributes",
+            "product__attributes__attribute",
+        )
+    )
+    cart = (
+        Cart.objects
+        .select_related("user")
+        .prefetch_related(Prefetch("items", queryset=items_qs))
+        .get(pk=cart.pk)
+    )
     serializer = CartSerializer(cart, many=False)
     return Response(serializer.data)
 
@@ -129,14 +140,12 @@ def handleCartItems(request):
         return Response({"error": "Missing product id"}, status=400)
 
     cart = get_or_create_cart(request)
-    # Prefetch related objects for performance
-    cart = Cart.objects.prefetch_related(
-    "items__product__images",
-    "items__product__attributes",
-    "items__product__attributes__attribute",
-).select_related("user").get(pk=cart.pk)
     try:
-        product = get_object_or_404(ProductVariant, pk=product_id)
+        product = ProductVariant.objects.prefetch_related(
+    "product",
+    "attributes",
+    "images"
+    ).get(pk=product_id)
     except Exception:
         return Response({"error": "Product variant not found"}, status=404)
 
@@ -155,6 +164,22 @@ def handleCartItems(request):
             item.save()
 
     request.session.save()
+    # Refetch the cart with all prefetches to ensure up-to-date data
+    items_qs = (
+        CartItem.objects
+        .select_related("product", "product__product")
+        .prefetch_related(
+            "product__images",
+            "product__attributes",
+            "product__attributes__attribute",
+        )
+    )
+    cart = (
+        Cart.objects
+        .select_related("user")
+        .prefetch_related(Prefetch("items", queryset=items_qs))
+        .get(pk=cart.pk)
+    )
     serializer = CartSerializer(cart)
     return Response(serializer.data)
 

@@ -1,6 +1,8 @@
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const csrftoken = getCookie('csrftoken');
 
+import { useNavigate } from 'react-router-dom';
+
 // FETCH OPTIONS //
 export const GET_OPTIONS = {
   method: 'GET',
@@ -38,10 +40,19 @@ export function useApi() {
     setRecentProductList,
     setCategoriesList,
     setCart,
+    selectedColor,
+    selectedSize,
   } = useProductContext();
-  const { setErrorMessage } = useErrorContext();
+  const { setErrorMessage, setErrorMessageCart } = useErrorContext();
   const { setUserInfo, setLoggedIn } = useUserContext();
   const { setIsLoading, setAddToCartLoading } = usePageContext();
+
+  const navigate = useNavigate();
+
+  const handleCheckoutNavigate = () => {
+    onOverlayClose('cart');
+    navigate('/checkout');
+  };
 
   // Fetch all products
   const fetchProducts = async (filters = {}) => {
@@ -165,7 +176,7 @@ export function useApi() {
 
   //  Fetch Cart
   const fetchCart = async (variant) => {
-    variant !== 'addToCart' ? setIsLoading(true) : setAddToCartLoading(true);
+    setIsLoading(true);
     const endpoint = `/product/cart/`;
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
@@ -184,12 +195,11 @@ export function useApi() {
       setErrorMessage('Error fetching cart. Please try again later...');
     } finally {
       setIsLoading(false);
-      setAddToCartLoading(false);
     }
   };
 
   // fetch add/remove cart
-  const handleRemoveFromCart = async (id, e) => {
+  const handleRemoveFromCart = async (e, id) => {
     setIsLoading(true);
     e.preventDefault();
     const endpoint = '/product/cart/delete/';
@@ -200,32 +210,46 @@ export function useApi() {
       });
       const data = await response.json();
       if (!response.ok) {
+        setCart([]);
         throw new Error('Failed to remove cart item');
       }
-      handleCartUpdate();
+      setCart(data);
     } catch (error) {
       console.error('Error removing cart item:', error);
       setErrorMessage('Error removing cart item. Please try again later...');
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleAddToCart = async (id, e) => {
-    setIsLoading(true);
+  const handleAddToCart = async (e, buyNow, id) => {
     e.preventDefault();
-    const endpoint = '/product/cart/add/';
-    try {
-      const response = await fetch(API_BASE_URL + endpoint, {
-        ...POST_OPTIONS,
-        body: JSON.stringify({ id: id }),
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error('Failed to add cart item');
+    if (!(selectedColor && selectedSize) && !id) {
+      setErrorMessageCart('გთხოვთ აირჩიეთ ფერი და ზომა');
+    } else {
+      setIsLoading(true);
+      const endpoint = '/product/cart/add/';
+
+      try {
+        const response = await fetch(API_BASE_URL + endpoint, {
+          ...POST_OPTIONS,
+          body: JSON.stringify({ id: id }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          setCart([]);
+          throw new Error('Failed to add to cart:', data);
+        }
+        setCart(data);
+        setErrorMessageCart(null);
+        buyNow && handleCheckoutNavigate();
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      } finally {
+        setIsLoading(false);
       }
-      handleCartUpdate();
-    } catch (error) {
-      console.error('Error adding cart item:', error);
-      setErrorMessage('Error adding cart item. Please try again later...');
     }
   };
 

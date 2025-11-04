@@ -20,6 +20,11 @@ export const ProductProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
+  // Product Detail States
+
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+
   // Delivery Cost State
   const [deliveryCost, setDeliveryCost] = useState(null);
 
@@ -83,6 +88,10 @@ export const ProductProvider = ({ children }) => {
         setChosenCategory,
         chosenSubCategory,
         setChosenSubCategory,
+        selectedColor,
+        setSelectedColor,
+        selectedSize,
+        setSelectedSize,
       }}
     >
       {children}

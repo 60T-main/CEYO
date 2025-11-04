@@ -82,22 +82,27 @@ class CartSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_cart_items(self, obj):
+        # items, product, and product.product are now select_related in the view
         items = self._prefetched_list(obj, 'items')
         result = []
         for item in items:
+            product = item.product  # select_related('items__product') ensures no extra query
+            parent_product = product.product  # select_related('items__product__product') ensures no extra query
             attributes = {}
-            product_attributes = self._prefetched_list(item.product, 'attributes')
+            # attributes and images are prefetched
+            product_attributes = self._prefetched_list(product, 'attributes')
             for attribute in product_attributes:
+                # attribute.attribute is select_related via prefetch path
                 attributes[attribute.attribute.name] = attribute.value
-            images = self._prefetched_list(item.product, 'images')
+            images = self._prefetched_list(product, 'images')
             result.append({
-                "id": item.product.id,
+                "id": product.id,
                 "cart_item_id": item.id,
-                "name": item.product.product.name,  
+                "name": parent_product.name,
                 "attributes": attributes,
-                "images": [img.image.url if hasattr(img.image, 'url') else str(img.image) for   img in images],
+                "images": [img.image.url if hasattr(img.image, 'url') else str(img.image) for img in images],
                 "quantity": item.quantity,
-                "unit_price": float(item.product.price),
+                "unit_price": float(product.price),
                 "subtotal": float(item.subtotal),
             })
         return result
