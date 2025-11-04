@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import AddToCart from '@/pages/allproducts/AddToCart.jsx';
+import AddToCart from '@/pages/productdetail/AddToCart.jsx';
 
 import { Link } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ const Product = ({
   API_BASE_URL,
   POST_OPTIONS,
   handleCheckoutNavigate,
+  onCartError,
 }) => {
   const { isLoading } = usePageContext();
 
@@ -243,6 +244,7 @@ const Product = ({
                 selectedSize={selectedSize}
                 checkVariant={checkVariant}
                 handleCheckoutNavigate={handleCheckoutNavigate}
+                onCartError={onCartError}
               />
             </div>
           </div>

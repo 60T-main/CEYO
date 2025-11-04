@@ -3,6 +3,7 @@ import React from 'react';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 import { useErrorContext } from '@/hooks/ErrorStates';
+import { usePageContext } from '../../hooks/PageStates';
 
 const AddToCart = ({
   id,
@@ -11,14 +12,16 @@ const AddToCart = ({
   selectedColor,
   selectedSize,
   handleCheckoutNavigate,
+  onCartError,
 }) => {
-  const { setErrorMessage } = useErrorContext();
+  const { setAddToCartLoading, addToCartLoading } = usePageContext();
 
   const handleAddToCart = async (e, buyNow) => {
     e.preventDefault();
+    setAddToCartLoading(true);
 
     if (!(selectedColor && selectedSize) && !id) {
-      setErrorMessage('გთხოვთ აირჩიეთ ფერი და ზომა');
+      onCartError('გთხოვთ აირჩიეთ ფერი და ზომა');
     } else {
       const endpoint = '/product/cart/add/';
 
@@ -33,13 +36,12 @@ const AddToCart = ({
         if (!response.ok) {
           throw new Error('Failed to add to cart:', data);
         }
-
+        onCartError(null);
         buyNow && handleCheckoutNavigate();
       } catch (error) {
         console.error('Error adding to cart:', error);
-        setErrorMessage('Error adding to cart. Please try again later...');
       } finally {
-        handleCartUpdate();
+        handleCartUpdate('addToCart');
       }
     }
   };
@@ -49,14 +51,14 @@ const AddToCart = ({
       <form onSubmit={(e) => handleAddToCart(e, true)} className="cart-form">
         <div className="cart-buy shadow button-animation">
           <button className={'inline-font w-full'} type="submit">
-            იყიდე ახლავე
+            {addToCartLoading ? <span className="loader add-to-cart" /> : 'იყიდე ახლავე'}
           </button>
         </div>
       </form>
       <form onSubmit={handleAddToCart} className="cart-form">
         <div className="cart-cart shadow">
           <button className={'inline-font w-full'} type="submit">
-            დაამატე კალათაში
+            {addToCartLoading ? <span className="loader add-to-cart" /> : 'დაამატე კალათაში'}
           </button>
         </div>
       </form>

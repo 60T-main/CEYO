@@ -41,7 +41,7 @@ export function useApi() {
   } = useProductContext();
   const { setErrorMessage } = useErrorContext();
   const { setUserInfo, setLoggedIn } = useUserContext();
-  const { setIsLoading } = usePageContext();
+  const { setIsLoading, setAddToCartLoading } = usePageContext();
 
   // Fetch all products
   const fetchProducts = async (filters = {}) => {
@@ -164,8 +164,8 @@ export function useApi() {
   };
 
   //  Fetch Cart
-  const fetchCart = async () => {
-    setIsLoading(true);
+  const fetchCart = async (variant) => {
+    variant !== 'addToCart' ? setIsLoading(true) : setAddToCartLoading(true);
     const endpoint = `/product/cart/`;
     try {
       const response = await fetch(API_BASE_URL + endpoint, GET_OPTIONS);
@@ -184,6 +184,7 @@ export function useApi() {
       setErrorMessage('Error fetching cart. Please try again later...');
     } finally {
       setIsLoading(false);
+      setAddToCartLoading(false);
     }
   };
 
@@ -228,8 +229,8 @@ export function useApi() {
     }
   };
 
-  const handleCartUpdate = async () => {
-    await fetchCart();
+  const handleCartUpdate = async (variant) => {
+    await fetchCart(variant);
   };
 
   // USER FETCH FUNCTIONS //

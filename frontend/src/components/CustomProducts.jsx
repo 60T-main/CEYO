@@ -17,6 +17,7 @@ const CustomProducts = ({
   variant === 'new' && (customProducts = dateOrderedProducts.slice(0, cardCount));
 
   variant === 'recent' &&
+    recentProductList &&
     (customProducts = recentProductList.filter((product) => product.id !== currentProduct.id));
 
   return (

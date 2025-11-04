@@ -129,8 +129,6 @@ const CheckoutDelivery = ({ onNavigateBtnClick }) => {
         phone: data.phone || '',
       });
 
-      console.log('oldForm from api call:', data);
-
       if (data.Response === 'False') {
         setErrorMessage(data.error || 'Failed to get address data');
         return;

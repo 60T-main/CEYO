@@ -10,8 +10,9 @@ export const PageProvider = ({ children }) => {
   // Header Animation State
   const [headerAnimate, setHeaderAnimate] = useState(null);
 
-  // Loading State
+  // Loading States
   const [isLoading, setIsLoading] = useState(false);
+  const [addToCartLoading, setAddToCartLoading] = useState(false);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,6 +32,8 @@ export const PageProvider = ({ children }) => {
         setHeaderAnimate,
         isLoading,
         setIsLoading,
+        addToCartLoading,
+        setAddToCartLoading,
         currentPage,
         setCurrentPage,
         postsPerPage,

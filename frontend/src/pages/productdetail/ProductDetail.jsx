@@ -30,7 +30,11 @@ const ProductDetail = ({
   const [rating, setRating] = useState(1);
 
   const { productDetail, isLoading } = useProductContext();
-  const { errorMessage, setErrorMessage } = useErrorContext();
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const onCartError = (message) => {
+    setErrorMessage(message);
+  };
 
   const fetchComments = async () => {
     const endpoint = `/product/comments/${id}/`;
@@ -47,15 +51,14 @@ const ProductDetail = ({
       const data = await response.json();
 
       if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch comments');
+        console.error(data.Error || 'Failed to fetch comments');
         setCommentList([]);
         return;
       }
 
       setCommentList(data);
     } catch (error) {
-      console.error('Error comments:', error);
-      setErrorMessage('Error fetching comments. Please try again later...');
+      console.error('Error fetching comments:', error);
     }
   };
 
@@ -83,7 +86,7 @@ const ProductDetail = ({
       const data = await response.json();
 
       if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to add comment');
+        console.error(data.Error || 'Failed to add comment');
       } else {
         // Optimistic clear + refresh
         setName('');
@@ -94,7 +97,6 @@ const ProductDetail = ({
       }
     } catch (error) {
       console.error('Error adding comment:', error);
-      setErrorMessage('Error adding comment. Please try again later...');
     }
   };
 
@@ -115,11 +117,12 @@ const ProductDetail = ({
           POST_OPTIONS={POST_OPTIONS}
           handleCheckoutNavigate={handleCheckoutNavigate}
           variant="product-detail"
+          onCartError={onCartError}
         />
 
-        {errorMessage && (
-          <div className="flex items-center justify-center text-red-600 my-2">{errorMessage}</div>
-        )}
+        <div className="flex items-center justify-center text-red-600 mt-4 font-bold h-4">
+          {errorMessage ? errorMessage : ''}
+        </div>
       </div>
 
       {{ recentProductList } && (

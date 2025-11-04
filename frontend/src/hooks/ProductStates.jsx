@@ -9,7 +9,7 @@ export const ProductProvider = ({ children }) => {
   // All Products State
   const [productDetail, setProductDetail] = useState([]);
   // Recent Products State
-  const [recentProductList, setRecentProductList] = useState([]);
+  const [recentProductList, setRecentProductList] = useState(null);
   // Date Ordered Products State
   const [dateOrderedProducts, setDateOrderedProducts] = useState([]);
   // Categories List
