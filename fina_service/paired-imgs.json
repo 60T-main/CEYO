@@ -1,0 +1,5140 @@
+[
+    {
+        "name": "0157",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0157-36-40-kilik-ayakkabi-21864-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9878-14",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9878-14-35-41-terlk-21503-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3000-2",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3000-2-35-39-yazlik-terlk-23641-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3000-2",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-3000-2-40-45-yazlik-terlk-20860-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3200-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-3200-1-40-46-yazlik-terlk-21102-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3200-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-3200-1-40-46-yazlik-terlk-21064-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3400-2 (35-40)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3400-2-35-40-yazlik-terlk-21274-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3400-2 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3400-2-35-40-yazlik-terlk-21274-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3400-2 (35-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3400-2-35-40-yazlik-terlk-21272-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3400-2 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3400-2-35-40-yazlik-terlk-21272-13-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-11",
+        "color": "FUME",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-11-40-46-yazlik-terlk-23219-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-11",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-6100-11-35-39-yazlik-terlk-23364-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-11",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-6100-11-35-39-yazlik-terlk-23360-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-13 (-39)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-13-35-39-terlk-23380-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-13 (35-39)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-13-35-39-terlk-23380-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-13 (35-)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-13-35-39-terlk-23380-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-13 (-46)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-13-40-46-yazlik-terlk-23222-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-13 (40-46)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-13-40-46-yazlik-terlk-23222-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-21",
+        "color": "FUME",
+        "images": []
+    },
+    {
+        "name": "6100-21 (-39)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-21-35-39-terlk-23371-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-21 (35-39)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-21-35-39-terlk-23371-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-21 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-genc-erkek-terlik-6100-21-35-39-terlk-23371-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-21 (-46)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-21-40-46-yazlik-terlk-23226-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-21 (40-46)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-21-40-46-yazlik-terlk-23226-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-22 (-46)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-22-40-46-yazlik-terlk-20544-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-22 (40-46)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-22-40-46-yazlik-terlk-20544-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-22 (-46)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-22-40-46-yazlik-terlk-20531-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6100-22 (40-46)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6100-22-40-46-yazlik-terlk-20531-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6300-1 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6300-1-40-45-yazlik-terlk-21230-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6300-1 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6300-1-40-45-yazlik-terlk-21230-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6300-1 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-6300-1-40-45-yazlik-terlk-21230-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9100-19",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9100-19-40-45-yazlik-terlk-23213-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9100-19",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9100-19-40-45-yazlik-terlk-23211-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9100-8",
+        "color": "NAVY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9100-8-40-45-yazlik-terlk-23208-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9100-8",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9100-8-40-45-yazlik-terlk-23209-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-12",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-12-35-41-yazlik-terlk-23370-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-12",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-12-35-41-yazlik-terlk-23368-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-12",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-12-35-41-yazlik-terlk-23375-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-3 (35-41)",
+        "color": "BEJ",
+        "images": []
+    },
+    {
+        "name": "9200-3 (35-)",
+        "color": "BEJ",
+        "images": []
+    },
+    {
+        "name": "9200-3 (35-41)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-3-35-41-yazlik-terlk-20804-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-3 (35-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-3-35-41-yazlik-terlk-20804-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-3 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-3-35-41-yazlik-terlk-20767-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-3 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-3-35-41-yazlik-terlk-20767-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-3",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-3-35-41-yazlik-terlk-20779-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-15 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-15-35-41-yazlik-terlk-23058-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-15 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-15-35-41-yazlik-terlk-23058-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-15 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-15-35-41-yazlik-terlk-23059-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-15 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-15-35-41-yazlik-terlk-23059-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9814-4 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9814-4-35-41-yazlik-terlk-23115-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9814-4 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9814-4-35-41-yazlik-terlk-23115-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9814-4",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9814-4-35-41-yazlik-terlk-23116-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9814-4",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9814-4-35-41-yazlik-terlk-23117-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9827-8 (35-41)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9827-8-35-41-yazlik-terlk-23622-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9827-8 (35-)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9827-8-35-41-yazlik-terlk-23622-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-3 (-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-3-35-41-sandalet-23408-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-3 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-3-35-41-sandalet-23408-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-3 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-3-35-41-sandalet-23408-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9829 (-46) SIYAH",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sandalet-9829-40-46-sandalet-23244-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9829 (40-46) SIYAH",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sandalet-9829-40-46-sandalet-23244-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9829 (40-) SIYAH",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sandalet-9829-40-46-sandalet-23244-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-1-35-41-terlk-20535-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-1-35-41-terlk-20529-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-1-35-41-terlk-20523-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-35-41-terlk-20512-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX-1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-1-35-41-terlk-21377-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-1-35-41-terlk-21380-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-1-35-41-terlk-21383-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-1-40-46-terlk-20508-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-1-40-46-terlk-20501-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-1-40-46-terlk-20494-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-40-46-terlk-20486-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX-1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-1-40-46-terlk-21365-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-1-40-46-terlk-21370-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-1-40-46-terlk-21374-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9851-6 (-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9851-6-40-45-yazlik-terlk-23276-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9851-6 (40-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9851-6-40-45-yazlik-terlk-23276-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9851-6 (40-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9851-6-40-45-yazlik-terlk-23276-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9855-11 (35-41)",
+        "color": "CAMEL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9855-11-35-41-yazlik-terlk-21753-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9855-11 (35-)",
+        "color": "CAMEL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9855-11-35-41-yazlik-terlk-21753-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9855-11 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9855-11-35-41-yazlik-terlk-21755-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9855-11 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9855-11-35-41-yazlik-terlk-21755-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-1 (-42)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-1-35-42-yazlik-terlk-23630-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-1 (35-42)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-1-35-42-yazlik-terlk-23630-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-1 (35-42)",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-1-35-42-yazlik-terlk-21396-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-1 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-1-35-42-yazlik-terlk-21392-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-1 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-1-35-42-yazlik-terlk-21392-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-2 (-42)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-2-35-42-yazlik-terlk-23636-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-2 (35-42)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-2-35-42-yazlik-terlk-23636-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-2 (35-42)",
+        "color": "KAHVE",
+        "images": []
+    },
+    {
+        "name": "9863-2 (-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-2-35-42-yazlik-terlk-23635-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-2 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-2-35-42-yazlik-terlk-23635-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-2 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-2-35-42-yazlik-terlk-23635-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9877",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9877-40-46-yazlik-terlk-20395-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9877",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9877-40-46-yazlik-terlk-20368-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9877-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9877-1-40-46-yazlik-terlk-23252-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9877-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9877-1-40-46-yazlik-terlk-23251-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9878-14",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9878-14-35-41-terlk-21499-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9878-14",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9878-14-35-41-terlk-21505-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (-34)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21196-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-34)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21196-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21196-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (-34)",
+        "color": "FUSYA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21202-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-34)",
+        "color": "FUSYA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21202-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-)",
+        "color": "FUSYA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21202-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (-34)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21207-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-34)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21207-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21207-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21213-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21213-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F11 (24-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-9910-f11-24-34-sandalet-21213-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (-46)",
+        "color": "CAMEL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21675-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (40-46)",
+        "color": "CAMEL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21675-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (-46)",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21679-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (40-46)",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21679-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (40-)",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21679-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (-46)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21677-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (40-46)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21677-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-21677-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z34 (35-42) A",
+        "color": "MAVI",
+        "images": []
+    },
+    {
+        "name": "9910-Z34 (35-42)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z34-35-42-yazlik-terlk-21749-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z34 (35-42)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z34-35-42-yazlik-terlk-21750-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z34 (35-42)",
+        "color": "SARI",
+        "images": []
+    },
+    {
+        "name": "9910-Z34 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z34-35-42-yazlik-terlk-21752-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z34 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z34-35-42-yazlik-terlk-21752-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926",
+        "color": "BEYAZ",
+        "images": []
+    },
+    {
+        "name": "9926",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9926-40-46-terlk-21103-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9926-40-46-terlk-21098-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9926-1-40-46-terlk-21087-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9926-1-40-46-terlk-21096-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9926-1-40-46-terlk-21076-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946 (35-41)",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-35-41-yazlik-terlk-21459-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-35-41-yazlik-terlk-21461-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946 (35-41)",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-35-41-yazlik-terlk-21462-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946 (35-)",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-35-41-yazlik-terlk-21462-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-1 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-1-35-41-yazlik-terlk-23017-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-1 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-1-35-41-yazlik-terlk-23017-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9956 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9956-40-45-yazlik-terlk-23180-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9956 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9956-40-45-yazlik-terlk-23180-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9956 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9956-40-45-yazlik-terlk-23180-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9959-Z2",
+        "color": "ALTIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9959-z2-35-41-yazlik-terlk-23584-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9959-Z2 (35-39)",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9959-z2-35-41-yazlik-terlk-23583-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9959-Z2 (35-)",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9959-z2-35-41-yazlik-terlk-23583-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9959-Z2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9959-z2-35-41-yazlik-terlk-23585-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9966-4 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9966-4-35-41-yazlik-terlk-21659-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9966-4 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9966-4-35-41-yazlik-terlk-21669-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9966-4 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9966-4-35-41-yazlik-terlk-21669-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9966-4 (35-41)",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9966-4-35-41-yazlik-terlk-21692-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9966-4 (35-)",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9966-4-35-41-yazlik-terlk-21692-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-1 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-1-35-42-yazlik-terlk-21641-14-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-34)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21604-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21604-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-34)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21614-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21614-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21618-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-F (24-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-aquaflex-f-29-34-sandalet-21618-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (40-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (40-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21491-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21491-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21491-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-Z1 (35-41)",
+        "color": "HAKI",
+        "images": []
+    },
+    {
+        "name": "AQUAFLEX-Z1 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-aquaflex-z1-35-41-yazlik-terlk-23703-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-10",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-bahama-10-40-48-yazlik-terlk-20278-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-10",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-bahama-10-40-48-yazlik-terlk-20246-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-3 (19-34)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-bello-3-19-34-sandalet-22994-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-3 (19-)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-bello-3-19-34-sandalet-22994-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-3 (19-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-bello-3-19-34-sandalet-22993-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-3 (19-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-bello-3-19-34-sandalet-22993-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-34)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21723-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21723-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (-34)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21725-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-34)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21725-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21725-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21726-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELLO-4 (24-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-bello-4-24-34-terlk-21726-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-34)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20616-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20616-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-34)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20625-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20625-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20639-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-22 (19-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-22-24-34-terlk-20639-14-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20326-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20328-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20329-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20315-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20316-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20317-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20360-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20361-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20362-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20339-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20340-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20343-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20291-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20292-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20294-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "YESIL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20309-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20311-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-mediclogs-41-46-terlk-20313-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21125-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (40-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21125-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (40-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21125-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (-45)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21131-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (40-45)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21131-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21133-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-M (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-new-splash-m-40-45-yazlik-terlk-21133-13-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-sabotech-c1-35-40-terlk-21539-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-sabotech-c1-35-40-terlk-21540-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-sabotech-c1-35-40-terlk-21541-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C1",
+        "color": "YESIL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c1-41-46-terlk-21514-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C1",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c1-41-46-terlk-21508-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c1-41-46-terlk-21523-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C2",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c2-41-46-terlk-21553-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C2",
+        "color": "LACIVERT",
+        "images": []
+    },
+    {
+        "name": "SABOTECH-C2",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c2-41-46-terlk-21568-14-B.jpg"
+        ]
+    },
+    {
+        "name": "SABOTECH-C2",
+        "color": "YESIL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-sabotech-c2-41-46-terlk-21560-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-25",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-25-35-42-kilik-terlk-22975-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-17",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-17-35-41-kilik-terlk-20248-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-40",
+        "color": "ALTIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-40-35-41-kilik-terlk-21040-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-40",
+        "color": "GUMUS",
+        "images": []
+    },
+    {
+        "name": "9924-8 (-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9924-8-35-42-kilik-ayakkabi-21926-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9924-8 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9924-8-35-42-kilik-ayakkabi-21926-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9924-8 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9924-8-35-42-kilik-ayakkabi-21926-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-8 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-8-35-41-kilik-terlk-21465-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-8 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-8-35-41-kilik-terlk-21465-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9933-7 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-7-40-45-kilik-terlk-21418-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9933-7 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-7-40-45-kilik-terlk-21418-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9933-7 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-7-40-45-kilik-terlk-21418-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-5 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-5-35-41-kilik-terlk-23696-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-5 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-5-35-41-kilik-terlk-23696-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9955-1",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9955-1-40-45-kilik-terlk-21065-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (-34)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20985-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-34)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20985-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20985-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (-34)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20989-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-34)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20989-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20989-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20992-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-34)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20992-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F2 (29-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-puffi-f2-29-34-panduf-20992-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-M3",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-puffi-m3-40-45-kilik-terlk-20942-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4 (-41)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20964-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4 (35-41)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20964-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20973-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20973-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20978-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21007-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21007-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21007-14-B.jpg"
+        ]
+    },
+    {
+        "name": "RAMONA-3 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-ramona-3-35-41-kilik-terlk-21024-14-B.jpg"
+        ]
+    },
+    {
+        "name": "RAMONA-3 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-ramona-3-35-41-kilik-terlk-21024-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9933",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-40-45-kilik-terlk-21629-14-B.jpg"
+        ]
+    },
+    {
+        "name": "New Splash -Z",
+        "color": "Black",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21167-13-B.jpg"
+        ]
+    },
+    {
+        "name": "New Splash -Z",
+        "color": "Fuchsia",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21159-13-B.jpg"
+        ]
+    },
+    {
+        "name": "New Splash -Z",
+        "color": "Blue",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21163-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-35-41-kilik-terlk-21619-14-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW SPLASH -Z",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21159-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW SPLASH -Z",
+        "color": "MAVY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21163-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-7",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-7-35-42-kilik-terlk-21320-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-20",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-20-35-41-kilik-terlk-22869-14-B.jpg"
+        ]
+    },
+    {
+        "name": "RAMONA-3 (35-41)",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-ramona-3-35-41-kilik-terlk-21017-14-B.jpg"
+        ]
+    },
+    {
+        "name": "RAMONA-3 (35-)",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-ramona-3-35-41-kilik-terlk-21017-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-20",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-20-35-41-kilik-terlk-22790-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21003-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (40-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21003-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-3 (40-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-3-40-45-kilik-terlk-21003-14-B.jpg"
+        ]
+    },
+    {
+        "name": "510",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-510-36-40-yazlik-ayakkabi-21212-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-12",
+        "color": "PUCHSIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-bahama-12-35-41-yazlik-terlk-21367-14-B.jpg"
+        ]
+    },
+    {
+        "name": "MINELLI TOPUKLU-2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-minelli-topuklu-2-35-41-yazlik-terlk-21248-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-26",
+        "color": "FUSCHIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-26-19-34-sandalet-22973-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-26",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-26-19-34-sandalet-22974-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-5",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-5-35-41-yazlik-terlk-23107-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-5",
+        "color": "GOLD",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-5-35-41-yazlik-terlk-23106-14-B.jpg"
+        ]
+    },
+    {
+        "name": "510",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-510-36-40-yazlik-ayakkabi-21204-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9876-17",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9876-17-35-42-yazlik-terlk-21446-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2021-7",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2021-7-20-30-panduf-21146-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2021-7",
+        "color": "FUSCHIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2021-7-20-30-panduf-21130-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-20",
+        "color": "turquoise",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-20-35-41-kilik-terlk-22865-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9922-12",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9922-12-35-41-yazlik-terlk-20977-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z49",
+        "color": "ALTIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z49-35-42-yazlik-terlk-20983-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z49",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z49-35-42-yazlik-terlk-20988-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z49",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z49-35-42-yazlik-terlk-20994-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9922-12",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9922-12-35-41-yazlik-terlk-20961-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-11",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9953-11-35-41-yazlik-terlk-20875-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-11",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9953-11-35-41-yazlik-terlk-20866-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-1",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-1-35-42-yazlik-terlk-21648-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-1 SEDEF",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-1-35-42-yazlik-terlk-21656-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-3",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-3-35-41-yazlik-terlk-20763-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-3",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-3-35-41-yazlik-terlk-20752-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-12",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-bahama-12-35-41-yazlik-terlk-21372-14-B.jpg"
+        ]
+    },
+    {
+        "name": "OLIVA-1",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-oliva-1-35-41-yazlik-terlk-20532-14-B.jpg"
+        ]
+    },
+    {
+        "name": "510",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-510-36-40-yazlik-ayakkabi-21208-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-7",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-7-35-41-sandalet-21008-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-5",
+        "color": "BLUE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-5-35-41-yazlik-terlk-23105-14-B.jpg"
+        ]
+    },
+    {
+        "name": "CAPRI-26",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-26-19-34-sandalet-22971-14-B.jpg"
+        ]
+    },
+    {
+        "name": "OLIVA-1",
+        "color": "GOLD",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-oliva-1-35-41-yazlik-terlk-20521-14-B.jpg"
+        ]
+    },
+    {
+        "name": "OLIVA-1",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-oliva-1-35-41-yazlik-terlk-20525-14-B.jpg"
+        ]
+    },
+    {
+        "name": "109",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-109-36-40-kilik-ayakkabi-20426-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-7",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-7-40-45-kilik-terlk-21495-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-10",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-10-40-45-kilik-terlk-21094-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-4",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-4-35-42-kilik-terlk-21331-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-9",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-9-40-45-kilik-terlk-21097-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-25",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-25-35-42-kilik-terlk-22976-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2008",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-2008-36-40-bot-20391-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-33",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-33-35-42-kilik-terlk-20342-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-24",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-24-35-41-kilik-terlk-21694-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-M3",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-puffi-m3-40-45-kilik-terlk-20952-14-B.jpg"
+        ]
+    },
+    {
+        "name": "MARINA-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-marina-1-35-41-yazlik-terlk-22921-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0402",
+        "color": "BLACK",
+        "images": []
+    },
+    {
+        "name": "0402",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-34-35-41-kilik-terlk-23385-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0402",
+        "color": "GREY",
+        "images": []
+    },
+    {
+        "name": "510",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-510-36-40-yazlik-ayakkabi-21203-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-36",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-36-35-42-yazlik-terlk-23530-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-36",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-36-35-42-yazlik-terlk-23532-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-36",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-36-35-42-yazlik-terlk-23531-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-1",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-1-35-41-yazlik-terlk-23016-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9959-Z2",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9959-z2-35-41-yazlik-terlk-23583-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-8",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-8-35-42-yazlik-terlk-23076-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-8",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-8-35-42-yazlik-terlk-23074-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELIZE",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-belize-35-40-yazlik-terlk-21295-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MINELLI TOPUKLU-2 SEDEF",
+        "color": "SIYAH",
+        "images": []
+    },
+    {
+        "name": "MINELLI TOPUKLU-2",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-minelli-topuklu-2-35-41-yazlik-terlk-21255-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6005",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-32-24-34-sandalet-22981-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MINERVA TOKALI",
+        "color": "BEIJE",
+        "images": []
+    },
+    {
+        "name": "6003",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-32-24-34-sandalet-22978-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW SPLASH-Z",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21159-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-19",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-19-35-41-yazlik-terlk-23407-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-35-41-terlk-20515-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-35-41-terlk-20519-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-15",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-15-35-41-yazlik-terlk-23061-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BELIZE",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-belize-35-40-yazlik-terlk-21303-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9808-19",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9808-19-35-41-yazlik-terlk-23410-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6500-1 PEARL",
+        "color": "RED",
+        "images": []
+    },
+    {
+        "name": "9975-3",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-3-35-41-yazlik-terlk-20729-14-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-12",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-bahama-12-35-41-yazlik-terlk-22265-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-1",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-1-35-41-yazlik-terlk-23015-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-11",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9953-11-35-41-yazlik-terlk-20856-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-2-35-41-yazlik-terlk-21287-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-2",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-2-35-41-yazlik-terlk-21278-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-2",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-2-35-41-yazlik-terlk-21283-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-5",
+        "color": "GUMUS",
+        "images": []
+    },
+    {
+        "name": "9922-12",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9922-12-35-41-yazlik-terlk-20944-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1701",
+        "color": "BLACK",
+        "images": []
+    },
+    {
+        "name": "1701",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-11-35-41-kilik-terlk-23810-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1701",
+        "color": "TABACCO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-6-40-45-kilik-terlk-22399-13-B.jpg"
+        ]
+    },
+    {
+        "name": "6005",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sandalet-capri-32-24-34-sandalet-22981-13-B.jpg"
+        ]
+    },
+    {
+        "name": "6005",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-capri-33-24-34-terlk-22990-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MINELLI TOPUKLU",
+        "color": "ALTIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-minelli-topuklu-35-41-yazlik-terlk-20781-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20827-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20829-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20831-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21068-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21070-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21072-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "BLUE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21079-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21080-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21082-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20853-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20854-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20855-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "WHITE-LACIVERTI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22108-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22109-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22111-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22108-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22109-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-22111-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "KHAKI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20864-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20865-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20868-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-20799-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-20801-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-troya-40-46-yazlik-terlk-20803-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-26",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-26-35-41-yazlik-terlk-23430-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-26",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-26-35-41-yazlik-terlk-23429-14-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20857-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20859-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20862-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9946-26",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9946-26-35-41-yazlik-terlk-23431-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1703",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-6-40-45-kilik-terlk-22398-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M",
+        "color": "ANTRASITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m-40-45-yazlik-terlk-21496-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-Z1",
+        "color": "ANTRASITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-aquaflex-z1-35-41-yazlik-terlk-23708-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9964-6",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9964-6-40-45-yazlik-terlk-23188-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9968-4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9968-4-40-45-yazlik-terlk-23192-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-33",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-33-35-42-kilik-terlk-20358-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-33",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-33-35-42-kilik-terlk-20325-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-33",
+        "color": "GOLD",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-33-35-42-kilik-terlk-20306-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9964-6",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9964-6-40-45-yazlik-terlk-23187-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9920-32",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9920-32-35-42-yazlik-ayakkabi-21176-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2052",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-2052-26-30-bot-20310-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9925-35",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-9925-35-40-46-yazlik-ayakkabi-21192-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-4",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-4-35-42-kilik-terlk-21328-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-4-35-42-kilik-terlk-21327-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3915",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-3915-26-36-bot-21049-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3915",
+        "color": "LACIVERT",
+        "images": []
+    },
+    {
+        "name": "3921",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-3921-26-36-bot-21022-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3943",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-3943-21-25-ayakkabi-21005-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3948",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-3948-21-25-bot-20995-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4099",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4099-26-36-bot-20714-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4101",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4101-31-40-ayakkabi-20705-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4101",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4101-31-40-ayakkabi-20698-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2021-7",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2021-7-20-30-panduf-21136-14-B.jpg"
+        ]
+    },
+    {
+        "name": "2023",
+        "color": "FUSYA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2023-20-30-panduf-21170-13-B.jpg"
+        ]
+    },
+    {
+        "name": "2023",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2023-20-30-panduf-21175-13-B.jpg"
+        ]
+    },
+    {
+        "name": "2023-1",
+        "color": "FUSYA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2023-1-20-30-panduf-21157-13-B.jpg"
+        ]
+    },
+    {
+        "name": "2023-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-panduf-2023-1-20-30-panduf-21164-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3965",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-3965-21-30-bot-20986-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3965",
+        "color": "FUSYA",
+        "images": []
+    },
+    {
+        "name": "9863-10",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-10-35-42-kilik-terlk-21309-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-10",
+        "color": "VIZON",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-10-35-42-kilik-terlk-21317-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-6",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-6-35-41-kilik-terlk-21713-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-8",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-8-35-41-kilik-terlk-23310-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-12",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-12-40-45-kilik-terlk-21448-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-12",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-12-40-45-kilik-terlk-21445-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4099",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4099-26-36-bot-20708-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1056",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-1056-36-40-bot-21127-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-27",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-27-35-41-kilik-terlk-20376-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-28",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-28-35-41-kilik-terlk-20353-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-28",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-28-35-41-kilik-terlk-20336-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9955-1",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9955-1-40-45-kilik-terlk-21056-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20966-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20967-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20968-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20902-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20904-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20906-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20935-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20937-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20940-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F15",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f15-29-34-panduf-21438-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F15",
+        "color": "YESIL",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f15-29-34-panduf-21441-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F16",
+        "color": "FUSHIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f16-29-34-panduf-21433-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F16",
+        "color": "BLUE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f16-29-34-panduf-21435-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "WHITE-PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20825-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20826-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-22015-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20815-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20816-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20817-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "ORANGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20818-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20822-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-troya-35-40-yazlik-terlk-20824-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-puffi-z4-35-41-kilik-terlk-20982-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9942-8",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9942-8-35-41-yazlik-terlk-20684-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-M1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-aquaflex-m1-41-45-yazlik-terlk-21419-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PALERMO-2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-palermo-2-35-41-yazlik-terlk-20628-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21073-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21075-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21077-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21083-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21084-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21086-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TROYA",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-sabo-terli-troya-29-34-terlk-21088-13-B.jpg"
+        ]
+    },
+    {
+        "name": "61890",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-61890-36-40-yazlik-ayakkabi-21135-13-B.jpg"
+        ]
+    },
+    {
+        "name": "61890",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-61890-36-40-yazlik-ayakkabi-21129-13-B.jpg"
+        ]
+    },
+    {
+        "name": "61890",
+        "color": "TOBACCO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-61890-36-40-yazlik-ayakkabi-21140-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9873-8 L",
+        "color": "BLUE",
+        "images": []
+    },
+    {
+        "name": "9873-8",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9873-8-35-42-yazlik-terlk-21368-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9873-8",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9873-8-35-42-yazlik-terlk-21376-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9903-4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9903-4-40-46-yazlik-terlk-22358-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z53 L",
+        "color": "BLUE",
+        "images": []
+    },
+    {
+        "name": "9910-Z53",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z53-35-42-yazlik-terlk-20701-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z53",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z53-35-42-yazlik-terlk-20706-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-18",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9953-18-35-41-sandalet-23533-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-18",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9953-18-35-41-sandalet-23534-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9953-18",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9953-18-35-41-sandalet-23535-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9964-10",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9964-10-40-45-yazlik-terlk-20620-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9964-10",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9964-10-40-45-yazlik-terlk-20613-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-10",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22586-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22589-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22591-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22592-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-10",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22560-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22561-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22562-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22563-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22564-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22565-14-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-10-35-41-yazlik-terlk-22566-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9984-1",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9984-1-35-41-yazlik-terlk-20370-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9985",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9985-35-41-sandalet-23349-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9985",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9985-35-41-sandalet-23350-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9985-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9985-1-35-41-yazlik-terlk-20960-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9985-1",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9985-1-35-41-yazlik-terlk-20933-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9985-1",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9985-1-35-41-yazlik-terlk-20948-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9987",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9987-35-41-yazlik-terlk-21273-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9987",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9987-35-41-yazlik-terlk-21276-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-1-40-45-yazlik-terlk-23653-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-1",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-1-40-45-yazlik-terlk-21321-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9986-35-41-yazlik-terlk-23526-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9986-35-41-yazlik-terlk-23523-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986-3",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9986-3-35-41-sandalet-23517-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986-3",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9986-3-35-41-sandalet-23516-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986-3",
+        "color": "BEIJE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9986-3-35-41-sandalet-23514-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-4",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9926-4-35-39-terlk-21931-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-4",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9926-4-35-39-terlk-21932-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-6",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9926-6-35-39-terlk-21672-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9926-6",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9926-6-35-39-terlk-21674-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-3",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-3-35-42-kilik-ayakkabi-23394-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9844-FLEX",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-9844-flex-35-41-terlk-20512-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3956",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-3956-26-36-bot-21221-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4098",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4098-26-36-bot-21889-13-B.jpg"
+        ]
+    },
+    {
+        "name": "2042",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-evayakkabi-easy-z4-35-39-ev-ayakkabisi-23598-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3001",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-marina-12-35-41-yazlik-terlk-22925-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4278",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4278-26-36-bot-21882-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4278",
+        "color": "TOBACCO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4278-26-36-bot-21883-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4286",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4286-21-30-bot-21877-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4292",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4292-26-36-bot-21872-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4292",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-bot-4292-26-36-bot-21867-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-54",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-54-35-41-kilik-terlk-21869-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-54",
+        "color": "PURPLE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-54-35-41-kilik-terlk-21871-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-31",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-31-35-41-kilik-terlk-21846-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-31",
+        "color": "ORANGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-31-35-41-kilik-terlk-21849-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9955-9",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9955-9-40-45-kilik-terlk-21818-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9955-9",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9955-9-40-45-kilik-terlk-21817-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9984-4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9984-4-35-41-kilik-terlk-22969-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F21",
+        "color": "BLUE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f21-24-34-panduf-21785-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F21",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f21-24-34-panduf-21782-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F21",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f21-24-34-panduf-21787-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F20",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f20-24-34-panduf-21795-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F20",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f20-24-34-panduf-21790-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F19",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f19-24-34-panduf-21799-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-F19",
+        "color": "FUCHSIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ev-ayakkab-puffi-f19-24-34-panduf-21797-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20917-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20920-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20925-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20962-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20963-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20965-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-12",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-12-35-41-kilik-terlk-22967-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0550",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-grande-4-40-45-yazlik-terlk-22954-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4292",
+        "color": "GUMUS",
+        "images": []
+    },
+    {
+        "name": "9988-5",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-5-35-41-kilik-terlk-21798-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-4",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-4-35-41-kilik-terlk-21801-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MEDICLOGS",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20345-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20346-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-terli-mediclogs-35-40-terlk-20347-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TYANA",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-tyana-35-40-yazlik-terlk-23126-14-B.jpg"
+        ]
+    },
+    {
+        "name": "TYANA",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-tyana-35-40-yazlik-terlk-23120-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3979",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-3979-26-36-ayakkabi-21969-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9873-8",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9873-8-35-42-yazlik-terlk-21378-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9986",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9986-35-41-yazlik-terlk-23525-13-B.jpg"
+        ]
+    },
+    {
+        "name": "AQUAFLEX-Z1",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-aquaflex-z1-35-41-yazlik-terlk-23705-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4330",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4330-26-36-ayakkabi-21985-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9827-25",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9827-25-35-41-yazlik-terlk-23511-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4330",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4330-26-36-ayakkabi-21994-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0730",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0730-36-40-yazlik-ayakkabi-22167-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-40-46-terlk-20471-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9846-FLEX",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sabo-terli-9846-flex-40-46-terlk-20477-13-B.jpg"
+        ]
+    },
+    {
+        "name": "46005",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-46005-40-45-yazlik-ayakkabi-22226-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sandalet-9989-2-40-45-sandalet-21319-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9003",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9003-36-40-yazlik-ayakkabi-22213-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9827-25",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9827-25-35-41-yazlik-terlk-23512-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9829-8",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-sandalet-9829-8-40-46-sandalet-22198-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9861-Z",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9861-z-35-41-yazlik-terlk-22306-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9861-Z",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9861-z-35-41-yazlik-terlk-22312-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-39",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9863-39-35-42-sandalet-21937-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F18",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f18-29-34-terlk-22148-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F18",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f18-29-34-terlk-22144-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-M1",
+        "color": "NAVY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9910-m1-40-46-yazlik-terlk-22203-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9960-15",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9960-15-35-41-yazlik-terlk-21955-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-8",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-8-35-41-yazlik-terlk-22095-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-8",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-8-35-41-yazlik-terlk-22094-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-5",
+        "color": "ANTRACITE",
+        "images": []
+    },
+    {
+        "name": "BAHAMA-16",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-bahama-16-35-39-yazlik-terlk-22069-13-B.jpg"
+        ]
+    },
+    {
+        "name": "NEW-SPLASH-Z",
+        "color": "GREEN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-new-splash-z-35-41-yazlik-terlk-21169-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PERLA-13",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-perla-13-35-41-yazlik-terlk-21991-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TYANA",
+        "color": "YELLOW",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-tyana-35-40-yazlik-terlk-23128-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1000-B (-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1000-b-36-40-kilik-ayakkabi-21738-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1000-B (36-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1000-b-36-40-kilik-ayakkabi-21738-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1000-B (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1000-b-36-40-kilik-ayakkabi-21738-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1063 (-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1063-36-40-kilik-ayakkabi-22484-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1063 (36-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1063-36-40-kilik-ayakkabi-22484-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1063 (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1063-36-40-kilik-ayakkabi-22484-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1940 (-44) M008",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-bot-1940-40-44-bot-22461-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1940 (40-44) M008",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-bot-1940-40-44-bot-22461-13-B.jpg"
+        ]
+    },
+    {
+        "name": "1940 (40-) M008",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-bot-1940-40-44-bot-22461-13-B.jpg"
+        ]
+    },
+    {
+        "name": "21307",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-21307-36-40-kilik-ayakkabi-22493-13-B.jpg"
+        ]
+    },
+    {
+        "name": "21321 (-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-21321-36-40-kilik-ayakkabi-22497-13-B.jpg"
+        ]
+    },
+    {
+        "name": "21321 (36-40)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-21321-36-40-kilik-ayakkabi-22497-13-B.jpg"
+        ]
+    },
+    {
+        "name": "21321 (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-21321-36-40-kilik-ayakkabi-22497-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3400-19 (36-40) Z030",
+        "color": "HAKI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-3400-19-35-40-yazlik-terlk-22054-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3520 (-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-3520-36-41-bot-22513-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3520 (36-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-3520-36-41-bot-22513-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3520 (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-3520-36-41-bot-22513-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3541 (-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-3541-36-41-bot-22515-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3541 (36-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-3541-36-41-bot-22515-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3556-1 (-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3556-1-36-41-kilik-ayakkabi-22508-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3556-1 (36-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3556-1-36-41-kilik-ayakkabi-22508-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3556-1 (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3556-1-36-41-kilik-ayakkabi-22508-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3560-4 (-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3560-4-36-41-kilik-ayakkabi-22489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3560-4 (36-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3560-4-36-41-kilik-ayakkabi-22489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3560-4 (36-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3560-4-36-41-kilik-ayakkabi-22489-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4440 (-30)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4440-26-36-ayakkabi-22412-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4440 (26-30)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4440-26-36-ayakkabi-22412-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4440 (26-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4440-26-36-ayakkabi-22412-13-B.jpg"
+        ]
+    },
+    {
+        "name": "5225 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-5225-40-45-kilik-ayakkabi-22446-13-B.jpg"
+        ]
+    },
+    {
+        "name": "5225 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-5225-40-45-kilik-ayakkabi-22446-13-B.jpg"
+        ]
+    },
+    {
+        "name": "5225 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-5225-40-45-kilik-ayakkabi-22446-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-8 (-40)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-8-35-41-sandalet-22135-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-8 (36-40)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-8-35-41-sandalet-22135-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9828-8 (36-)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sandalet-9828-8-35-41-sandalet-22135-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F17 (-34)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f17-29-34-terlk-22139-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F17 (29-34)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f17-29-34-terlk-22139-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F17 (29-)",
+        "color": "SAX",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f17-29-34-terlk-22139-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-F18",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9910-f18-29-34-terlk-22143-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M",
+        "color": "SIYAH",
+        "images": []
+    },
+    {
+        "name": "ASSOS-M1",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m1-40-45-yazlik-terlk-22126-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22120-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22122-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M3",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m3-40-45-yazlik-terlk-22113-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (-39)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22349-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-39)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22349-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-)",
+        "color": "MAVI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22349-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (-39)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-21952-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-39)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-21952-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-21952-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (-39)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22033-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-39)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22033-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22033-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (-39)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22028-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-39)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22028-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22028-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-16",
+        "color": "HAKI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-bahama-16-40-48-yazlik-terlk-22115-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z3 (-39)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z3-35-39-yazlik-terlk-22017-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z3 (35-39)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z3-35-39-yazlik-terlk-22017-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z3 (35-)",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z3-35-39-yazlik-terlk-22017-13-B.jpg"
+        ]
+    },
+    {
+        "name": "24040",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-24040-36-40-bot-22511-13-B.jpg"
+        ]
+    },
+    {
+        "name": "25153",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-25153-36-40-bot-22520-13-B.jpg"
+        ]
+    },
+    {
+        "name": "25652",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-bot-25652-36-40-bot-23312-13-B.jpg"
+        ]
+    },
+    {
+        "name": "3005",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3005-36-40-kilik-ayakkabi-22502-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4470",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4470-26-36-ayakkabi-22416-13-B.jpg"
+        ]
+    },
+    {
+        "name": "4470",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4470-26-36-ayakkabi-22419-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-10",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-10-35-42-kilik-terlk-21314-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-40",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-40-35-42-kilik-terlk-22532-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-40",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-40-35-42-kilik-terlk-22533-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9863-40",
+        "color": "COPPER",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9863-40-35-42-kilik-terlk-22534-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-55",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-55-35-41-kilik-terlk-22500-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-32",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-32-35-41-kilik-terlk-22392-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-32",
+        "color": "FUSHIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-32-35-41-kilik-terlk-22393-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9933-15",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-15-40-45-kilik-terlk-22404-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9933-15",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9933-15-40-45-kilik-terlk-22405-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9955-10",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9955-10-40-45-kilik-terlk-22401-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-6",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-6-35-41-kilik-terlk-21715-14-B.jpg"
+        ]
+    },
+    {
+        "name": "PIERRO-12",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-pierro-12-40-45-kilik-terlk-21443-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0157 BLACK 36",
+        "color": "",
+        "images": []
+    },
+    {
+        "name": "0157 BLACK 37",
+        "color": "",
+        "images": []
+    },
+    {
+        "name": "0157 BLACK 38",
+        "color": "",
+        "images": []
+    },
+    {
+        "name": "0157 BLACK 39",
+        "color": "",
+        "images": []
+    },
+    {
+        "name": "0157 BLACK 40",
+        "color": "",
+        "images": []
+    },
+    {
+        "name": "9866-55",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-55-35-41-kilik-terlk-22499-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-34",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-34-35-41-kilik-terlk-23384-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9932-34",
+        "color": "GREEN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9932-34-35-41-kilik-terlk-23385-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-15",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-15-35-41-kilik-terlk-22371-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-4",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-4-35-41-kilik-terlk-21800-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-5",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-5-35-41-kilik-terlk-21794-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z-35-41-kilik-terlk-22521-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z2 DK",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z2-35-41-kilik-terlk-22529-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z2",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z2-35-41-kilik-terlk-22528-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z36",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ev-ayakkab-puffi-z36-35-41-ev-ayakkabisi-22545-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PUFFI-Z36",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ev-ayakkab-puffi-z36-35-41-ev-ayakkabisi-22547-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z-35-41-kilik-terlk-22517-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-15",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-15-35-41-kilik-terlk-22372-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9988-11",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9988-11-35-41-kilik-terlk-23810-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0157-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0157-1-36-40-yazlik-ayakkabi-23553-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0157-1",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0157-1-36-40-yazlik-ayakkabi-23552-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0350",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0350-36-40-yazlik-ayakkabi-23464-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0707",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-0707-40-45-yazlik-ayakkabi-23405-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0708",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-0708-40-45-yazlik-ayakkabi-23398-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1049",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1049-36-40-yazlik-ayakkabi-23476-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1201-13",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-1201-13-36-42-yazlik-ayakkabi-23469-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1735-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-1735-1-31-36-ayakkabi-23389-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1735-1",
+        "color": "BLUE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-1735-1-31-36-ayakkabi-23387-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1735-1",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-1735-1-31-36-ayakkabi-23390-14-B.jpg"
+        ]
+    },
+    {
+        "name": "1735-3",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-1735-3-26-36-ayakkabi-23306-14-B.jpg"
+        ]
+    },
+    {
+        "name": "31101",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-31101-36-40-yazlik-ayakkabi-23456-14-B.jpg"
+        ]
+    },
+    {
+        "name": "31101",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-31101-36-40-yazlik-ayakkabi-23455-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3536-13",
+        "color": "BKACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3536-13-36-42-yazlik-ayakkabi-23478-14-B.jpg"
+        ]
+    },
+    {
+        "name": "3536-13",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-3536-13-36-42-yazlik-ayakkabi-23479-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4543",
+        "color": "NAVY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4543-21-30-ayakkabi-23302-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4548",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4548-21-25-ayakkabi-23298-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4548",
+        "color": "GREY",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4548-21-25-ayakkabi-23299-14-B.jpg"
+        ]
+    },
+    {
+        "name": "4548",
+        "color": "TOBACCO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-ayakkabi-4548-21-25-ayakkabi-23297-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6601-1",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-6601-1-36-42-yazlik-ayakkabi-23460-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6601-1",
+        "color": "WHITE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-6601-1-36-42-yazlik-ayakkabi-23459-14-B.jpg"
+        ]
+    },
+    {
+        "name": "6601-1",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-6601-1-36-42-yazlik-ayakkabi-23458-14-B.jpg"
+        ]
+    },
+    {
+        "name": "7511",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-7511-36-41-yazlik-ayakkabi-23448-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-56",
+        "color": "MINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-56-35-41-kilik-terlk-22505-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-56",
+        "color": "FUSHIA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-56-35-41-kilik-terlk-22506-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9866-56",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9866-56-35-41-kilik-terlk-22503-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9925-48 (-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-9925-48-40-46-yazlik-ayakkabi-23434-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9925-48 (40-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-9925-48-40-46-yazlik-ayakkabi-23434-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9925-48 (40-) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-ayakkabi-9925-48-40-46-yazlik-ayakkabi-23434-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-4 (-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-4-35-42-yazlik-ayakkabi-23453-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-4 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-4-35-42-yazlik-ayakkabi-23453-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-4 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-4-35-42-yazlik-ayakkabi-23453-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-5 (-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-5-35-42-yazlik-ayakkabi-23439-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9938-5 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-9938-5-35-42-yazlik-ayakkabi-23439-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-6 (40-45) M006",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-6-40-45-kilik-terlk-22398-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-6 (40-) M006",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-6-40-45-kilik-terlk-22398-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2 (-45)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22121-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2 (-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22119-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2 (40-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22119-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M2 (40-) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m2-40-45-yazlik-terlk-22119-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-M3 (40-45)",
+        "color": "GRI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-assos-m3-40-45-yazlik-terlk-22114-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-39)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22353-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22353-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22351-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (-39)",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22348-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-39)",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22348-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z (35-)",
+        "color": "SARI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z-35-39-yazlik-terlk-22348-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z1 (-39) Z031",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z1-35-39-yazlik-terlk-22040-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z1 (35-39) Z031",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z1-35-39-yazlik-terlk-22040-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z1 (35-) Z031",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z1-35-39-yazlik-terlk-22040-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (-39) Z031",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22036-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-39) Z031",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22036-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-) Z031",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22036-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-39) Z031",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22029-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (35-) Z031",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22029-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-16",
+        "color": "RED",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-bahama-16-35-39-yazlik-terlk-23669-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-16",
+        "color": "BROWN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-bahama-16-40-48-yazlik-terlk-22112-13-B.jpg"
+        ]
+    },
+    {
+        "name": "BAHAMA-16",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-bahama-16-40-48-yazlik-terlk-22110-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-F2 (-34) F003 KOYU",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-easy-f2-29-34-terlk-22463-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-F2 (29-34) F003 KOYU",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-easy-f2-29-34-terlk-22463-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-F2 (29-) F003 KOYU",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-easy-f2-29-34-terlk-22463-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-F2 (-34) F003",
+        "color": "SIYAH",
+        "images": []
+    },
+    {
+        "name": "EASY-F2 (29-34) F003",
+        "color": "SIYAH",
+        "images": []
+    },
+    {
+        "name": "EASY-F2 (29-) F003",
+        "color": "SIYAH",
+        "images": []
+    },
+    {
+        "name": "EASY-M1 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-easy-m1-40-45-kilik-terlk-22423-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-M1 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-easy-m1-40-45-kilik-terlk-22423-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-M1 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-easy-m1-40-45-kilik-terlk-22423-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z (-40) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z-35-41-kilik-terlk-22519-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z (36-40) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z-35-41-kilik-terlk-22519-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z (36-) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z-35-41-kilik-terlk-22519-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z1 (-40) Z030",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z1-35-41-kilik-terlk-22523-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z1 (36-40) Z030",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z1-35-41-kilik-terlk-22523-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z1 (36-) Z030",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z1-35-41-kilik-terlk-22523-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z2 (-40) Z030",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z2-35-41-kilik-terlk-22530-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z2 (36-40) Z030",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z2-35-41-kilik-terlk-22530-13-B.jpg"
+        ]
+    },
+    {
+        "name": "EASY-Z2 (36-) Z030",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-easy-z2-35-41-kilik-terlk-22530-13-B.jpg"
+        ]
+    },
+    {
+        "name": "GORDION (41-46)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-gordion-41-46-yazlik-terlk-20760-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-gordion-41-46-yazlik-terlk-20762-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-gordion-41-46-yazlik-terlk-20764-13-B.jpg"
+        ]
+    },
+    {
+        "name": "GORDION (35-40) Z019",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-21927-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-21928-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-21929-13-B.jpg"
+        ]
+    },
+    {
+        "name": "GORDION (35-40) Z019",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20890-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20894-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20896-13-B.jpg"
+        ]
+    },
+    {
+        "name": "GORDION (35-40) Z019",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20918-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20914-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-gordion-35-40-yazlik-terlk-20915-13-B.jpg"
+        ]
+    },
+    {
+        "name": "MINELLI-TOPUKLU-2 (35-41) SEDEF",
+        "color": "KIRMIZI",
+        "images": []
+    },
+    {
+        "name": "MINELLI-TOPUKLU-2 (35-) SEDEF",
+        "color": "KIRMIZI",
+        "images": []
+    },
+    {
+        "name": "OLYMPOS (-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-olympos-40-45-yazlik-terlk-22325-13-B.jpg"
+        ]
+    },
+    {
+        "name": "OLYMPOS (40-45) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-olympos-40-45-yazlik-terlk-22325-13-B.jpg"
+        ]
+    },
+    {
+        "name": "OLYMPOS (40-) M007",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-olympos-40-45-yazlik-terlk-22325-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20759-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20759-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (35-41)",
+        "color": "ALTIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20730-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (-40) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20737-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (36-40) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20737-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PADOVA-1 (36-) Z030",
+        "color": "BORDO",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-padova-1-35-41-yazlik-terlk-20737-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA (35-40) Z019",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20908-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20911-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20913-13-B.jpg"
+        ]
+    },
+    {
+        "name": "PATARA (35-40) Z019",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20943-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20946-13-B.jpg",
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-patara-35-40-yazlik-terlk-20947-13-B.jpg"
+        ]
+    },
+    {
+        "name": "SPLASH-Z4 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-splash-z4-35-41-yazlik-terlk-22323-13-B.jpg"
+        ]
+    },
+    {
+        "name": "SPLASH-Z4 (35-)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-splash-z4-35-41-yazlik-terlk-22323-13-B.jpg"
+        ]
+    },
+    {
+        "name": "ASSOS-Z2 (-39) Z031",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-assos-z2-35-39-yazlik-terlk-22029-13-B.jpg"
+        ]
+    },
+    {
+        "name": "TYANA",
+        "color": "PINK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-tyana-35-40-yazlik-terlk-23119-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0091",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0091-36-41-yazlik-ayakkabi-23519-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0618 (-40)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0618-36-41-yazlik-ayakkabi-23529-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0618 (36-40)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0618-36-41-yazlik-ayakkabi-23529-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0618 (36-)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0618-36-41-yazlik-ayakkabi-23529-14-B.jpg"
+        ]
+    },
+    {
+        "name": "0619",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0619-36-41-yazlik-ayakkabi-23657-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9200-21 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9200-21-35-41-yazlik-terlk-22259-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9827-25 (35-41)",
+        "color": "TABA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9827-25-35-41-yazlik-terlk-23510-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-9 (35-41)",
+        "color": "BAKIR",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-9-35-41-yazlik-terlk-23110-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-9 (35-41)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-9-35-41-yazlik-terlk-23111-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9872-9 (35-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9872-9-35-41-yazlik-terlk-23111-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z34 (35-42)",
+        "color": "TABA",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z34-35-42-yazlik-terlk-23638-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z55 (35-42)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z55-35-42-yazlik-terlk-22047-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z55 (35-42)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z55-35-42-yazlik-terlk-22046-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z55 (35-42)",
+        "color": "KAHVE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z55-35-42-yazlik-terlk-22045-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9910-Z55 (35-42)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9910-z55-35-42-yazlik-terlk-22041-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9922-18 (35-41)",
+        "color": "BEJ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9922-18-35-41-yazlik-terlk-23536-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9928-37 (24-34)",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9928-37-24-34-terlk-23417-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9928-37 (24-)",
+        "color": "PEMBE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-cocuk-terlik-9928-37-24-34-terlk-23417-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-1 (35-42)",
+        "color": "PLATIN",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-1-35-42-yazlik-terlk-21653-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9969-1 (35-42) SEDEF",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9969-1-35-42-yazlik-terlk-21650-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-13 (35-41)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-13-35-41-yazlik-terlk-23383-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-13 (35-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-13-35-41-yazlik-terlk-23383-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-2 (35-41)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-2-35-41-yazlik-terlk-21281-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9975-2 (35-)",
+        "color": "BEYAZ",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9975-2-35-41-yazlik-terlk-21281-14-B.jpg"
+        ]
+    },
+    {
+        "name": "9986 (35-41)",
+        "color": "KIRMIZI",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-terlik-9986-35-41-yazlik-terlk-23522-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23176-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (40-45)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23176-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23177-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (40-)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23177-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (40-)",
+        "color": "LACIVERT",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23176-13-B.jpg"
+        ]
+    },
+    {
+        "name": "9989-7 (40-45)",
+        "color": "SIYAH",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-erkek-terlik-9989-7-40-45-yazlik-terlk-23177-13-B.jpg"
+        ]
+    },
+    {
+        "name": "WONDERWALK",
+        "color": "BEIGE",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-wonderwalk-35-41-yazlik-terlk-21978-13-B.jpg"
+        ]
+    },
+    {
+        "name": "WONDERWALK",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-sabo-wonderwalk-35-41-yazlik-terlk-21950-13-B.jpg"
+        ]
+    },
+    {
+        "name": "0618",
+        "color": "BLACK",
+        "images": [
+            "https://ceyo.witcdn.net/ceyo-kadin-ayakkabi-0618-36-41-yazlik-ayakkabi-23527-14-B.jpg"
+        ]
+    }
+]
