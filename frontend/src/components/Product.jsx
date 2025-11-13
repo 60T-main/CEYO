@@ -22,9 +22,6 @@ const Product = ({
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
 
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
-
   const [existingSizes, setExistingSizes] = useState(null);
 
   const [variantId, setVariantId] = useState(null);

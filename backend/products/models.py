@@ -93,35 +93,8 @@ class ProductVariant(models.Model):
         unique_together = ("product", "sku")
 
     def __str__(self):
-        """
-        Safe string representation that avoids triggering extra DB queries.
-        - Uses cached/prefetched relations only (product, attributes)
-        - Falls back to lightweight labels if relations aren't loaded
-        """
-        # Base label uses SKU or PK without hitting DB
-        base_label = f"Variant {self.sku or self.pk or 'unsaved'}"
+        return self.sku
 
-        # Try to use cached product name if relation already loaded (no DB call)
-        product_name = None
-        if 'product' in self.__dict__ and getattr(self, 'product', None):
-            try:
-                product_name = self.product.name
-            except Exception:
-                product_name = None
-
-        # Try to use prefetched attributes only (do NOT query if not prefetched)
-        attrs_suffix = ""
-        cache = getattr(self, "_prefetched_objects_cache", None)
-        if cache and 'attributes' in cache:
-            try:
-                values = [av.value for av in cache['attributes'][:3]]
-                if values:
-                    attrs_suffix = f" ({', '.join(values)})"
-            except Exception:
-                attrs_suffix = ""
-
-        label = product_name or base_label
-        return f"{label}{attrs_suffix}"
 
 class ProductImage(models.Model):
     product_variant = models.ForeignKey(ProductVariant, related_name="images", on_delete=models.CASCADE)
