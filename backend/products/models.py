@@ -82,6 +82,7 @@ class AttributeValue(models.Model):
     
 
 class ProductVariant(models.Model):
+    id = models.IntegerField(primary_key=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="variants")
     sku = models.CharField(max_length=100, unique=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)

@@ -15,9 +15,6 @@ from rest_framework.permissions import AllowAny
 from .serializers import ProductSerializer, CategorySerializer, CartSerializer, CommentSerializer
 
 
-
-
-
 @api_view(['GET'])
 def ProductList(request):
     products = (

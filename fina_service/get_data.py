@@ -20,15 +20,15 @@ def auth():
         token = data.get('token')
         ex = data.get('ex')
         if ex:
-            print(f"Auth error info: {ex}")
+            raise PermissionError(f"Auth error info: {ex}")
         if not token:
-            print("No token found in authentication response.")
-            return None
+            raise PermissionError("No token found in authentication response.")
+            
         print(f"Received token: {token}")
         return token
     except requests.RequestException as e:
-        print(f"Error authenticating: {e}")
-        return None
+        raise PermissionError(f"Error authenticating: {e}")
+        
 
 def fetch(endpoint, token, body=None, method=None):
     url = SCOPE + endpoint
@@ -143,7 +143,7 @@ def parse_product_name(product_name: str, id: int):
     else:
         name_only = ' '.join(parts[:size_idx]) if size is not None else ' '.join(parts)
 
-    return id, name_only.strip() or None, color, size
+    return id, name_only.strip().replace(' ','-') or None, color, size
 
 
 def check_parsing(products):
@@ -278,11 +278,19 @@ def main():
     # product variant ids, names, colors, sizes
     product_ids = []
     product_attrs= {}
+
+    # remove before prod
+    old_colors = set()
+    old_sizes = set()
+
     for _, product in enumerate(products_shoes):
         if product['name']:
             id, n, c, s = parse_product_name(product['name'], product['id'])
             product_ids.append(id)
             product_attrs[id] = {"name":n, "color":c, "size":s}
+
+            old_colors.add(c)
+            old_sizes.add(s)
 
 
     
@@ -303,8 +311,17 @@ def main():
 
     check_parsing(products_shoes)
 
+    final_products = join_products(products_price_rest, product_attrs, product_barcodes,products_parent)
+
+    # new_products = set()
+    
+    # for id,value in final_products.items():
+    #     new_products.add(value["product_id"])
+    # print(len(new_products))
+        
+
     # returning final joined products
-    return join_products(products_price_rest, product_attrs, product_barcodes,products_parent)
+    return final_products
 
 
 if __name__ == "__main__":
