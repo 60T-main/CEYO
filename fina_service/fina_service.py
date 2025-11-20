@@ -1,11 +1,18 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from get_data import main
+from product_out import save_product_out
 
 app = Flask(__name__)
 
 @app.route('/products', methods=['GET'])
 def get_products():
     result = main()
+    return jsonify(result)
+
+@app.route('/sales', methods=['POST'])
+def product_out():
+    body = request.get_json()  
+    result = save_product_out(body)
     return jsonify(result)
 
 if __name__ == '__main__':

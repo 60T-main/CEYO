@@ -56,7 +56,6 @@ def fetch(endpoint, token, body=None, method=None):
 
 
 
-
 # Common color tokens (uppercase). Extend as needed for your catalog.
 
 
@@ -313,12 +312,6 @@ def main():
 
     final_products = join_products(products_price_rest, product_attrs, product_barcodes,products_parent)
 
-    # new_products = set()
-    
-    # for id,value in final_products.items():
-    #     new_products.add(value["product_id"])
-    # print(len(new_products))
-        
 
     # returning final joined products
     return final_products
