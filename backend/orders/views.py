@@ -16,6 +16,9 @@ from .serializers import OrderSerializer
 
 from rest_framework.decorators import api_view
 
+from products.fina_services import call_fina_service_api
+from datetime import datetime
+
 
 @api_view(['POST'])
 def OrderView(request):
@@ -46,9 +49,12 @@ def OrderView(request):
         )
     order.save()
 
-    
+    productVariants = []
+
     for id, qty in products.items():
         product = get_object_or_404(ProductVariant,id=id)
+
+        productVariants.append({'id': id, "quantity": qty,"price": product.price})
 
         order_item = OrderItem(
             order=order,
@@ -59,6 +65,30 @@ def OrderView(request):
         order_item.save()
 
     request.session.save()
+
+    body = {
+        "id": 0,
+        "date": datetime.now().isoformat(timespec='seconds'),
+        "purpose": "საცალო ონლაინ გაყიდვა",
+        "amount": total_amount,
+        "currency": "GEL",
+        "store": 1,
+        "user": 1,
+        "customer": 0,
+        "is_vat": True,
+        "make_entry": True,
+        "pay_type":1,
+        "price_type": 3,
+        "products": productVariants
+        }
+
+    fina_response = call_fina_service_api(endpoint="sales",  method="POST", body=body)
+
+    if fina_response:
+        order.status = 'completed'
+        order.save()
+
+
     serializer = OrderSerializer(order, many=False)
     return Response(serializer.data)
 

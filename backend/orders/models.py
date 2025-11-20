@@ -5,6 +5,7 @@ class Order(models.Model):
     ORDER_STATUS_CHOICES = [
         ('pending', 'Pending'),
         ('paid', 'Paid'),
+        ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),
     ]
 
