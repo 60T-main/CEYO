@@ -10,15 +10,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    env:   
-      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-      DATABASE_USER: ${{ secrets.DATABASE_USER }}
-      DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-      DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
-      EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
-      EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_USER }}
-      FINA_SERVICE_URL: http://127.0.0.1:5000/
+  env:
+    DATABASE_NAME: test_db
+    DATABASE_USER: postgres
+    DATABASE_PASSWORD: postgres
+    DATABASE_HOST: localhost
+    DATABASE_PORT: 5432
+    EMAIL_HOST_USER: dummy@example.com
+    EMAIL_HOST_PASSWORD: dummy_password
+    FINA_SERVICE_URL: http://127.0.0.1:5000/
       
 
     services:
