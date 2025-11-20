@@ -10,15 +10,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-  env:
-    DATABASE_NAME: test_db
-    DATABASE_USER: postgres
-    DATABASE_PASSWORD: postgres
-    DATABASE_HOST: localhost
-    DATABASE_PORT: 5432
-    EMAIL_HOST_USER: dummy@example.com
-    EMAIL_HOST_PASSWORD: dummy_password
-    FINA_SERVICE_URL: http://127.0.0.1:5000/
+    env:
+      DATABASE_NAME: test_db
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_HOST: localhost
+      DATABASE_PORT: 5432
+      EMAIL_HOST_USER: dummy@example.com
+      EMAIL_HOST_PASSWORD: dummy_password
+      FINA_SERVICE_URL: http://127.0.0.1:5000/
       
 
     services:
