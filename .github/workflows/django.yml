@@ -16,6 +16,10 @@ jobs:
       DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
       DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+      EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
+      EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_USER }}
+      FINA_SERVICE_URL: http://127.0.0.1:5000/
+      
 
     services:
       postgres:
