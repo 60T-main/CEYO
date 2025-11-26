@@ -22,6 +22,7 @@ export const ProductProvider = ({ children }) => {
 
   // Product Detail States
 
+  const [existingSizes, setExistingSizes] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -92,6 +93,8 @@ export const ProductProvider = ({ children }) => {
         setSelectedColor,
         selectedSize,
         setSelectedSize,
+        existingSizes, 
+        setExistingSizes
       }}
     >
       {children}

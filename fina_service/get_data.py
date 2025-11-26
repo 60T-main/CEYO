@@ -1,18 +1,22 @@
 import re
 import requests
 import json
+import os
+
+# This logic is for getting data from CEYO FINA database and parsing it to be used on website 
+
 
 SCOPE = "http://178.134.42.98:8080/"
 
 
-
+# change this before prod!!!
 def auth():
     url = SCOPE + "api/authentication/authenticate"
     try:
         payload = {
-            "login": "ceyo-api",
-            "password": "duduKI12051997!"
-        }
+            "login": os.environ.get("LOGIN"),
+            "password": os.environ.get("PASSWORD")
+}
         response = requests.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
@@ -208,7 +212,7 @@ def price_rest_info(token, product_ids: list):
         pid = product1.get("id")
         if not pid:
             continue
-        if product1.get("rest") and product1.get("price"):
+        if product1.get("price"):
             rest_store = store_dict.get(pid, {}).get("rest")
             products_with_rest[pid] = {
                 "price": product1.get("price"),
@@ -240,22 +244,6 @@ def join_products(products_price_rest: list, product_attrs: dict , product_barco
 
 
 
-def get_images(joined_products: dict):
-    images_dict = {}
-    paired_images = {}
-    with open("paired-imgs.json", "r") as f:
-        data = json.load(f)
-        for product in data:
-            images_dict[product["name"].split(' ')[0].strip()] = {"color":product["color"], "images":product["images"]}
-    for id,value in joined_products.items():
-        if value["name"] in images_dict.keys() and value["color"] == images_dict[value["name"]]["color"] and images_dict[value["name"]]["images"]:
-            paired_images[id] = {"name":value["name"],"color":value["color"], "size":value["size"], "rest":value["rest"],"rest_store": value["rest_store"] ,"barcode": value["barcode"], "images": images_dict[value["name"]]["images"]}
-
-    return paired_images
-
-
-PRODUCTS_BEFORE = set()
-PRODUCTS_AFTER = set()
 
 
 def main():

@@ -82,9 +82,11 @@ def OrderView(request):
         "products": productVariants
         }
 
+    # calling fina_service api to record a sale in Fina Database  
     fina_response = call_fina_service_api(endpoint="sales",  method="POST", body=body)
 
-    if fina_response:
+    # when call_fina_service_api succeeds > make the order.status = "completed"
+    if not fina_response:
         order.status = 'completed'
         order.save()
 

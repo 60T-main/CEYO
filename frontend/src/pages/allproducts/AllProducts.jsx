@@ -88,7 +88,7 @@ const AllProducts = ({
               }}
               className="filter-p"
             >
-              <i class="bi bi-funnel-fill"></i>
+              <i className="bi bi-funnel-fill"></i>
               გაფილტვრა
             </p>
             <p

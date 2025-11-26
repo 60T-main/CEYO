@@ -104,6 +104,11 @@ attribute_value_dict = {
     "LACIVERT": 263,
     "FUSIA": 264,
     "YELLOW": 265,
+    ### new colors:
+    "TURQUOISE": 266,
+    "PUDRA": 267,
+    "ANTHRACITE": 268,
+    "BRONZE": 269,
     # Sizes (value_tr is same as value)
     "29": 200,
     "30": 201,

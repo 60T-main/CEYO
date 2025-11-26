@@ -5,6 +5,7 @@ import AddToCart from '@/pages/productdetail/AddToCart.jsx';
 import { Link } from 'react-router-dom';
 
 import { usePageContext } from '@/hooks/PageStates.jsx';
+import { useProductContext } from '@/hooks/ProductStates.jsx';
 
 import CardSkeleton from '@/skeletons/CardSkeleton.jsx';
 
@@ -18,11 +19,13 @@ const Product = ({
   onCartError,
 }) => {
   const { isLoading } = usePageContext();
+const { existingSizes, setExistingSizes, selectedColor, setSelectedColor, selectedSize, setSelectedSize } = useProductContext();
 
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
-
-  const [existingSizes, setExistingSizes] = useState(null);
+  
+  const [shopSizes, setShopSizes] = useState([]);
+  
 
   const [variantId, setVariantId] = useState(null);
 
@@ -69,12 +72,16 @@ const Product = ({
     });
     const sizes = [];
     variants.forEach((variant) => {
-      variant.attributes.forEach((attr) => {
-        attr.name === 'ზომა' && sizes.push(attr.value);
-      });
+      if (variant.rest_main > 0) 
+      {variant.attributes.forEach((attr) => {
+        attr.name === 'ზომა' && (
+          sizes.push(attr.value)
+        )
+      })} 
     });
     return sizes;
   };
+
 
   const checkVariant = () => {
     if (existingSizes && !existingSizes.includes(selectedSize)) {
@@ -95,6 +102,30 @@ const Product = ({
     }
   };
 
+const checkRestShop = (color) => {
+  const sizes = [];
+  if (!Array.isArray(product_variants)) return;
+  product_variants.forEach((variant) => {
+    if (!variant || !Array.isArray(variant.attributes)) return;
+    let colorMatch = false;
+    let sizeValue = null;
+    variant.attributes.forEach((attr) => {
+      if (attr.name === 'ფერი' && attr.value === color) {
+        colorMatch = true;
+      }
+      if (attr.name === 'ზომა') {
+        sizeValue = attr.value;
+        
+      }
+    });
+    if (colorMatch && variant.stock_shop > 0 && sizeValue) {
+      sizes.push({"rest" : variant.stock_shop, "size" : sizeValue});
+      
+    }
+  });
+  setShopSizes(sizes);
+};
+
   useEffect(() => {
     handleVariants();
   }, [product_variants]);
@@ -106,6 +137,13 @@ const Product = ({
   useEffect(() => {
     checkVariant();
   }, [existingSizes, selectedSize]);
+  
+  // useEffect(() => {
+  //   console.log(shopSizes)
+  // }, [shopSizes]);
+
+  
+  
 
   return (
     <>
@@ -140,7 +178,8 @@ const Product = ({
           </Link>
         ) : (
           ''
-        ))}
+        ))} 
+            
       {variant === 'product-detail' &&
         (isLoading ? (
           <CardSkeleton variant="product-detail" />
@@ -151,17 +190,23 @@ const Product = ({
             className="card-parent"
           >
             <div className="card-img-parent">
-              <img
-                src={
-                  Array.isArray(images)
-                    ? selectedColor
-                      ? images.find((image) => image.color === selectedColor).images[0] ||
-                        '/no-img.jpg'
-                      : images[0].images[0] || '/no-img.jpg'
-                    : '/no-img.jpg'
-                }
-                alt="no image"
-              />
+            <img
+              src={
+                Array.isArray(images)
+                  ? selectedColor
+                    ? (() => {
+                        const found = images.find((image) => image.color === selectedColor);
+                        return found && Array.isArray(found.images) && found.images[0]
+                          ? found.images[0]
+                          : '/no-img.jpg';
+                      })()
+                    : images[0] && Array.isArray(images[0].images) && images[0].images[0]
+                      ? images[0].images[0]
+                      : '/no-img.jpg'
+                  : '/no-img.jpg'
+              }
+              alt="no image"
+            />
             </div>
             <div className="card-content-parent ">
               <h3 className={'card-title'}>{name}</h3>
@@ -184,6 +229,7 @@ const Product = ({
                             checked={selectedColor === color}
                             onChange={() => {
                               setSelectedColor(color);
+                              checkRestShop(color)
                             }}
                           />
                           {color}
@@ -243,10 +289,27 @@ const Product = ({
                 handleCheckoutNavigate={handleCheckoutNavigate}
                 onCartError={onCartError}
               />
+
+              {selectedColor && shopSizes ?
+                <div className='shop-rest'>
+                <p className='font-bold text-[var(--color-primary-blue)]'>ხელმისაწვდომი ზომები თბილისი ცენტრალის მაღაზიაში:</p> 
+                <div className='shop-sizes'>
+                  {shopSizes.map((sizeObj)=>(
+                    <div className='flex flex-col'>
+                    <p className='text-center'>{sizeObj.size}</p>
+                    <p className='text-center text-[9px]'>{sizeObj.rest} in stock</p>
+                    </div>
+                  ))
+                  }
+                </div>
+                  <img src="/logo-central-ge.svg" alt="central logo" />
+                <p className='mt-2 font-bold'><span className='text-[var(--color-primary-blue)]'>მისამართი:</span>სადგურის მოედანი #2, სავაჭრო ცენტრი "თბილისი ცენტრალი"</p> 
+              </div> : ''}
             </div>
           </div>
         ))}
       {variant === 'all-products' && (
+        (images && images[0] && images[0].images[0] ? (
         <Link
           to={`/product/${id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
@@ -261,7 +324,7 @@ const Product = ({
           <div className="card-content-parent-all ">
             {colors.length > 0 && (
               <p className="card-content-color-all inline-font">
-                <i class="bi bi-palette"></i> +{colors.length} ფერი
+                <i className="bi bi-palette"></i> +{colors.length} ფერი
               </p>
             )}
             <h4 className={'card-title-all'}>{name}</h4>
@@ -270,7 +333,9 @@ const Product = ({
             </p>
           </div>
         </Link>
-      )}
+        ) : (
+          ''
+        )))}
       {variant === 'search' && (
         <Link
           onClick={() => closeAllOverlays()}

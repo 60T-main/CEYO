@@ -53,17 +53,29 @@ const Header = ({ children, MenuComponent, onOverlayClose, onFilter }) => {
           </a>
         </div>
         <div className="category-desktop-parent">
+          <Link
+                  onClick={() => {
+                    onOverlayClose('menu');
+                  }}
+                  to={`/product`}
+                >
+                  <p
+                    className={'inline-font category-desktop animate-slide-left'}
+                  >
+                    კატალოგი
+                  </p>
+                </Link>
           {categoriesList.map(
             (category) =>
               parentCattegories.includes(category.name) && (
                 <Link
-                  onMouseEnter={() => {
-                    setOverlayState('category');
-                    setMouseLeftName(false);
-                  }}
-                  onMouseLeave={() => {
-                    setMouseLeftName(true);
-                  }}
+                  // onMouseEnter={() => {
+                  //   setOverlayState('category');
+                  //   setMouseLeftName(false);
+                  // }}
+                  // onMouseLeave={() => {
+                  //   setMouseLeftName(true);
+                  // }}
                   key={category.id}
                   onClick={() => {
                     onFilter({ category: category.id });

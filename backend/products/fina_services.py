@@ -20,7 +20,7 @@ def call_fina_service_api(endpoint, body=None, method = None, max_retries=3, del
             response.raise_for_status()  
             return response.json()
         except requests.RequestException as e:
-            logger.error(f"FINA API call failed     (attempt {attempt+1}/{max_retries}): {e}")
+            logger.error(f"FINA API call failed (attempt {attempt+1}/{max_retries}): {e}")
             attempt += 1
             last_exception = e
             time.sleep(delay)

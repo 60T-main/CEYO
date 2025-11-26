@@ -1,5 +1,16 @@
-from .models import Cart, Product, CartItem
-from django.shortcuts import get_object_or_404
+from .models import Cart, CartItem, ProductImage, ProductVariant
+from products.fina_services import call_fina_service_api
+from tqdm import tqdm
+
+def fetch_and_save_images():
+    print("Fetching images from API...")
+    data = call_fina_service_api(endpoint="images", method="GET")
+    variants = ProductVariant.objects.select_related("product")
+
+    for variant in tqdm(variants, desc="Populating Images"):
+        if variant.sku in data:
+            img = ProductImage(product_variant=variant ,image=data[variant.sku] ,alt_text=f"image for {variant.product.name}")
+            img.save()
 
 def get_or_create_cart(request):
 
@@ -61,3 +72,8 @@ def add_product_history(request, pk):
     request.session.modified = True
 
     print(f'add_product_history called, {pk}')
+
+
+
+
+
