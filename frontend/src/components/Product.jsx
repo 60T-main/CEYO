@@ -72,7 +72,7 @@ const { existingSizes, setExistingSizes, selectedColor, setSelectedColor, select
     });
     const sizes = [];
     variants.forEach((variant) => {
-      if (variant.rest_main > 0) 
+      if (variant.stock_main > 0) 
       {variant.attributes.forEach((attr) => {
         attr.name === 'ზომა' && (
           sizes.push(attr.value)
@@ -190,10 +190,10 @@ const checkRestShop = (color) => {
             className="card-parent"
           >
             <div className="card-img-parent">
+              {Array.isArray(images) ? 
             <img
               src={
-                Array.isArray(images)
-                  ? selectedColor
+                  selectedColor
                     ? (() => {
                         const found = images.find((image) => image.color === selectedColor);
                         return found && Array.isArray(found.images) && found.images[0]
@@ -203,10 +203,11 @@ const checkRestShop = (color) => {
                     : images[0] && Array.isArray(images[0].images) && images[0].images[0]
                       ? images[0].images[0]
                       : '/no-img.jpg'
-                  : '/no-img.jpg'
+                  
               }
               alt="no image"
             />
+            : <span className="loader product" />}
             </div>
             <div className="card-content-parent ">
               <h3 className={'card-title'}>{name}</h3>
@@ -290,8 +291,8 @@ const checkRestShop = (color) => {
                 onCartError={onCartError}
               />
 
-              {selectedColor && shopSizes ?
-                <div className='shop-rest'>
+              
+                <div className={`shop-rest ${selectedColor && shopSizes.length > 0 ? 'visible' : ''}`}>
                 <p className='font-bold text-[var(--color-primary-blue)]'>ხელმისაწვდომი ზომები თბილისი ცენტრალის მაღაზიაში:</p> 
                 <div className='shop-sizes'>
                   {shopSizes.map((sizeObj)=>(
@@ -303,13 +304,12 @@ const checkRestShop = (color) => {
                   }
                 </div>
                   <img src="/logo-central-ge.svg" alt="central logo" />
-                <p className='mt-2 font-bold'><span className='text-[var(--color-primary-blue)]'>მისამართი:</span>სადგურის მოედანი #2, სავაჭრო ცენტრი "თბილისი ცენტრალი"</p> 
-              </div> : ''}
+                <p className='mt-2 font-bold'><span className='text-[var(--color-primary-blue)]'>მისამართი: </span>სადგურის მოედანი #2, სავაჭრო ცენტრი "თბილისი ცენტრალი"</p> 
+              </div> 
             </div>
           </div>
         ))}
       {variant === 'all-products' && (
-        (images && images[0] && images[0].images[0] ? (
         <Link
           to={`/product/${id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
@@ -333,9 +333,7 @@ const checkRestShop = (color) => {
             </p>
           </div>
         </Link>
-        ) : (
-          ''
-        )))}
+        )}
       {variant === 'search' && (
         <Link
           onClick={() => closeAllOverlays()}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import { useProductContext } from '@/hooks/ProductStates.jsx';
 import { usePageContext } from '@/hooks/PageStates.jsx';
+import { useApi } from '../../services/api'; 
 
 const AllProducts = ({
   Product,
@@ -12,16 +13,17 @@ const AllProducts = ({
   onFilter,
   CardSkeleton,
 }) => {
-  const { productList, priceState, nameState } = useProductContext();
+  const { productList, priceState, nameState, productsRaw } = useProductContext();
   const {
     setOverlayState,
     overlayState,
     overlayClosing,
     currentPage,
     postsPerPage,
-    setCurrentPage,
     isLoading,
   } = usePageContext();
+
+  const {fetchProducts} = useApi()
 
   const overlayRef = useRef();
 
@@ -38,18 +40,30 @@ const AllProducts = ({
     };
   }, []);
 
-  const cardCount = 20;
-
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
-
-  const paginated_list = productList.slice(firstPostIndex, lastPostIndex);
-
-  const pages_num = Math.ceil(productList.length / postsPerPage);
+  const cardCount = 21;
 
   const handleOrderButton = async () => {
     overlayState === 'order' ? onOverlayClose('order') : setOverlayState('order');
   };
+
+
+const handleFetchProducts = async (filters = {}, pageUrl = null) => {
+  await fetchProducts(filters, pageUrl); 
+};
+
+
+const handleNextNavigate = (pageTo) => {
+    if (pageTo === "next") {
+      if (productsRaw && productsRaw.next) {
+      handleFetchProducts({}, productsRaw.next)}
+    } else {
+      if (productsRaw && productsRaw.previous) {
+      handleFetchProducts({}, productsRaw.previous)}
+    }
+    
+  }
+
+
   return (
     <>
       <section className={`products-section`}>
@@ -114,7 +128,7 @@ const AllProducts = ({
           <div className="cards-parent-all">
             {isLoading
               ? [...Array(cardCount)].map((_, i) => <CardSkeleton variant={'products'} key={i} />)
-              : paginated_list.map((product) => (
+              : productList.map((product) => (
                   <Product
                     key={product.id}
                     product={product}
@@ -124,70 +138,18 @@ const AllProducts = ({
                 ))}
           </div>
           <div className="pages-parent">
-            <div className="pages">
-              {!(currentPage === 1) && (
-                <>
-                  {!(currentPage === 2) && (
-                    <div className="last-page">
-                      <p
-                        onClick={() => {
-                          setCurrentPage(1);
-                        }}
-                        key={1}
-                      >
-                        {'<<'}
-                      </p>
-                    </div>
-                  )}
-                  <div className="prev-page">
-                    <p
-                      onClick={() => {
-                        setCurrentPage(currentPage - 1);
-                      }}
-                      key={currentPage}
-                    >
-                      {currentPage - 1}
-                    </p>
-                  </div>
-                </>
-              )}
-
-              <div className="current-page">
-                <p>{currentPage}</p>
-              </div>
-
-              {!(currentPage === pages_num) && (
-                <>
-                  <div className="next-page">
-                    <p
-                      onClick={() => {
-                        setCurrentPage(currentPage + 1);
-                      }}
-                      key={currentPage}
-                    >
-                      {currentPage + 1}
-                    </p>
-                  </div>
-                  {!(currentPage === pages_num - 1) && (
-                    <div className="last-page">
-                      <p
-                        onClick={() => {
-                          setCurrentPage(pages_num);
-                        }}
-                        key={pages_num}
-                      >
-                        {'>>'}
-                      </p>
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
+            {productsRaw && productsRaw.previous ? 
+                  <div className='next-page cursor-pointer' onClick={()=>{handleNextNavigate("previous")}}>PREVIOUS</div>
+             : ''}
+          {productsRaw && productsRaw.next ? 
+                <div className='next-page cursor-pointer' onClick={()=>{handleNextNavigate("next")}}>NEXT</div>
+           : ''}
+           </div>
+          
         </div>
       </section>
     </>
   );
-};
+}
 
 export default AllProducts;

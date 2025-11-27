@@ -5,6 +5,7 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   // All Products State
+  const [productsRaw, setProductsRaw] = useState([]);
   const [productList, setProductList] = useState([]);
   // All Products State
   const [productDetail, setProductDetail] = useState([]);
@@ -94,7 +95,9 @@ export const ProductProvider = ({ children }) => {
         selectedSize,
         setSelectedSize,
         existingSizes, 
-        setExistingSizes
+        setExistingSizes,
+        productsRaw, 
+        setProductsRaw
       }}
     >
       {children}

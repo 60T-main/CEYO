@@ -42,6 +42,7 @@ export function useApi() {
     setCart,
     selectedColor,
     selectedSize,
+    setProductsRaw
   } = useProductContext();
   const { setErrorMessage, setErrorMessageCart } = useErrorContext();
   const { setUserInfo, setLoggedIn } = useUserContext();
@@ -55,11 +56,18 @@ export function useApi() {
   };
 
   // Fetch all products
-  const fetchProducts = async (filters = {}) => {
+  const fetchProducts = async (filters = {}, pageUrl = null) => {
     setIsLoading(true);
     try {
+      let endpoint;
+      if (pageUrl) {
+      const urlObj = new URL(pageUrl, API_BASE_URL);
+      endpoint = urlObj.pathname + urlObj.search;
+    } else {
       const params = new URLSearchParams(filters).toString();
-      const endpoint = `/product/?${params}`;
+      endpoint = `/product/?${params}`;
+    }
+
       const response = await fetch(API_BASE_URL + endpoint, {
         method: 'GET',
         credentials: 'include',
@@ -71,17 +79,17 @@ export function useApi() {
 
       if (data.Response === 'False') {
         setProductList([]);
+        setProductsRaw([]);
         return;
       }
 
-      const filtered = data.filter(
-        (product) => product.product_variants.length > 0 && product.images.length > 0
-      );
+      
+      setProductsRaw(data);
 
       if (filters.order_by === 'created_at') {
-        setDateOrderedProducts(filtered);
+        setDateOrderedProducts(data.results);
       } else {
-        setProductList(filtered);
+        setProductList(data.results);
       }
     } catch (error) {
       setErrorMessage('Error fetching products. Please try again later...');

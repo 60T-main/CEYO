@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useProductContext } from '@/hooks/ProductStates';
 import { usePageContext } from '@/hooks/PageStates';
 
-const FilterOverlay = ({ onFilter }) => {
+const FilterOverlay = ({ onFilter, onOverlayClose  }) => {
   const {
     categoriesList,
     debouncedSearchTerm,
@@ -18,7 +18,7 @@ const FilterOverlay = ({ onFilter }) => {
     setChosenSubCategory,
   } = useProductContext();
 
-  const parentCattegories = ['ქალი', 'კაცი', 'ბავშვი'];
+  const parentCategories = ['ქალი', 'კაცი', 'ბავშვი'];
 
   async function handleFilter(event) {
     event.preventDefault();
@@ -139,7 +139,7 @@ const FilterOverlay = ({ onFilter }) => {
           >
             გასუფთავება
           </button>
-          <button className="submit-btn" type="submit">
+          <button className="submit-btn" type="submit"  onClick={()=>{onOverlayClose('filter')}}>
             გაფილტვრა
           </button>
         </div>

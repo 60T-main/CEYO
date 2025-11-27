@@ -1,6 +1,4 @@
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, render
-from django.views.generic import ListView, DetailView, View
+from rest_framework.pagination import PageNumberPagination
 from django.db.models import Prefetch
 
 from django.views.decorators.csrf import csrf_exempt
@@ -14,6 +12,7 @@ from rest_framework.permissions import AllowAny
 
 from .serializers import ProductSerializer, CategorySerializer, CartSerializer, CommentSerializer
 
+from django.db.models import Count,Q
 
 @api_view(['GET'])
 def ProductList(request):
@@ -41,21 +40,35 @@ def ProductList(request):
     # filter by max price
     max_price = request.GET.get('max_price')
     if max_price:
-        products = [product for product in products if product.variants.first() and product.variants.first().price <= float(max_price)]
+        products = products.filter(variants__price__lte=float(max_price))
 
     # filter by min price
     min_price = request.GET.get('min_price')
     if min_price:
-        products = [product for product in products if product.variants.first() and product.variants.first().price >= float(min_price)]
+        products = products.filter(variants__price__gte=float(min_price))
 
     # ordering
     order_by = request.GET.get('order_by')
     if order_by in ['created_at', '-created_at', 'name', '-name', 'price', '-price']:
         products = products.order_by(order_by)
 
-    serializer = ProductSerializer(products, many=True)
+    # filter out products that have no variants and no images
+    products = (
+        products
+        .annotate(
+            num_variants=Count('variants', distinct=True),
+            num_images=Count('variants__images', distinct=True)
+        )
+        .filter(num_variants__gt=0, num_images__gt=0)
+    )
 
-    return Response(serializer.data)
+    # Pagination
+    paginator = PageNumberPagination()
+    paginator.page_size = 21
+    result_page = paginator.paginate_queryset(products, request)
+
+    serializer = ProductSerializer(result_page, many=True)
+    return paginator.get_paginated_response(serializer.data)
 
 
 

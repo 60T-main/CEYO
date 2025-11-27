@@ -16,7 +16,7 @@ export const PageProvider = ({ children }) => {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(20);
+  const [postsPerPage, setPostsPerPage] = useState(15);
 
   // Checkout page state
   const [checkoutPageState, setCheckoutPageState] = useState('delivery');

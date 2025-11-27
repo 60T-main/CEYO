@@ -603,7 +603,7 @@ input::placeholder {
 
 
     .pages-parent{
-      @apply flex justify-center items-center mt-12 w-full;
+      @apply flex justify-center items-center mt-12 w-full gap-12;
     }
 
     .pages{
@@ -674,7 +674,7 @@ input::placeholder {
     }
 
     .card-skeleton-products{
-      @apply w-4/5 h-55 md:w-2/3 md:h-55 lg:w-6/7 lg:h-75 xl:w-9/10 xl:h-120 mx-auto mt-4;
+      @apply w-4/5 h-55 md:w-2/3 md:h-55 lg:w-6/7 lg:h-75 xl:w-9/10 xl:h-80 mt-4 mx-auto ;
     }
 
     /* Filter overlay */
@@ -786,14 +786,14 @@ input::placeholder {
     }
 
     .card-skeleton-product{
-      @apply flex flex-col justify-center lg:flex-row lg:gap-12;
+      @apply flex flex-col justify-center 2xl:flex-row lg:gap-12 xl:pt-12;
     }
 
     .card-skeleton-product-img{
-      @apply mx-auto w-3/4 h-70 min-[550px]:w-1/2;
+      @apply mx-auto w-3/4 h-70 min-[550px]:w-1/2 xl:h-100 2xl:w-1/3;
     }
     .card-skeleton-product-content{
-      @apply flex flex-col mx-auto w-3/4 mt-4 lg:w-100 lg:justify-center gap-2;
+      @apply flex flex-col mx-auto w-3/4 mt-4 lg:w-5/6 lg:justify-center 2xl:w-1/3 gap-2;
     }
     .card-skeleton-product-name{
       @apply w-3/4 h-8;
@@ -844,7 +844,15 @@ input::placeholder {
     }
 
     .shop-rest{
-      @apply border-2 border-[var(--color-primary-blue)] rounded-3xl p-3 mt-5 flex flex-col justify-center items-center;
+      @apply opacity-0 border-2 border-[var(--color-primary-blue)] rounded-3xl p-3 mt-5 flex flex-col justify-center items-center text-center transition-all duration-100 ease-in;
+      transform: translateY(10px);
+      max-height: 0;
+      overflow: hidden;
+    }
+    .shop-rest.visible{
+      @apply opacity-100;
+      transform: translateY(0);
+      max-height: 100%;
     }
     .shop-rest img{
       @apply w-50;
@@ -1330,6 +1338,16 @@ input::placeholder {
     content: "";
     box-sizing: border-box;
     @apply absolute inset-0 rounded-full border-4;
+    animation: prixClipFix 2s linear infinite;
+  }
+    .loader.product {
+    @apply flex justify-start w-20 h-20 rounded-full relative my-20;
+    animation: rotate 1s linear infinite;
+  }
+    .loader.product:before {
+        content: "";
+    box-sizing: border-box;
+    @apply absolute inset-0 rounded-full border-8 border-[var(--color-primary-blue)];
     animation: prixClipFix 2s linear infinite;
   }
 

@@ -77,7 +77,7 @@ function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
 
   const onFilter = async (filter = {}) => {
-    const expectedKeys = ['category', 'min_price', 'max_price', 'search', 'order_by'];
+    const expectedKeys = ['category', 'min_price', 'max_price', 'search', 'order_by', 'page'];
 
     expectedKeys.forEach((key) => {
       if (!filter[key]) {
@@ -91,6 +91,7 @@ function App() {
       min_price: filter.min_price,
       max_price: filter.max_price,
       order_by: filter.order_by,
+      page: filter.page
     });
   };
 
@@ -279,7 +280,7 @@ function App() {
                 CardSkeleton={CardSkeleton}
                 isLoading={isLoading}
               >
-                <FilterOverlay onFilter={onFilter} debouncedSearchTerm={debouncedSearchTerm} />
+                <FilterOverlay onFilter={onFilter} debouncedSearchTerm={debouncedSearchTerm} onOverlayClose ={onOverlayClose } />
               </AllProducts>
             }
           />
